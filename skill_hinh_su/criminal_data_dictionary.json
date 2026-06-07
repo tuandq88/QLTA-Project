@@ -1,0 +1,1258 @@
+{
+  "skill": "criminal_statistics_specialist",
+  "forms": {
+    "HS_ST_1A": [
+      {
+        "column_number": 1,
+        "excel_column": "A",
+        "label": "TỘI PHẠM(Ghi theo thứ tự các chương, điều luật của Bộ luật hình sự)"
+      },
+      {
+        "column_number": 2,
+        "excel_column": "B",
+        "label": "ĐIỀU LUẬT ÁP DỤNG"
+      },
+      {
+        "column_number": 3,
+        "excel_column": "C",
+        "label": "SỐ VỤ ÁN PHẢI GIẢI QUYẾT / Cũ còn lại / Vụ"
+      },
+      {
+        "column_number": 4,
+        "excel_column": "D",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 5,
+        "excel_column": "E",
+        "label": "Mới thụ lý / Vụ"
+      },
+      {
+        "column_number": 6,
+        "excel_column": "F",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 7,
+        "excel_column": "G",
+        "label": "Chuyển vụ án / Vụ"
+      },
+      {
+        "column_number": 8,
+        "excel_column": "H",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 9,
+        "excel_column": "I",
+        "label": "Tổng số / Vụ"
+      },
+      {
+        "column_number": 10,
+        "excel_column": "J",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 11,
+        "excel_column": "K",
+        "label": "SỐ VỤ ÁN ĐÃ GIẢI QUYẾT / Đình chỉ / Vụ"
+      },
+      {
+        "column_number": 12,
+        "excel_column": "L",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 13,
+        "excel_column": "M",
+        "label": "Trả hồ sơ cho Viện kiểm sát / Tổng số / Vụ"
+      },
+      {
+        "column_number": 14,
+        "excel_column": "N",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 15,
+        "excel_column": "O",
+        "label": "Số vụ án trả hồ sơ nhưng VKS không chấp nhận yêu cầu của Toà án"
+      },
+      {
+        "column_number": 16,
+        "excel_column": "P",
+        "label": "Xét xử / Vụ"
+      },
+      {
+        "column_number": 17,
+        "excel_column": "Q",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 18,
+        "excel_column": "R",
+        "label": "Phân tích đặc điểm các vụ án, bị cáo đã xét xử / Số vụ án Tòa án yêu cầu Viện kiểm sát bổ sung tài liệu, chứng cứ"
+      },
+      {
+        "column_number": 19,
+        "excel_column": "S",
+        "label": "Số vụ án điểm hoặc xét xử lưu động"
+      },
+      {
+        "column_number": 20,
+        "excel_column": "T",
+        "label": "Số vụ án xét xử theo thủ tục rút gọn"
+      },
+      {
+        "column_number": 21,
+        "excel_column": "U",
+        "label": "Số vụ án liên quan đến bạo lực gia đình"
+      },
+      {
+        "column_number": 22,
+        "excel_column": "V",
+        "label": "Vi phạm thời hạn tạm giam trong giai đoạn xét xử / Vụ"
+      },
+      {
+        "column_number": 23,
+        "excel_column": "W",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 24,
+        "excel_column": "X",
+        "label": "Tòa án quyết định phục hồi vụ án / Vụ"
+      },
+      {
+        "column_number": 25,
+        "excel_column": "Y",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 26,
+        "excel_column": "Z",
+        "label": "Kiến nghị sửa chữa thiếu sót, vi phạm trong công tác quản lý"
+      },
+      {
+        "column_number": 27,
+        "excel_column": "AA",
+        "label": "Số vụ Tòa án xác minh, thu thập, bổ sung chứng cứ / Tổng số"
+      },
+      {
+        "column_number": 28,
+        "excel_column": "AB",
+        "label": "Tòa án tiến hành xác minh, thu thập chứng cứ khi đã yêu cầu mà VKS không bổ sung được"
+      },
+      {
+        "column_number": 29,
+        "excel_column": "AC",
+        "label": "Khởi tố vụ án tại phiên tòa / Vụ"
+      },
+      {
+        "column_number": 30,
+        "excel_column": "AD",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 31,
+        "excel_column": "AE",
+        "label": "Tòa án áp dụng tội danh khác VKS truy tố / Tòa án áp dụng tội danh nặng hơn"
+      },
+      {
+        "column_number": 32,
+        "excel_column": "AF",
+        "label": "Tòa án áp dụng tội danh nhẹ hơn"
+      },
+      {
+        "column_number": 33,
+        "excel_column": "AG",
+        "label": "Tòa án xét xử theo khoản khác VKS truy tố / Tòa án áp dụng điều khoản nặng hơn"
+      },
+      {
+        "column_number": 34,
+        "excel_column": "AH",
+        "label": "Tòa án áp dụng điều khoản nhẹ hơn"
+      },
+      {
+        "column_number": 35,
+        "excel_column": "AI",
+        "label": "Tòa án áp dụng hình phạt khác theo đề nghị của Viện kiểm sát / Tòa án áp dụng hình phạt nặng hơn"
+      },
+      {
+        "column_number": 36,
+        "excel_column": "AJ",
+        "label": "Tòa án áp dụng hình phạt nhẹ hơn"
+      },
+      {
+        "column_number": 37,
+        "excel_column": "AK",
+        "label": "Tổng số vụ án đã giải quyết / Vụ"
+      },
+      {
+        "column_number": 38,
+        "excel_column": "AL",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 39,
+        "excel_column": "AM",
+        "label": "SỐ VỤ ÁN CÒN LẠI / Tổng số / Vụ"
+      },
+      {
+        "column_number": 40,
+        "excel_column": "AN",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 41,
+        "excel_column": "AO",
+        "label": "Tạm đình chỉ / Vụ / Tổng số"
+      },
+      {
+        "column_number": 42,
+        "excel_column": "AP",
+        "label": "Kiến nghị cơ quan có thẩm quyền xem xét, sửa đổi bổ sung hoặc bãi bỏ VBQPPL do có dấu hiệu trái PL"
+      },
+      {
+        "column_number": 43,
+        "excel_column": "AQ",
+        "label": "Tạm đinh chỉ lần 2"
+      },
+      {
+        "column_number": 44,
+        "excel_column": "AR",
+        "label": "Tạm đình chỉ trên 2 lần"
+      },
+      {
+        "column_number": 45,
+        "excel_column": "AS",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 46,
+        "excel_column": "AT",
+        "label": "Số vụ quá hạn luật định / Nguyên nhân chủ quan"
+      },
+      {
+        "column_number": 47,
+        "excel_column": "AU",
+        "label": "Nguyên nhân khách quan"
+      },
+      {
+        "column_number": 48,
+        "excel_column": "AV",
+        "label": "PHÂN TÍCH QUYẾT ĐỊNH VỀ TỘI DANH VÀ HÌNH PHẠT / Không có tội"
+      },
+      {
+        "column_number": 49,
+        "excel_column": "AW",
+        "label": "Miễn trách nhiệm hình sự hoặc miễn hình phạt"
+      },
+      {
+        "column_number": 50,
+        "excel_column": "AX",
+        "label": "Giáo dục tại trường giáo dưỡng"
+      },
+      {
+        "column_number": 51,
+        "excel_column": "AY",
+        "label": "Cho hưởng án treo"
+      },
+      {
+        "column_number": 52,
+        "excel_column": "AZ",
+        "label": "HÌNH PHẠT CHÍNH / Cảnh cáo"
+      },
+      {
+        "column_number": 53,
+        "excel_column": "BA",
+        "label": "Phạt tiền"
+      },
+      {
+        "column_number": 54,
+        "excel_column": "BB",
+        "label": "Cải tạo không giam giữ"
+      },
+      {
+        "column_number": 55,
+        "excel_column": "BC",
+        "label": "Trục xuất"
+      },
+      {
+        "column_number": 56,
+        "excel_column": "BD",
+        "label": "Tù từ 3 năm trở xuống"
+      },
+      {
+        "column_number": 57,
+        "excel_column": "BE",
+        "label": "Tù từ trên 3 năm đến 7 năm"
+      },
+      {
+        "column_number": 58,
+        "excel_column": "BF",
+        "label": "Tù từ trên 7 năm đến 15 năm"
+      },
+      {
+        "column_number": 59,
+        "excel_column": "BG",
+        "label": "Tù từ trên 15 năm đến 20 năm"
+      },
+      {
+        "column_number": 60,
+        "excel_column": "BH",
+        "label": "Tù chung thân"
+      },
+      {
+        "column_number": 61,
+        "excel_column": "BI",
+        "label": "Tử hình"
+      },
+      {
+        "column_number": 62,
+        "excel_column": "BJ",
+        "label": "Tổng hợp hình phạt tù từ trên 20 năm đến 30 năm"
+      },
+      {
+        "column_number": 63,
+        "excel_column": "BK",
+        "label": "Số bị cáo xét xử lại phần xử lý vật chứng và trách nhiệm dân sự"
+      },
+      {
+        "column_number": 64,
+        "excel_column": "BL",
+        "label": "HÌNH PHẠT BỔ SUNG / Tịch thu tài sản"
+      },
+      {
+        "column_number": 65,
+        "excel_column": "BM",
+        "label": "Phạt tiền"
+      },
+      {
+        "column_number": 66,
+        "excel_column": "BN",
+        "label": "Trục xuất"
+      },
+      {
+        "column_number": 67,
+        "excel_column": "BO",
+        "label": "Các hình phạt bổ sung khác"
+      },
+      {
+        "column_number": 68,
+        "excel_column": "BP",
+        "label": "PHÂN TÍCH THIỆT HẠI (Mục 3 Chương 18; Chương 23) / Tài sản chiếm đoạt (VNĐ)"
+      },
+      {
+        "column_number": 69,
+        "excel_column": "BQ",
+        "label": "Tài sản thiệt hại (VNĐ)"
+      },
+      {
+        "column_number": 70,
+        "excel_column": "BR",
+        "label": "Tài sản thu hồi(VNĐ)"
+      },
+      {
+        "column_number": 71,
+        "excel_column": "BS",
+        "label": "Bồi thường thiệt hại(VNĐ)"
+      },
+      {
+        "column_number": 72,
+        "excel_column": "BT",
+        "label": "PHÂN TÍCH ĐẶC ĐIỂM NHÂN THÂN CÁC BỊ CÁO ĐÃ XÉT XỬ / Công chức, viên chức"
+      },
+      {
+        "column_number": 73,
+        "excel_column": "BU",
+        "label": "Đảng viên"
+      },
+      {
+        "column_number": 74,
+        "excel_column": "BV",
+        "label": "Không nghề nghiệp"
+      },
+      {
+        "column_number": 75,
+        "excel_column": "BW",
+        "label": "Tái phạm, tái phạm nguy hiểm"
+      },
+      {
+        "column_number": 76,
+        "excel_column": "BX",
+        "label": "Nghiện ma tuý"
+      },
+      {
+        "column_number": 77,
+        "excel_column": "BY",
+        "label": "Dân tộc thiểu số"
+      },
+      {
+        "column_number": 78,
+        "excel_column": "BZ",
+        "label": "Nữ"
+      },
+      {
+        "column_number": 79,
+        "excel_column": "CA",
+        "label": "Từ đủ 14 đến dưới 16 tuổi"
+      },
+      {
+        "column_number": 80,
+        "excel_column": "CB",
+        "label": "Từ đủ 16 đến dưới 18 tuổi"
+      },
+      {
+        "column_number": 81,
+        "excel_column": "CC",
+        "label": "Từ 18 đến 30 tuổi"
+      },
+      {
+        "column_number": 82,
+        "excel_column": "CD",
+        "label": "Trên 75 tuổi"
+      },
+      {
+        "column_number": 83,
+        "excel_column": "CE",
+        "label": "Người nước ngoài"
+      },
+      {
+        "column_number": 84,
+        "excel_column": "CF",
+        "label": "PHÂN TÍCH ĐẶC ĐIỂM NHÂN THÂN CỦA NGƯỜI BỊ HẠI / Độ tuổi / Dưới 16 tuổi"
+      },
+      {
+        "column_number": 85,
+        "excel_column": "CG",
+        "label": "Dưới 16 tuổi bị tổn thương nghiêm trọng về tâm lý"
+      },
+      {
+        "column_number": 86,
+        "excel_column": "CH",
+        "label": "Từ đủ 16 đến dưới 18 tuổi"
+      },
+      {
+        "column_number": 87,
+        "excel_column": "CI",
+        "label": "Từ đủ 16 đến dưới 18 tuổi bị tổn thương nghiêm trọng về tâm lý"
+      },
+      {
+        "column_number": 88,
+        "excel_column": "CJ",
+        "label": "Từ đủ 18 tuổi đến dưới 30 tuổi"
+      },
+      {
+        "column_number": 89,
+        "excel_column": "CK",
+        "label": "Nữ"
+      },
+      {
+        "column_number": 90,
+        "excel_column": "CL",
+        "label": "Số vụ Tòa án đề nghị các cơ quan áp dụng các biện pháp bảo vệ"
+      },
+      {
+        "column_number": 91,
+        "excel_column": "CM",
+        "label": "Số vụ án có người bào chữa, người bảo vệ quyền, lợi ích hợp pháp cho đương sự / Luật sư"
+      },
+      {
+        "column_number": 92,
+        "excel_column": "CN",
+        "label": "Người bào chữa khác"
+      },
+      {
+        "column_number": 93,
+        "excel_column": "CO",
+        "label": "Số vụ án Tòa án áp dụng án lệ"
+      },
+      {
+        "column_number": 94,
+        "excel_column": "CP",
+        "label": "Số vụ án tòa án tổ chức phiên tòa rút kinh nghiệm"
+      }
+    ],
+    "HS_PT_1B": [
+      {
+        "column_number": 1,
+        "excel_column": "A",
+        "label": "TỘI PHẠM(Ghi theo thứ tự các chương, điều luật của Bộ luật hình sự)"
+      },
+      {
+        "column_number": 2,
+        "excel_column": "B",
+        "label": "ĐIỀU LUẬT ÁP DỤNG"
+      },
+      {
+        "column_number": 3,
+        "excel_column": "C",
+        "label": "SỐ VỤ ÁN PHẢI GIẢI QUYẾT / Cũ còn lại / Kháng nghị / Vụ"
+      },
+      {
+        "column_number": 4,
+        "excel_column": "D",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 5,
+        "excel_column": "E",
+        "label": "Kháng cáo / Vụ"
+      },
+      {
+        "column_number": 6,
+        "excel_column": "F",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 7,
+        "excel_column": "G",
+        "label": "Mới thụ lý / Kháng nghị / Vụ"
+      },
+      {
+        "column_number": 8,
+        "excel_column": "H",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 9,
+        "excel_column": "I",
+        "label": "Kháng cáo / Vụ"
+      },
+      {
+        "column_number": 10,
+        "excel_column": "J",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 11,
+        "excel_column": "K",
+        "label": "Tổng số / Kháng nghị / Vụ"
+      },
+      {
+        "column_number": 12,
+        "excel_column": "L",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 13,
+        "excel_column": "M",
+        "label": "Kháng cáo / Vụ"
+      },
+      {
+        "column_number": 14,
+        "excel_column": "N",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 15,
+        "excel_column": "O",
+        "label": "Số trường hợp vi phạm thời hạn tạm giam"
+      },
+      {
+        "column_number": 16,
+        "excel_column": "P",
+        "label": "SỐ VỤ ÁN ĐÃ GIẢI QUYẾT / Đình chỉ / Rút kháng nghị / Vụ"
+      },
+      {
+        "column_number": 17,
+        "excel_column": "Q",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 18,
+        "excel_column": "R",
+        "label": "Rút kháng cáo / Vụ"
+      },
+      {
+        "column_number": 19,
+        "excel_column": "S",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 20,
+        "excel_column": "T",
+        "label": "Lý do khác / Kháng nghị / Vụ"
+      },
+      {
+        "column_number": 21,
+        "excel_column": "U",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 22,
+        "excel_column": "V",
+        "label": "Kháng cáo / Vụ"
+      },
+      {
+        "column_number": 23,
+        "excel_column": "W",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 24,
+        "excel_column": "X",
+        "label": "Xét xử / Kháng nghị / Vụ"
+      },
+      {
+        "column_number": 25,
+        "excel_column": "Y",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 26,
+        "excel_column": "Z",
+        "label": "Kháng cáo / Vụ"
+      },
+      {
+        "column_number": 27,
+        "excel_column": "AA",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 28,
+        "excel_column": "AB",
+        "label": "Tổng số / Vụ"
+      },
+      {
+        "column_number": 29,
+        "excel_column": "AC",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 30,
+        "excel_column": "AD",
+        "label": "SỐ VỤ ÁN CÒN LẠI / Kháng nghị / Vụ"
+      },
+      {
+        "column_number": 31,
+        "excel_column": "AE",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 32,
+        "excel_column": "AF",
+        "label": "Kháng cáo / Vụ"
+      },
+      {
+        "column_number": 33,
+        "excel_column": "AG",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 34,
+        "excel_column": "AH",
+        "label": "Tổng số / Vụ"
+      },
+      {
+        "column_number": 35,
+        "excel_column": "AI",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 36,
+        "excel_column": "AJ",
+        "label": "Tạm đình chỉ / Vụ / Tổng số"
+      },
+      {
+        "column_number": 37,
+        "excel_column": "AK",
+        "label": "Kiến nghị cơ quan có thẩm quyền xem xét, sửa đổi bổ sung hoặc bãi bỏ VBQPPL do có dấu hiệu trái PL"
+      },
+      {
+        "column_number": 38,
+        "excel_column": "AL",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 39,
+        "excel_column": "AM",
+        "label": "Số vụ quá hạn luật định / Nguyên nhân chủ quan"
+      },
+      {
+        "column_number": 40,
+        "excel_column": "AN",
+        "label": "Nguyên nhân khách quan"
+      },
+      {
+        "column_number": 41,
+        "excel_column": "AO",
+        "label": "PHÂN TÍCH SỐ BỊ CÁO ĐÃ XÉT XỬ (KHÔNG CÓ HÌNH PHẠT TỬ HÌNH) / Giữ nguyên bản án, quyết định sơ thẩm"
+      },
+      {
+        "column_number": 42,
+        "excel_column": "AP",
+        "label": "Miễn trách nhiệm hình sự hoặc miễn hình phạt"
+      },
+      {
+        "column_number": 43,
+        "excel_column": "AQ",
+        "label": "Cho hưởng án treo"
+      },
+      {
+        "column_number": 44,
+        "excel_column": "AR",
+        "label": "Không cho bị cáo hưởng án treo"
+      },
+      {
+        "column_number": 45,
+        "excel_column": "AS",
+        "label": "Giảm hình phạt"
+      },
+      {
+        "column_number": 46,
+        "excel_column": "AT",
+        "label": "Chuyển hình phạt khác nhẹ hơn"
+      },
+      {
+        "column_number": 47,
+        "excel_column": "AU",
+        "label": "Tăng hình phạt"
+      },
+      {
+        "column_number": 48,
+        "excel_column": "AV",
+        "label": "Chuyển hình phạt khác nặng hơn"
+      },
+      {
+        "column_number": 49,
+        "excel_column": "AW",
+        "label": "Thay đổi tội danh"
+      },
+      {
+        "column_number": 50,
+        "excel_column": "AX",
+        "label": "Sửa phần hình phạt bổ sung hoặc áp dụng các biện pháp tư pháp"
+      },
+      {
+        "column_number": 51,
+        "excel_column": "AY",
+        "label": "Sửa phần bồi thường thiệt hại và quyết định xử lý vật chứng"
+      },
+      {
+        "column_number": 52,
+        "excel_column": "AZ",
+        "label": "Sửa các phần khác"
+      },
+      {
+        "column_number": 53,
+        "excel_column": "BA",
+        "label": "Sửa quyết định của bản án sơ thẩm đối với bị cáo không có kháng cáo, kháng nghị"
+      },
+      {
+        "column_number": 54,
+        "excel_column": "BB",
+        "label": "Sửa bản án, quyết định sơ thẩm / Do cấp sơ thẩm sai"
+      },
+      {
+        "column_number": 55,
+        "excel_column": "BC",
+        "label": "Do có tình tiết mới"
+      },
+      {
+        "column_number": 56,
+        "excel_column": "BD",
+        "label": "Huỷ bản án sơ thẩm, tuyên bố bị cáo không có tội và đình chỉ vụ án / Do cấp sơ thẩm sai"
+      },
+      {
+        "column_number": 57,
+        "excel_column": "BE",
+        "label": "Do có tình tiết mới"
+      },
+      {
+        "column_number": 58,
+        "excel_column": "BF",
+        "label": "Huỷ bản án sơ thẩm và đình chỉ vụ án / Do cấp sơ thẩm sai"
+      },
+      {
+        "column_number": 59,
+        "excel_column": "BG",
+        "label": "Do có tình tiết mới"
+      },
+      {
+        "column_number": 60,
+        "excel_column": "BH",
+        "label": "Huỷ bản án, quyết định sơ thẩm để điều tra lại / Do cấp sơ thẩm sai"
+      },
+      {
+        "column_number": 61,
+        "excel_column": "BI",
+        "label": "Do có tình tiết mới"
+      },
+      {
+        "column_number": 62,
+        "excel_column": "BJ",
+        "label": "Huỷ bản án, quyết định sơ thẩm để xét xử sơ thẩm lại / Do cấp sơ thẩm sai"
+      },
+      {
+        "column_number": 63,
+        "excel_column": "BK",
+        "label": "Do có tình tiết mới"
+      },
+      {
+        "column_number": 64,
+        "excel_column": "BL",
+        "label": "Đình chỉ xét xử phúc thẩm"
+      },
+      {
+        "column_number": 65,
+        "excel_column": "BM",
+        "label": "Khởi tố vụ án tại phiên tòa"
+      },
+      {
+        "column_number": 66,
+        "excel_column": "BN",
+        "label": "ÁN TỬ HÌNH / Giữ nguyên hình phạt tử hình"
+      },
+      {
+        "column_number": 67,
+        "excel_column": "BO",
+        "label": "Tăng lên hình phạt tử hình"
+      },
+      {
+        "column_number": 68,
+        "excel_column": "BP",
+        "label": "Giảm hình phạt tử hình"
+      },
+      {
+        "column_number": 69,
+        "excel_column": "BQ",
+        "label": "Huỷ bản án tử hình để điều tra lại"
+      },
+      {
+        "column_number": 70,
+        "excel_column": "BR",
+        "label": "Huỷ bản án tử hình để xét xử lại"
+      },
+      {
+        "column_number": 71,
+        "excel_column": "BS",
+        "label": "TÒA ÁN CHẤP NHẬN KHÁNG NGHỊ CỦA VIỆN KIỂM SÁT / Vụ"
+      },
+      {
+        "column_number": 72,
+        "excel_column": "BT",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 73,
+        "excel_column": "BU",
+        "label": "Số vụ án Viện kiểm sát rút kháng nghị, người có kháng cáo không rút kháng cáo"
+      },
+      {
+        "column_number": 74,
+        "excel_column": "BV",
+        "label": "Số vụ án có người bào chữa, người bảo vệ quyền, lợi ích hợp pháp cho đương sự / Luật sư"
+      },
+      {
+        "column_number": 75,
+        "excel_column": "BW",
+        "label": "Người bào chữa khác"
+      },
+      {
+        "column_number": 76,
+        "excel_column": "BX",
+        "label": "Số vụ Tòa án áp dụng án lệ"
+      },
+      {
+        "column_number": 77,
+        "excel_column": "BY",
+        "label": "Số vụ án tòa án tổ chức phiên tòa rút kinh nghiệm"
+      }
+    ],
+    "HS_GDT_1C": [
+      {
+        "column_number": 1,
+        "excel_column": "A",
+        "label": "TỘI PHẠM(Ghi theo thứ tự các chương, điều luật của Bộ luật hình sự)"
+      },
+      {
+        "column_number": 2,
+        "excel_column": "B",
+        "label": "ĐIỀU LUẬT ÁP DỤNG"
+      },
+      {
+        "column_number": 3,
+        "excel_column": "C",
+        "label": "SỐ VỤ ÁN PHẢI GIẢI QUYẾT / Cũ còn lại / Chánh án kháng nghị / Vụ"
+      },
+      {
+        "column_number": 4,
+        "excel_column": "D",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 5,
+        "excel_column": "E",
+        "label": "Viện trưởng kháng nghị / Vụ"
+      },
+      {
+        "column_number": 6,
+        "excel_column": "F",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 7,
+        "excel_column": "G",
+        "label": "Mới thụ lý / Chánh án kháng nghị / Vụ"
+      },
+      {
+        "column_number": 8,
+        "excel_column": "H",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 9,
+        "excel_column": "I",
+        "label": "Viện trưởng kháng nghị / Vụ"
+      },
+      {
+        "column_number": 10,
+        "excel_column": "J",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 11,
+        "excel_column": "K",
+        "label": "Tổng số / Vụ"
+      },
+      {
+        "column_number": 12,
+        "excel_column": "L",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 13,
+        "excel_column": "M",
+        "label": "SỐ VỤ ÁN ĐÃ GIẢI QUYẾT / Đình chỉ / Chánh án rút kháng nghị / Vụ"
+      },
+      {
+        "column_number": 14,
+        "excel_column": "N",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 15,
+        "excel_column": "O",
+        "label": "Viện trưởng rút kháng nghị / Vụ"
+      },
+      {
+        "column_number": 16,
+        "excel_column": "P",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 17,
+        "excel_column": "Q",
+        "label": "Số vụ án đã xét xử / Chánh án kháng nghị / Vụ"
+      },
+      {
+        "column_number": 18,
+        "excel_column": "R",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 19,
+        "excel_column": "S",
+        "label": "Viện trưởng kháng nghị / Vụ"
+      },
+      {
+        "column_number": 20,
+        "excel_column": "T",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 21,
+        "excel_column": "U",
+        "label": "Tổng số / Vụ"
+      },
+      {
+        "column_number": 22,
+        "excel_column": "V",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 23,
+        "excel_column": "W",
+        "label": "SỐ VỤ ÁN CÒN LẠI / Chánh án kháng nghị / Vụ"
+      },
+      {
+        "column_number": 24,
+        "excel_column": "X",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 25,
+        "excel_column": "Y",
+        "label": "Viện trưởng kháng nghị / Vụ"
+      },
+      {
+        "column_number": 26,
+        "excel_column": "Z",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 27,
+        "excel_column": "AA",
+        "label": "Tổng số / Vụ"
+      },
+      {
+        "column_number": 28,
+        "excel_column": "AB",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 29,
+        "excel_column": "AC",
+        "label": "Số vụ án quá hạn luật định / Nguyên nhân chủ quan"
+      },
+      {
+        "column_number": 30,
+        "excel_column": "AD",
+        "label": "Nguyên nhân khách quan"
+      },
+      {
+        "column_number": 31,
+        "excel_column": "AE",
+        "label": "PHÂN TÍCH SỐ BỊ CÁO ĐÃ XÉT XỬ / Không chấp nhận kháng nghị, giữ nguyên bản án, quyết định có hiệu lực pháp luật / Chánh án / Vụ"
+      },
+      {
+        "column_number": 32,
+        "excel_column": "AF",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 33,
+        "excel_column": "AG",
+        "label": "Viện trưởng / Vụ"
+      },
+      {
+        "column_number": 34,
+        "excel_column": "AH",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 35,
+        "excel_column": "AI",
+        "label": "Sửa bản án, quyết định / Sửa phần hình phạt"
+      },
+      {
+        "column_number": 36,
+        "excel_column": "AJ",
+        "label": "Sửa phần bồi thường thiệt hại"
+      },
+      {
+        "column_number": 37,
+        "excel_column": "AK",
+        "label": "Sửa khác"
+      },
+      {
+        "column_number": 38,
+        "excel_column": "AL",
+        "label": "Huỷ bản án hoặc quyết định đã có hiệu lực pháp luật / Huỷ bản án, quyết định sơ thẩm để điều tra lại"
+      },
+      {
+        "column_number": 39,
+        "excel_column": "AM",
+        "label": "Huỷ bản án, quyết định sơ thẩm để xét xử lại"
+      },
+      {
+        "column_number": 40,
+        "excel_column": "AN",
+        "label": "Huỷ bản án, quyết định phúc thẩm để điều tra lại"
+      },
+      {
+        "column_number": 41,
+        "excel_column": "AO",
+        "label": "Huỷ bản án, quyết định phúc thẩm để xét xử lại"
+      },
+      {
+        "column_number": 42,
+        "excel_column": "AP",
+        "label": "Huỷ quyết định giám đốc thẩm, tái thẩm để điều tra lại"
+      },
+      {
+        "column_number": 43,
+        "excel_column": "AQ",
+        "label": "Huỷ quyết định giám đốc thẩm, tái thẩm để xét xử lại"
+      },
+      {
+        "column_number": 44,
+        "excel_column": "AR",
+        "label": "Huỷ bản án, quyết định có hiệu lực pháp luật và tuyên bố bị cáo không có tội"
+      },
+      {
+        "column_number": 45,
+        "excel_column": "AS",
+        "label": "Huỷ bản án, quyết định có hiệu lực pháp luật và đình chỉ vụ án"
+      },
+      {
+        "column_number": 46,
+        "excel_column": "AT",
+        "label": "Hủy bản án, quyết định đã có hiệu lực pháp luật và giữ nguyên bản án, quyết định đúng pháp luật của TA cấp sơ thẩm hoặc TA cấp phúc thẩm bị hủy, sửa không đúng pháp luật"
+      },
+      {
+        "column_number": 47,
+        "excel_column": "AU",
+        "label": "Giải quyết khác"
+      },
+      {
+        "column_number": 48,
+        "excel_column": "AV",
+        "label": "Số vụ Tòa án áp dụng án lệ"
+      }
+    ],
+    "HS_TT_1D": [
+      {
+        "column_number": 1,
+        "excel_column": "A",
+        "label": "TỘI PHẠM(Ghi theo thứ tự các chương, điều luật của Bộ luật hình sự)"
+      },
+      {
+        "column_number": 2,
+        "excel_column": "B",
+        "label": "ĐIỀU LUẬT ÁP DỤNG"
+      },
+      {
+        "column_number": 3,
+        "excel_column": "C",
+        "label": "SỐ VỤ ÁN PHẢI GIẢI QUYẾT / Cũ còn lại / Vụ"
+      },
+      {
+        "column_number": 4,
+        "excel_column": "D",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 5,
+        "excel_column": "E",
+        "label": "Mới thụ lý / Vụ"
+      },
+      {
+        "column_number": 6,
+        "excel_column": "F",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 7,
+        "excel_column": "G",
+        "label": "Tổng số / Vụ"
+      },
+      {
+        "column_number": 8,
+        "excel_column": "H",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 9,
+        "excel_column": "I",
+        "label": "SỐ VỤ ÁN ĐÃ GIẢI QUYẾT / Đình chỉ xét xử tái thẩm / Vụ"
+      },
+      {
+        "column_number": 10,
+        "excel_column": "J",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 11,
+        "excel_column": "K",
+        "label": "Số vụ án đã xét xử / Vụ"
+      },
+      {
+        "column_number": 12,
+        "excel_column": "L",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 13,
+        "excel_column": "M",
+        "label": "Tổng số / Vụ"
+      },
+      {
+        "column_number": 14,
+        "excel_column": "N",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 15,
+        "excel_column": "O",
+        "label": "SỐ VỤ ÁN CÒN LẠI / Tổng số / Vụ"
+      },
+      {
+        "column_number": 16,
+        "excel_column": "P",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 17,
+        "excel_column": "Q",
+        "label": "Số vụ án quá hạn luật định / Nguyên nhân chủ quan"
+      },
+      {
+        "column_number": 18,
+        "excel_column": "R",
+        "label": "Nguyên nhân khách quan"
+      },
+      {
+        "column_number": 19,
+        "excel_column": "S",
+        "label": "PHÂN TÍCH SỐ BỊ CÁO ĐÃ XÉT XỬ / Không chấp nhận kháng nghị, giữ nguyên bản án, quyết định có hiệu lực pháp luật / Vụ"
+      },
+      {
+        "column_number": 20,
+        "excel_column": "T",
+        "label": "Bị cáo"
+      },
+      {
+        "column_number": 21,
+        "excel_column": "U",
+        "label": "Huỷ bản án hoặc quyết định đã có hiệu lực pháp luật / Huỷ bản án, quyết định sơ thẩm để điều tra lại"
+      },
+      {
+        "column_number": 22,
+        "excel_column": "V",
+        "label": "Huỷ bản án, quyết định sơ thẩm để xét xử lại"
+      },
+      {
+        "column_number": 23,
+        "excel_column": "W",
+        "label": "Huỷ bản án, quyết định phúc thẩm để điều tra lại"
+      },
+      {
+        "column_number": 24,
+        "excel_column": "X",
+        "label": "Huỷ bản án, quyết định phúc thẩm để xét xử lại"
+      },
+      {
+        "column_number": 25,
+        "excel_column": "Y",
+        "label": "Huỷ quyết định giám đốc thẩm, tái thẩm để điều tra lại"
+      },
+      {
+        "column_number": 26,
+        "excel_column": "Z",
+        "label": "Huỷ quyết định giám đốc thẩm, tái thẩm để xét xử lại"
+      },
+      {
+        "column_number": 27,
+        "excel_column": "AA",
+        "label": "Huỷ bản án, quyết định có hiệu lực pháp luật và tuyên bố bị cáo không có tội"
+      },
+      {
+        "column_number": 28,
+        "excel_column": "AB",
+        "label": "Huỷ bản án, quyết định có hiệu lực pháp luật và đình chỉ vụ án"
+      },
+      {
+        "column_number": 29,
+        "excel_column": "AC",
+        "label": "Giải quyết khác"
+      },
+      {
+        "column_number": 30,
+        "excel_column": "AD",
+        "label": "Số vụ án Tòa án áp dụng án lệ"
+      }
+    ]
+  }
+}

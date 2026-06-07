@@ -1,0 +1,353 @@
+{
+  "skill": "criminal_statistics_specialist",
+  "version": "1.0",
+  "generated_at": "2026-06-07T11:06:35",
+  "forms": {
+    "HS_ST_1A": "Hình sự sơ thẩm do cá nhân phạm tội (Mẫu 1A)",
+    "HS_PT_1B": "Hình sự phúc thẩm do cá nhân phạm tội (Mẫu 1B)",
+    "HS_GDT_1C": "Hình sự giám đốc thẩm do cá nhân phạm tội (Mẫu 1C)",
+    "HS_TT_1D": "Hình sự tái thẩm do cá nhân phạm tội (Mẫu 1D)"
+  },
+  "formulas": {
+    "HS_ST_1A": [
+      {
+        "id": "1A_C9",
+        "target": "C9",
+        "name": "Tổng số vụ án phải giải quyết",
+        "formula": "C9 = C3 + C5 - C7",
+        "expression": "old_case + new_case - transferred_case"
+      },
+      {
+        "id": "1A_C10",
+        "target": "C10",
+        "name": "Tổng số bị cáo phải giải quyết",
+        "formula": "C10 = C4 + C6 - C8",
+        "expression": "old_defendant + new_defendant - transferred_defendant"
+      },
+      {
+        "id": "1A_C37",
+        "target": "C37",
+        "name": "Tổng số vụ án đã giải quyết",
+        "formula": "C37 = C11 + C13 + C16",
+        "expression": "dismissed_case + returned_case + tried_case"
+      },
+      {
+        "id": "1A_C38",
+        "target": "C38",
+        "name": "Tổng số bị cáo đã giải quyết",
+        "formula": "C38 = C12 + C14 + C17",
+        "expression": "dismissed_defendant + returned_defendant + tried_defendant"
+      },
+      {
+        "id": "1A_C39",
+        "target": "C39",
+        "name": "Tổng số vụ án còn lại",
+        "formula": "C39 = C9 - C37",
+        "expression": "total_case - resolved_case"
+      },
+      {
+        "id": "1A_C40",
+        "target": "C40",
+        "name": "Tổng số bị cáo còn lại",
+        "formula": "C40 = C10 - C38",
+        "expression": "total_defendant - resolved_defendant"
+      },
+      {
+        "id": "1A_RULE_SENTENCE",
+        "target": "C48:C61",
+        "name": "Đối chiếu bị cáo đã xét xử với hình phạt chính",
+        "formula": "SUM(C48:C61) = C17",
+        "expression": "main_penalty_defendant_total == tried_defendant"
+      }
+    ],
+    "HS_PT_1B": [
+      {
+        "id": "1B_C11",
+        "target": "C11",
+        "name": "Tổng số vụ án bị kháng nghị phải giải quyết",
+        "formula": "C11 = C3 + C7",
+        "expression": "old_protest_case + new_protest_case"
+      },
+      {
+        "id": "1B_C12",
+        "target": "C12",
+        "name": "Tổng số bị cáo bị kháng nghị phải giải quyết",
+        "formula": "C12 = C4 + C8",
+        "expression": "old_protest_defendant + new_protest_defendant"
+      },
+      {
+        "id": "1B_C13",
+        "target": "C13",
+        "name": "Tổng số vụ án bị kháng cáo phải giải quyết",
+        "formula": "C13 = C5 + C9",
+        "expression": "old_appeal_case + new_appeal_case"
+      },
+      {
+        "id": "1B_C14",
+        "target": "C14",
+        "name": "Tổng số bị cáo bị kháng cáo phải giải quyết",
+        "formula": "C14 = C6 + C10",
+        "expression": "old_appeal_defendant + new_appeal_defendant"
+      },
+      {
+        "id": "1B_C28",
+        "target": "C28",
+        "name": "Tổng số vụ án đã giải quyết",
+        "formula": "C28 = C16 + C18 + C20 + C22 + C24 + C26",
+        "expression": "withdrawn_protest_case + withdrawn_appeal_case + other_dismissed_protest_case + other_dismissed_appeal_case + tried_protest_case + tried_appeal_case"
+      },
+      {
+        "id": "1B_C29",
+        "target": "C29",
+        "name": "Tổng số bị cáo đã giải quyết",
+        "formula": "C29 = C17 + C19 + C21 + C23 + C25 + C27",
+        "expression": "withdrawn_protest_defendant + withdrawn_appeal_defendant + other_dismissed_protest_defendant + other_dismissed_appeal_defendant + tried_protest_defendant + tried_appeal_defendant"
+      },
+      {
+        "id": "1B_C30",
+        "target": "C30",
+        "name": "Số vụ án có kháng nghị còn lại",
+        "formula": "C30 = C11 - (C16 + C20 + C24)",
+        "expression": "total_protest_case - (withdrawn_protest_case + other_dismissed_protest_case + tried_protest_case)"
+      },
+      {
+        "id": "1B_C31",
+        "target": "C31",
+        "name": "Số bị cáo có kháng nghị còn lại",
+        "formula": "C31 = C12 - (C17 + C21 + C25)",
+        "expression": "total_protest_defendant - (withdrawn_protest_defendant + other_dismissed_protest_defendant + tried_protest_defendant)"
+      },
+      {
+        "id": "1B_C32",
+        "target": "C32",
+        "name": "Số vụ án có kháng cáo còn lại",
+        "formula": "C32 = C13 - (C18 + C22 + C26)",
+        "expression": "total_appeal_case - (withdrawn_appeal_case + other_dismissed_appeal_case + tried_appeal_case)"
+      },
+      {
+        "id": "1B_C33",
+        "target": "C33",
+        "name": "Số bị cáo có kháng cáo còn lại",
+        "formula": "C33 = C14 - (C19 + C23 + C27)",
+        "expression": "total_appeal_defendant - (withdrawn_appeal_defendant + other_dismissed_appeal_defendant + tried_appeal_defendant)"
+      },
+      {
+        "id": "1B_C34",
+        "target": "C34",
+        "name": "Tổng số vụ án còn lại",
+        "formula": "C34 = C30 + C32",
+        "expression": "remaining_protest_case + remaining_appeal_case"
+      },
+      {
+        "id": "1B_C35",
+        "target": "C35",
+        "name": "Tổng số bị cáo còn lại",
+        "formula": "C35 = C31 + C33",
+        "expression": "remaining_protest_defendant + remaining_appeal_defendant"
+      }
+    ],
+    "HS_GDT_1C": [
+      {
+        "id": "1C_C11",
+        "target": "C11",
+        "name": "Tổng số vụ án phải giải quyết",
+        "formula": "C11 = C3 + C5 + C7 + C9",
+        "expression": "old_chief_case + old_procurator_case + new_chief_case + new_procurator_case"
+      },
+      {
+        "id": "1C_C12",
+        "target": "C12",
+        "name": "Tổng số bị cáo phải giải quyết",
+        "formula": "C12 = C4 + C6 + C8 + C10",
+        "expression": "old_chief_defendant + old_procurator_defendant + new_chief_defendant + new_procurator_defendant"
+      },
+      {
+        "id": "1C_C21",
+        "target": "C21",
+        "name": "Tổng số vụ án đã giải quyết",
+        "formula": "C21 = C13 + C15 + C17 + C19",
+        "expression": "withdrawn_chief_case + withdrawn_procurator_case + tried_chief_case + tried_procurator_case"
+      },
+      {
+        "id": "1C_C22",
+        "target": "C22",
+        "name": "Tổng số bị cáo đã giải quyết",
+        "formula": "C22 = C14 + C16 + C18 + C20",
+        "expression": "withdrawn_chief_defendant + withdrawn_procurator_defendant + tried_chief_defendant + tried_procurator_defendant"
+      },
+      {
+        "id": "1C_C23",
+        "target": "C23",
+        "name": "Vụ án còn lại do Chánh án kháng nghị",
+        "formula": "C23 = C3 + C7 - C13 - C17",
+        "expression": "old_chief_case + new_chief_case - withdrawn_chief_case - tried_chief_case"
+      },
+      {
+        "id": "1C_C24",
+        "target": "C24",
+        "name": "Bị cáo còn lại do Chánh án kháng nghị",
+        "formula": "C24 = C4 + C8 - C14 - C18",
+        "expression": "old_chief_defendant + new_chief_defendant - withdrawn_chief_defendant - tried_chief_defendant"
+      },
+      {
+        "id": "1C_C25",
+        "target": "C25",
+        "name": "Vụ án còn lại do Viện trưởng kháng nghị",
+        "formula": "C25 = C5 + C9 - C15 - C19",
+        "expression": "old_procurator_case + new_procurator_case - withdrawn_procurator_case - tried_procurator_case"
+      },
+      {
+        "id": "1C_C26",
+        "target": "C26",
+        "name": "Bị cáo còn lại do Viện trưởng kháng nghị",
+        "formula": "C26 = C6 + C10 - C16 - C20",
+        "expression": "old_procurator_defendant + new_procurator_defendant - withdrawn_procurator_defendant - tried_procurator_defendant"
+      },
+      {
+        "id": "1C_C27",
+        "target": "C27",
+        "name": "Tổng số vụ án còn lại",
+        "formula": "C27 = C23 + C25",
+        "expression": "remaining_chief_case + remaining_procurator_case"
+      },
+      {
+        "id": "1C_C28",
+        "target": "C28",
+        "name": "Tổng số bị cáo còn lại",
+        "formula": "C28 = C24 + C26",
+        "expression": "remaining_chief_defendant + remaining_procurator_defendant"
+      }
+    ],
+    "HS_TT_1D": [
+      {
+        "id": "1D_C7",
+        "target": "C7",
+        "name": "Tổng số vụ án phải giải quyết",
+        "formula": "C7 = C3 + C5",
+        "expression": "old_case + new_case"
+      },
+      {
+        "id": "1D_C8",
+        "target": "C8",
+        "name": "Tổng số bị cáo phải giải quyết",
+        "formula": "C8 = C4 + C6",
+        "expression": "old_defendant + new_defendant"
+      },
+      {
+        "id": "1D_C13",
+        "target": "C13",
+        "name": "Tổng số vụ án đã giải quyết",
+        "formula": "C13 = C9 + C11",
+        "expression": "dismissed_retrial_case + tried_retrial_case"
+      },
+      {
+        "id": "1D_C14",
+        "target": "C14",
+        "name": "Tổng số bị cáo đã giải quyết",
+        "formula": "C14 = C10 + C12",
+        "expression": "dismissed_retrial_defendant + tried_retrial_defendant"
+      },
+      {
+        "id": "1D_C15",
+        "target": "C15",
+        "name": "Số vụ án còn lại",
+        "formula": "C15 = C7 - C13",
+        "expression": "total_case - resolved_case"
+      },
+      {
+        "id": "1D_C16",
+        "target": "C16",
+        "name": "Số bị cáo còn lại",
+        "formula": "C16 = C8 - C14",
+        "expression": "total_defendant - resolved_defendant"
+      }
+    ]
+  },
+  "kpis": [
+    {
+      "id": "KPI_RESOLUTION_RATE",
+      "name": "Tỷ lệ giải quyết",
+      "formula": "resolved_case / total_case * 100",
+      "safe_division": true
+    },
+    {
+      "id": "KPI_PENDING_RATE",
+      "name": "Tỷ lệ án tồn",
+      "formula": "remaining_case / total_case * 100",
+      "safe_division": true
+    },
+    {
+      "id": "KPI_OVERDUE_RATE",
+      "name": "Tỷ lệ án quá hạn",
+      "formula": "overdue_case / remaining_case * 100",
+      "safe_division": true
+    },
+    {
+      "id": "KPI_RETURN_RATE",
+      "name": "Tỷ lệ trả hồ sơ điều tra bổ sung",
+      "formula": "returned_case / resolved_case * 100",
+      "safe_division": true
+    },
+    {
+      "id": "KPI_APPEAL_RATE",
+      "name": "Tỷ lệ kháng cáo",
+      "formula": "appeal_case / first_instance_resolved_case * 100",
+      "safe_division": true
+    },
+    {
+      "id": "KPI_PROTEST_RATE",
+      "name": "Tỷ lệ kháng nghị",
+      "formula": "protest_case / first_instance_resolved_case * 100",
+      "safe_division": true
+    },
+    {
+      "id": "KPI_MODIFIED_RATE",
+      "name": "Tỷ lệ sửa án",
+      "formula": "modified_case / appellate_tried_case * 100",
+      "safe_division": true
+    },
+    {
+      "id": "KPI_CANCELLED_RATE",
+      "name": "Tỷ lệ hủy án",
+      "formula": "cancelled_case / appellate_tried_case * 100",
+      "safe_division": true
+    }
+  ],
+  "validation_rules": [
+    {
+      "id": "VAL_NON_NEGATIVE",
+      "severity": "error",
+      "rule": "Mọi cột số lượng vụ án, bị cáo phải là số nguyên không âm."
+    },
+    {
+      "id": "VAL_BALANCE_CASE",
+      "severity": "error",
+      "rule": "total_case = resolved_case + remaining_case, áp dụng cho các mẫu có cột tổng, đã giải quyết, còn lại."
+    },
+    {
+      "id": "VAL_BALANCE_DEFENDANT",
+      "severity": "error",
+      "rule": "total_defendant = resolved_defendant + remaining_defendant, áp dụng cho các mẫu có cột tổng, đã giải quyết, còn lại."
+    },
+    {
+      "id": "VAL_WITHIN_TOTAL",
+      "severity": "warning",
+      "rule": "Các cột “trong đó” không được vượt quá cột tổng tương ứng."
+    },
+    {
+      "id": "VAL_1A_MAIN_PENALTY",
+      "severity": "error",
+      "rule": "Mẫu 1A: tổng số bị cáo tại C48:C61 phải bằng số bị cáo đã xét xử tại C17; C62 chỉ theo dõi, không cộng vào tổng."
+    },
+    {
+      "id": "VAL_OVERDUE_REMAINING",
+      "severity": "error",
+      "rule": "Số vụ quá hạn không được lớn hơn số vụ còn lại."
+    },
+    {
+      "id": "VAL_APPEAL_PROTEST_PRIORITY",
+      "severity": "warning",
+      "rule": "Mẫu 1B: vụ án vừa có kháng cáo vừa có kháng nghị thì thống kê vào nhóm kháng nghị."
+    }
+  ]
+}
