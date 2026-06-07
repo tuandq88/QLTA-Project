@@ -1,0 +1,298 @@
+{
+  "skill_name": "cong_thuc_thong_ke_an_hinh_su",
+  "version": "1.0.0",
+  "created_at": "2026-06-07",
+  "scope": [
+    "Mẫu 1A - Hình sự sơ thẩm do cá nhân phạm tội",
+    "Mẫu 1B - Hình sự phúc thẩm do cá nhân phạm tội"
+  ],
+  "source_files": [
+    "SKILL.md",
+    "formula_catalog.json",
+    "Hình sự sơ thẩm.xlsx",
+    "Hình sự phúc thẩm.xlsx"
+  ],
+  "templates": {
+    "1A": {
+      "name": "Thống kê thụ lý và giải quyết các vụ án hình sự sơ thẩm do cá nhân phạm tội",
+      "level": "sơ thẩm",
+      "columns_count": 94,
+      "grain": [
+        "kỳ thống kê",
+        "đơn vị Tòa án",
+        "tội danh",
+        "điều luật áp dụng"
+      ],
+      "primary_subjects": [
+        "vụ án",
+        "bị cáo"
+      ],
+      "manual_input_groups": [
+        "Tồn đầu kỳ: vụ/bị cáo cũ còn lại theo từng tội danh",
+        "Thụ lý mới trong kỳ: vụ/bị cáo",
+        "Chuyển vụ án: vụ/bị cáo",
+        "Kết quả giải quyết: đình chỉ, trả hồ sơ VKS, xét xử, tạm đình chỉ",
+        "Đặc điểm tố tụng: bổ sung chứng cứ, án điểm/lưu động, rút gọn, bạo lực gia đình, vi phạm tạm giam, phục hồi, xác minh chứng cứ, khởi tố tại phiên tòa",
+        "Quyết định khác với truy tố của VKS: tội danh/khoản/hình phạt nặng hơn hoặc nhẹ hơn",
+        "Hình phạt, thiệt hại, nhân thân bị cáo, nhân thân người bị hại, người bào chữa, án lệ, phiên tòa rút kinh nghiệm"
+      ],
+      "formula_columns": [
+        {
+          "column": 9,
+          "code": "C9",
+          "name": "Tổng số vụ án phải giải quyết",
+          "formula": "C9 = C3 + C5 - C7",
+          "type": "aggregate"
+        },
+        {
+          "column": 10,
+          "code": "C10",
+          "name": "Tổng số bị cáo phải giải quyết",
+          "formula": "C10 = C4 + C6 - C8",
+          "type": "aggregate"
+        },
+        {
+          "column": 37,
+          "code": "C37",
+          "name": "Tổng số vụ án đã giải quyết",
+          "formula": "C37 = C11 + C13 + C16",
+          "type": "aggregate"
+        },
+        {
+          "column": 38,
+          "code": "C38",
+          "name": "Tổng số bị cáo đã giải quyết",
+          "formula": "C38 = C12 + C14 + C17",
+          "type": "aggregate"
+        },
+        {
+          "column": 39,
+          "code": "C39",
+          "name": "Tổng số vụ án còn lại",
+          "formula": "C39 = C9 - C37",
+          "type": "balance"
+        },
+        {
+          "column": 40,
+          "code": "C40",
+          "name": "Số bị cáo còn lại",
+          "formula": "C40 = C10 - C38",
+          "type": "balance"
+        }
+      ],
+      "validation_rules": [
+        "C9 >= C37; C10 >= C38; C39 >= 0; C40 >= 0",
+        "Các cột “trong đó” không được vượt quá cột tổng cha tương ứng.",
+        "Tổng bị cáo theo nhóm hình phạt chính C52:C61 phải khớp với số bị cáo đã xét xử C17 nếu thống kê đầy đủ theo bị cáo.",
+        "Mỗi bị cáo chỉ được tính vào một nhóm hình phạt chính cao nhất/cuối cùng; tránh cộng trùng.",
+        "Các chỉ tiêu vụ án và bị cáo phải phân biệt: một vụ có thể có nhiều bị cáo."
+      ]
+    },
+    "1B": {
+      "name": "Thống kê thụ lý và giải quyết các vụ án hình sự phúc thẩm do cá nhân phạm tội",
+      "level": "phúc thẩm",
+      "columns_count": 77,
+      "grain": [
+        "kỳ thống kê",
+        "đơn vị Tòa án",
+        "tòa án sơ thẩm/đơn vị nguồn",
+        "tội danh",
+        "điều luật áp dụng"
+      ],
+      "primary_subjects": [
+        "vụ án",
+        "bị cáo",
+        "kháng nghị",
+        "kháng cáo"
+      ],
+      "manual_input_groups": [
+        "Tồn đầu kỳ: cũ còn lại theo nhóm kháng nghị/kháng cáo, vụ/bị cáo",
+        "Thụ lý mới trong kỳ: theo nhóm kháng nghị/kháng cáo, vụ/bị cáo",
+        "Vi phạm thời hạn tạm giam phúc thẩm",
+        "Kết quả giải quyết: rút kháng nghị, rút kháng cáo, lý do khác, xét xử theo kháng nghị/kháng cáo, tạm đình chỉ",
+        "Kết quả xét xử phúc thẩm: giữ nguyên, sửa án, hủy án, đình chỉ xét xử phúc thẩm, khởi tố tại phiên tòa",
+        "Án tử hình: giữ nguyên, tăng lên, giảm, hủy để điều tra lại/xét xử lại",
+        "Chấp nhận kháng nghị VKS, rút kháng nghị nhưng còn kháng cáo, người bào chữa, án lệ, phiên tòa rút kinh nghiệm"
+      ],
+      "priority_rules": [
+        "Trường hợp vụ án vừa có kháng cáo vừa có kháng nghị thì ưu tiên thống kê vào nhóm kháng nghị khi xác định loại nguồn phải giải quyết/còn lại.",
+        "Các kết quả xét xử phải tách theo vụ án và bị cáo; không cộng bị cáo vào chỉ tiêu vụ án."
+      ],
+      "formula_columns": [
+        {
+          "column": 11,
+          "code": "C11",
+          "name": "Tổng số vụ án bị kháng nghị phải giải quyết",
+          "formula": "C11 = C3 + C7",
+          "type": "aggregate"
+        },
+        {
+          "column": 12,
+          "code": "C12",
+          "name": "Tổng số bị cáo bị kháng nghị phải giải quyết",
+          "formula": "C12 = C4 + C8",
+          "type": "aggregate"
+        },
+        {
+          "column": 13,
+          "code": "C13",
+          "name": "Tổng số vụ án bị kháng cáo phải giải quyết",
+          "formula": "C13 = C5 + C9",
+          "type": "aggregate"
+        },
+        {
+          "column": 14,
+          "code": "C14",
+          "name": "Tổng số bị cáo bị kháng cáo phải giải quyết",
+          "formula": "C14 = C6 + C10",
+          "type": "aggregate"
+        },
+        {
+          "column": 28,
+          "code": "C28",
+          "name": "Tổng số vụ án đã được Tòa án giải quyết",
+          "formula": "C28 = C16 + C18 + C20 + C22 + C24 + C26",
+          "type": "aggregate"
+        },
+        {
+          "column": 29,
+          "code": "C29",
+          "name": "Tổng số bị cáo đã được Tòa án giải quyết",
+          "formula": "C29 = C17 + C19 + C21 + C23 + C25 + C27",
+          "type": "aggregate"
+        },
+        {
+          "column": 30,
+          "code": "C30",
+          "name": "Số vụ án có kháng nghị còn lại",
+          "formula": "C30 = C11 - (C16 + C20 + C24)",
+          "type": "balance"
+        },
+        {
+          "column": 31,
+          "code": "C31",
+          "name": "Số bị cáo có kháng nghị còn lại",
+          "formula": "C31 = C12 - (C17 + C21 + C25)",
+          "type": "balance"
+        },
+        {
+          "column": 32,
+          "code": "C32",
+          "name": "Số vụ án có kháng cáo còn lại",
+          "formula": "C32 = C13 - (C18 + C22 + C26)",
+          "type": "balance"
+        },
+        {
+          "column": 33,
+          "code": "C33",
+          "name": "Số bị cáo có kháng cáo còn lại",
+          "formula": "C33 = C14 - (C19 + C23 + C27)",
+          "type": "balance"
+        },
+        {
+          "column": 34,
+          "code": "C34",
+          "name": "Tổng số vụ án còn lại phải giải quyết",
+          "formula": "C34 = C30 + C32",
+          "type": "balance"
+        },
+        {
+          "column": 35,
+          "code": "C35",
+          "name": "Tổng số bị cáo còn lại phải giải quyết",
+          "formula": "C35 = C31 + C33",
+          "type": "balance"
+        }
+      ],
+      "validation_rules": [
+        "C30, C31, C32, C33, C34, C35 không được âm.",
+        "C34 = C30 + C32; C35 = C31 + C33.",
+        "C28 không được vượt quá tổng phải giải quyết theo vụ án C11 + C13.",
+        "C29 không được vượt quá tổng phải giải quyết theo bị cáo C12 + C14.",
+        "Các cột phân tích bị cáo đã xét xử chỉ tính trên bị cáo đã xét xử; không tính bị cáo đình chỉ/tạm đình chỉ."
+      ]
+    }
+  },
+  "raw_formula_extract": {
+    "1A": [
+      {
+        "line": 42,
+        "text": "+ Cột 9 ghi tổng số vụ án phải giải quyết (Cột 9 = Cột 3 + Cột 5 - Cột 7);"
+      },
+      {
+        "line": 43,
+        "text": "+ Cột 10 ghi tổng số bị cáo phải giải quyết (Cột 10 = Cột 4 + Cột 6 - Cột 8);"
+      },
+      {
+        "line": 197,
+        "text": "Cột 37 = Cột 11 + Cột 13 + Cột 16 • Cột 38 ghi tổng số bị cáo đã được giải quyết."
+      },
+      {
+        "line": 199,
+        "text": "Cột 38 = Cột 12 + Cột 14 + Cột 17 - Từ Cột 39 đến Cột 47 phân tích số vụ án còn lại phải giải quyết, trong đó:"
+      },
+      {
+        "line": 235,
+        "text": "Cột 39 ghi tổng số vụ án còn lại (Cột 39 = Cột 9 - Cột 37);"
+      },
+      {
+        "line": 236,
+        "text": "Cột 40 ghi số bị cáo còn lại (Cột 40 = Cột 10 - Cột 38);"
+      },
+      {
+        "line": 315,
+        "text": "Lưu ý: Tổng số các bị cáo tại các Cột từ Cột 48 đến Cột 61 = Tổng số bị cáo đã"
+      }
+    ],
+    "1B": [
+      {
+        "line": 876,
+        "text": "Cột 11 = Cột 3 + Cột 7 + Cột 12 ghi tổng số bị cáo bị kháng nghị phải giải quyết."
+      },
+      {
+        "line": 878,
+        "text": "Cột 12 = Cột 4 + Cột 8 + Cột 13 ghi tổng số vụ án bị kháng cáo. Cột 13 = Cột 5+ Cột 9 + Cột 14 ghi tổng số bị cáo bị kháng cáo. Cột 14 = Cột 6 + Cột 10"
+      },
+      {
+        "line": 879,
+        "text": "+ Cột 13 ghi tổng số vụ án bị kháng cáo. Cột 13 = Cột 5+ Cột 9 + Cột 14 ghi tổng số bị cáo bị kháng cáo. Cột 14 = Cột 6 + Cột 10 + Cột 15 ghi số trường hợp bi phạm thời hạn tạm giam."
+      },
+      {
+        "line": 880,
+        "text": "+ Cột 14 ghi tổng số bị cáo bị kháng cáo. Cột 14 = Cột 6 + Cột 10 + Cột 15 ghi số trường hợp bi phạm thời hạn tạm giam."
+      },
+      {
+        "line": 948,
+        "text": "Cột 28 = Cột 16 + Cột 18 + Cột 20 + Cột 22 + Cột 24 + Cột 26 + Cột 29 ghi tổng số bị cáo đã được Tòa án giải quyết."
+      },
+      {
+        "line": 950,
+        "text": "Cột 29 = Cột 17 + Cột 19 + Cột 21 + Cột 23 + Cột 25 + Cột 27 SỐ VỤ ÁN CÒN LẠI"
+      },
+      {
+        "line": 971,
+        "text": "+ Cột 30 ghi số vụ án có kháng nghị còn lại. Cột 30 = Cột 11 - (Cột 16 + Cột 20 + Cột 24);"
+      },
+      {
+        "line": 973,
+        "text": "+ Cột 31 ghi số bị cáo có kháng nghị còn lại. Cột 31 = Cột 12 - (Cột 17 + Cột 21 + Cột 25);"
+      },
+      {
+        "line": 975,
+        "text": "+ Cột 32 ghi số vụ án có kháng cáo còn lại. Cột 32 = Cột 13 - (Cột 18 + Cột 22 + Cột 26);"
+      },
+      {
+        "line": 977,
+        "text": "+ Cột 33 ghi số bị cáo có kháng cáo còn lại. Cột 33 = Cột 14 - (Cột 19 + Cột 23 + Cột 27);"
+      },
+      {
+        "line": 979,
+        "text": "+ Cột 34 ghi tổng số vụ án còn lại phải giải quyết (Cột 34 = Cột 30 + Cột 32);"
+      },
+      {
+        "line": 980,
+        "text": "+ Cột 35 ghi tổng số bị cáo còn lại phải giải quyết (Cột 35 = Cột 31 + Cột 33)"
+      }
+    ]
+  }
+}

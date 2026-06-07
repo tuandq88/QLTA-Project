@@ -1,0 +1,2023 @@
+{
+  "templates": [
+    {
+      "line": 15,
+      "title": "1. Thống kê thụ lý và giải quyết các vụ án hình sự sơ thẩm do cá nhân phạm tội (Mẫu 1A)",
+      "template": "1A"
+    },
+    {
+      "line": 446,
+      "title": "2. Thống kê thụ lý và giải quyết các vụ án hình sự sơ thẩm do pháp nhân thương mại phạm tội (Mẫu 1A1)",
+      "template": "1A1"
+    },
+    {
+      "line": 823,
+      "title": "3. Thống kê thụ lý và giải quyết các vụ án hình sự phúc thẩm do cá nhân phạm tội (Mẫu 1B)",
+      "template": "1B"
+    },
+    {
+      "line": 1199,
+      "title": "4. Thống kê thụ lý và giải quyết các vụ án hình sự phúc thẩm do pháp nhân thương mại phạm tội (Mẫu 1B1)",
+      "template": "1B1"
+    },
+    {
+      "line": 1552,
+      "title": "5. Thống kê thụ lý và giải quyết các vụ án hình sự giám đốc thẩm do cá nhân phạm tội (Mẫu 1C)",
+      "template": "1C"
+    },
+    {
+      "line": 1768,
+      "title": "6. Thống kê thụ lý và giải quyết các vụ án hình sự giám đốc thẩm do pháp nhân thương mại phạm tội (Mẫu 1C1)",
+      "template": "1C1"
+    },
+    {
+      "line": 1990,
+      "title": "7. Thống kê thụ lý và giải quyết các vụ án hình sự tái thẩm do cá nhân phạm tội (Mẫu 1D)",
+      "template": "1D"
+    },
+    {
+      "line": 2129,
+      "title": "8. Thống kê thụ lý và giải quyết các vụ án hình sự tái thẩm do pháp nhân thương mại phạm tội (Mẫu 1D1)",
+      "template": "1D1"
+    },
+    {
+      "line": 2261,
+      "title": "9. Thống kê thụ lý, giải quyết các vụ án hình sự theo thủ tục xem xét lại quyết định của Hội đồng thẩm phán Tòa án nhân dân tối cao (Mẫu 1E)",
+      "template": "1E"
+    },
+    {
+      "line": 2507,
+      "title": "10. Thống kê thụ lý và giải quyết các vụ án hình sự sơ thẩm có bị cáo là người dưới 18 tuổi (Mẫu 1F)",
+      "template": "1F"
+    },
+    {
+      "line": 2716,
+      "title": "11. Thống kê kết quả thi hành án hình sự (Mẫu 1G)",
+      "template": "1G"
+    },
+    {
+      "line": 2934,
+      "title": "12. Thống kê các bị cáo Tòa án cấp sơ thẩm cho hưởng án treo và cải tạo không giam giữ bị kháng cáo, kháng nghị (Mẫu 1H)",
+      "template": "1H"
+    },
+    {
+      "line": 3239,
+      "title": "14. Thống kê các bị cáo Tòa án cấp sơ thẩm áp dụng các tình tiết giảm nhẹ trách nhiệm hình sự và quyết định hình phạt nhẹ hơn quy định của Bộ luật hình sự (Mẫu",
+      "template": ""
+    },
+    {
+      "line": 3382,
+      "title": "15. Thống kê các trường hợp Tòa án có vi phạm các quy định về tố tụng hình sự và thi hành án hình sự (Mẫu 1L)",
+      "template": "1L"
+    },
+    {
+      "line": 3428,
+      "title": "16. Thống kê thụ lý, giải quyết các vụ án về ma túy có liên quan đến việc giám định (Mẫu 1M)",
+      "template": "1M"
+    },
+    {
+      "line": 3887,
+      "title": "1. Thống kê thụ lý và giải quyết các vụ án, việc dân sự sơ thẩm (Mẫu 2A)",
+      "template": "2A"
+    },
+    {
+      "line": 4111,
+      "title": "2. Thống kê thụ lý và giải quyết các vụ án, việc dân sự phúc thẩm (Mẫu 2B)",
+      "template": "2B"
+    },
+    {
+      "line": 4394,
+      "title": "3. Thống kê thụ lý và giải quyết các vụ, việc dân sự giám đốc thẩm (Mẫu 2C)",
+      "template": "2C"
+    },
+    {
+      "line": 4557,
+      "title": "4. Thống kê thụ lý và giải quyết các vụ việc dân sự tái thẩm (Mẫu 2D)",
+      "template": "2D"
+    },
+    {
+      "line": 4652,
+      "title": "5. Thống kê thụ lý và giải quyết các vụ việc dân sự theo thủ tục đặc biệt (Mẫu 2E)",
+      "template": "2E"
+    },
+    {
+      "line": 4886,
+      "title": "1. Thống kê thụ lý, giải quyết các vụ, việc hôn nhân và gia đình sơ thẩm (Mẫu 3A)",
+      "template": "3A"
+    },
+    {
+      "line": 5099,
+      "title": "2. Thống kê thụ lý và giải quyết các vụ, việc hôn nhân và gia đình phúc thẩm (Mẫu 3B)",
+      "template": "3B"
+    },
+    {
+      "line": 5394,
+      "title": "3. Thống kê thụ lý và giải quyết các vụ việc hôn nhân gia đình giám đốc thẩm (Mẫu 3C)",
+      "template": "3C"
+    },
+    {
+      "line": 5562,
+      "title": "4. Thống kê thụ lý và giải quyết các vụ việc hôn nhân gia đình tái thẩm (Mẫu",
+      "template": ""
+    },
+    {
+      "line": 5668,
+      "title": "1. Thống kê thụ lý và giải quyết các vụ việc về kinh doanh thương mại sơ thẩm (Mẫu 4A)",
+      "template": "4A"
+    },
+    {
+      "line": 5849,
+      "title": "2. Thống kê thụ lý và giải quyết các vụ, việc về kinh doanh thương mại phúc thẩm (Mẫu 4B)",
+      "template": "4B"
+    },
+    {
+      "line": 6159,
+      "title": "3. Thống kê thụ lý và giải quyết các vụ việc về kinh doanh thương mại giám đốc thẩm (Mẫu 4C)",
+      "template": "4C"
+    },
+    {
+      "line": 6326,
+      "title": "4. Thống kê thụ lý và giải quyết các vụ việc kinh doanh thương mại tái thẩm (Mẫu 4D)",
+      "template": "4D"
+    },
+    {
+      "line": 6429,
+      "title": "5. Thống kê thụ lý và giải quyết yêu cầu tuyên bố phá sản (Mẫu 4E)",
+      "template": "4E"
+    },
+    {
+      "line": 6826,
+      "title": "6. Thống kê thụ lý và giải quyết đơn đề nghị, kháng nghị việc giải quyết yêu cầu tuyên bố phá sản (Mẫu 4F)",
+      "template": "4F"
+    },
+    {
+      "line": 7001,
+      "title": "7. Thống kê thụ lý và giải quyết yêu cầu tuyên bố phá sản theo thủ tục đặc biệt dùng cho Tòa án nhân dân tối cao (Mẫu 4G)",
+      "template": "4G"
+    },
+    {
+      "line": 7169,
+      "title": "1. Thống kê thụ lý và giải quyết các vụ, việc lao động sơ thẩm (Mẫu 5A)",
+      "template": "5A"
+    },
+    {
+      "line": 7349,
+      "title": "2. Thống kê thụ lý và giải quyết các vụ việc lao động phúc thẩm (Mẫu 5B)",
+      "template": "5B"
+    },
+    {
+      "line": 7638,
+      "title": "3. Thống kê thụ lý và giải quyết các vụ việc lao động giám đốc thẩm (Mẫu 5C)",
+      "template": "5C"
+    },
+    {
+      "line": 7804,
+      "title": "4. Thống kê thụ lý và giải quyết các vụ việc lao động tái thẩm (Mẫu 5D)",
+      "template": "5D"
+    },
+    {
+      "line": 7909,
+      "title": "1. Thống kê thụ lý và giải quyết các vụ án hành chính sơ thẩm (Mẫu 6A)",
+      "template": "6A"
+    },
+    {
+      "line": 8118,
+      "title": "2. Thống kê thụ lý và giải quyết các vụ án hành chính phúc thẩm (Mẫu 6B)",
+      "template": "6B"
+    },
+    {
+      "line": 8407,
+      "title": "3. Thống kê thụ lý và giải quyết các vụ án hành chính giám đốc thẩm (Mẫu",
+      "template": ""
+    },
+    {
+      "line": 8584,
+      "title": "4. Thống kê thụ lý và giải quyết các vụ án hành chính tái thẩm (Mẫu 6D)",
+      "template": "6D"
+    },
+    {
+      "line": 8712,
+      "title": "5. Thống kê thụ lý và giải quyết các vụ án hành chính theo thủ tục đặc biệt (Mẫu 6E)",
+      "template": "6E"
+    },
+    {
+      "line": 8969,
+      "title": "1. Thống kê thụ lý và giải quyết việc áp dụng các biện pháp xử lý hành chính tại Tòa án nhân dân (Mẫu 7A)",
+      "template": "7A"
+    },
+    {
+      "line": 9096,
+      "title": "2. Thống kê thụ lý và giải quyết đơn đề nghị hoãn, miễn chấp hành, giảm thời hạn, tạm đình chỉ hoặc miễn chấp hành phần thời gian áp dụng biện pháp xử lý hành chính còn lại tại Tòa án nhân dân (Mẫu 7B)",
+      "template": "7B"
+    },
+    {
+      "line": 9180,
+      "title": "3. Thống kê thụ lý và giải quyết khiếu nại, kiến nghị, kháng nghị các quyết định của Tòa án trong việc áp dụng các biện pháp xử lý hành chính (Mẫu 7C)",
+      "template": "7C"
+    },
+    {
+      "line": 9375,
+      "title": "1. Thống kê thụ lý và giải quyết đơn đề nghị giám đốc thẩm, tái thẩm (Mẫu",
+      "template": ""
+    },
+    {
+      "line": 9531,
+      "title": "2. Thống kê thụ lý, giải quyết đơn khiếu nại, tố cáo quyết định tố tụng và hành vi tố tụng 2.1. Thống kê thụ lý, giải quyết đơn khiếu nại quyết định tố tụng, hành vi tố tụng (Mẫu 8B-01)",
+      "template": "8B-01"
+    },
+    {
+      "line": 9784,
+      "title": "3. Thống kê thụ lý và giải quyết các vụ việc cơ quan thi hành án yêu cầu sửa chữa, giải thích, kiến nghị giám đốc thẩm, tái thẩm bản án, quyết định của Tòa án (Mẫu 8C)",
+      "template": "8C"
+    },
+    {
+      "line": 10129,
+      "title": "1. Thống kê các hồ sơ ủy thác tư pháp về dân sự vào Việt Nam (Mẫu 9A)",
+      "template": "9A"
+    },
+    {
+      "line": 10186,
+      "title": "2. Thống kê các hồ sơ ủy thác tư pháp về dân sự ra nước ngoài (Mẫu 9B)",
+      "template": "9B"
+    },
+    {
+      "line": 10254,
+      "title": "3. Thống kê việc xử lý vi phạm hành chính thuộc thẩm quyền của Tòa án (Mẫu 9C)",
+      "template": "9C"
+    },
+    {
+      "line": 10322,
+      "title": "4. Thống kê quyết định về án phí trong các bản án, quyết định và việc xét miễn, giảm các khoản thu nộp ngân sách nhà nước (Mẫu 9D)",
+      "template": "9D"
+    },
+    {
+      "line": 10358,
+      "title": "5. Thống kê việc Tòa án trưng cầu giám định trong quá trình giải quyết, xét xử các loại án (Mẫu 9E)",
+      "template": "9E"
+    },
+    {
+      "line": 10439,
+      "title": "6. Thống kê số vụ việc dân sự cá nhân, tổ chức yêu cầu áp dụng, thay đổi, hủy bỏ biện pháp khẩn cấp tạm thời (Mẫu 9F)",
+      "template": "9F"
+    },
+    {
+      "line": 10583,
+      "title": "7. Thống kê các trường hợp Tòa án có vi phạm các quy định của pháp luật tố tụng dân sự, tố tụng hành chính (Mẫu 9G)",
+      "template": "9G"
+    },
+    {
+      "line": 10748,
+      "title": "9. Thống kê bản án, quyết định cung cấp cho Sở Tư pháp (Mẫu 9I)",
+      "template": "9I"
+    }
+  ],
+  "formulas": {
+    "1A": [
+      {
+        "line": 42,
+        "text": "+ Cột 9 ghi tổng số vụ án phải giải quyết (Cột 9 = Cột 3 + Cột 5 - Cột 7);"
+      },
+      {
+        "line": 43,
+        "text": "+ Cột 10 ghi tổng số bị cáo phải giải quyết (Cột 10 = Cột 4 + Cột 6 - Cột 8);"
+      },
+      {
+        "line": 197,
+        "text": "Cột 37 = Cột 11 + Cột 13 + Cột 16 • Cột 38 ghi tổng số bị cáo đã được giải quyết."
+      },
+      {
+        "line": 199,
+        "text": "Cột 38 = Cột 12 + Cột 14 + Cột 17 - Từ Cột 39 đến Cột 47 phân tích số vụ án còn lại phải giải quyết, trong đó:"
+      },
+      {
+        "line": 235,
+        "text": "Cột 39 ghi tổng số vụ án còn lại (Cột 39 = Cột 9 - Cột 37);"
+      },
+      {
+        "line": 236,
+        "text": "Cột 40 ghi số bị cáo còn lại (Cột 40 = Cột 10 - Cột 38);"
+      },
+      {
+        "line": 315,
+        "text": "Lưu ý: Tổng số các bị cáo tại các Cột từ Cột 48 đến Cột 61 = Tổng số bị cáo đã"
+      }
+    ],
+    "1A1": [
+      {
+        "line": 483,
+        "text": "+ Cột 9 ghi tổng số vụ án phải giải quyết (Cột 7 = Cột 3 + Cột 5 - Cột 7);"
+      },
+      {
+        "line": 484,
+        "text": "+ Cột 10 ghi tổng số pháp nhân thương mại phải giải quyết (Cột 10 = Cột 4 + Cột 6 - Cột 8);"
+      },
+      {
+        "line": 654,
+        "text": "Cột 34 = Cột 11 + Cột 13 + Cột 16 • Cột 35 ghi tổng số pháp nhân thương mại đã được giải quyết."
+      },
+      {
+        "line": 656,
+        "text": "Cột 35 = Cột 12 + Cột 14 + Cột 17 - Từ Cột 36 đến Cột 44 phân tích số vụ án còn lại phải giải quyết, trong đó:"
+      },
+      {
+        "line": 660,
+        "text": "Cột 36 ghi tổng số vụ án còn lại (Cột 36 = Cột 9 - Cột 34);"
+      },
+      {
+        "line": 661,
+        "text": "Cột 37 ghi số pháp nhân thương mại còn lại (Cột 37 = Cột 10 - Cột 35);"
+      },
+      {
+        "line": 716,
+        "text": "thương mại Tòa án đã xét xử ( Cột 17 = Cột 45 + Cột 46 + Cột 47 + Cột 48 + Cột 49)"
+      }
+    ],
+    "1B": [
+      {
+        "line": 876,
+        "text": "Cột 11 = Cột 3 + Cột 7 + Cột 12 ghi tổng số bị cáo bị kháng nghị phải giải quyết."
+      },
+      {
+        "line": 878,
+        "text": "Cột 12 = Cột 4 + Cột 8 + Cột 13 ghi tổng số vụ án bị kháng cáo. Cột 13 = Cột 5+ Cột 9 + Cột 14 ghi tổng số bị cáo bị kháng cáo. Cột 14 = Cột 6 + Cột 10"
+      },
+      {
+        "line": 879,
+        "text": "+ Cột 13 ghi tổng số vụ án bị kháng cáo. Cột 13 = Cột 5+ Cột 9 + Cột 14 ghi tổng số bị cáo bị kháng cáo. Cột 14 = Cột 6 + Cột 10 + Cột 15 ghi số trường hợp bi phạm thời hạn tạm giam."
+      },
+      {
+        "line": 880,
+        "text": "+ Cột 14 ghi tổng số bị cáo bị kháng cáo. Cột 14 = Cột 6 + Cột 10 + Cột 15 ghi số trường hợp bi phạm thời hạn tạm giam."
+      },
+      {
+        "line": 948,
+        "text": "Cột 28 = Cột 16 + Cột 18 + Cột 20 + Cột 22 + Cột 24 + Cột 26 + Cột 29 ghi tổng số bị cáo đã được Tòa án giải quyết."
+      },
+      {
+        "line": 950,
+        "text": "Cột 29 = Cột 17 + Cột 19 + Cột 21 + Cột 23 + Cột 25 + Cột 27 SỐ VỤ ÁN CÒN LẠI"
+      },
+      {
+        "line": 971,
+        "text": "+ Cột 30 ghi số vụ án có kháng nghị còn lại. Cột 30 = Cột 11 - (Cột 16 + Cột 20 + Cột 24);"
+      },
+      {
+        "line": 973,
+        "text": "+ Cột 31 ghi số bị cáo có kháng nghị còn lại. Cột 31 = Cột 12 - (Cột 17 + Cột 21 + Cột 25);"
+      },
+      {
+        "line": 975,
+        "text": "+ Cột 32 ghi số vụ án có kháng cáo còn lại. Cột 32 = Cột 13 - (Cột 18 + Cột 22 + Cột 26);"
+      },
+      {
+        "line": 977,
+        "text": "+ Cột 33 ghi số bị cáo có kháng cáo còn lại. Cột 33 = Cột 14 - (Cột 19 + Cột 23 + Cột 27);"
+      },
+      {
+        "line": 979,
+        "text": "+ Cột 34 ghi tổng số vụ án còn lại phải giải quyết (Cột 34 = Cột 30 + Cột 32);"
+      },
+      {
+        "line": 980,
+        "text": "+ Cột 35 ghi tổng số bị cáo còn lại phải giải quyết (Cột 35 = Cột 31 + Cột 33)"
+      }
+    ],
+    "1B1": [
+      {
+        "line": 1247,
+        "text": "(Cột 11 = Cột 3 + Cột 7)"
+      },
+      {
+        "line": 1249,
+        "text": "Cột 12 = Cột 4 + Cột 8 + Cột 13 ghi tổng số vụ án bị kháng cáo phải giải quyết"
+      },
+      {
+        "line": 1251,
+        "text": "(Cột 13 = Cột 5 + Cột 9)"
+      },
+      {
+        "line": 1253,
+        "text": "Cột 14 = Cột 6 + Cột 10 Lưu ý:"
+      },
+      {
+        "line": 1324,
+        "text": "Cột 27 = Cột 15 + Cột 17 + Cột 19 + Cột 21 + Cột 23 + Cột 25 + Cột 28 ghi tổng số pháp nhân thương mại đã được Tòa án giải quyết."
+      },
+      {
+        "line": 1326,
+        "text": "Cột 28 = Cột 16 + Cột 18 + Cột 20 + Cột 22 + Cột 24 + Cột 26 SỐ VỤ ÁN CÒN LẠI"
+      },
+      {
+        "line": 1349,
+        "text": "Cột 29 = Cột 11 - (Cột 15 + Cột 19 + Cột 23)"
+      },
+      {
+        "line": 1351,
+        "text": "Cột 30 = Cột 12 - (Cột 16 + Cột 20 + Cột 24)."
+      },
+      {
+        "line": 1353,
+        "text": "Cột 31 = Cột 13 - (Cột 17 + Cột 21 + Cột 25);"
+      },
+      {
+        "line": 1355,
+        "text": "Cột 32 = Cột 14 - (Cột 18 + Cột 22 + Cột 26)."
+      },
+      {
+        "line": 1356,
+        "text": "+ Cột 33 ghi tổng số vụ án còn lại (Cột 33 = Cột 29 + Cột 31)"
+      },
+      {
+        "line": 1357,
+        "text": "+ Cột 34 ghi tổng số pháp nhân thương mại còn lại (Cột 34 = Cột 30 + Cột 32)."
+      }
+    ],
+    "1C": [
+      {
+        "line": 1595,
+        "text": "Cột 11 = Cột 3 + Cột 5 + Cột 7 + Cột 9 + Cột 12 ghi tổng số bị cáo phải giải quyết."
+      },
+      {
+        "line": 1597,
+        "text": "Cột 12 = Cột 4 + Cột 6 + Cột 8 + Cột 10"
+      },
+      {
+        "line": 1642,
+        "text": "Cột 21 = Cột 13 + Cột 15 + Cột 17 + Cột 19 + Cột 22 ghi tổng số bị cáo đã giải quyết."
+      },
+      {
+        "line": 1644,
+        "text": "Cột 22 = Cột 14 + Cột 16 + Cột 18 + Cột 20 - Từ Cột 23 đến Cột 30 ghi số vụ án và bị cáo còn lại, trong đó:"
+      },
+      {
+        "line": 1647,
+        "text": "Cột 23 = Cột 3 + Cột 7 - Cột 13 - Cột 17 + Cột 24 ghi số bị cáo còn lại do Chánh án kháng nghị."
+      },
+      {
+        "line": 1649,
+        "text": "Cột 24 = Cột 4 + Cột 8 - Cột 14 - Cột 18 + Cột 25 ghi số vụ án còn lại do Viện trưởng Viện kiểm sát kháng nghị"
+      },
+      {
+        "line": 1651,
+        "text": "Cột 25 = Cột 5 + Cột 9 - Cột 15 - Cột 19 + Cột 26 ghi số bị cáo còn lại do Viện trưởng Viện kiểm sát kháng nghị"
+      },
+      {
+        "line": 1653,
+        "text": "Cột 26 = Cột 6 + Cột 10 - Cột 16 - Cột 20 + Cột 27 ghi tổng số vụ án còn lại (Cột 27 = Cột 23 + Cột 25);"
+      },
+      {
+        "line": 1654,
+        "text": "+ Cột 27 ghi tổng số vụ án còn lại (Cột 27 = Cột 23 + Cột 25);"
+      },
+      {
+        "line": 1655,
+        "text": "+ Cột 28 ghi tổng số bị cáo còn lại (Cột 28 = Cột 24 + Cột 26)."
+      }
+    ],
+    "1C1": [
+      {
+        "line": 1819,
+        "text": "Cột 11 = Cột 3 + Cột 5 + Cột 7 + Cột 9 + Cột 12 ghi tổng số pháp nhân thương mại phải giải quyết."
+      },
+      {
+        "line": 1821,
+        "text": "Cột 12 = Cột 4 + Cột 6 + Cột 8 + Cột 10"
+      },
+      {
+        "line": 1871,
+        "text": "Cột 21 = Cột 13 + Cột 15 + Cột 17 + Cột 19 + Cột 22 ghi tổng số pháp nhân thương mại đã giải quyết."
+      },
+      {
+        "line": 1873,
+        "text": "Cột 22 = Cột 14 + Cột 16 + Cột 18 + Cột 20 - Từ Cột 23 đến Cột 30 ghi số vụ án và pháp nhân thương mại còn lại, trong đó:"
+      },
+      {
+        "line": 1876,
+        "text": "Cột 23 = Cột 3 + Cột 7 - Cột 13 - Cột 17 + Cột 24 ghi số pháp nhân thương mại còn lại do Chánh án kháng nghị."
+      },
+      {
+        "line": 1878,
+        "text": "Cột 24 = Cột 4 + Cột 8 - Cột 14 - Cột 18 + Cột 25 ghi số vụ án còn lại do Viện trưởng Viện kiểm sát kháng nghị"
+      },
+      {
+        "line": 1880,
+        "text": "Cột 25 = Cột 5 + Cột 9 - Cột 15 - Cột 19 + Cột 26 ghi số pháp nhân thương mại còn lại do Viện trưởng Viện kiểm sát kháng"
+      },
+      {
+        "line": 1887,
+        "text": "Cột 26 = Cột 6 + Cột 10 - Cột 16 - Cột 20 + Cột 27 ghi tổng số vụ án còn lại (Cột 27 = Cột 23 + Cột 25);"
+      },
+      {
+        "line": 1888,
+        "text": "+ Cột 27 ghi tổng số vụ án còn lại (Cột 27 = Cột 23 + Cột 25);"
+      },
+      {
+        "line": 1889,
+        "text": "+ Cột 28 ghi tổng số pháp nhân thương mại còn lại (Cột 28 = Cột 24 + Cột 26)."
+      }
+    ],
+    "1D": [
+      {
+        "line": 2025,
+        "text": "+ Cột 7 ghi tổng số vụ án phải giải quyết. Cột 7 = Cột 3 + Cột 5 + Cột 8 ghi tổng số bị cáo phải giải quyết. Cột 8 = Cột 4 + Cột 6 - Từ Cột 9 đến Cột 14 ghi số vụ án và bị cáo đã giải quyết, trong đó:"
+      },
+      {
+        "line": 2026,
+        "text": "+ Cột 8 ghi tổng số bị cáo phải giải quyết. Cột 8 = Cột 4 + Cột 6 - Từ Cột 9 đến Cột 14 ghi số vụ án và bị cáo đã giải quyết, trong đó:"
+      },
+      {
+        "line": 2032,
+        "text": "+ Cột 13 ghi tổng số vụ án đã giải quyết. Cột 13 = Cột 9 + Cột 11 + Cột 14 ghi tổng số bị cáo đã giải quyết. Cột 14 = Cột 10 + Cột 12"
+      },
+      {
+        "line": 2033,
+        "text": "+ Cột 14 ghi tổng số bị cáo đã giải quyết. Cột 14 = Cột 10 + Cột 12"
+      },
+      {
+        "line": 2090,
+        "text": "+ Cột 15 ghi số vụ án còn lại. Cột 15 = Cột 7 - Cột 13 + Cột 16 ghi số bị cáo còn lại. Cột 16 = Cột 8 - Cột 14 + Cột 17 và Cột 18 ghi số vụ án còn lại nhưng quá thời hạn xét xử tái thẩm vì"
+      },
+      {
+        "line": 2091,
+        "text": "+ Cột 16 ghi số bị cáo còn lại. Cột 16 = Cột 8 - Cột 14 + Cột 17 và Cột 18 ghi số vụ án còn lại nhưng quá thời hạn xét xử tái thẩm vì"
+      }
+    ],
+    "1D1": [
+      {
+        "line": 2164,
+        "text": "+ Cột 7 ghi tổng số vụ án phải giải quyết. Cột 7 = Cột 3 + Cột 5 40"
+      },
+      {
+        "line": 2169,
+        "text": "+ Cột 8 ghi tổng số pháp nhân thương mại phải giải quyết. Cột 8 = Cột 4 + Cột 6 - Từ Cột 9 đến Cột 14 ghi số vụ án và pháp nhân thương mại đã giải quyết, trong"
+      },
+      {
+        "line": 2176,
+        "text": "+ Cột 13 ghi tổng số vụ án đã giải quyết. Cột 13 = Cột 9 + Cột 11 + Cột 14 ghi tổng số pháp nhân thương mại đã giải quyết."
+      },
+      {
+        "line": 2178,
+        "text": "Cột 14 = Cột 10 + Cột 12 SỐ VỤ ÁN CÒN LẠI PHÂN TÍCH SỐ BỊ CÁO ĐÃ XÉT XỬ"
+      },
+      {
+        "line": 2224,
+        "text": "+ Cột 15 ghi số vụ án còn lại. Cột 15 = Cột 7 - Cột 13 + Cột 16 ghi số pháp nhân thương mại còn lại. Cột 16 = Cột 8 - Cột 14 + Cột 17 và Cột 18 ghi số vụ án còn lại nhưng quá thời hạn xét xử tái thẩm vì"
+      },
+      {
+        "line": 2225,
+        "text": "+ Cột 16 ghi số pháp nhân thương mại còn lại. Cột 16 = Cột 8 - Cột 14 + Cột 17 và Cột 18 ghi số vụ án còn lại nhưng quá thời hạn xét xử tái thẩm vì"
+      }
+    ],
+    "1E": [
+      {
+        "line": 2328,
+        "text": "xem xét lại. Cột 11 = Cột 3 + Cột 7 + Cột 12 ghi tổng số vụ án phải giải quyết do Ủy ban tư pháp của Quốc hội kiến"
+      },
+      {
+        "line": 2330,
+        "text": "nghị xem xét lại. Cột 12 = Cột 4 + Cột 8"
+      },
+      {
+        "line": 2338,
+        "text": "nghị xem xét lại. Cột 13 = Cột 5 + Cột 9 + Cột 14 ghi tổng số vụ án phải giải quyết do Viện trưởng Viện kiểm sát nhân dân"
+      },
+      {
+        "line": 2340,
+        "text": "tối cao kiến nghị xem xét lại. Cột 14 = Cột 6 + Cột 10 + Cột 15 ghi tổng số vụ án phải giải quyết theo thủ tục xem xét lại quyết định của"
+      },
+      {
+        "line": 2343,
+        "text": "Cột 15 = Cột 11 + Cột 12 + Cột 13 + Cột 14 Lưu ý: Trường hợp vụ án có nhiều văn bản yêu cầu, đề nghị, kiến nghị xem xét lại"
+      },
+      {
+        "line": 2386,
+        "text": "cơ quan có thẩm quyền. Cột 20 = Cột 16 + Cột 17 + Cột 18 + Cột 19 + Từ Cột 21 đến Cột 25 ghi số vụ án đã giải quyết, nhất trí với yêu cầu, đề nghị,"
+      },
+      {
+        "line": 2400,
+        "text": "có thẩm quyền. Cột 25 = Cột 21 + Cột 22 + Cột 23 + Cột 24 + Cột 26 ghi tổng số các vụ án đã giải quyết theo yêu cầu, đề nghị, kiến nghị của"
+      },
+      {
+        "line": 2402,
+        "text": "các cơ quan có thẩm quyền. Cột 26 = Cột 20 + Cột 25 THỤ LÝ, GIẢI QUYẾT YÊU CẦU, ĐỀ NGHỊ, KIẾN NGHỊ"
+      },
+      {
+        "line": 2423,
+        "text": "quyết. Cột 27 = Cột 11 - Cột 16 - Cột 21 + Cột 28 ghi số vụ án có kiến nghị của Ủy ban tư pháp của Quốc hội chưa được"
+      },
+      {
+        "line": 2425,
+        "text": "giải quyết. Cột 28 = Cột 12 - Cột 17 - Cột 22 + Cột 29 ghi số vụ án có đề nghị của Chánh án Tòa án nhân dân tối cao chưa được"
+      },
+      {
+        "line": 2427,
+        "text": "giải quyết. Cột 29 = Cột 13 - Cột 18 - Cột 23 + Cột 30 ghi số vụ án có kiến nghị của Viện trưởng Viện kiểm sát nhân dân tối cao"
+      },
+      {
+        "line": 2429,
+        "text": "chưa được giải quyết. Cột 30 = Cột 14 - Cột 19 - Cột 24 + Cột 31 ghi tổng số vụ án có yêu cầu, đề nghị, kiến nghị chưa được giải quyết."
+      },
+      {
+        "line": 2431,
+        "text": "Cột 31 = Cột 27 + Cột 28 + Cột 29 + Cột 30"
+      },
+      {
+        "line": 2476,
+        "text": "thẩm phán Tòa án nhân dân tối cao. Cột 34 = Cột 32 + Cột 33 + Từ Cột 35 đến Cột 39 phân tích kết quả giải quyết các vụ án theo thủ tục xem xét"
+      },
+      {
+        "line": 2503,
+        "text": "cao. Cột 40 = Cột 35 + Cột 36 + Cột 37 + Cột 38 + Cột 39 + Cột 41 ghi số vụ án còn lại Hội đồng Thẩm phán Tòa án nhân dân tối cao chưa"
+      },
+      {
+        "line": 2506,
+        "text": "tối cao. Cột 41 = Cột 34 - Cột 40"
+      }
+    ],
+    "1F": [
+      {
+        "line": 2538,
+        "text": "Cột 9 = Cột 3 + Cột 5 - Cột 7 + Cột 10 ghi tổng số bị cáo phải giải quyết trong kỳ thống kê."
+      },
+      {
+        "line": 2540,
+        "text": "Cột 10 = Cột 4 + Cột 6 - Cột 8 Lưu ý: Số liệu thống kê tại Cột bao gồm các trường hợp sau:"
+      },
+      {
+        "line": 2582,
+        "text": "Cột 19 = Cột 11 + Cột 13 + Cột 15 Cột 20 = Cột 12 + Cột 14 + Cột 16 + Cột 21, Cột 22 ghi số vụ án, bị cáo còn lại, trong đó:"
+      },
+      {
+        "line": 2583,
+        "text": "Cột 20 = Cột 12 + Cột 14 + Cột 16 + Cột 21, Cột 22 ghi số vụ án, bị cáo còn lại, trong đó:"
+      },
+      {
+        "line": 2586,
+        "text": "Cột 21 = Cột 9 - Cột 19 • Cột 22 ghi số bị cáo còn lại trong kỳ thống kê."
+      },
+      {
+        "line": 2588,
+        "text": "Cột 22 = Cột 10 - Cột 22"
+      }
+    ],
+    "1G": [
+      {
+        "line": 2753,
+        "text": "(Cột 1 = Cột 10 + Cột 11 của kỳ thống kê trước chuyển sang)."
+      },
+      {
+        "line": 2758,
+        "text": "Cột 3 = Cột 4 + Cột 5 + Cột 6 + Cột 7 - Từ Cột 4 đến Cột 7 phân tích số người bị kết án, trong đó:"
+      },
+      {
+        "line": 2831,
+        "text": "14 = Cột 12 + Cột 13 + Từ Cột 15 đến Cột 19 ghi tổng số người bị kết án phạt tù có quyết định thi hành"
+      },
+      {
+        "line": 2843,
+        "text": "Cột 19 = Cột 15 + Cột 16 + Cột 17 + Cột 18 + Từ Cột 20 đến Cột 26 phân tích các trường hợp người bị kết án phạt tù đã có"
+      },
+      {
+        "line": 2884,
+        "text": "+ Cột 29 ghi tổng số người bị kết án tử hình đã có quyết định thi hành án Cột 29 = Cột 27 + Cột 28 + Cột 30 ghi số người bị kết án tử hình đã thi hành án;"
+      }
+    ],
+    "1H": [
+      {
+        "line": 2972,
+        "text": "chưa có kết quả xét xử phúc thẩm kỳ trước chuyển sang (Cột 2 =Cột 20 kỳ trước chuyển sang)."
+      },
+      {
+        "line": 2975,
+        "text": "trước chưa có kết quả xét xử phúc thẩm kỳ trước chuyển sang (Cột 3 =Cột 21 kỳ trước chuyển sang)."
+      },
+      {
+        "line": 2978,
+        "text": "hoặc kháng nghị ở kỳ trước chưa có kết quả xét xử phúc thẩm kỳ trước chuyển sang (Cột 4 = Cột 22 kỳ trước chuyển sang)."
+      },
+      {
+        "line": 2987,
+        "text": "thống kê: Cột 8 = Cột 2+Cột 5."
+      },
+      {
+        "line": 2989,
+        "text": "kỳ thống kê: Cột 9 = Cột 3+Cột 6."
+      },
+      {
+        "line": 2991,
+        "text": "kháng cáo, kháng nghị trong kỳ thống kê: Cột 10 = Cột 4 + Cột 7."
+      },
+      {
+        "line": 3057,
+        "text": "Cột 20 = Cột 8 - (Cột 11 + Cột 14 + Cột 17)"
+      },
+      {
+        "line": 3059,
+        "text": "thẩm. Cột 21 = Cột 9 - (Cột 12 + Cột 15 + Cột 18)"
+      },
+      {
+        "line": 3062,
+        "text": "Cột 22 = Cột 10 - (Cột 13+Cột 16+ Cột 19)"
+      },
+      {
+        "line": 3091,
+        "text": "trước chưa có kết quả xét xử giám đốc thẩm chuyển sang (Cột 2 3 =Cột 35 kỳ trước chuyển sang)."
+      },
+      {
+        "line": 3102,
+        "text": "nghị ở kỳ trước chưa có kết quả xét xử giám đốc thẩm chuyển sang (Cột 24 = Cột 36 kỳ trước chuyển sang)."
+      },
+      {
+        "line": 3109,
+        "text": "đốc thẩm trong kỳ thống kê: Cột 27 = Cột 23+Cột 25."
+      },
+      {
+        "line": 3111,
+        "text": "bị kháng nghị trong kỳ thống kê: Cột 28 = Cột 24+Cột 26."
+      },
+      {
+        "line": 3142,
+        "text": "đốc thẩm. Cột 35 = Cột 27- (Cột 29+Cột 31+Cột 33)."
+      },
+      {
+        "line": 3144,
+        "text": "giám đốc thẩm. Cột 36= Cột 28- (Cột 30+Cột 32+Cột 34)."
+      },
+      {
+        "line": 3177,
+        "text": "chưa có kết quả xét xử giám đốc thẩm chuyển sang (Cột 4 =Cột 16 kỳ trước chuyển sang)."
+      },
+      {
+        "line": 3179,
+        "text": "kỳ trước chưa có kết quả xét xử giám đốc thẩm chuyển sang (Cột 5 =Cột 17 kỳ trước chuyển sang)."
+      },
+      {
+        "line": 3190,
+        "text": "đốc thẩm trong kỳ thống kê: Cột 8 = Cột 4 + Cột 6."
+      },
+      {
+        "line": 3192,
+        "text": "kháng nghị trong kỳ thống kê: Cột 9 = Cột 5 + Cột 7."
+      },
+      {
+        "line": 3235,
+        "text": "Cột 16 = Cột 8 - (Cột 10 + Cột 12 + Cột 14)"
+      },
+      {
+        "line": 3238,
+        "text": "Cột 17 = Cột 9 - (Cột 11 + Cột 13 + Cột 15)"
+      }
+    ],
+    "1L": [],
+    "1M": [],
+    "2A": [
+      {
+        "line": 3928,
+        "text": "Cột 6 = Cột 2 + Cột 3 - Cột 4 - Cột 5."
+      },
+      {
+        "line": 3940,
+        "text": "+ Cột 10 ghi tổng số vụ việc dân sự đã giải quyết (Cột 10 = Cột 7 + Cột 8 + Cột 9)."
+      },
+      {
+        "line": 3983,
+        "text": "+ Cột 11 ghi tổng số vụ việc dân sự còn lại. Cột 11 = Cột 6 - Cột 10 + Cột 12 và 13 ghi số vụ việc dân sự còn lại nhưng đã quá thời hạn phải giải"
+      }
+    ],
+    "2B": [
+      {
+        "line": 4137,
+        "text": "Cột 6 = Cột 2 + Cột 4."
+      },
+      {
+        "line": 4138,
+        "text": "Cột 7 = Cột 3 + Cột 5."
+      },
+      {
+        "line": 4139,
+        "text": "Cột 8 = Cột 6 + Cột 7."
+      },
+      {
+        "line": 4195,
+        "text": "Cột 13 = Cột 9 + Cột 10 + Cột 11 + Cột 12 + Từ Cột 14 đến Cột 16 ghi số vụ án Toà án đã xét xử đối với vụ án dân sự hoặc"
+      },
+      {
+        "line": 4208,
+        "text": "quyết. Cột 16 = Cột 14 + Cột 15."
+      },
+      {
+        "line": 4211,
+        "text": "Cột 17 = Cột 9 + Cột 11 + Cột 14 * Cột 18 ghi số vụ việc dân sự do Viện kiểm sát kháng nghị đã giải quyết."
+      },
+      {
+        "line": 4213,
+        "text": "Cột 18 = Cột 10 + Cột 12 + Cột 15 * Cột 19 ghi tổng số vụ việc dân sự đã được giải quyết."
+      },
+      {
+        "line": 4215,
+        "text": "Cột 19 = Cột 17 + Cột 18 SỐ VỤ, VIỆC CÒN LẠI"
+      },
+      {
+        "line": 4240,
+        "text": "Cột 20 = Cột 6 - Cột 17 + Cột 21 ghi số vụ việc dân sự bị kháng nghị còn lại."
+      },
+      {
+        "line": 4242,
+        "text": "Cột 21 = Cột 7 - Cột 18 + Cột 22 ghi tổng số vụ việc dân sự có kháng cáo và kháng nghị còn lại."
+      },
+      {
+        "line": 4244,
+        "text": "Cột 22 = Cột 20 + Cột 21 + Cột 23 và 24 ghi số vụ việc còn lại nhưng đã quá thời hạn phải giải quyết theo"
+      }
+    ],
+    "2C": [
+      {
+        "line": 4434,
+        "text": "+ Cột 6 ghi tổng số vụ việc phải giải quyết do Chánh án kháng nghị (Cột 6 = Cột 2 + Cột 4);"
+      },
+      {
+        "line": 4437,
+        "text": "nghị (Cột 7 = Cột 3 + Cột 5);"
+      },
+      {
+        "line": 4438,
+        "text": "+ Cột 8 ghi tổng số vụ việc phải giải quyết (Cột 8 = Cột 6 + Cột 7)."
+      },
+      {
+        "line": 4449,
+        "text": "Cột 13 = Cột 9 + Cột 10 + Cột 11 + Cột 12"
+      },
+      {
+        "line": 4469,
+        "text": "Cột 14 = Cột 6 - (Cột 9 + Cột 11)"
+      },
+      {
+        "line": 4470,
+        "text": "+ Cột 15 ghi số vụ việc còn lại do Viện trưởng Viện kiểm sát kháng nghị Cột 15 = Cột 7- (Cột 10 + Cột 12)"
+      },
+      {
+        "line": 4472,
+        "text": "+ Cột 16 ghi tổng số các vụ việc còn lại. Cột 16 = Cột 14 + Cột 15 + Cột 17,18 ghi số vụ việc dân sự còn lại quá hạn luật định, trong đó:"
+      }
+    ],
+    "2D": [
+      {
+        "line": 4588,
+        "text": "Cột 6 = Cột 2 + Cột 4 + Cột 7 ghi tổng số vụ việc phải giải quyết do Viện trưởng Viện kiểm sát kháng"
+      },
+      {
+        "line": 4590,
+        "text": "nghị. Cột 7 = Cột 3 + Cột 5 + Cột 8 ghi tổng số vụ việc phải giải quyết. Cột 8 = Cột 6 + Cột 7 SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT SỐ VỤ, VIỆC CÒN LẠI"
+      },
+      {
+        "line": 4591,
+        "text": "+ Cột 8 ghi tổng số vụ việc phải giải quyết. Cột 8 = Cột 6 + Cột 7 SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT SỐ VỤ, VIỆC CÒN LẠI"
+      },
+      {
+        "line": 4618,
+        "text": "Cột 13 = Cột 9 + Cột 10 + Cột11 + Cột 12 - Từ Cột 14 đến Cột 16 ghi các vụ việc còn lại, trong đó:"
+      },
+      {
+        "line": 4621,
+        "text": "Cột 14 = Cột 6 - (Cột 9 + Cột 11)"
+      },
+      {
+        "line": 4622,
+        "text": "+ Cột 15 ghi số vụ việc còn lại do Viện trưởng Viện kiểm sát kháng nghị Cột 15 = Cột 7 - (Cột 10 + Cột 12)"
+      },
+      {
+        "line": 4624,
+        "text": "+ Cột 16 ghi tổng số các vụ việc còn lại. Cột 16 = Cột 14 + Cột 15 PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ"
+      }
+    ],
+    "2E": [
+      {
+        "line": 4720,
+        "text": "Cột 10 = Cột 2 + Cột 6 Cột 11 ghi tổng số vụ việc do Ủy ban tư pháp của Quốc hội kiến nghị."
+      },
+      {
+        "line": 4722,
+        "text": "Cột 11 = Cột 3 + Cột 7 Cột 12 ghi tổng số số vụ việc do Chánh án Tòa án nhân dân tối cao đề nghị. Cột 12 = Cột 4 + Cột 8"
+      },
+      {
+        "line": 4724,
+        "text": "= Cột 4 + Cột 8 Cột 13 ghi tổng số vụ việc do Viện trưởng Viện kiểm sát nhân dân tối cao kiến"
+      },
+      {
+        "line": 4726,
+        "text": "nghị. Cột 13 = Cột 5 + Cột 9 Cột 14 tổng số vụ việc có yêu cầu, đề nghị, kiến nghị xem xét lại quyết định của"
+      },
+      {
+        "line": 4729,
+        "text": "Cột 14 = Cột 10 + Cột 11 + Cột 12 + Cột 13 THỤ LÝ, GIẢI QUYẾT YÊU CẦU, ĐỀ NGHỊ, KIẾN NGHỊ"
+      },
+      {
+        "line": 4778,
+        "text": "Cột 19 = Cột 15 + Cột 16 + Cột 17 + Cột 18 * Cột 20 đến Cột 25 thống kê số vụ việc Hội đồng Thẩm phán Tòa án nhân dân tối"
+      },
+      {
+        "line": 4796,
+        "text": "Cột 24 = Cột 20 + Cột 21 + Cột 22 + Cột 23 THỤ LÝ, GIẢI QUYẾT YÊU CẦU, ĐỀ NGHỊ, KIẾN NGHỊ"
+      },
+      {
+        "line": 4822,
+        "text": "Cột 30 = Cột 26 + Cột 27 + Cột 28 + Cột 29 THỤ LÝ, GIẢI QUYẾT VỤ, VIỆC DÂN SỰ THEO THỦ TỤC ĐẶC BIỆT"
+      },
+      {
+        "line": 4860,
+        "text": "Cột 33 = Cột 31 + Cột 32 + Cột 34 đến Cột 37 thống kê kết quả xem xét lại quyết định Hội đồng Thẩm phán"
+      },
+      {
+        "line": 4882,
+        "text": "Cột 37= Cột 34 + Cột 35 + Cột 36."
+      },
+      {
+        "line": 4884,
+        "text": "Cột 38 = Cột 33 - Cột 37 III. BIỂU MẪU THỐNG KÊ VỀ CÁC VỤ, VIỆC HÔN NHÂN VÀ GIA ĐÌNH"
+      }
+    ],
+    "3A": [
+      {
+        "line": 4917,
+        "text": "(Cột 6 = Cột 2 + Cột 3 - Cột 4 - Cột 5)."
+      },
+      {
+        "line": 4966,
+        "text": "Cột 15 = Cột 7 + Cột 9 + Cột 10 + Cột 13"
+      },
+      {
+        "line": 4999,
+        "text": "Cột 16 = Cột 6 - Cột 15 + Cột 17 và Cột 18 phân tích nguyên nhân các vụ, việc hôn nhân và gia đình quá"
+      }
+    ],
+    "3B": [
+      {
+        "line": 5128,
+        "text": "Cột 6 = Cột 2 + Cột 4."
+      },
+      {
+        "line": 5134,
+        "text": "Cột 7 = Cột 3 + Cột 5."
+      },
+      {
+        "line": 5135,
+        "text": "Cột 8 = Cột 6 + Cột 7."
+      },
+      {
+        "line": 5193,
+        "text": "Cột 13 = Cột 9 + Cột 10 + Cột 11 + Cột 12 + Từ Cột 14 đến Cột 16 ghi số vụ án Toà án đã xét xử đối với vụ án hôn nhân và"
+      },
+      {
+        "line": 5202,
+        "text": "được giải quyết. Cột 16 = Cột 14 + Cột 15."
+      },
+      {
+        "line": 5206,
+        "text": "Cột 17 = Cột 9 + Cột 11 + Cột 14 * Cột 18 ghi số vụ việc hôn nhân và gia đình do Viện kiểm sát kháng nghị đã giải"
+      },
+      {
+        "line": 5209,
+        "text": "Cột 18 = Cột 10 + Cột 12 + Cột 15 * Cột 19 ghi tổng số vụ việc hôn nhân và gia đình đã được giải quyết."
+      },
+      {
+        "line": 5211,
+        "text": "Cột 19 = Cột 17 + Cột 18 SỐ VỤ, VIỆC CÒN LẠI"
+      },
+      {
+        "line": 5244,
+        "text": "Cột 20 = Cột 6 - Cột 17 + Cột 21 ghi số vụ việc hôn nhân và gia đình bị kháng nghị còn lại."
+      },
+      {
+        "line": 5246,
+        "text": "Cột 21 = Cột 7 - Cột 18 + Cột 22 ghi tổng số vụ việc hôn nhân và gia đình có kháng cáo và kháng nghị còn"
+      },
+      {
+        "line": 5249,
+        "text": "Cột 22 = Cột 20 + Cột 21 + Cột 23 và 24 ghi số vụ việc còn lại nhưng đã quá thời hạn phải giải quyết theo"
+      }
+    ],
+    "3C": [
+      {
+        "line": 5434,
+        "text": "Cột 6 = Cột 2 + Cột 4 + Cột 7 ghi tổng số vụ việc phải giải quyết do Viện trưởng Viện kiểm sát kháng"
+      },
+      {
+        "line": 5436,
+        "text": "nghị. Cột 7 = Cột 3 + Cột 5 + Cột 8 ghi tổng số vụ việc phải giải quyết. Cột 8 = Cột 6 + Cột 7 - Từ Cột 9 đến Cột 13 phân tích số vụ việc đã giải quyết, trong đó:"
+      },
+      {
+        "line": 5437,
+        "text": "+ Cột 8 ghi tổng số vụ việc phải giải quyết. Cột 8 = Cột 6 + Cột 7 - Từ Cột 9 đến Cột 13 phân tích số vụ việc đã giải quyết, trong đó:"
+      },
+      {
+        "line": 5448,
+        "text": "Cột 13 = Cột 9 + Cột 10 + Cột11 + Cột 12"
+      },
+      {
+        "line": 5468,
+        "text": "Cột 14 = Cột 6 - (Cột 9 + Cột 11)"
+      },
+      {
+        "line": 5469,
+        "text": "+ Cột 15 ghi số vụ việc còn lại do Viện trưởng Viện kiểm sát kháng nghị Cột 15 = Cột 7 - (Cột 10 + Cột 12)"
+      },
+      {
+        "line": 5471,
+        "text": "+ Cột 16 ghi tổng số các vụ việc còn lại. Cột 16 = Cột 14 + Cột 15 + Cột 17 và Cột 18 ghi số vụ việc hôn nhân gia đình còn lại quá hạn luật định, trong"
+      }
+    ],
+    "4A": [
+      {
+        "line": 5710,
+        "text": "Cột 6 = Cột 2 + Cột 3 - Cột 4 - Cột 5 - Từ Cột 7 đến Cột 10 ghi số vụ việc đã giải quyết, trong đó:"
+      },
+      {
+        "line": 5726,
+        "text": "Cột 10 = Cột 7 + Cột 8 + Cột 9 SỐ VỤ VIỆC CÒN LẠI ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ GIẢI QUYẾT"
+      },
+      {
+        "line": 5761,
+        "text": "Cột 11 = Cột 6 - Cột 10 + Cột 12 và Cột 13 ghi số vụ việc về kinh doanh thương mại còn lại nhưng đã quá"
+      }
+    ],
+    "4B": [
+      {
+        "line": 5884,
+        "text": "Cột 6 = Cột 2 + Cột 4."
+      },
+      {
+        "line": 5885,
+        "text": "Cột 7 = Cột 3 + Cột 5."
+      },
+      {
+        "line": 5886,
+        "text": "Cột 8 = Cột 6 + Cột 7."
+      },
+      {
+        "line": 5944,
+        "text": "Cột 13 = Cột 9 + Cột 10 + Cột 11 + Cột 12 + Từ Cột 14 đến Cột 16 ghi số vụ án Toà án đã xét xử đối với vụ án kinh doanh"
+      },
+      {
+        "line": 5953,
+        "text": "đã được giải quyết. Cột 16 = Cột 14 + Cột 15."
+      },
+      {
+        "line": 5958,
+        "text": "Cột 17 = Cột 9 + Cột 11 + Cột 14 * Cột 18 ghi số vụ việc kinh doanh thương mại do Viện kiểm sát kháng nghị đã"
+      },
+      {
+        "line": 5961,
+        "text": "Cột 18 = Cột 10 + Cột 12 + Cột 15 * Cột 19 ghi tổng số vụ việc kinh doanh thương mại đã được giải quyết."
+      },
+      {
+        "line": 5963,
+        "text": "Cột 19 = Cột 17 + Cột 18 SỐ VỤ, VIỆC CÒN LẠI"
+      },
+      {
+        "line": 5993,
+        "text": "Cột 20 = Cột 6 - Cột 17 + Cột 21 ghi số vụ việc kinh doanh thương mại bị kháng nghị còn lại."
+      },
+      {
+        "line": 5995,
+        "text": "Cột 21 = Cột 7 - Cột 18 + Cột 22 ghi tổng số vụ việc kinh doanh thương mại có kháng cáo và kháng nghị"
+      },
+      {
+        "line": 5998,
+        "text": "Cột 22 = Cột 20 + Cột 21 + Cột 23 và 24 ghi số vụ việc còn lại nhưng đã quá thời hạn phải giải quyết theo"
+      }
+    ],
+    "4C": [
+      {
+        "line": 6195,
+        "text": "Cột 6 = Cột 2 + Cột 4 + Cột 7 ghi tổng số vụ việc phải giải quyết do Viện trưởng Viện kiểm sát kháng"
+      },
+      {
+        "line": 6197,
+        "text": "nghị. Cột 7 = Cột 3 + Cột 5 + Cột 8 ghi tổng số vụ việc phải giải quyết. Cột 8 = Cột 6 + Cột 7 SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT SỐ VỤ, VIỆC CÒN LẠI"
+      },
+      {
+        "line": 6198,
+        "text": "+ Cột 8 ghi tổng số vụ việc phải giải quyết. Cột 8 = Cột 6 + Cột 7 SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT SỐ VỤ, VIỆC CÒN LẠI"
+      },
+      {
+        "line": 6230,
+        "text": "Cột 13 = Cột 9 + Cột 10 + Cột11 + Cột 12 - Từ Cột 14 đến Cột 18 ghi các vụ việc còn lại, trong đó:"
+      },
+      {
+        "line": 6233,
+        "text": "Cột 14 = Cột 6 - (Cột 9 + Cột 11)"
+      },
+      {
+        "line": 6234,
+        "text": "+ Cột 15 ghi số vụ việc còn lại do Viện trưởng Viện kiểm sát kháng nghị Cột 15 = Cột 7 - (Cột 10 + Cột 12)"
+      },
+      {
+        "line": 6236,
+        "text": "+ Cột 16 ghi tổng số các vụ việc còn lại. Cột 16 = Cột 14 + Cột 15 + Cột 17,18 ghi số vụ việc kinh doanh thương mại còn lại quá hạn luật định, trong"
+      }
+    ],
+    "4D": [
+      {
+        "line": 6356,
+        "text": "Cột 6 = Cột 2 + Cột 4 + Cột 7 ghi tổng số vụ việc phải giải quyết do Viện trưởng Viện kiểm sát kháng"
+      },
+      {
+        "line": 6358,
+        "text": "nghị. Cột 7 = Cột 3 + Cột 5 + Cột 8 ghi tổng số vụ việc phải giải quyết. Cột 8 = Cột 6 + Cột 7 SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT SỐ VỤ VIỆC CÒN LẠI"
+      },
+      {
+        "line": 6359,
+        "text": "+ Cột 8 ghi tổng số vụ việc phải giải quyết. Cột 8 = Cột 6 + Cột 7 SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT SỐ VỤ VIỆC CÒN LẠI"
+      },
+      {
+        "line": 6390,
+        "text": "Cột 13 = Cột 9 + Cột 10 + Cột11 + Cột 12 - Từ Cột 14 đến Cột 16 ghi các vụ việc còn lại, trong đó:"
+      },
+      {
+        "line": 6393,
+        "text": "Cột 14 = Cột 6 - (Cột 9 + Cột 11)"
+      },
+      {
+        "line": 6394,
+        "text": "+ Cột 15 ghi số vụ việc còn lại do Viện trưởng Viện kiểm sát kháng nghị Cột 15 = Cột 7 - (Cột 10 + Cột 12)"
+      },
+      {
+        "line": 6396,
+        "text": "+ Cột 16 ghi tổng số các vụ việc còn lại. Cột 16 = Cột 14 + Cột 15 PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ"
+      }
+    ],
+    "4E": [
+      {
+        "line": 6480,
+        "text": "(Cột 9 = Cột 5+cột 6+cột 8)."
+      },
+      {
+        "line": 6481,
+        "text": "- Cột 10 ghi tổng số đơn còn lại chưa xử lý (Cột 10 = cột 4 - cột 9)."
+      },
+      {
+        "line": 6504,
+        "text": "số vụ việc có kết quả giải quyết đơn yêu cầu mở thủ tục phá sản đã thụ lý (Cột 16 = cột 14 + cột 15);"
+      },
+      {
+        "line": 6507,
+        "text": "(Cột 17= cột 13 - cột 16)"
+      },
+      {
+        "line": 6562,
+        "text": "(Cột 20 = Cột 18 + Cột 19)"
+      },
+      {
+        "line": 6581,
+        "text": "(Cột 24 = Cột 21+Cột 22+Cột 23)"
+      },
+      {
+        "line": 6584,
+        "text": "hồi kinh doanh (Cột 25 = Cột 20 - Cột 24)"
+      },
+      {
+        "line": 6654,
+        "text": "quyết (Cột 28 = cột 26 + cột 27)."
+      },
+      {
+        "line": 6700,
+        "text": "(Cột 40 = cột 33 + cột 34 + cột 35 + cột 36 + cột 37 + cột 38 + cột 39)"
+      },
+      {
+        "line": 6705,
+        "text": "(Cột 41 = cột 29 + cột 32 + cột 40)"
+      },
+      {
+        "line": 6707,
+        "text": "(Cột 42 = cột 28 - cột 41)"
+      }
+    ],
+    "4F": [
+      {
+        "line": 6853,
+        "text": "Toà án cấp dưới liên quan đến yêu cầu tuyên bố phá sản; (Cột 2 = Cột 12 kỳ trước chuyển sang)."
+      },
+      {
+        "line": 6856,
+        "text": "của Toà án cấp dưới liên quan đến yêu cầu tuyên bố phá sản; (Cột 3 = cột 13 kỳ trước chuyển sang)."
+      },
+      {
+        "line": 6866,
+        "text": "án nhân dân cấp dưới liên quan đến yêu cầu tuyên bố phá sản (Cột 6 = cột 2 + cột 4)."
+      },
+      {
+        "line": 6869,
+        "text": "Toà án nhân dân cấp dưới liên quan đến yêu cầu tuyên bố phá sản (Cột 7 = Cột 3 + Cột 5)."
+      },
+      {
+        "line": 6873,
+        "text": "(Cột 8 = Cột 6 + Cột 7)."
+      },
+      {
+        "line": 6892,
+        "text": "(Cột 11= Cột 9 + Cột 10)"
+      },
+      {
+        "line": 6896,
+        "text": "+ Cột 12 ghi số đơn có đề nghị chưa giải quyết (Cột 12 = Cột 6 - Cột 9)"
+      },
+      {
+        "line": 6897,
+        "text": "+ Cột 13 ghi số đơn có kháng nghị chưa giải quyết (Cột 13 = Cột 7 - Cột 10)"
+      },
+      {
+        "line": 6900,
+        "text": "(Cột 14 = Cột 8 - Cột 11)"
+      },
+      {
+        "line": 6943,
+        "text": "(Cột 15 + Cột 16 + Cột 17 + Cột 18 + Cột 19 + Cột 20 + Cột 21 = Cột 11)"
+      }
+    ],
+    "4G": [
+      {
+        "line": 7032,
+        "text": "kiến nghị liên quan đến yêu cầu tuyên bố phá sản; (Cột 2 = Cột 16 kỳ trước chuyển sang)."
+      },
+      {
+        "line": 7040,
+        "text": "kiến nghị liên quan đến yêu cầu tuyên bố phá sản (Cột 3 = Cột 17 kỳ trước chuyển sang)."
+      },
+      {
+        "line": 7044,
+        "text": "quan đến yêu cầu tuyên bố phá sản (Cột 4 = Cột 18 kỳ trước chuyển sang)."
+      },
+      {
+        "line": 7061,
+        "text": "phá sản (Cột 8 = Cột 2 + Cột 5)"
+      },
+      {
+        "line": 7064,
+        "text": "đề nghị, kiến nghị liên quan đến yêu cầu tuyên bố phá sản. (Cột 9 = Cột 3 + Cột 6)"
+      },
+      {
+        "line": 7067,
+        "text": "nghị liên quan đến yêu cầu tuyên bố phá sản (Cột 10 = Cột 4 + Cột 7)"
+      },
+      {
+        "line": 7069,
+        "text": "kê: (Cột 11 = Cột 8 + Cột 9 + Cột 10)"
+      },
+      {
+        "line": 7100,
+        "text": "tuyên bố phá sản (Cột 15 = Cột 12 + Cột 13 + Cột 14)."
+      },
+      {
+        "line": 7104,
+        "text": "+ Cột 16 ghi số đơn có đề nghị chưa giải quyết (Cột 16 = Cột 8 - Cột 12)"
+      },
+      {
+        "line": 7106,
+        "text": "quyết (Cột 17 = Cột 9 - Cột 13)."
+      },
+      {
+        "line": 7108,
+        "text": "(Cột 18 = Cột 10 - Cột 14)."
+      },
+      {
+        "line": 7111,
+        "text": "đến yêu cầu tuyên bố phá sản (Cột 19 = Cột 16 + Cột 17 + Cột 18)."
+      },
+      {
+        "line": 7149,
+        "text": "20 + Cột 21 + Cột 22 + Cột 23 + Cột 24 + Cột 25 = Cột 15)."
+      }
+    ],
+    "5A": [
+      {
+        "line": 7208,
+        "text": "(Cột 6 = Cột 2 + Cột 3 - Cột 4 - Cột 5)."
+      },
+      {
+        "line": 7217,
+        "text": "Cột 10 = Cột 7 + Cột 8 + Cột 9 SỐ VỤ, VIỆC CÒN LẠI"
+      },
+      {
+        "line": 7244,
+        "text": "Cột 11 = Cột 6 - Cột 10 + Cột 12 và Cột 13 ghi số vụ việc lao động còn lại nhưng đã quá thời hạn phải"
+      }
+    ],
+    "5B": [
+      {
+        "line": 7375,
+        "text": "Cột 6 = Cột 2 + Cột 4."
+      },
+      {
+        "line": 7376,
+        "text": "Cột 7 = Cột 3 + Cột 5."
+      },
+      {
+        "line": 7377,
+        "text": "Cột 8 = Cột 6 + Cột 7."
+      },
+      {
+        "line": 7433,
+        "text": "Cột 13 = Cột 9 + Cột 10 + Cột 11 + Cột 12 143"
+      },
+      {
+        "line": 7445,
+        "text": "giải quyết. Cột 16 = Cột 14 + Cột 15."
+      },
+      {
+        "line": 7449,
+        "text": "Cột 17 = Cột 9 + Cột 11 + Cột 14 * Cột 18 ghi số vụ việc lao động do Viện kiểm sát kháng nghị đã giải quyết."
+      },
+      {
+        "line": 7451,
+        "text": "Cột 18 = Cột 10 + Cột 12 + Cột 15 * Cột 19 ghi tổng số vụ việc lao động đã được giải quyết."
+      },
+      {
+        "line": 7453,
+        "text": "Cột 19 = Cột 17 + Cột 18 SỐ VỤ, VIỆC CÒN LẠI"
+      },
+      {
+        "line": 7478,
+        "text": "Cột 20 = Cột 6 - Cột 17 + Cột 21 ghi số vụ việc lao động bị kháng nghị còn lại."
+      },
+      {
+        "line": 7480,
+        "text": "Cột 21 = Cột 7 - Cột 18 + Cột 22 ghi tổng số vụ việc lao động có kháng cáo và kháng nghị còn lại."
+      },
+      {
+        "line": 7482,
+        "text": "Cột 22 = Cột 20 + Cột 21 + Cột 23 và 24 ghi số vụ việc còn lại nhưng đã quá thời hạn phải giải quyết"
+      }
+    ],
+    "5C": [
+      {
+        "line": 7664,
+        "text": "Cột 6 = Cột 2 + Cột 4 + Cột 7 ghi tổng số vụ việc phải giải quyết do Viện trưởng Viện kiểm sát"
+      },
+      {
+        "line": 7666,
+        "text": "kháng nghị. Cột 7 = Cột 3 + Cột 5 + Cột 8 ghi tổng số vụ việc phải giải quyết. Cột 8 = Cột 6 + Cột 7"
+      },
+      {
+        "line": 7667,
+        "text": "+ Cột 8 ghi tổng số vụ việc phải giải quyết. Cột 8 = Cột 6 + Cột 7 SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT SỐ VỤ, VIỆC CÒN LẠI"
+      },
+      {
+        "line": 7703,
+        "text": "Cột 13 = Cột 9 + Cột 10 + Cột11 + Cột 12 - Từ Cột 14 đến Cột 18 ghi các vụ việc còn lại, trong đó:"
+      },
+      {
+        "line": 7706,
+        "text": "Cột 14 = Cột 6 - (Cột 9 + Cột 11)"
+      },
+      {
+        "line": 7708,
+        "text": "Cột 15 = Cột 7- (Cột 10 + Cột 12)"
+      },
+      {
+        "line": 7709,
+        "text": "+ Cột 16 ghi tổng số các vụ việc còn lại. Cột 16 = Cột 14 + Cột 15 + Cột 17,18 ghi số vụ việc lao động còn lại quá hạn luật định, trong đó:"
+      }
+    ],
+    "5D": [
+      {
+        "line": 7829,
+        "text": "Cột 6 = Cột 2 + Cột 4 + Cột 7 ghi tổng số vụ việc phải giải quyết do Viện trưởng Viện kiểm sát"
+      },
+      {
+        "line": 7831,
+        "text": "kháng nghị. Cột 7 = Cột 3 + Cột 5 + Cột 8 ghi tổng số vụ việc phải giải quyết. Cột 8 = Cột 6 + Cột 7"
+      },
+      {
+        "line": 7832,
+        "text": "+ Cột 8 ghi tổng số vụ việc phải giải quyết. Cột 8 = Cột 6 + Cột 7 SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT SỐ VỤ, VIỆC CÒN LẠI"
+      },
+      {
+        "line": 7866,
+        "text": "Cột 13 = Cột 9 + Cột 10 + Cột11 + Cột 12 - Từ Cột 14 đến Cột 16 ghi các vụ việc còn lại, trong đó:"
+      },
+      {
+        "line": 7869,
+        "text": "Cột 14 = Cột 6 - (Cột 9 + Cột 11)"
+      },
+      {
+        "line": 7871,
+        "text": "Cột 15 = Cột 7 - (Cột 10 + Cột 12)"
+      },
+      {
+        "line": 7872,
+        "text": "+ Cột 16 ghi tổng số các vụ việc còn lại. Cột 16 = Cột 14 + Cột 15"
+      }
+    ],
+    "6A": [
+      {
+        "line": 7925,
+        "text": "+ Cột 2 ghi số vụ án cũ còn lại; Cột 2 = cột 17 kỳ trước chuyển sang"
+      },
+      {
+        "line": 7950,
+        "text": "+ Cột 6 ghi tổng số vụ án phải giải quyết. Cột 6 = Cột 2 + Cột 3 - Cột 4 - Cột 5 SỐ VỤ ÁN ĐÃ GIẢI QUYẾT"
+      },
+      {
+        "line": 7982,
+        "text": "Cột 9 = Cột 7 + Cột 8 + Cột 10 đến Cột 14 thống kê số vụ án đã xét xử theo khoản 2 Điều 193 Luật"
+      },
+      {
+        "line": 7990,
+        "text": "* Cột 13 ghi tổng số vụ án đã xét xử: Cột 13 = Cột 10 + Cột 11 + Cột 12 * Cột 14 ghi số vụ án đã xét xử có kiến nghị với cơ quan nhà nước, người"
+      },
+      {
+        "line": 7994,
+        "text": "+ Cột 15 ghi tổng số vụ án đã giải quyết: Cột 15 = Cột 9 + Cột 13 + Cột 16 ghi tổng số các vụ án có đối thoại đã giải quyết theo Khoản 1 Điều"
+      },
+      {
+        "line": 8026,
+        "text": "+ Cột 17 ghi tổng số vụ án còn lại: Cột 17 = Cột 6 - Cột 15 + Cột 18 và cột 19 thống kê số vụ án còn lại nhưng đã quá thời hạn phải giải"
+      }
+    ],
+    "6B": [
+      {
+        "line": 8141,
+        "text": "nghị. (Cột 2= cột 18, cột 3 = cột 19 kỳ thống kê trước chuyển sang)."
+      },
+      {
+        "line": 8147,
+        "text": "Cột 6 = Cột 2 + Cột 4 * Cột 7 ghi tổng số vụ án phải giải quyết do Viện kiểm sát kháng nghị:"
+      },
+      {
+        "line": 8149,
+        "text": "Cột 7 = Cột 3 + Cột 5."
+      },
+      {
+        "line": 8150,
+        "text": "* Cột 8 ghi tổng số các vụ án phải giải quyết: Cột 8 = Cột 6 + Cột 7 SỐ VỤ ÁN ĐÃ GIẢI QUYẾT"
+      },
+      {
+        "line": 8196,
+        "text": "Cột 13 = (Cột 9 + Cột 10 + Cột 11 + Cột 12)"
+      },
+      {
+        "line": 8201,
+        "text": "* Cột 16 ghi tổng số vụ án đã xét xử: Cột 16 = Cột 14 + Cột 15 + Cột 17 đến Cột 19 ghi tổng số các vụ án đã giải quyết, trong đó:"
+      },
+      {
+        "line": 8204,
+        "text": "Cột 17 = Cột 9 + Cột 11 + Cột 14 * Cột 18 ghi tổng số vụ án Viện kiểm sát kháng nghị đã giải quyết."
+      },
+      {
+        "line": 8206,
+        "text": "Cột 18 = Cột 10 + Cột 12 + Cột 15 * Cột 19 ghi tổng số vụ án có kháng cáo, kháng nghị đã giải quyết."
+      },
+      {
+        "line": 8208,
+        "text": "Cột 19 = Cột 17 + Cột 18"
+      },
+      {
+        "line": 8240,
+        "text": "Cột 20 = Cột 6 - Cột 17 + Cột 21 ghi tổng số các vụ án còn lại do có kháng nghị:"
+      },
+      {
+        "line": 8242,
+        "text": "Cột 21 = Cột 7 - Cột 18 + Cột 22 thống kê tổng số các vụ án còn lại: Cột 22 = Cột 20 + Cột 21 + Cột 23 và Cột 24 thống kê số vụ án còn lại nhưng đã quá thời hạn phải giải"
+      },
+      {
+        "line": 8243,
+        "text": "+ Cột 22 thống kê tổng số các vụ án còn lại: Cột 22 = Cột 20 + Cột 21 + Cột 23 và Cột 24 thống kê số vụ án còn lại nhưng đã quá thời hạn phải giải"
+      }
+    ],
+    "6D": [
+      {
+        "line": 8602,
+        "text": "(Cột 2 = cột 18 kỳ trước chuyển sang)"
+      },
+      {
+        "line": 8604,
+        "text": "nghị: (Cột 3 = cột 19 kỳ trước chuyển sang)"
+      },
+      {
+        "line": 8614,
+        "text": "Cột 6 = Cột 2 + Cột 4."
+      },
+      {
+        "line": 8616,
+        "text": "kiểm sát kháng nghị. Cột 7 = Cột 3 + Cột 5."
+      },
+      {
+        "line": 8617,
+        "text": "+ Cột 8 ghi tổng số vụ án hành chính phải giải quyết. Cột 8 = Cột 6 + Cột 7 SỐ VỤ ÁN ĐÃ GIẢI QUYẾT"
+      },
+      {
+        "line": 8639,
+        "text": "rút kháng nghị. Cột 11= Cột 9 + Cột 10;"
+      },
+      {
+        "line": 8644,
+        "text": "kháng nghị. Cột 14 = Cột 12 + Cột 13;"
+      },
+      {
+        "line": 8646,
+        "text": "quyết. Cột 15 = Cột 9 + Cột 12;"
+      },
+      {
+        "line": 8648,
+        "text": "kháng nghị đã giải quyết. Cột 16 = Cột 10 + Cột 13;"
+      },
+      {
+        "line": 8650,
+        "text": "Cột 17 = Cột 15 + Cột 16."
+      },
+      {
+        "line": 8666,
+        "text": "Cột 18 = Cột 6 - Cột 15."
+      },
+      {
+        "line": 8668,
+        "text": "Cột 19 = Cột 7 - Cột 16."
+      },
+      {
+        "line": 8670,
+        "text": "Cột 20 = Cột 18 + Cột 19 + Cột 21 và Cột 22 thống kê số vụ án hành chính còn lại quá hạn luật định"
+      }
+    ],
+    "6E": [
+      {
+        "line": 8743,
+        "text": "Quốc hội (Cột 2 = cột 26 kỳ trước chuyển sang)."
+      },
+      {
+        "line": 8745,
+        "text": "của Quốc hội (Cột 3 = Cột 27 kỳ trước chuyển sang)."
+      },
+      {
+        "line": 8747,
+        "text": "nhân dân tối cao (Cột 4 = Cột 28 kỳ trước chuyển sang)."
+      },
+      {
+        "line": 8749,
+        "text": "kiểm sát nhân dân tối cao (Cột 5 = Cột 29 kỳ trước chuyển sang)."
+      },
+      {
+        "line": 8775,
+        "text": "Quốc hội yêu cầu, Cột 10 = Cột 2 + Cột 6."
+      },
+      {
+        "line": 8777,
+        "text": "Quốc hội kiến nghị, Cột 11= Cột 3 + Cột 7."
+      },
+      {
+        "line": 8779,
+        "text": "án Tòa án nhân dân tối cao, Cột 12 = Cột 4 + Cột 8."
+      },
+      {
+        "line": 8781,
+        "text": "trưởng Viện kiểm sát nhân dân tối cao, Cột 13 = Cột 5 + Cột 9."
+      },
+      {
+        "line": 8784,
+        "text": "Cột 14 = Cột 10 + Cột 11 + Cột 12 + Cột 13."
+      },
+      {
+        "line": 8830,
+        "text": "Cột 19 = Cột 15 + Cột 16 + Cột 17 + Cột 18 + Cột 20 đến Cột 24 ghi số vụ án hành chính Hội đồng Thẩm phán Tòa án nhân"
+      },
+      {
+        "line": 8844,
+        "text": "Cột 24 = Cột 20 + Cột 21 + Cột 22 + Cột 23."
+      },
+      {
+        "line": 8846,
+        "text": "Cột 25 = Cột 19 + Cột 24."
+      },
+      {
+        "line": 8858,
+        "text": "còn lại chưa giải quyết. Cột 26 = Cột 10 - Cột 15 - Cột 20."
+      },
+      {
+        "line": 8860,
+        "text": "hội kiến nghị còn lại chưa giải quyết . Cột 27 = Cột 11 - Cột 16 - Cột 21."
+      },
+      {
+        "line": 8866,
+        "text": "tối cao còn lại chưa giải quyết. Cột 28 = Cột 12 - Cột 17 - Cột 22."
+      },
+      {
+        "line": 8868,
+        "text": "nhân dân tối cao còn lại chưa giải quyết. Cột 29 = Cột 13 - Cột 18 - Cột 23."
+      },
+      {
+        "line": 8870,
+        "text": "lại chưa giải quyết. Cột 30 = (Cột 26 + cột 27 + Cột 28 + Cột 29)"
+      },
+      {
+        "line": 8905,
+        "text": "* Cột 31 ghi số hồ sơ cũ còn lại chưa giải quyết (Cột 31 = Cột 39 kỳ trước chuyển sang)."
+      },
+      {
+        "line": 8908,
+        "text": "(Số liệu Cột 32 = Cột 24 chuyển sang)"
+      },
+      {
+        "line": 8910,
+        "text": "Cột 33 = Cột 31+Cột 32."
+      },
+      {
+        "line": 8930,
+        "text": "giải quyết. Cột 38 = Cột 34 + Cột 35 + Cột 36 + Cột 37."
+      },
+      {
+        "line": 8931,
+        "text": "- Cột 39 ghi số vụ án còn lại chưa giải quyết. Cột 39 = Cột 33 - Cột 38."
+      }
+    ],
+    "7A": [
+      {
+        "line": 8995,
+        "text": "+ Cột 4 ghi tổng số hồ sơ phải giải quyết. Cột 4 = Cột 2 + Cột 3."
+      },
+      {
+        "line": 9009,
+        "text": "Tòa án giải quyết. Cột 9 = Cột 5 + Cột 6 + Cột 7 + Cột 8."
+      },
+      {
+        "line": 9032,
+        "text": "Cột 10 = Cột 4 - Cột 9."
+      }
+    ],
+    "7B": [
+      {
+        "line": 9131,
+        "text": "Cột 4 = cột 2 + cột 3."
+      },
+      {
+        "line": 9139,
+        "text": "+ Cột 7 ghi tổng số hồ sơ Tòa án đã giải quyết. Cột 7 = Cột 5 + Cột 6 - Từ Cột 8 đến Cột 10 ghi số hồ sơ còn lại Tòa án chưa giải quyết trong kỳ"
+      },
+      {
+        "line": 9142,
+        "text": "+ Cột 8 ghi tổng số hồ sơ còn lại. Cột 8 = Cột 4 - Cột 7 + Cột 9 và Cột 10 ghi số hồ sơ còn lại nhưng đã quá thời hạn quy định của"
+      },
+      {
+        "line": 9179,
+        "text": "Lưu ý: Cột 5= Cột 11+ cột 12+ cột 13+ cột 14+ cột 15."
+      }
+    ],
+    "7C": [
+      {
+        "line": 9209,
+        "text": "Cột 8 = Cột 2 + Cột 3 + Cột 4 + Cột 5 + Cột 6 + Cột 7 Lưu ý: - Nếu một hồ sơ vừa có khiếu nại và vừa có kháng nghị của Viện kiểm sát thì"
+      },
+      {
+        "line": 9240,
+        "text": "Cột 15 = Cột 9 + Cột 10 + Cột 11 + Cột 12 + Cột 13 + Cột 14."
+      },
+      {
+        "line": 9286,
+        "text": "Cột 19 = Cột 16 + Cột 17 + Cột 18."
+      }
+    ],
+    "8B-01": [
+      {
+        "line": 9578,
+        "text": "+ Cột 2 ghi số đơn tồn từ kỳ trước chuyển sang. Cột 2 = Cột 11 kỳ trước"
+      },
+      {
+        "line": 9582,
+        "text": "Cột 4 = Cột 2 + Cột 3 - Từ Cột 5 đến Cột 10 thống kê số đơn khiếu nại Tòa án đã xử lý, cụ thể:"
+      },
+      {
+        "line": 9593,
+        "text": "Cột 10 = Cột 5 + Cột 6 + Cột 7 + Cột 8 + Cột 9 - Cột 11 ghi số đơn còn lại Tòa án chưa xử lý. Cột 11 = Cột 4 - Cột 10 Đánh giá việc khiếu nại"
+      },
+      {
+        "line": 9594,
+        "text": "- Cột 11 ghi số đơn còn lại Tòa án chưa xử lý. Cột 11 = Cột 4 - Cột 10 Đánh giá việc khiếu nại"
+      },
+      {
+        "line": 9626,
+        "text": "+ Cột 12 ghi số đơn cũ còn lại từ kỳ trước chuyển sang. Cột 12= Cột 19 của"
+      },
+      {
+        "line": 9632,
+        "text": "+ Cột 13 ghi số đơn mới thụ lý trong thời điểm thống kê. Cột 13 = Cột 5 chuyển sang."
+      },
+      {
+        "line": 9635,
+        "text": "Cột 14 = Cột 12 + Cột 13 + Cột 15 ghi số đơn Tòa án đã giải quyết bằng hình thức ra quyết định."
+      },
+      {
+        "line": 9640,
+        "text": "Cột 18 = Cột 15 + Cột 16 + Cột 17 + Cột 19 ghi số đơn khiếu nại thuộc thẩm quyền nhưng Tòa án chưa giải quyết."
+      },
+      {
+        "line": 9647,
+        "text": "Lưu ý: Cột 20 + Cột 21 + Cột 22 = Cột 18 - Cột 23,24 theo dõi số việc Tòa án phải xử lý sau giải quyết khiếu nại, cụ thể:"
+      },
+      {
+        "line": 9703,
+        "text": "+ Cột 2 ghi số đơn tồn trước thời điểm báo cáo chuyển qua. Cột 2 = Cột 11 của kỳ trước chuyển sang."
+      },
+      {
+        "line": 9707,
+        "text": "Cột 4 = Cột 2 + Cột 3 - Từ Cột 5 đến Cột 10 thống kê số đơn tố cáo Tòa án đã xử lý, cụ thể:"
+      },
+      {
+        "line": 9717,
+        "text": "Cột 10 = Cột 5 + Cột 6 + Cột 7 + Cột 8 + Cột 9 - Cột 11 ghi số đơn còn lại Tòa án chưa xử lý. Cột 11 = Cột 4 - Cột 10"
+      },
+      {
+        "line": 9718,
+        "text": "- Cột 11 ghi số đơn còn lại Tòa án chưa xử lý. Cột 11 = Cột 4 - Cột 10"
+      },
+      {
+        "line": 9757,
+        "text": "+ Cột 12 ghi số đơn cũ còn lại từ kỳ trước chuyển sang. Cột 12= Cột 19 của"
+      },
+      {
+        "line": 9759,
+        "text": "+ Cột 13 ghi số đơn mới thụ lý trong thời điểm thống kê. Cột 13 = Cột 5 chuyển sang."
+      },
+      {
+        "line": 9762,
+        "text": "Cột 14 = Cột 12 + Cột 13 + Cột 15 ghi số đơn Tòa án đã giải quyết bằng hình thức ra quyết định (Kết luận)."
+      },
+      {
+        "line": 9768,
+        "text": "Cột 18 = Cột 15 + Cột 16 + Cột 17 + Cột 19 ghi số đơn khiếu nại thuộc thẩm quyền nhưng Tòa án chưa giải quyết."
+      }
+    ],
+    "8C": [
+      {
+        "line": 9837,
+        "text": "Cột 6 = Cột 2 + Cột 3 + Cột 4 + Cột 5 + Từ Cột 7 đến Cột 11: thống kê số bản án, quyết định cơ quan thi hành án"
+      },
+      {
+        "line": 9852,
+        "text": "Cột 11 = Cột 7 + Cột 8 + Cột 9 + Cột 10 + Từ Cột 12 đến Cột 16: thống kê tổng số bản án, quyết định cơ quan thi hành"
+      },
+      {
+        "line": 9858,
+        "text": "Cột 12 = Cột 2 + Cột 7 * Cột 13: ghi số bản án, quyết định cơ quan thi hành án dân sự yêu cầu Tòa"
+      },
+      {
+        "line": 9861,
+        "text": "Cột 13 = Cột 3 + Cột 8 * Cột 14: ghi số bản án, quyết định cơ quan thi hành án dân sự kiến nghị Tòa"
+      },
+      {
+        "line": 9864,
+        "text": "thống kê. Cột 14 = Cột 4 + Cột 9 * Cột 15: ghi số bản án, quyết định cơ quan thi hành án dân sự kiến nghị Tòa"
+      },
+      {
+        "line": 9867,
+        "text": "kê. Cột 15 = Cột 5 + Cột 10 * Cột 16: ghi tổng số bản án, quyết định cơ quan thi hành án dân sự yêu cầu"
+      },
+      {
+        "line": 9870,
+        "text": "Cột 16 = Cột 6 + Cột 11 193"
+      },
+      {
+        "line": 9921,
+        "text": "Cột 25 = Cột 17 + Cột 18 + Cột 19 + Cột 20 + Cột 21 + Cột 22 + Cột 23 + Cột 24 - Từ Cột 26 đến Cột 30: thống kê số bản án, quyết định cơ quan thi hành án"
+      },
+      {
+        "line": 9941,
+        "text": "giải quyết. Cột 30 = Cột 26 + Cột 27 + Cột 28 + Cột 29."
+      },
+      {
+        "line": 9967,
+        "text": "Cột 33 = Cột 31 + Cột 32 - Từ Cột 34 đến Cột 36: thống kê số bản án, quyết định cơ quan thi hành án"
+      },
+      {
+        "line": 9984,
+        "text": "Cột 36 = Cột 34 + Cột 35 - Cột 37: thống kê số bản án, quyết định cơ quan thi hành án dân sự yêu cầu"
+      },
+      {
+        "line": 9987,
+        "text": "giải quyết. Cột 37 = Cột 33 - Cột 36 SỐ VỤ TÒA ÁN"
+      },
+      {
+        "line": 10023,
+        "text": "Cột 40 = Cột 38 + Cột 39"
+      },
+      {
+        "line": 10040,
+        "text": "Cột 43 = Cột 41 + Cột 42."
+      },
+      {
+        "line": 10043,
+        "text": "Cột 44 = Cột 40 - Cột 43."
+      }
+    ],
+    "9A": [
+      {
+        "line": 10159,
+        "text": "Cột 5 = Cột 3 + Cột 4."
+      }
+    ],
+    "9B": [
+      {
+        "line": 10223,
+        "text": "+ Cột 5 tổng số các trường hợp đã yêu cầu thực hiện ủy thác tư pháp (Cột 5 = Cột 3 + Cột 4);"
+      }
+    ],
+    "9C": [
+      {
+        "line": 10273,
+        "text": "tòa. Cột 1 = Cột 2 + Cột 3 + Cột 5."
+      },
+      {
+        "line": 10308,
+        "text": "quá trình Tòa án giải quyết các vụ việc phá sản. Cột 7= Cột 8 + Cột 9 + Cột 11."
+      }
+    ],
+    "9D": [],
+    "9E": [],
+    "9F": [
+      {
+        "line": 10493,
+        "text": "Cột 9 = Cột 3 + Cột 6 • Cột 10 ghi tổng số yêu cầu thay đổi biện pháp khẩn cấp tạm thời."
+      },
+      {
+        "line": 10495,
+        "text": "Cột 10 = Cột 4 + Cột 7 • Cột 11 ghi tổng số yêu cầu hủy bỏ biện pháp khẩn cấp tạm thời."
+      },
+      {
+        "line": 10497,
+        "text": "Cột 11 = Cột 5 + Cột 8 + Cột 12 ghi tổng số các yêu cầu áp dụng, thay đổi, hủy bỏ biện pháp khẩn"
+      },
+      {
+        "line": 10499,
+        "text": "cấp tạm thời. Cột 12 = Cột 9 + Cột 10 + Cột 11."
+      },
+      {
+        "line": 10531,
+        "text": "+ Cột 16 ghi tổng số yêu cầu đương sự rút. Cột 16 = Cột 13 + Cột 14 + Cột 15 - Từ Cột 17 đến Cột 20 ghi số đơn được Tòa án chấp nhận áp dụng, thay đổi, hủy"
+      },
+      {
+        "line": 10540,
+        "text": "Cột 20 = Cột 17 + Cột 18 + Cột 19 206"
+      },
+      {
+        "line": 10575,
+        "text": "hủy bỏ biện pháp khẩn cấp tạm thời. Cột 24 = Cột 21 + Cột 22 + Cột 23 - Từ Cột 25 đến Cột 28 ghi số yêu cầu của đương sự Tòa án chưa giải quyết,"
+      },
+      {
+        "line": 10582,
+        "text": "Cột 28 = Cột 25 + Cột 26 + Cột 27."
+      }
+    ],
+    "9G": [],
+    "9I": [
+      {
+        "line": 10772,
+        "text": "Cột 1 = Cột 2 + Cột 3 + Cột 4 + Cột 5 - Từ Cột 2 đến Cột 5: phân loại thông tin đã cung cấp cho Sở Tư pháp, cụ thể:"
+      }
+    ],
+    "14. Thống kê các bị ": [
+      {
+        "line": 3296,
+        "text": "trong kỳ thống kê. Cột 8 = Cột 4 + Cột 6."
+      },
+      {
+        "line": 3298,
+        "text": "trong kỳ thống kê. Cột 9 = Cột 5 + Cột 7."
+      },
+      {
+        "line": 3313,
+        "text": "Cột 16 = Cột 8 - Cột 10 - Cột 12 - Cột 14 + Cột 17: số bị cáo Tòa án án cấp sơ thẩm áp dụng điều 54 bị kháng cáo, kháng"
+      },
+      {
+        "line": 3316,
+        "text": "Cột 17 = Cột 9 - Cột 11 - Cột 13 - Cột 15"
+      },
+      {
+        "line": 3356,
+        "text": "trong kỳ thống kê. Cột 22 = Cột 18 + Cột 20 + Cột 23: ghi tổng số bị cáo Tòa án áp dụng điều 54 bị kháng nghị giám đốc thẩm"
+      },
+      {
+        "line": 3358,
+        "text": "trong kỳ thống kê. Cột 23 = Cột 19 + Cột 21."
+      },
+      {
+        "line": 3378,
+        "text": "Cột 30 = Cột 22 - Cột 24 - Cột 26 - Cột 28 + Cột 31: số bị cáo Tòa án áp dụng điều 54 bị kháng nghị giám đốc thẩm trong kỳ"
+      },
+      {
+        "line": 3381,
+        "text": "Cột 31 = Cột 23 - Cột 25 - Cột 27 - Cột 29."
+      }
+    ],
+    "4. Thống kê thụ lý v": [
+      {
+        "line": 5593,
+        "text": "Cột 6 = Cột 2 + Cột 4 + Cột 7 ghi tổng số vụ việc phải giải quyết do Viện trưởng Viện kiểm sát kháng"
+      },
+      {
+        "line": 5595,
+        "text": "nghị. Cột 7 = Cột 3 + Cột 5 + Cột 8 ghi tổng số vụ việc phải giải quyết. Cột 8 = Cột 6 + Cột 7 SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT"
+      },
+      {
+        "line": 5596,
+        "text": "+ Cột 8 ghi tổng số vụ việc phải giải quyết. Cột 8 = Cột 6 + Cột 7 SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT"
+      },
+      {
+        "line": 5620,
+        "text": "Cột 13 = Cột 9 + Cột 10 + Cột 11 + Cột 12 SỐ VỤ, VIỆC"
+      },
+      {
+        "line": 5640,
+        "text": "Cột 14 = Cột 6 - (Cột 9 + Cột 11)"
+      },
+      {
+        "line": 5641,
+        "text": "+ Cột 15 ghi số vụ việc còn lại do Viện trưởng Viện kiểm sát kháng nghị Cột 15 = Cột 7 - (Cột 10 + Cột 12)"
+      },
+      {
+        "line": 5643,
+        "text": "+ Cột 16 ghi tổng số các vụ việc còn lại. Cột 16 = Cột 14 + Cột 15 - Từ Cột 17 đến Cột 20 phân tích các vụ việc đã xét xử, trong đó:"
+      }
+    ],
+    "3. Thống kê thụ lý v": [
+      {
+        "line": 8432,
+        "text": "Cột 2 = cột 18 (kỳ thống kê trước chuyển sang)."
+      },
+      {
+        "line": 8434,
+        "text": "nghị: Cột 3= cột 19 (kỳ thống kê trước chuyển sang)."
+      },
+      {
+        "line": 8439,
+        "text": "Cột 6 = Cột 2 + Cột 4 + Cột 7 ghi tổng số vụ án hành chính phải giải quyết do Viện trưởng Viện"
+      },
+      {
+        "line": 8441,
+        "text": "kiểm sát kháng nghị: Cột 7 = Cột 3 + Cột 5 + Cột 8 ghi tổng số vụ án hành chính phải giải quyết: Cột 8 = Cột 6 + Cột 7 SỐ VỤ ÁN ĐÃ GIẢI QUYẾT"
+      },
+      {
+        "line": 8442,
+        "text": "+ Cột 8 ghi tổng số vụ án hành chính phải giải quyết: Cột 8 = Cột 6 + Cột 7 SỐ VỤ ÁN ĐÃ GIẢI QUYẾT"
+      },
+      {
+        "line": 8467,
+        "text": "rút kháng nghị: Cột 11= Cột 9 + Cột 10 + Cột 12 ghi số vụ án hành chính do Chánh án kháng nghị đã được đưa ra xét"
+      },
+      {
+        "line": 8473,
+        "text": "kháng nghị: Cột 14 = Cột 12 + Cột 13."
+      },
+      {
+        "line": 8475,
+        "text": "nghị: Cột 15 = Cột 9 + Cột 12."
+      },
+      {
+        "line": 8477,
+        "text": "kiểm sát kháng nghị: Cột 16 = Cột 10 + Cột 13."
+      },
+      {
+        "line": 8479,
+        "text": "Cột 17 = Cột 15 + Cột 16 SỐ VỤ ÁN CÒN LẠI"
+      },
+      {
+        "line": 8490,
+        "text": "Cột 18 = Cột 6 - Cột 15 + Cột 19 ghi số vụ án hành chính còn lại do Viện trưởng Viện kiểm sát kháng"
+      },
+      {
+        "line": 8492,
+        "text": "nghị: Cột 19 = Cột 7 - Cột 16 + Cột 20 ghi tổng số các vụ án hành chính còn lại: Cột 20 = (Cột 18 + Cột 19)"
+      },
+      {
+        "line": 8493,
+        "text": "+ Cột 20 ghi tổng số các vụ án hành chính còn lại: Cột 20 = (Cột 18 + Cột 19)"
+      }
+    ],
+    "1. Thống kê thụ lý v": [
+      {
+        "line": 9402,
+        "text": "* Cột 4 ghi tổng số đơn đã nhận trong kỳ thống kê. Cột 4 = Cột 2 + Cột 3."
+      },
+      {
+        "line": 9411,
+        "text": "* Cột 6: ghi số đơn thuộc thẩm quyền giải quyết của Toà án. Cột 6 = Cột 10 * Cột 7: ghi tổng số đơn đã xử lý trong kỳ thống kê. Cột 7 = Cột 5 + Cột 6 * Cột 8: ghi số đơn còn lại chưa xử lý. Cột 8 = Cột 4 - Cột 7."
+      },
+      {
+        "line": 9412,
+        "text": "* Cột 7: ghi tổng số đơn đã xử lý trong kỳ thống kê. Cột 7 = Cột 5 + Cột 6 * Cột 8: ghi số đơn còn lại chưa xử lý. Cột 8 = Cột 4 - Cột 7."
+      },
+      {
+        "line": 9413,
+        "text": "* Cột 8: ghi số đơn còn lại chưa xử lý. Cột 8 = Cột 4 - Cột 7."
+      },
+      {
+        "line": 9439,
+        "text": "+ Cột 12 ghi tổng số đơn Tòa án phải giải quyết. Cột 12 = Cột 9 + Cột 10 - Cột 11 + Cột 13: ghi số đơn/vụ có kiến nghị của đại biểu Quốc hội."
+      },
+      {
+        "line": 9494,
+        "text": "Cột 29 = Cột 18 + Cột 23 + Cột 28 + Cột 30 ghi tỷ lệ giải quyết đơn đề nghị giám đốc thẩm, tái thẩm."
+      },
+      {
+        "line": 9496,
+        "text": "Cột 30 = Cột 29/Cột 12 x 100"
+      }
+    ]
+  }
+}
