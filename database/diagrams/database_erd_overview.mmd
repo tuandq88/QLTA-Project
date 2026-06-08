@@ -1,0 +1,38 @@
+erDiagram
+
+    COURTS ||--o{ USERS : employs
+    COURTS ||--o{ CASE_FILES : manages
+    USERS ||--o{ CASE_ASSIGNMENTS : assigned
+    CASE_FILES ||--o{ CASE_ASSIGNMENTS : has
+    CASE_FILES ||--o{ PARTICIPANTS : has
+    CASE_FILES ||--o{ CASE_EVENTS : logs
+    CASE_FILES ||--o{ DOCUMENTS : stores
+    CASE_FILES ||--o{ HEARINGS : schedules
+    CASE_FILES ||--o{ DECISIONS : issues
+    CASE_FILES ||--o{ APPEALS : may_have
+    CASE_FILES ||--o{ DEADLINES : tracks
+    CASE_FILES ||--o{ VALIDATION_RESULTS : checked_by_ai
+    CASE_FILES ||--o{ STATISTICS_SNAPSHOTS : contributes_to
+
+    CASE_FILES ||--o| CIVIL_CASE_DETAILS : civil_extension
+    CASE_FILES ||--o| CRIMINAL_CASE_DETAILS : criminal_extension
+    CASE_FILES ||--o| ADMINISTRATIVE_CASE_DETAILS : administrative_extension
+
+    CIVIL_CASE_DETAILS ||--o{ CIVIL_CLAIMS : includes
+    CIVIL_CASE_DETAILS ||--o{ MEDIATION_SESSIONS : has
+
+    CRIMINAL_CASE_DETAILS ||--o{ DEFENDANTS : has
+    DEFENDANTS ||--o{ CHARGES : accused_of
+    DEFENDANTS ||--o{ PREVENTIVE_MEASURES : subject_to
+    DEFENDANTS ||--o{ SENTENCES : receives
+    CRIMINAL_CASE_DETAILS ||--o{ VICTIMS : has
+    CRIMINAL_CASE_DETAILS ||--o{ INVESTIGATION_RETURNS : may_return
+
+    ADMINISTRATIVE_CASE_DETAILS ||--o{ CHALLENGED_ADMIN_OBJECTS : challenges
+    ADMINISTRATIVE_CASE_DETAILS ||--o{ DIALOGUE_SESSIONS : has
+    ADMINISTRATIVE_CASE_DETAILS ||--o{ ADMIN_ENFORCEMENT_TRACKING : tracks
+
+    STATISTICS_PERIODS ||--o{ STATISTICS_SNAPSHOTS : contains
+    KPI_METRICS ||--o{ KPI_VALUES : defines
+    STATISTICS_PERIODS ||--o{ KPI_VALUES : measured_in
+    COURTS ||--o{ KPI_VALUES : reported_by

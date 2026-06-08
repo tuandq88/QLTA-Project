@@ -1,0 +1,133 @@
+MASTER PLAN - HỆ THỐNG QUẢN LÝ VÀ ĐIỀU HÀNH TÒA ÁN NHÂN DÂN HAI CẤP TỈNH QUẢNG NGÃI
+Phiên bản: 1.0
+Nguồn ngữ cảnh: Chỉ tổng hợp từ các nội dung đã được nghiên cứu trong các cuộc trao đổi của dự án.
+Mục đích: Tài liệu điều phối cho AI Agent và đội phát triển triển khai song song.
+1. Phạm vi dự án
+
+Xây dựng hệ thống quản lý, thống kê và điều hành hoạt động xét xử cho TAND hai cấp tỉnh Quảng Ngãi.
+Trọng tâm:
+- Theo dõi thụ lý, giải quyết, tồn đọng, quá hạn.
+- Dashboard điều hành cho lãnh đạo.
+- Hệ thống KPI.
+- Cảnh báo án sắp hết hạn/quá hạn.
+- Báo cáo tự động.
+- Nền tảng AI hỏi đáp dữ liệu thống kê.
+
+2. Nguyên tắc bắt buộc
+
+- Bám sát hệ thống biểu mẫu thống kê ngành Tòa án.
+- Bám sát Quyết định 287/QĐ-TANDTC.
+- Mọi loại án phải có Data Dictionary.
+- Mọi chỉ tiêu phải có Formula Catalog.
+- Mọi dữ liệu phải có Validation Rules.
+- Không cho phép đếm trùng số liệu.
+- Kiểm tra chéo giữa các biểu mẫu.
+
+3. Các phân hệ mục tiêu
+
+A. Quản lý hồ sơ vụ án.
+B. Thống kê nghiệp vụ.
+C. Dashboard điều hành.
+D. KPI lãnh đạo.
+E. Cảnh báo thời hạn.
+F. Theo dõi án hủy sửa.
+G. Báo cáo tự động.
+H. AI hỏi đáp dữ liệu.
+
+4. Backlog đã xác định
+
+- Framework Skill thống kê.
+- Skill Hình sự.
+- Skill Dân sự.
+- Skill Kinh doanh thương mại.
+- Formula Catalog.
+- Validation Rules.
+- Data Dictionary.
+- KPI Dashboard.
+
+5. Kiến trúc AI Agent
+
+Agent-01: Chief Architect
+Nhiệm vụ:
+- Quản lý backlog.
+- Kiểm soát kiến trúc.
+- Kiểm tra tính nhất quán.
+
+Agent-02: Data Dictionary Agent
+Nhiệm vụ:
+- Chuẩn hóa dữ liệu.
+- Quản lý danh mục dữ liệu.
+
+Agent-03: Formula Catalog Agent
+Nhiệm vụ:
+- Xây dựng công thức.
+- Kiểm tra logic thống kê.
+
+Agent-04: Validation Agent
+Nhiệm vụ:
+- Quy tắc kiểm tra dữ liệu.
+- Kiểm tra chéo biểu mẫu.
+
+Agent-05: Dashboard Agent
+Nhiệm vụ:
+- Dashboard lãnh đạo.
+- KPI.
+- Heatmap.
+- Cảnh báo.
+
+Agent-06: Reporting Agent
+Nhiệm vụ:
+- Báo cáo tuần/tháng/quý/năm.
+- Xuất Excel/PDF/Word.
+
+Agent-07: AI Analytics Agent
+Nhiệm vụ:
+- Truy vấn dữ liệu tự nhiên.
+- Hỏi đáp thống kê.
+- Phân tích xu hướng.
+
+Agent-08: QA Agent
+Nhiệm vụ:
+- Kiểm thử dữ liệu.
+- Kiểm thử nghiệp vụ.
+
+6. Kế hoạch triển khai
+
+Giai đoạn 1:
+- Data Dictionary.
+- Formula Catalog.
+- Validation Rules.
+- Framework Skill.
+
+Giai đoạn 2:
+- Dashboard điều hành.
+- Theo dõi tiến độ vụ án.
+- Cảnh báo quá hạn.
+
+Giai đoạn 3:
+- KPI.
+- Báo cáo tự động.
+- Theo dõi án hủy sửa.
+
+Giai đoạn 4:
+- AI hỏi đáp dữ liệu.
+- Dự báo khối lượng án.
+
+7. Tiêu chí hoàn thành
+
+- Số liệu dashboard khớp biểu mẫu.
+- Không có đếm trùng.
+- Truy xuất nguồn gốc công thức.
+- Kiểm tra chéo tự động.
+- Hỗ trợ lãnh đạo điều hành toàn tỉnh.
+
+8. Định dạng giao việc cho AI
+
+Task:
+Objective:
+Input:
+Output:
+Dependencies:
+Validation:
+Owner Agent:
+Priority:
