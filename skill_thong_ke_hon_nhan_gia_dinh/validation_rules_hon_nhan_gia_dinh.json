@@ -1,0 +1,377 @@
+{
+  "skill": "hon_nhan_gia_dinh_statistics",
+  "version": "1.0.0",
+  "rules": [
+    {
+      "id": "HNGD_ST_3A_NON_NEGATIVE",
+      "form": "HNGD_ST_3A",
+      "expression": "all_numeric_columns >= 0",
+      "severity": "error",
+      "message": "Tất cả số liệu đếm phải là số nguyên không âm"
+    },
+    {
+      "id": "HNGD_ST_3A_INTEGER",
+      "form": "HNGD_ST_3A",
+      "expression": "all_count_columns are integers",
+      "severity": "error",
+      "message": "Các cột số lượng vụ/việc phải là số nguyên"
+    },
+    {
+      "id": "HNGD_PT_3B_NON_NEGATIVE",
+      "form": "HNGD_PT_3B",
+      "expression": "all_numeric_columns >= 0",
+      "severity": "error",
+      "message": "Tất cả số liệu đếm phải là số nguyên không âm"
+    },
+    {
+      "id": "HNGD_PT_3B_INTEGER",
+      "form": "HNGD_PT_3B",
+      "expression": "all_count_columns are integers",
+      "severity": "error",
+      "message": "Các cột số lượng vụ/việc phải là số nguyên"
+    },
+    {
+      "id": "HNGD_GDT_3C_NON_NEGATIVE",
+      "form": "HNGD_GDT_3C",
+      "expression": "all_numeric_columns >= 0",
+      "severity": "error",
+      "message": "Tất cả số liệu đếm phải là số nguyên không âm"
+    },
+    {
+      "id": "HNGD_GDT_3C_INTEGER",
+      "form": "HNGD_GDT_3C",
+      "expression": "all_count_columns are integers",
+      "severity": "error",
+      "message": "Các cột số lượng vụ/việc phải là số nguyên"
+    },
+    {
+      "id": "HNGD_TT_3D_NON_NEGATIVE",
+      "form": "HNGD_TT_3D",
+      "expression": "all_numeric_columns >= 0",
+      "severity": "error",
+      "message": "Tất cả số liệu đếm phải là số nguyên không âm"
+    },
+    {
+      "id": "HNGD_TT_3D_INTEGER",
+      "form": "HNGD_TT_3D",
+      "expression": "all_count_columns are integers",
+      "severity": "error",
+      "message": "Các cột số lượng vụ/việc phải là số nguyên"
+    },
+    {
+      "id": "HNGD_ST_3A_R001",
+      "form": "HNGD_ST_3A",
+      "expression": "C6 == C2 + C3 - C4 + C5",
+      "severity": "error",
+      "message": "Tổng số phải giải quyết bằng cũ còn lại + mới thụ lý - chuyển hồ sơ + nhập vụ án"
+    },
+    {
+      "id": "HNGD_ST_3A_R002",
+      "form": "HNGD_ST_3A",
+      "expression": "C15 == C7 + C9 + C10 + C13",
+      "severity": "error",
+      "message": "Tổng đã giải quyết bằng đình chỉ + công nhận thỏa thuận + không chấp nhận + chấp nhận yêu cầu"
+    },
+    {
+      "id": "HNGD_ST_3A_R003",
+      "form": "HNGD_ST_3A",
+      "expression": "C16 == C6 - C15",
+      "severity": "error",
+      "message": "Còn lại bằng phải giải quyết trừ đã giải quyết"
+    },
+    {
+      "id": "HNGD_ST_3A_R004",
+      "form": "HNGD_ST_3A",
+      "expression": "C8 <= C7",
+      "severity": "error",
+      "message": "Hòa giải đoàn tụ thành là chỉ tiêu trong nhóm đình chỉ"
+    },
+    {
+      "id": "HNGD_ST_3A_R005",
+      "form": "HNGD_ST_3A",
+      "expression": "C11 <= C10 and C12 <= C10",
+      "severity": "error",
+      "message": "Chỉ tiêu chi tiết không chấp nhận yêu cầu không vượt tổng nhóm"
+    },
+    {
+      "id": "HNGD_ST_3A_R006",
+      "form": "HNGD_ST_3A",
+      "expression": "C14 <= C13",
+      "severity": "error",
+      "message": "Số vụ án cho ly hôn không vượt tổng chấp nhận yêu cầu"
+    },
+    {
+      "id": "HNGD_ST_3A_R007",
+      "form": "HNGD_ST_3A",
+      "expression": "C17 + C18 <= C16",
+      "severity": "error",
+      "message": "Quá hạn chủ quan + khách quan không vượt tổng còn lại"
+    },
+    {
+      "id": "HNGD_ST_3A_R008",
+      "form": "HNGD_ST_3A",
+      "expression": "C19 <= C16",
+      "severity": "error",
+      "message": "Tạm đình chỉ không vượt tổng còn lại"
+    },
+    {
+      "id": "HNGD_ST_3A_R009",
+      "form": "HNGD_ST_3A",
+      "expression": "C20 <= C19 and C21 <= C19 and C22 <= C19",
+      "severity": "error",
+      "message": "Các chỉ tiêu trong đó của tạm đình chỉ không vượt tổng tạm đình chỉ"
+    },
+    {
+      "id": "HNGD_ST_3A_R010",
+      "form": "HNGD_ST_3A",
+      "expression": "C29 + C30 <= C15",
+      "severity": "error",
+      "message": "Vụ có người bảo vệ quyền, lợi ích hợp pháp không vượt đã giải quyết"
+    },
+    {
+      "id": "HNGD_ST_3A_R011",
+      "form": "HNGD_ST_3A",
+      "expression": "C33 <= C32 and C34 <= C32",
+      "severity": "error",
+      "message": "Số con nữ/dưới 7 tuổi là chi tiết của số con dưới 18 tuổi"
+    },
+    {
+      "id": "HNGD_ST_3A_R012",
+      "form": "HNGD_ST_3A",
+      "expression": "C31 <= C14",
+      "severity": "error",
+      "message": "Vợ chồng 18-30 tuổi chỉ áp dụng nhóm vụ án ly hôn đã được chấp nhận"
+    },
+    {
+      "id": "HNGD_ST_3A_R013",
+      "form": "HNGD_ST_3A",
+      "expression": "C35 <= C15",
+      "severity": "error",
+      "message": "Yếu tố nước ngoài không vượt tổng đã giải quyết"
+    },
+    {
+      "id": "HNGD_ST_3A_R014",
+      "form": "HNGD_ST_3A",
+      "expression": "C36 <= C15 and C37 <= C15",
+      "severity": "error",
+      "message": "Phiên tòa rút kinh nghiệm/hòa giải thành công không vượt tổng đã giải quyết"
+    },
+    {
+      "id": "HNGD_PT_3B_R001",
+      "form": "HNGD_PT_3B",
+      "expression": "C6 == C2 + C4",
+      "severity": "error",
+      "message": "Tổng kháng cáo phải giải quyết = cũ kháng cáo + mới kháng cáo"
+    },
+    {
+      "id": "HNGD_PT_3B_R002",
+      "form": "HNGD_PT_3B",
+      "expression": "C7 == C3 + C5",
+      "severity": "error",
+      "message": "Tổng kháng nghị phải giải quyết = cũ kháng nghị + mới kháng nghị"
+    },
+    {
+      "id": "HNGD_PT_3B_R003",
+      "form": "HNGD_PT_3B",
+      "expression": "C8 == C6 + C7",
+      "severity": "error",
+      "message": "Tổng cộng phải giải quyết = kháng cáo + kháng nghị"
+    },
+    {
+      "id": "HNGD_PT_3B_R004",
+      "form": "HNGD_PT_3B",
+      "expression": "C13 == C9 + C10 + C11 + C12",
+      "severity": "error",
+      "message": "Đình chỉ cộng = rút kháng cáo + rút kháng nghị + lý do khác"
+    },
+    {
+      "id": "HNGD_PT_3B_R005",
+      "form": "HNGD_PT_3B",
+      "expression": "C16 == C14 + C15",
+      "severity": "error",
+      "message": "Xét xử/giải quyết cộng = kháng cáo + kháng nghị"
+    },
+    {
+      "id": "HNGD_PT_3B_R006",
+      "form": "HNGD_PT_3B",
+      "expression": "C17 == C9 + C11 + C14",
+      "severity": "error",
+      "message": "Tổng đã giải quyết kháng cáo"
+    },
+    {
+      "id": "HNGD_PT_3B_R007",
+      "form": "HNGD_PT_3B",
+      "expression": "C18 == C10 + C12 + C15",
+      "severity": "error",
+      "message": "Tổng đã giải quyết kháng nghị"
+    },
+    {
+      "id": "HNGD_PT_3B_R008",
+      "form": "HNGD_PT_3B",
+      "expression": "C19 == C17 + C18",
+      "severity": "error",
+      "message": "Tổng đã giải quyết = kháng cáo + kháng nghị"
+    },
+    {
+      "id": "HNGD_PT_3B_R009",
+      "form": "HNGD_PT_3B",
+      "expression": "C20 == C6 - C17 and C21 == C7 - C18 and C22 == C20 + C21",
+      "severity": "error",
+      "message": "Còn lại đúng theo từng nguồn kháng cáo/kháng nghị"
+    },
+    {
+      "id": "HNGD_PT_3B_R010",
+      "form": "HNGD_PT_3B",
+      "expression": "C23 + C24 <= C22",
+      "severity": "error",
+      "message": "Quá hạn không vượt tổng còn lại"
+    },
+    {
+      "id": "HNGD_PT_3B_R011",
+      "form": "HNGD_PT_3B",
+      "expression": "C25 <= C22",
+      "severity": "error",
+      "message": "Tạm đình chỉ không vượt tổng còn lại"
+    },
+    {
+      "id": "HNGD_PT_3B_R012",
+      "form": "HNGD_PT_3B",
+      "expression": "C26 <= C25 and C27 <= C25 and C28 <= C25",
+      "severity": "error",
+      "message": "Chi tiết tạm đình chỉ không vượt tổng tạm đình chỉ"
+    },
+    {
+      "id": "HNGD_PT_3B_R013",
+      "form": "HNGD_PT_3B",
+      "expression": "C30 + C31 + C32 + C33 + C34 + C35 + C36 + C37 + C38 + C39 + C29 + C40 <= C16",
+      "severity": "error",
+      "message": "Phân tích kết quả xét xử không vượt tổng xét xử/giải quyết"
+    },
+    {
+      "id": "HNGD_PT_3B_R014",
+      "form": "HNGD_PT_3B",
+      "expression": "C30 + C32 + C34 + C36 + C38 <= C16",
+      "severity": "error",
+      "message": "Các trường hợp do sơ thẩm sai không vượt tổng xét xử/giải quyết"
+    },
+    {
+      "id": "HNGD_PT_3B_R015",
+      "form": "HNGD_PT_3B",
+      "expression": "C41 <= C15",
+      "severity": "error",
+      "message": "VKS kháng nghị không được chấp nhận không vượt số xét xử kháng nghị"
+    },
+    {
+      "id": "HNGD_PT_3B_R016",
+      "form": "HNGD_PT_3B",
+      "expression": "C42 <= C10 + C15",
+      "severity": "error",
+      "message": "VKS rút kháng nghị nhưng đương sự không rút kháng cáo cần đối chiếu nhóm kháng nghị"
+    },
+    {
+      "id": "HNGD_PT_3B_R017",
+      "form": "HNGD_PT_3B",
+      "expression": "C47 + C48 <= C19",
+      "severity": "error",
+      "message": "Có người bảo vệ quyền, lợi ích hợp pháp không vượt tổng đã giải quyết"
+    },
+    {
+      "id": "HNGD_PT_3B_R018",
+      "form": "HNGD_PT_3B",
+      "expression": "C49 <= C19",
+      "severity": "error",
+      "message": "Phiên tòa rút kinh nghiệm không vượt tổng đã giải quyết"
+    },
+    {
+      "id": "HNGD_GDT_3C_R001",
+      "form": "HNGD_GDT_3C",
+      "expression": "C6 == C2 + C4 and C7 == C3 + C5 and C8 == C6 + C7",
+      "severity": "error",
+      "message": "Tổng phải giải quyết đúng theo nguồn kháng nghị"
+    },
+    {
+      "id": "HNGD_GDT_3C_R002",
+      "form": "HNGD_GDT_3C",
+      "expression": "C13 == C9 + C10 + C11 + C12",
+      "severity": "error",
+      "message": "Tổng đã giải quyết = rút kháng nghị + đã xét xử"
+    },
+    {
+      "id": "HNGD_GDT_3C_R003",
+      "form": "HNGD_GDT_3C",
+      "expression": "C14 == C6 - C9 - C11 and C15 == C7 - C10 - C12 and C16 == C14 + C15",
+      "severity": "error",
+      "message": "Còn lại đúng theo nguồn kháng nghị"
+    },
+    {
+      "id": "HNGD_GDT_3C_R004",
+      "form": "HNGD_GDT_3C",
+      "expression": "C17 + C18 <= C16",
+      "severity": "error",
+      "message": "Quá hạn không vượt tổng còn lại"
+    },
+    {
+      "id": "HNGD_GDT_3C_R005",
+      "form": "HNGD_GDT_3C",
+      "expression": "C19 + C20 + C21 + C22 + C23 + C24 + C25 + C26 + C27 + C28 + C29 <= C11 + C12",
+      "severity": "error",
+      "message": "Phân tích kết quả xét xử không vượt số đã xét xử"
+    },
+    {
+      "id": "HNGD_GDT_3C_R006",
+      "form": "HNGD_GDT_3C",
+      "expression": "C19 <= C11 and C20 <= C12",
+      "severity": "error",
+      "message": "Không chấp nhận kháng nghị đúng nguồn Chánh án/Viện trưởng"
+    },
+    {
+      "id": "HNGD_GDT_3C_R007",
+      "form": "HNGD_GDT_3C",
+      "expression": "C30 <= C11 + C12",
+      "severity": "error",
+      "message": "Áp dụng án lệ không vượt số đã xét xử"
+    },
+    {
+      "id": "HNGD_TT_3D_R001",
+      "form": "HNGD_TT_3D",
+      "expression": "C6 == C2 + C4 and C7 == C3 + C5 and C8 == C6 + C7",
+      "severity": "error",
+      "message": "Tổng phải giải quyết đúng theo nguồn kháng nghị"
+    },
+    {
+      "id": "HNGD_TT_3D_R002",
+      "form": "HNGD_TT_3D",
+      "expression": "C13 == C9 + C10 + C11 + C12",
+      "severity": "error",
+      "message": "Tổng đã giải quyết = rút kháng nghị + đã xét xử"
+    },
+    {
+      "id": "HNGD_TT_3D_R003",
+      "form": "HNGD_TT_3D",
+      "expression": "C14 == C6 - C9 - C11 and C15 == C7 - C10 - C12 and C16 == C14 + C15",
+      "severity": "error",
+      "message": "Còn lại đúng theo nguồn kháng nghị"
+    },
+    {
+      "id": "HNGD_TT_3D_R004",
+      "form": "HNGD_TT_3D",
+      "expression": "C17 + C18 + C19 + C20 <= C11 + C12",
+      "severity": "error",
+      "message": "Phân tích kết quả xét xử không vượt số đã xét xử"
+    },
+    {
+      "id": "HNGD_TT_3D_R005",
+      "form": "HNGD_TT_3D",
+      "expression": "C17 <= C11 and C18 <= C12",
+      "severity": "error",
+      "message": "Không chấp nhận kháng nghị đúng nguồn Chánh án/Viện trưởng"
+    },
+    {
+      "id": "HNGD_TT_3D_R006",
+      "form": "HNGD_TT_3D",
+      "expression": "C21 <= C11 + C12",
+      "severity": "error",
+      "message": "Áp dụng án lệ không vượt số đã xét xử"
+    }
+  ]
+}

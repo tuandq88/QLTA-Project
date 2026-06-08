@@ -1,0 +1,334 @@
+{
+  "skill": "hon_nhan_gia_dinh_statistics",
+  "version": "1.0.0",
+  "forms": [
+    "HNGD_ST_3A",
+    "HNGD_PT_3B",
+    "HNGD_GDT_3C",
+    "HNGD_TT_3D"
+  ],
+  "column_formulas": [
+    {
+      "id": "HNGD_ST_3A_C06",
+      "form": "HNGD_ST_3A",
+      "column": 6,
+      "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số",
+      "formula": "C2 + C3 - C4 + C5",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_ST_3A_C15",
+      "form": "HNGD_ST_3A",
+      "column": 15,
+      "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT, XÉT XỬ > Tổng cộng",
+      "formula": "C7 + C9 + C10 + C13",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_ST_3A_C16",
+      "form": "HNGD_ST_3A",
+      "column": 16,
+      "label": "SỐ VỤ VIỆC CÒN LẠI > Tổng số",
+      "formula": "C6 - C15",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_PT_3B_C06",
+      "form": "HNGD_PT_3B",
+      "column": 6,
+      "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số > Kháng cáo",
+      "formula": "C2 + C4",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_PT_3B_C07",
+      "form": "HNGD_PT_3B",
+      "column": 7,
+      "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số > Kháng nghị",
+      "formula": "C3 + C5",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_PT_3B_C08",
+      "form": "HNGD_PT_3B",
+      "column": 8,
+      "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số > Cộng",
+      "formula": "C6 + C7",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_PT_3B_C13",
+      "form": "HNGD_PT_3B",
+      "column": 13,
+      "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Đình chỉ > Cộng",
+      "formula": "C9 + C10 + C11 + C12",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_PT_3B_C16",
+      "form": "HNGD_PT_3B",
+      "column": 16,
+      "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Xét xử hoặc giải quyết > Cộng",
+      "formula": "C14 + C15",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_PT_3B_C17",
+      "form": "HNGD_PT_3B",
+      "column": 17,
+      "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Tổng số > Kháng cáo",
+      "formula": "C9 + C11 + C14",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_PT_3B_C18",
+      "form": "HNGD_PT_3B",
+      "column": 18,
+      "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Tổng số > Kháng nghị",
+      "formula": "C10 + C12 + C15",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_PT_3B_C19",
+      "form": "HNGD_PT_3B",
+      "column": 19,
+      "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Tổng số > Cộng",
+      "formula": "C17 + C18",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_PT_3B_C20",
+      "form": "HNGD_PT_3B",
+      "column": 20,
+      "label": "SỐ VỤ, VIỆC CÒN LẠI > Tổng số > Kháng cáo",
+      "formula": "C6 - C17",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_PT_3B_C21",
+      "form": "HNGD_PT_3B",
+      "column": 21,
+      "label": "SỐ VỤ, VIỆC CÒN LẠI > Tổng số > Kháng nghị",
+      "formula": "C7 - C18",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_PT_3B_C22",
+      "form": "HNGD_PT_3B",
+      "column": 22,
+      "label": "SỐ VỤ, VIỆC CÒN LẠI > Tổng số > Cộng",
+      "formula": "C20 + C21",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_GDT_3C_C06",
+      "form": "HNGD_GDT_3C",
+      "column": 6,
+      "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số > Chánh án kháng nghị",
+      "formula": "C2 + C4",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_GDT_3C_C07",
+      "form": "HNGD_GDT_3C",
+      "column": 7,
+      "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số > Viện trưởng kháng nghị",
+      "formula": "C3 + C5",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_GDT_3C_C08",
+      "form": "HNGD_GDT_3C",
+      "column": 8,
+      "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số > Cộng",
+      "formula": "C6 + C7",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_GDT_3C_C13",
+      "form": "HNGD_GDT_3C",
+      "column": 13,
+      "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Tổng số",
+      "formula": "C9 + C10 + C11 + C12",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_GDT_3C_C14",
+      "form": "HNGD_GDT_3C",
+      "column": 14,
+      "label": "SỐ VỤ, VIỆC CÒN LẠI > Chánh án kháng nghị",
+      "formula": "C6 - C9 - C11",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_GDT_3C_C15",
+      "form": "HNGD_GDT_3C",
+      "column": 15,
+      "label": "SỐ VỤ, VIỆC CÒN LẠI > Viện trưởng kháng nghị",
+      "formula": "C7 - C10 - C12",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_GDT_3C_C16",
+      "form": "HNGD_GDT_3C",
+      "column": 16,
+      "label": "SỐ VỤ, VIỆC CÒN LẠI > Tổng số",
+      "formula": "C14 + C15",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_TT_3D_C06",
+      "form": "HNGD_TT_3D",
+      "column": 6,
+      "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số > Chánh án kháng nghị",
+      "formula": "C2 + C4",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_TT_3D_C07",
+      "form": "HNGD_TT_3D",
+      "column": 7,
+      "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số > Viện trưởng kháng nghị",
+      "formula": "C3 + C5",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_TT_3D_C08",
+      "form": "HNGD_TT_3D",
+      "column": 8,
+      "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số > Cộng",
+      "formula": "C6 + C7",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_TT_3D_C13",
+      "form": "HNGD_TT_3D",
+      "column": 13,
+      "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Tổng số",
+      "formula": "C9 + C10 + C11 + C12",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_TT_3D_C14",
+      "form": "HNGD_TT_3D",
+      "column": 14,
+      "label": "SỐ VỤ, VIỆC CÒN LẠI > Chánh án kháng nghị",
+      "formula": "C6 - C9 - C11",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_TT_3D_C15",
+      "form": "HNGD_TT_3D",
+      "column": 15,
+      "label": "SỐ VỤ, VIỆC CÒN LẠI > Viện trưởng kháng nghị",
+      "formula": "C7 - C10 - C12",
+      "type": "column_total"
+    },
+    {
+      "id": "HNGD_TT_3D_C16",
+      "form": "HNGD_TT_3D",
+      "column": 16,
+      "label": "SỐ VỤ, VIỆC CÒN LẠI > Tổng số",
+      "formula": "C14 + C15",
+      "type": "column_total"
+    }
+  ],
+  "kpi_formulas": [
+    {
+      "id": "HNGD_KPI_001",
+      "name": "ty_le_giai_quyet",
+      "formula": "resolved_total / total_to_resolve * 100",
+      "zero_division": "return 0"
+    },
+    {
+      "id": "HNGD_KPI_002",
+      "name": "ty_le_ton",
+      "formula": "remaining_total / total_to_resolve * 100",
+      "zero_division": "return 0"
+    },
+    {
+      "id": "HNGD_KPI_003",
+      "name": "ty_le_qua_han",
+      "formula": "overdue_total / remaining_total * 100",
+      "zero_division": "return 0"
+    },
+    {
+      "id": "HNGD_KPI_004",
+      "name": "ty_le_tam_dinh_chi",
+      "formula": "suspended_remaining / remaining_total * 100",
+      "zero_division": "return 0"
+    },
+    {
+      "id": "HNGD_KPI_005",
+      "name": "ty_le_ap_dung_an_le",
+      "formula": "precedent_cases / resolved_total * 100",
+      "zero_division": "return 0"
+    },
+    {
+      "id": "HNGD_KPI_006",
+      "name": "ty_le_thu_tuc_rut_gon",
+      "formula": "summary_procedure_cases / resolved_total * 100",
+      "zero_division": "return 0"
+    },
+    {
+      "id": "HNGD_KPI_007",
+      "name": "ty_le_bien_phap_khan_cap_tam_thoi",
+      "formula": "provisional_measure_cases / resolved_total * 100",
+      "zero_division": "return 0"
+    },
+    {
+      "id": "HNGD_KPI_008",
+      "name": "ty_le_vks_tham_gia",
+      "formula": "procuracy_participation_cases / resolved_total * 100",
+      "zero_division": "return 0"
+    },
+    {
+      "id": "HNGD_KPI_009",
+      "name": "ty_le_luat_su_tham_gia",
+      "formula": "lawyer_cases / resolved_total * 100",
+      "zero_division": "return 0"
+    },
+    {
+      "id": "HNGD_ST_KPI_010",
+      "name": "ty_le_hoa_giai_doan_tu_thanh",
+      "formula": "reconciled_reunion_cases / resolved_total * 100",
+      "zero_division": "return 0"
+    },
+    {
+      "id": "HNGD_ST_KPI_011",
+      "name": "ty_le_cong_nhan_thoa_thuan",
+      "formula": "recognized_agreement_cases / resolved_total * 100",
+      "zero_division": "return 0"
+    },
+    {
+      "id": "HNGD_ST_KPI_012",
+      "name": "ty_le_cho_ly_hon",
+      "formula": "divorce_accepted_cases / resolved_total * 100",
+      "zero_division": "return 0"
+    },
+    {
+      "id": "HNGD_PT_KPI_013",
+      "name": "ty_le_sua_an_do_so_tham_sai",
+      "formula": "modified_due_first_instance_error / appellate_tried_total * 100",
+      "zero_division": "return 0"
+    },
+    {
+      "id": "HNGD_PT_KPI_014",
+      "name": "ty_le_huy_an_do_so_tham_sai",
+      "formula": "cancelled_due_first_instance_error / appellate_tried_total * 100",
+      "zero_division": "return 0"
+    },
+    {
+      "id": "HNGD_GDT_KPI_015",
+      "name": "ty_le_chap_nhan_khang_nghi_giam_doc_tham",
+      "formula": "(reviewed_total - rejected_protest_total) / reviewed_total * 100",
+      "zero_division": "return 0"
+    },
+    {
+      "id": "HNGD_TT_KPI_016",
+      "name": "ty_le_chap_nhan_khang_nghi_tai_tham",
+      "formula": "(retrial_reviewed_total - retrial_rejected_protest_total) / retrial_reviewed_total * 100",
+      "zero_division": "return 0"
+    }
+  ]
+}

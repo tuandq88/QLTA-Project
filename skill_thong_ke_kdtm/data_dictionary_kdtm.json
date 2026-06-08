@@ -1,0 +1,249 @@
+{
+  "skill": "commercial_business_case_statistics",
+  "version": "3.0.0",
+  "entities": {
+    "kdtm_case": [
+      [
+        "case_id",
+        "string",
+        "Mã vụ, việc duy nhất"
+      ],
+      [
+        "case_code",
+        "string",
+        "Số thụ lý/số hồ sơ"
+      ],
+      [
+        "matter_code",
+        "string",
+        "Mã loại tranh chấp/việc KDTM"
+      ],
+      [
+        "matter_name",
+        "string",
+        "Tên loại tranh chấp/việc KDTM"
+      ],
+      [
+        "court_id",
+        "string",
+        "Đơn vị Tòa án"
+      ],
+      [
+        "court_level",
+        "enum",
+        "khu_vuc, tinh, cap_cao, toi_cao"
+      ],
+      [
+        "procedure_level",
+        "enum",
+        "so_tham, phuc_tham, giam_doc_tham, tai_tham"
+      ],
+      [
+        "period_id",
+        "string",
+        "Kỳ thống kê"
+      ],
+      [
+        "acceptance_date",
+        "date",
+        "Ngày thụ lý"
+      ],
+      [
+        "resolved_date",
+        "date",
+        "Ngày giải quyết"
+      ],
+      [
+        "status",
+        "enum",
+        "dang_giai_quyet, dinh_chi, cong_nhan_thoa_thuan, xet_xu_giai_quyet, tam_dinh_chi, chuyen_ho_so"
+      ],
+      [
+        "is_old_pending",
+        "boolean",
+        "Cũ còn lại"
+      ],
+      [
+        "is_newly_accepted",
+        "boolean",
+        "Mới thụ lý"
+      ],
+      [
+        "is_transferred",
+        "boolean",
+        "Chuyển hồ sơ"
+      ],
+      [
+        "is_joined",
+        "boolean",
+        "Nhập vụ án"
+      ],
+      [
+        "is_overdue",
+        "boolean",
+        "Quá hạn luật định"
+      ],
+      [
+        "overdue_reason",
+        "enum",
+        "chu_quan, khach_quan"
+      ],
+      [
+        "is_suspended",
+        "boolean",
+        "Tạm đình chỉ"
+      ],
+      [
+        "suspension_count",
+        "integer",
+        "Số lần tạm đình chỉ"
+      ],
+      [
+        "has_vbqppl_recommendation",
+        "boolean",
+        "Có kiến nghị sửa đổi/bãi bỏ VBQPPL"
+      ]
+    ],
+    "kdtm_first_instance_result": [
+      [
+        "case_id",
+        "string",
+        "Khóa ngoại vụ việc"
+      ],
+      [
+        "is_dismissed",
+        "boolean",
+        "Đình chỉ"
+      ],
+      [
+        "is_settlement_recognized",
+        "boolean",
+        "Công nhận thỏa thuận"
+      ],
+      [
+        "is_tried_or_resolved",
+        "boolean",
+        "Đã xét xử/giải quyết"
+      ],
+      [
+        "claim_result",
+        "enum",
+        "khong_chap_nhan, chap_nhan_mot_phan, chap_nhan_toan_bo"
+      ],
+      [
+        "is_successful_mediation",
+        "boolean",
+        "Hòa giải thành công"
+      ],
+      [
+        "has_precedent",
+        "boolean",
+        "Áp dụng án lệ"
+      ],
+      [
+        "is_simplified_procedure",
+        "boolean",
+        "Thủ tục rút gọn"
+      ],
+      [
+        "has_interim_measure",
+        "boolean",
+        "Biện pháp khẩn cấp tạm thời"
+      ],
+      [
+        "has_cancelled_illegal_individual_decision",
+        "boolean",
+        "Hủy quyết định cá biệt trái pháp luật"
+      ],
+      [
+        "has_procuracy_participation",
+        "boolean",
+        "VKS tham gia"
+      ],
+      [
+        "has_lawyer",
+        "boolean",
+        "Có luật sư"
+      ],
+      [
+        "has_other_protector",
+        "boolean",
+        "Có người bảo vệ quyền lợi khác"
+      ]
+    ],
+    "kdtm_party": [
+      [
+        "party_id",
+        "string",
+        "Mã đương sự"
+      ],
+      [
+        "case_id",
+        "string",
+        "Mã vụ việc"
+      ],
+      [
+        "role",
+        "enum",
+        "nguyen_don, bi_don, nguoi_lien_quan"
+      ],
+      [
+        "party_type",
+        "enum",
+        "doanh_nghiep_nha_nuoc, doi_tuong_khac"
+      ],
+      [
+        "has_foreign_element",
+        "boolean",
+        "Có yếu tố nước ngoài"
+      ]
+    ],
+    "kdtm_appeal_review": [
+      [
+        "case_id",
+        "string",
+        "Mã vụ việc"
+      ],
+      [
+        "review_type",
+        "enum",
+        "phuc_tham, giam_doc_tham, tai_tham"
+      ],
+      [
+        "source",
+        "enum",
+        "khang_cao, chanh_an_khang_nghi, vien_truong_khang_nghi"
+      ],
+      [
+        "is_withdrawn",
+        "boolean",
+        "Rút kháng cáo/kháng nghị"
+      ],
+      [
+        "withdrawn_by",
+        "enum",
+        "duong_su, chanh_an, vien_truong"
+      ],
+      [
+        "is_reviewed",
+        "boolean",
+        "Đã xét xử"
+      ],
+      [
+        "result",
+        "enum",
+        "giu_nguyen, sua_mot_phan, sua_toan_bo, huy_mot_phan, huy_toan_bo, huy_va_dinh_chi, dinh_chi_xet_xu"
+      ],
+      [
+        "error_source",
+        "enum",
+        "cap_so_tham_sai, ly_do_khac"
+      ],
+      [
+        "has_precedent",
+        "boolean",
+        "Áp dụng án lệ"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "manual_inputs": [
+    "case_subtype",
+    "court_id",
+    "period_id",
+    "procedure_level",
+    "status",
+    "resolution_result",
+    "acceptance_date",
+    "resolution_date",
+    "appeal_flag",
+    "protest_flag",
+    "protest_source",
+    "overdue_reason",
+    "temporary_suspension_count",
+    "party_features",
+    "procedural_features"
+  ],
+  "automatic_from_case_events": [
+    "old_remaining",
+    "newly_accepted",
+    "transferred",
+    "merged/imported_case",
+    "dismissed",
+    "recognized_agreement",
+    "tried_or_resolved",
+    "remaining",
+    "overdue",
+    "temporarily_suspended",
+    "appellate_result",
+    "cassation_result",
+    "retrial_result"
+  ],
+  "computed_only": [
+    "total_to_resolve",
+    "resolved_total",
+    "remaining_total",
+    "resolution_rate",
+    "remaining_rate",
+    "modification_rate",
+    "cancellation_rate",
+    "first_instance_error_rate",
+    "conciliation_success_rate"
+  ],
+  "dashboard_kpis": [
+    "Tổng phải giải quyết",
+    "Tổng đã giải quyết",
+    "Tỷ lệ giải quyết",
+    "Tổng còn lại",
+    "Tỷ lệ tồn",
+    "Quá hạn luật định",
+    "Tạm đình chỉ",
+    "Hòa giải thành công",
+    "Áp dụng án lệ",
+    "Thủ tục rút gọn",
+    "Biện pháp khẩn cấp tạm thời",
+    "VKS tham gia",
+    "Luật sư tham gia",
+    "Tỷ lệ sửa án phúc thẩm",
+    "Tỷ lệ hủy án phúc thẩm",
+    "Tỷ lệ chấp nhận kháng nghị giám đốc thẩm/tái thẩm"
+  ]
+}

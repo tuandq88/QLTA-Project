@@ -1,0 +1,227 @@
+{
+  "skill": "hanh_chinh_statistics",
+  "entities": {
+    "administrative_case": [
+      {
+        "field": "case_id",
+        "type": "uuid",
+        "source": "auto",
+        "description": "Mã duy nhất của vụ án hành chính"
+      },
+      {
+        "field": "court_unit_id",
+        "type": "string",
+        "source": "auto",
+        "description": "Mã đơn vị Tòa án"
+      },
+      {
+        "field": "report_period",
+        "type": "date_range",
+        "source": "auto",
+        "description": "Kỳ thống kê"
+      },
+      {
+        "field": "procedure_level",
+        "type": "enum",
+        "values": [
+          "so_tham",
+          "phuc_tham",
+          "giam_doc_tham",
+          "tai_tham"
+        ],
+        "source": "manual/auto"
+      },
+      {
+        "field": "claim_type_code",
+        "type": "enum",
+        "source": "manual",
+        "description": "Loại khiếu kiện hành chính"
+      },
+      {
+        "field": "old_remaining_flag",
+        "type": "boolean",
+        "source": "auto",
+        "description": "Vụ cũ còn lại từ kỳ trước"
+      },
+      {
+        "field": "newly_accepted_date",
+        "type": "date",
+        "source": "manual",
+        "description": "Ngày thụ lý mới"
+      },
+      {
+        "field": "transferred_out",
+        "type": "boolean",
+        "source": "manual",
+        "description": "Chuyển hồ sơ/vụ án"
+      },
+      {
+        "field": "imported_case",
+        "type": "boolean",
+        "source": "manual",
+        "description": "Nhập vụ án"
+      },
+      {
+        "field": "resolution_status",
+        "type": "enum",
+        "values": [
+          "dang_giai_quyet",
+          "dinh_chi_doi_thoai",
+          "dinh_chi_khac",
+          "bac_yeu_cau",
+          "chap_nhan_mot_phan",
+          "chap_nhan_toan_bo",
+          "rut_khang_cao",
+          "rut_khang_nghi",
+          "da_xet_xu",
+          "tam_dinh_chi"
+        ]
+      },
+      {
+        "field": "overdue_reason",
+        "type": "enum",
+        "values": [
+          "khong_qua_han",
+          "chu_quan",
+          "khach_quan"
+        ]
+      },
+      {
+        "field": "temporary_suspension_count",
+        "type": "integer",
+        "source": "auto/manual"
+      },
+      {
+        "field": "has_vbqppl_recommendation",
+        "type": "boolean",
+        "source": "manual"
+      },
+      {
+        "field": "uses_precedent",
+        "type": "boolean",
+        "source": "manual"
+      },
+      {
+        "field": "summary_procedure",
+        "type": "boolean",
+        "source": "manual"
+      },
+      {
+        "field": "interim_urgent_measure",
+        "type": "boolean",
+        "source": "manual"
+      },
+      {
+        "field": "procuracy_participated",
+        "type": "boolean",
+        "source": "manual"
+      },
+      {
+        "field": "foreign_element",
+        "type": "boolean",
+        "source": "manual"
+      },
+      {
+        "field": "compensation_case",
+        "type": "boolean",
+        "source": "manual"
+      },
+      {
+        "field": "compensation_amount_vnd",
+        "type": "currency",
+        "source": "manual"
+      },
+      {
+        "field": "trial_experience_session",
+        "type": "boolean",
+        "source": "manual"
+      }
+    ],
+    "participant": [
+      {
+        "field": "participant_id",
+        "type": "uuid"
+      },
+      {
+        "field": "case_id",
+        "type": "uuid"
+      },
+      {
+        "field": "role",
+        "type": "enum",
+        "values": [
+          "nguoi_khoi_kien",
+          "nguoi_bi_kien",
+          "nguoi_lien_quan",
+          "luat_su",
+          "nguoi_bao_ve_quyen_loi_khac"
+        ]
+      },
+      {
+        "field": "party_type",
+        "type": "enum",
+        "values": [
+          "ca_nhan",
+          "co_quan_to_chuc"
+        ]
+      },
+      {
+        "field": "is_lawyer",
+        "type": "boolean"
+      },
+      {
+        "field": "is_other_representative",
+        "type": "boolean"
+      }
+    ],
+    "appellate_review": [
+      {
+        "field": "review_id",
+        "type": "uuid"
+      },
+      {
+        "field": "case_id",
+        "type": "uuid"
+      },
+      {
+        "field": "review_level",
+        "type": "enum",
+        "values": [
+          "phuc_tham",
+          "giam_doc_tham",
+          "tai_tham"
+        ]
+      },
+      {
+        "field": "petition_source",
+        "type": "enum",
+        "values": [
+          "khang_cao",
+          "vks_khang_nghi",
+          "chanh_an_khang_nghi",
+          "vien_truong_khang_nghi"
+        ]
+      },
+      {
+        "field": "withdrawn",
+        "type": "boolean"
+      },
+      {
+        "field": "review_result",
+        "type": "enum",
+        "values": [
+          "giu_nguyen",
+          "sua_mot_phan",
+          "sua_toan_bo",
+          "huy_xet_xu_lai",
+          "huy_va_dinh_chi",
+          "khong_chap_nhan_khang_nghi"
+        ]
+      },
+      {
+        "field": "error_by_lower_court",
+        "type": "boolean"
+      }
+    ]
+  }
+}

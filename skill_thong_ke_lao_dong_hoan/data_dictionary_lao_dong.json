@@ -1,0 +1,236 @@
+{
+  "skill": "labor_statistics",
+  "version": "1.0",
+  "entities": {
+    "LABOR_CASE": [
+      {
+        "field": "case_id",
+        "type": "uuid",
+        "required": true,
+        "description": "Mã định danh vụ, việc lao động"
+      },
+      {
+        "field": "case_number",
+        "type": "string",
+        "required": true,
+        "description": "Số thụ lý/số hồ sơ"
+      },
+      {
+        "field": "case_subtype",
+        "type": "enum",
+        "required": true,
+        "description": "Loại vụ án/việc lao động theo dòng chỉ tiêu của biểu mẫu"
+      },
+      {
+        "field": "court_id",
+        "type": "string",
+        "required": true,
+        "description": "Đơn vị Tòa án thụ lý/giải quyết"
+      },
+      {
+        "field": "period_id",
+        "type": "string",
+        "required": true,
+        "description": "Kỳ thống kê"
+      },
+      {
+        "field": "procedure_level",
+        "type": "enum",
+        "required": true,
+        "description": "Sơ thẩm, phúc thẩm, giám đốc thẩm, tái thẩm"
+      },
+      {
+        "field": "acceptance_date",
+        "type": "date",
+        "required": false,
+        "description": "Ngày thụ lý"
+      },
+      {
+        "field": "status",
+        "type": "enum",
+        "required": true,
+        "description": "Cũ còn lại, mới thụ lý, chuyển, nhập, đã giải quyết, còn lại"
+      },
+      {
+        "field": "resolution_date",
+        "type": "date",
+        "required": false,
+        "description": "Ngày giải quyết"
+      },
+      {
+        "field": "resolution_result",
+        "type": "enum",
+        "required": false,
+        "description": "Đình chỉ, công nhận thỏa thuận, xét xử/giải quyết, giữ nguyên, sửa, hủy..."
+      },
+      {
+        "field": "is_overdue",
+        "type": "boolean",
+        "required": false,
+        "description": "Quá hạn luật định"
+      },
+      {
+        "field": "overdue_reason",
+        "type": "enum",
+        "required": false,
+        "description": "Chủ quan hoặc khách quan"
+      },
+      {
+        "field": "is_temporarily_suspended",
+        "type": "boolean",
+        "required": false,
+        "description": "Tạm đình chỉ"
+      },
+      {
+        "field": "temporary_suspension_count",
+        "type": "integer",
+        "required": false,
+        "description": "Số lần tạm đình chỉ để xác định lần 2/trên 2 lần"
+      },
+      {
+        "field": "chief_justice_normative_recommendation",
+        "type": "boolean",
+        "required": false,
+        "description": "Có kiến nghị xem xét sửa đổi/bãi bỏ VBQPPL do dấu hiệu trái pháp luật"
+      }
+    ],
+    "LABOR_APPELLATE": [
+      {
+        "field": "appeal_flag",
+        "type": "boolean",
+        "description": "Có kháng cáo"
+      },
+      {
+        "field": "protest_flag",
+        "type": "boolean",
+        "description": "Có kháng nghị"
+      },
+      {
+        "field": "appeal_withdrawn",
+        "type": "boolean",
+        "description": "Rút kháng cáo"
+      },
+      {
+        "field": "protest_withdrawn",
+        "type": "boolean",
+        "description": "Rút kháng nghị"
+      },
+      {
+        "field": "first_instance_error",
+        "type": "boolean",
+        "description": "Sửa/hủy do cấp sơ thẩm sai"
+      },
+      {
+        "field": "appeal_trial_result",
+        "type": "enum",
+        "description": "Giữ nguyên, sửa một phần, sửa toàn bộ, hủy một phần, hủy toàn bộ, hủy và đình chỉ, đình chỉ phúc thẩm"
+      }
+    ],
+    "LABOR_CASSATION_RETRIAL": [
+      {
+        "field": "protest_source",
+        "type": "enum",
+        "description": "Chánh án hoặc Viện trưởng"
+      },
+      {
+        "field": "protest_withdrawn",
+        "type": "boolean",
+        "description": "Người kháng nghị rút kháng nghị"
+      },
+      {
+        "field": "review_result",
+        "type": "enum",
+        "description": "Không chấp nhận, sửa, hủy, giữ nguyên, xét xử lại..."
+      },
+      {
+        "field": "reviewed_by_procedure",
+        "type": "enum",
+        "description": "Giám đốc thẩm hoặc tái thẩm"
+      }
+    ],
+    "LABOR_PARTY_FEATURES": [
+      {
+        "field": "plaintiff_worker_under_15",
+        "type": "boolean",
+        "description": "Nguyên đơn là người lao động dưới 15 tuổi"
+      },
+      {
+        "field": "plaintiff_female_worker",
+        "type": "boolean",
+        "description": "Nguyên đơn là lao động nữ"
+      },
+      {
+        "field": "plaintiff_disabled_worker",
+        "type": "boolean",
+        "description": "Nguyên đơn là lao động khuyết tật/tàn tật"
+      },
+      {
+        "field": "plaintiff_foreign_factor",
+        "type": "boolean",
+        "description": "Nguyên đơn có yếu tố nước ngoài"
+      },
+      {
+        "field": "defendant_worker_under_15",
+        "type": "boolean",
+        "description": "Bị đơn là người lao động dưới 15 tuổi"
+      },
+      {
+        "field": "defendant_female_worker",
+        "type": "boolean",
+        "description": "Bị đơn là lao động nữ"
+      },
+      {
+        "field": "defendant_disabled_worker",
+        "type": "boolean",
+        "description": "Bị đơn là lao động khuyết tật/tàn tật"
+      },
+      {
+        "field": "defendant_foreign_factor",
+        "type": "boolean",
+        "description": "Bị đơn có yếu tố nước ngoài"
+      }
+    ],
+    "PROCEDURAL_FEATURES": [
+      {
+        "field": "applied_precedent",
+        "type": "boolean",
+        "description": "Áp dụng án lệ"
+      },
+      {
+        "field": "summary_procedure",
+        "type": "boolean",
+        "description": "Giải quyết theo thủ tục rút gọn"
+      },
+      {
+        "field": "temporary_urgent_measure",
+        "type": "boolean",
+        "description": "Áp dụng biện pháp khẩn cấp tạm thời"
+      },
+      {
+        "field": "procuracy_participated",
+        "type": "boolean",
+        "description": "Viện kiểm sát tham gia"
+      },
+      {
+        "field": "lawyer_participated",
+        "type": "boolean",
+        "description": "Có luật sư tham gia bảo vệ quyền lợi"
+      },
+      {
+        "field": "other_representative_participated",
+        "type": "boolean",
+        "description": "Có người bảo vệ quyền, lợi ích hợp pháp khác"
+      },
+      {
+        "field": "experience_trial",
+        "type": "boolean",
+        "description": "Tổ chức phiên tòa rút kinh nghiệm"
+      },
+      {
+        "field": "successful_conciliation",
+        "type": "boolean",
+        "description": "Tòa án tổ chức hòa giải thành công"
+      }
+    ]
+  }
+}

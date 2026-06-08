@@ -1,0 +1,670 @@
+{
+  "skill_name": "civil_case_statistics",
+  "version": "2.0.0",
+  "forms": [
+    {
+      "code": "DS_ST_2A",
+      "name": "Dân sự sơ thẩm",
+      "columns": 34
+    },
+    {
+      "code": "DS_PT_2B",
+      "name": "Dân sự phúc thẩm",
+      "columns": 49
+    },
+    {
+      "code": "DS_GDT_2C",
+      "name": "Dân sự giám đốc thẩm",
+      "columns": 30
+    },
+    {
+      "code": "DS_TT_2D",
+      "name": "Dân sự tái thẩm",
+      "columns": 21
+    }
+  ],
+  "functions": {
+    "safe_divide": "return 0 if denominator is 0 or null, otherwise numerator/denominator"
+  },
+  "formulas": [
+    {
+      "id": "DS_CORE_001",
+      "form": "ALL",
+      "name": "Tổng sơ thẩm phải giải quyết",
+      "expression": "old_pending + newly_accepted - transferred + joined",
+      "columns": [],
+      "description": "Dùng cho các biểu sơ thẩm kiểu có chuyển hồ sơ và nhập vụ án"
+    },
+    {
+      "id": "DS_CORE_002",
+      "form": "ALL",
+      "name": "Tổng cấp xét lại phải giải quyết",
+      "expression": "old_pending + newly_accepted",
+      "columns": [],
+      "description": "Dùng cho phúc thẩm, giám đốc thẩm, tái thẩm"
+    },
+    {
+      "id": "DS_CORE_003",
+      "form": "ALL",
+      "name": "Tổng đã giải quyết sơ thẩm",
+      "expression": "dismissed + recognized_agreement + tried_or_resolved",
+      "columns": [],
+      "description": ""
+    },
+    {
+      "id": "DS_CORE_004",
+      "form": "ALL",
+      "name": "Số còn lại",
+      "expression": "total_to_resolve - total_resolved",
+      "columns": [],
+      "description": ""
+    },
+    {
+      "id": "DS_CORE_005",
+      "form": "ALL",
+      "name": "Tỷ lệ giải quyết",
+      "expression": "safe_divide(total_resolved,total_to_resolve)*100",
+      "columns": [],
+      "description": ""
+    },
+    {
+      "id": "DS_CORE_006",
+      "form": "ALL",
+      "name": "Tỷ lệ tồn",
+      "expression": "safe_divide(remaining,total_to_resolve)*100",
+      "columns": [],
+      "description": ""
+    },
+    {
+      "id": "DS_CORE_007",
+      "form": "ALL",
+      "name": "Tỷ lệ quá hạn",
+      "expression": "safe_divide(overdue_subjective+overdue_objective,remaining)*100",
+      "columns": [],
+      "description": ""
+    },
+    {
+      "id": "DS_ST_001",
+      "form": "DS_ST_2A",
+      "name": "Tổng phải giải quyết",
+      "expression": "C2+C3-C4+C5",
+      "columns": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_ST_002",
+      "form": "DS_ST_2A",
+      "name": "Tổng đã giải quyết",
+      "expression": "C7+C8+C9",
+      "columns": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_ST_003",
+      "form": "DS_ST_2A",
+      "name": "Số còn lại",
+      "expression": "C6-C10",
+      "columns": [
+        6,
+        10,
+        11
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_ST_004",
+      "form": "DS_ST_2A",
+      "name": "Tổng quá hạn",
+      "expression": "C12+C13",
+      "columns": [
+        12,
+        13
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_ST_005",
+      "form": "DS_ST_2A",
+      "name": "Tỷ lệ giải quyết",
+      "expression": "safe_divide(C10,C6)*100",
+      "columns": [
+        6,
+        10
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_ST_006",
+      "form": "DS_ST_2A",
+      "name": "Tỷ lệ công nhận thỏa thuận",
+      "expression": "safe_divide(C8,C10)*100",
+      "columns": [
+        8,
+        10
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_ST_007",
+      "form": "DS_ST_2A",
+      "name": "Tỷ lệ hòa giải thành công",
+      "expression": "safe_divide(C34,C10)*100",
+      "columns": [
+        34,
+        10
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_ST_008",
+      "form": "DS_ST_2A",
+      "name": "Tỷ lệ yếu tố nước ngoài",
+      "expression": "safe_divide(C23,C10)*100",
+      "columns": [
+        23,
+        10
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_ST_009",
+      "form": "DS_ST_2A",
+      "name": "Tỷ lệ VKS tham gia",
+      "expression": "safe_divide(C22,C10)*100",
+      "columns": [
+        22,
+        10
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_ST_010",
+      "form": "DS_ST_2A",
+      "name": "Tỷ lệ tạm đình chỉ",
+      "expression": "safe_divide(C14,C11)*100",
+      "columns": [
+        14,
+        11
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_PT_001",
+      "form": "DS_PT_2B",
+      "name": "Tổng kháng cáo phải giải quyết",
+      "expression": "C2+C4",
+      "columns": [
+        2,
+        4,
+        6
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_PT_002",
+      "form": "DS_PT_2B",
+      "name": "Tổng kháng nghị phải giải quyết",
+      "expression": "C3+C5",
+      "columns": [
+        3,
+        5,
+        7
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_PT_003",
+      "form": "DS_PT_2B",
+      "name": "Cộng phải giải quyết",
+      "expression": "C6+C7",
+      "columns": [
+        6,
+        7,
+        8
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_PT_004",
+      "form": "DS_PT_2B",
+      "name": "Cộng đình chỉ",
+      "expression": "C9+C10+C11+C12",
+      "columns": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_PT_005",
+      "form": "DS_PT_2B",
+      "name": "Cộng xét xử giải quyết",
+      "expression": "C14+C15",
+      "columns": [
+        14,
+        15,
+        16
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_PT_006",
+      "form": "DS_PT_2B",
+      "name": "Đã giải quyết kháng cáo",
+      "expression": "C9+C11+C14",
+      "columns": [
+        9,
+        11,
+        14,
+        17
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_PT_007",
+      "form": "DS_PT_2B",
+      "name": "Đã giải quyết kháng nghị",
+      "expression": "C10+C12+C15",
+      "columns": [
+        10,
+        12,
+        15,
+        18
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_PT_008",
+      "form": "DS_PT_2B",
+      "name": "Tổng đã giải quyết",
+      "expression": "C17+C18",
+      "columns": [
+        17,
+        18,
+        19
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_PT_009",
+      "form": "DS_PT_2B",
+      "name": "Còn lại kháng cáo",
+      "expression": "C6-C17",
+      "columns": [
+        6,
+        17,
+        20
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_PT_010",
+      "form": "DS_PT_2B",
+      "name": "Còn lại kháng nghị",
+      "expression": "C7-C18",
+      "columns": [
+        7,
+        18,
+        21
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_PT_011",
+      "form": "DS_PT_2B",
+      "name": "Cộng còn lại",
+      "expression": "C20+C21",
+      "columns": [
+        20,
+        21,
+        22
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_PT_012",
+      "form": "DS_PT_2B",
+      "name": "Tổng sửa án",
+      "expression": "C30+C31+C32+C33",
+      "columns": [
+        30,
+        31,
+        32,
+        33
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_PT_013",
+      "form": "DS_PT_2B",
+      "name": "Tổng hủy án",
+      "expression": "C34+C35+C36+C37+C38+C39",
+      "columns": [
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_PT_014",
+      "form": "DS_PT_2B",
+      "name": "Tỷ lệ y án",
+      "expression": "safe_divide(C29,C16)*100",
+      "columns": [
+        29,
+        16
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_PT_015",
+      "form": "DS_PT_2B",
+      "name": "Tỷ lệ sửa án",
+      "expression": "safe_divide(C30+C31+C32+C33,C16)*100",
+      "columns": [
+        30,
+        31,
+        32,
+        33,
+        16
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_PT_016",
+      "form": "DS_PT_2B",
+      "name": "Tỷ lệ hủy án",
+      "expression": "safe_divide(C34+C35+C36+C37+C38+C39,C16)*100",
+      "columns": [
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        16
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_GDT_001",
+      "form": "DS_GDT_2C",
+      "name": "Tổng Chánh án kháng nghị",
+      "expression": "C2+C4",
+      "columns": [
+        2,
+        4,
+        6
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_GDT_002",
+      "form": "DS_GDT_2C",
+      "name": "Tổng Viện trưởng kháng nghị",
+      "expression": "C3+C5",
+      "columns": [
+        3,
+        5,
+        7
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_GDT_003",
+      "form": "DS_GDT_2C",
+      "name": "Cộng phải giải quyết",
+      "expression": "C6+C7",
+      "columns": [
+        6,
+        7,
+        8
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_GDT_004",
+      "form": "DS_GDT_2C",
+      "name": "Tổng đã giải quyết",
+      "expression": "C9+C10+C11+C12",
+      "columns": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_GDT_005",
+      "form": "DS_GDT_2C",
+      "name": "Còn lại Chánh án",
+      "expression": "C6-C9-C11",
+      "columns": [
+        6,
+        9,
+        11,
+        14
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_GDT_006",
+      "form": "DS_GDT_2C",
+      "name": "Còn lại Viện trưởng",
+      "expression": "C7-C10-C12",
+      "columns": [
+        7,
+        10,
+        12,
+        15
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_GDT_007",
+      "form": "DS_GDT_2C",
+      "name": "Tổng còn lại",
+      "expression": "C14+C15",
+      "columns": [
+        14,
+        15,
+        16
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_GDT_008",
+      "form": "DS_GDT_2C",
+      "name": "Tổng giữ nguyên",
+      "expression": "C19+C20",
+      "columns": [
+        19,
+        20
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_GDT_009",
+      "form": "DS_GDT_2C",
+      "name": "Tổng sửa án",
+      "expression": "C21+C22",
+      "columns": [
+        21,
+        22
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_GDT_010",
+      "form": "DS_GDT_2C",
+      "name": "Tổng hủy án",
+      "expression": "C23+C24+C25+C26+C27+C28+C29",
+      "columns": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_GDT_011",
+      "form": "DS_GDT_2C",
+      "name": "Tỷ lệ kháng nghị không chấp nhận",
+      "expression": "safe_divide(C19+C20,C11+C12)*100",
+      "columns": [
+        19,
+        20,
+        11,
+        12
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_TT_001",
+      "form": "DS_TT_2D",
+      "name": "Tổng Chánh án kháng nghị",
+      "expression": "C2+C4",
+      "columns": [
+        2,
+        4,
+        6
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_TT_002",
+      "form": "DS_TT_2D",
+      "name": "Tổng Viện trưởng kháng nghị",
+      "expression": "C3+C5",
+      "columns": [
+        3,
+        5,
+        7
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_TT_003",
+      "form": "DS_TT_2D",
+      "name": "Cộng phải giải quyết",
+      "expression": "C6+C7",
+      "columns": [
+        6,
+        7,
+        8
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_TT_004",
+      "form": "DS_TT_2D",
+      "name": "Tổng đã giải quyết",
+      "expression": "C9+C10+C11+C12",
+      "columns": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_TT_005",
+      "form": "DS_TT_2D",
+      "name": "Còn lại Chánh án",
+      "expression": "C6-C9-C11",
+      "columns": [
+        6,
+        9,
+        11,
+        14
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_TT_006",
+      "form": "DS_TT_2D",
+      "name": "Còn lại Viện trưởng",
+      "expression": "C7-C10-C12",
+      "columns": [
+        7,
+        10,
+        12,
+        15
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_TT_007",
+      "form": "DS_TT_2D",
+      "name": "Tổng còn lại",
+      "expression": "C14+C15",
+      "columns": [
+        14,
+        15,
+        16
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_TT_008",
+      "form": "DS_TT_2D",
+      "name": "Tổng giữ nguyên",
+      "expression": "C17+C18",
+      "columns": [
+        17,
+        18
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_TT_009",
+      "form": "DS_TT_2D",
+      "name": "Tổng hủy",
+      "expression": "C19+C20",
+      "columns": [
+        19,
+        20
+      ],
+      "description": ""
+    },
+    {
+      "id": "DS_TT_010",
+      "form": "DS_TT_2D",
+      "name": "Tỷ lệ không chấp nhận kháng nghị",
+      "expression": "safe_divide(C17+C18,C11+C12)*100",
+      "columns": [
+        17,
+        18,
+        11,
+        12
+      ],
+      "description": ""
+    }
+  ]
+}

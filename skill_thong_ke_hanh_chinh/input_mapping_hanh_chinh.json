@@ -1,0 +1,33 @@
+{
+  "manual_input": [
+    "Loại khiếu kiện hành chính theo danh mục",
+    "Ngày thụ lý, nguồn thụ lý, trạng thái cũ/mới",
+    "Thông tin chuyển hồ sơ/nhập vụ án",
+    "Kết quả giải quyết/xét xử",
+    "Lý do quá hạn",
+    "Tình trạng tạm đình chỉ và số lần tạm đình chỉ",
+    "Án lệ, rút gọn, biện pháp khẩn cấp tạm thời, VKS tham gia",
+    "Yếu tố nước ngoài, bồi thường thiệt hại và số tiền",
+    "Đặc điểm người khởi kiện/người bị kiện",
+    "Thông tin kháng cáo/kháng nghị/rút kháng cáo/rút kháng nghị",
+    "Kết quả phúc thẩm/giám đốc thẩm/tái thẩm và lỗi cấp dưới"
+  ],
+  "automatic_input": [
+    "Mã vụ án, mã đơn vị, kỳ báo cáo",
+    "Số cũ còn lại chuyển kỳ",
+    "Tổng số phải giải quyết",
+    "Cộng đình chỉ, cộng xét xử, tổng đã giải quyết, còn lại",
+    "Các tỷ lệ KPI",
+    "Đối chiếu tổng cộng cấp đơn vị và toàn tỉnh",
+    "Cảnh báo số liệu âm, vượt tổng, lệch công thức"
+  ],
+  "source_tables": [
+    "administrative_case",
+    "participant",
+    "appellate_review",
+    "case_status_history",
+    "court_unit",
+    "report_period"
+  ],
+  "aggregation_grain": "court_unit_id + report_period + template_code + claim_type_code + column_code"
+}

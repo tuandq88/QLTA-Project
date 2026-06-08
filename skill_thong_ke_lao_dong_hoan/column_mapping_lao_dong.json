@@ -1,0 +1,1386 @@
+{
+  "skill": "labor_statistics",
+  "version": "1.0",
+  "columns": [
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 1,
+      "label": "LOẠI VỤ ÁN VÀ VIỆC LAO ĐỘNG",
+      "source_type": "reference_list",
+      "data_type": "text",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 2,
+      "label": "Cũ còn lại",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 3,
+      "label": "Mới thụ lý",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 4,
+      "label": "Chuyển hồ sơ",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 5,
+      "label": "Nhập vụ án",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 6,
+      "label": "Tổng số vụ, việc phải giải quyết",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 7,
+      "label": "Đình chỉ",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 8,
+      "label": "Công nhận thỏa thuận của các đương sự",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 9,
+      "label": "Xét xử/giải quyết - không chấp nhận yêu cầu, đề nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 10,
+      "label": "Xét xử/giải quyết - chấp nhận một phần yêu cầu, đề nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 11,
+      "label": "Xét xử/giải quyết - chấp nhận toàn bộ yêu cầu, đề nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 12,
+      "label": "Tổng xét xử hoặc giải quyết",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 13,
+      "label": "Tổng số vụ, việc đã giải quyết",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 14,
+      "label": "Tổng số vụ, việc còn lại",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 15,
+      "label": "Quá hạn luật định - nguyên nhân chủ quan",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 16,
+      "label": "Quá hạn luật định - nguyên nhân khách quan",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 17,
+      "label": "Tạm đình chỉ - tổng số",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 18,
+      "label": "Tạm đình chỉ lần 2",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 19,
+      "label": "Tạm đình chỉ trên 2 lần",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 20,
+      "label": "Tạm đình chỉ do Chánh án TANDTC kiến nghị xem xét sửa đổi/bãi bỏ VBQPPL có dấu hiệu trái pháp luật",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 21,
+      "label": "Áp dụng án lệ",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 22,
+      "label": "Giải quyết vụ án theo thủ tục rút gọn",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 23,
+      "label": "Áp dụng biện pháp khẩn cấp tạm thời",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 24,
+      "label": "Số quyết định cá biệt trái pháp luật của cơ quan, tổ chức bị Tòa án hủy",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 25,
+      "label": "Viện kiểm sát tham gia",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 26,
+      "label": "Cơ quan, tổ chức khởi kiện bảo vệ quyền và lợi ích hợp pháp của người khác, lợi ích công cộng/lợi ích nhà nước",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 27,
+      "label": "Có luật sư bảo vệ quyền, lợi ích hợp pháp cho đương sự",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 28,
+      "label": "Có người bảo vệ quyền, lợi ích hợp pháp khác",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 29,
+      "label": "Nguyên đơn là người lao động dưới 15 tuổi",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 30,
+      "label": "Nguyên đơn là người lao động là nữ",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 31,
+      "label": "Nguyên đơn là người lao động là người khuyết tật/tàn tật",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 32,
+      "label": "Nguyên đơn có yếu tố nước ngoài",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 33,
+      "label": "Bị đơn là người lao động dưới 15 tuổi",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 34,
+      "label": "Bị đơn là người lao động là nữ",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 35,
+      "label": "Bị đơn là người lao động là người khuyết tật/tàn tật",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 36,
+      "label": "Bị đơn có yếu tố nước ngoài",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 37,
+      "label": "Số vụ Tòa án tổ chức phiên tòa rút kinh nghiệm",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_ST_5A",
+      "template": "5A",
+      "sheet": "LaoDong_SoTham",
+      "column": 38,
+      "label": "Số vụ án Tòa án tổ chức hòa giải thành công",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 1,
+      "label": "LOẠI VỤ ÁN VÀ VIỆC LAO ĐỘNG",
+      "source_type": "reference_list",
+      "data_type": "text",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 2,
+      "label": "Cũ còn lại - kháng cáo",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 3,
+      "label": "Cũ còn lại - kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 4,
+      "label": "Mới thụ lý - kháng cáo",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 5,
+      "label": "Mới thụ lý - kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 6,
+      "label": "Tổng số phải giải quyết - kháng cáo",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 7,
+      "label": "Tổng số phải giải quyết - kháng nghị",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 8,
+      "label": "Cộng số phải giải quyết",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 9,
+      "label": "Đình chỉ do rút kháng cáo",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 10,
+      "label": "Đình chỉ do rút kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 11,
+      "label": "Đình chỉ lý do khác - kháng cáo",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 12,
+      "label": "Đình chỉ lý do khác - kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 13,
+      "label": "Cộng đình chỉ",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 14,
+      "label": "Xét xử/giải quyết - kháng cáo",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 15,
+      "label": "Xét xử/giải quyết - kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 16,
+      "label": "Cộng xét xử/giải quyết",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 17,
+      "label": "Đã giải quyết - kháng cáo",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 18,
+      "label": "Đã giải quyết - kháng nghị",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 19,
+      "label": "Cộng đã giải quyết",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 20,
+      "label": "Còn lại - kháng cáo",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 21,
+      "label": "Còn lại - kháng nghị",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 22,
+      "label": "Cộng còn lại",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 23,
+      "label": "Quá hạn luật định - nguyên nhân chủ quan",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 24,
+      "label": "Quá hạn luật định - nguyên nhân khách quan",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 25,
+      "label": "Tạm đình chỉ - tổng số",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 26,
+      "label": "Tạm đình chỉ lần 2",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 27,
+      "label": "Tạm đình chỉ trên 2 lần",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 28,
+      "label": "Tạm đình chỉ do Chánh án TANDTC kiến nghị xem xét sửa đổi/bãi bỏ VBQPPL có dấu hiệu trái pháp luật",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 29,
+      "label": "Giữ nguyên bản án, quyết định sơ thẩm",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 30,
+      "label": "Sửa một phần do cấp sơ thẩm sai",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 31,
+      "label": "Sửa một phần do lý do khác",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 32,
+      "label": "Sửa toàn bộ do cấp sơ thẩm sai",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 33,
+      "label": "Sửa toàn bộ do lý do khác",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 34,
+      "label": "Hủy một phần để giải quyết lại theo thủ tục sơ thẩm do cấp sơ thẩm sai",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 35,
+      "label": "Hủy một phần để giải quyết lại theo thủ tục sơ thẩm do lý do khác",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 36,
+      "label": "Hủy toàn bộ để giải quyết lại theo thủ tục sơ thẩm do cấp sơ thẩm sai",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 37,
+      "label": "Hủy toàn bộ để giải quyết lại theo thủ tục sơ thẩm do lý do khác",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 38,
+      "label": "Hủy bản án/quyết định sơ thẩm và đình chỉ do cấp sơ thẩm sai",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 39,
+      "label": "Hủy bản án/quyết định sơ thẩm và đình chỉ do lý do khác",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 40,
+      "label": "Đình chỉ xét xử phúc thẩm",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 41,
+      "label": "Số vụ việc Viện kiểm sát có kháng nghị nhưng không được chấp nhận",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 42,
+      "label": "Số vụ việc VKS rút kháng nghị nhưng đương sự không rút kháng cáo",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 43,
+      "label": "Áp dụng án lệ",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 44,
+      "label": "Giải quyết vụ án theo thủ tục rút gọn",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 45,
+      "label": "Áp dụng biện pháp khẩn cấp tạm thời",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 46,
+      "label": "Có Viện kiểm sát tham gia",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 47,
+      "label": "Có luật sư bảo vệ quyền, lợi ích hợp pháp cho đương sự",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 48,
+      "label": "Có người bảo vệ quyền, lợi ích hợp pháp khác",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_PT_5B",
+      "template": "5B",
+      "sheet": "LaoDong_phuc_tham",
+      "column": 49,
+      "label": "Số vụ án Tòa án tổ chức phiên tòa rút kinh nghiệm",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 1,
+      "label": "LOẠI VỤ ÁN VÀ VIỆC LAO ĐỘNG",
+      "source_type": "reference_list",
+      "data_type": "text",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 2,
+      "label": "Cũ còn lại - Chánh án kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 3,
+      "label": "Cũ còn lại - Viện trưởng kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 4,
+      "label": "Mới thụ lý - Chánh án kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 5,
+      "label": "Mới thụ lý - Viện trưởng kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 6,
+      "label": "Tổng số phải giải quyết - Chánh án kháng nghị",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 7,
+      "label": "Tổng số phải giải quyết - Viện trưởng kháng nghị",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 8,
+      "label": "Cộng số phải giải quyết",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 9,
+      "label": "Đình chỉ xét xử giám đốc thẩm - Chánh án rút kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 10,
+      "label": "Đình chỉ xét xử giám đốc thẩm - Viện trưởng rút kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 11,
+      "label": "Đã xét xử - Chánh án kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 12,
+      "label": "Đã xét xử - Viện trưởng kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 13,
+      "label": "Tổng số đã giải quyết",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 14,
+      "label": "Còn lại - Chánh án kháng nghị",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 15,
+      "label": "Còn lại - Viện trưởng kháng nghị",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 16,
+      "label": "Tổng số còn lại",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 17,
+      "label": "Quá hạn luật định - nguyên nhân chủ quan",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 18,
+      "label": "Quá hạn luật định - nguyên nhân khách quan",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 19,
+      "label": "Giữ nguyên bản án/quyết định có hiệu lực pháp luật - không chấp nhận kháng nghị của Chánh án",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 20,
+      "label": "Giữ nguyên bản án/quyết định có hiệu lực pháp luật - không chấp nhận kháng nghị của Viện trưởng",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 21,
+      "label": "Sửa một phần bản án/quyết định đã có hiệu lực pháp luật",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 22,
+      "label": "Sửa toàn bộ bản án/quyết định đã có hiệu lực pháp luật",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 23,
+      "label": "Hủy bản án/quyết định có hiệu lực pháp luật và đình chỉ giải quyết vụ án",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 24,
+      "label": "Hủy bản án/quyết định phúc thẩm, giữ nguyên bản án/quyết định sơ thẩm",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 25,
+      "label": "Hủy quyết định giám đốc thẩm, giữ nguyên bản án/quyết định sơ thẩm",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 26,
+      "label": "Hủy quyết định giám đốc thẩm, giữ nguyên bản án/quyết định phúc thẩm",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 27,
+      "label": "Hủy quyết định giám đốc thẩm, bản án/quyết định phúc thẩm, giữ nguyên bản án/quyết định sơ thẩm",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 28,
+      "label": "Hủy bản án/quyết định có hiệu lực pháp luật để xét xử lại theo thủ tục sơ thẩm",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 29,
+      "label": "Hủy bản án/quyết định có hiệu lực pháp luật để xét xử lại theo thủ tục phúc thẩm",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_GDT",
+      "template": "theo file: 3C",
+      "sheet": "LaoDong_GDT",
+      "column": 30,
+      "label": "Áp dụng án lệ",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 1,
+      "label": "LOẠI VỤ ÁN VÀ VIỆC LAO ĐỘNG",
+      "source_type": "reference_list",
+      "data_type": "text",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 2,
+      "label": "Cũ còn lại - Chánh án kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 3,
+      "label": "Cũ còn lại - Viện trưởng kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 4,
+      "label": "Mới thụ lý - Chánh án kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 5,
+      "label": "Mới thụ lý - Viện trưởng kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 6,
+      "label": "Tổng số phải giải quyết - Chánh án kháng nghị",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 7,
+      "label": "Tổng số phải giải quyết - Viện trưởng kháng nghị",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 8,
+      "label": "Cộng số phải giải quyết",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 9,
+      "label": "Đình chỉ xét xử tái thẩm - Chánh án rút kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 10,
+      "label": "Đình chỉ xét xử tái thẩm - Viện trưởng rút kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 11,
+      "label": "Đã xét xử - Chánh án kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 12,
+      "label": "Đã xét xử - Viện trưởng kháng nghị",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 13,
+      "label": "Tổng số đã giải quyết",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 14,
+      "label": "Còn lại - Chánh án kháng nghị",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 15,
+      "label": "Còn lại - Viện trưởng kháng nghị",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 16,
+      "label": "Tổng số còn lại",
+      "source_type": "calculated",
+      "data_type": "integer",
+      "allow_manual_override": false
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 17,
+      "label": "Giữ nguyên bản án/quyết định có hiệu lực pháp luật - không chấp nhận kháng nghị của Chánh án",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 18,
+      "label": "Giữ nguyên bản án/quyết định có hiệu lực pháp luật - không chấp nhận kháng nghị của Viện trưởng",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 19,
+      "label": "Hủy bản án/quyết định đã có hiệu lực pháp luật để xét xử sơ thẩm lại",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 20,
+      "label": "Hủy bản án/quyết định đã có hiệu lực pháp luật và đình chỉ giải quyết vụ án",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    },
+    {
+      "form": "LD_TT",
+      "template": "theo file: 6D",
+      "sheet": "LaoDong_TaiTham",
+      "column": 21,
+      "label": "Áp dụng án lệ",
+      "source_type": "manual",
+      "data_type": "integer",
+      "allow_manual_override": true
+    }
+  ]
+}

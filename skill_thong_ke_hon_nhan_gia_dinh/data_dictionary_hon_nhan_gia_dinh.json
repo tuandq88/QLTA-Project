@@ -1,0 +1,1918 @@
+{
+  "skill": "hon_nhan_gia_dinh_statistics",
+  "version": "1.0.0",
+  "entities": {
+    "case_fields": [
+      {
+        "field": "case_id",
+        "type": "string",
+        "required": true,
+        "description": "Mã vụ/việc duy nhất"
+      },
+      {
+        "field": "case_group",
+        "type": "enum",
+        "values": [
+          "vu_an_ly_hon",
+          "vu_an_hon_nhan_gia_dinh_khac",
+          "viec_hon_nhan_gia_dinh"
+        ],
+        "description": "Nhóm vụ án/việc HNGĐ"
+      },
+      {
+        "field": "case_subtype",
+        "type": "string",
+        "description": "Loại tranh chấp/yêu cầu: ly hôn, nuôi con, chia tài sản sau ly hôn, hủy kết hôn trái pháp luật..."
+      },
+      {
+        "field": "court_id",
+        "type": "string",
+        "description": "Mã đơn vị Tòa án"
+      },
+      {
+        "field": "period_start",
+        "type": "date"
+      },
+      {
+        "field": "period_end",
+        "type": "date"
+      },
+      {
+        "field": "procedure_level",
+        "type": "enum",
+        "values": [
+          "so_tham",
+          "phuc_tham",
+          "giam_doc_tham",
+          "tai_tham"
+        ]
+      },
+      {
+        "field": "old_pending",
+        "type": "boolean/count",
+        "description": "Cũ còn lại từ kỳ trước"
+      },
+      {
+        "field": "newly_accepted",
+        "type": "boolean/count",
+        "description": "Mới thụ lý trong kỳ"
+      },
+      {
+        "field": "transferred_out",
+        "type": "boolean/count",
+        "description": "Chuyển hồ sơ sang Tòa án khác"
+      },
+      {
+        "field": "merged_case",
+        "type": "boolean/count",
+        "description": "Nhập vụ án, chỉ áp dụng sơ thẩm"
+      },
+      {
+        "field": "resolved_status",
+        "type": "enum",
+        "values": [
+          "dinh_chi",
+          "cong_nhan_thoa_thuan",
+          "khong_chap_nhan_yeu_cau",
+          "chap_nhan_yeu_cau",
+          "xet_xu_giai_quyet",
+          "rut_khang_cao",
+          "rut_khang_nghi",
+          "ly_do_khac"
+        ]
+      },
+      {
+        "field": "remaining_status",
+        "type": "enum",
+        "values": [
+          "con_lai",
+          "qua_han_chu_quan",
+          "qua_han_khach_quan",
+          "tam_dinh_chi"
+        ]
+      },
+      {
+        "field": "suspension_repeat_level",
+        "type": "enum",
+        "values": [
+          "lan_1",
+          "lan_2",
+          "tren_2_lan"
+        ]
+      },
+      {
+        "field": "ca_tandtc_recommendation",
+        "type": "boolean",
+        "description": "Có văn bản kiến nghị cơ quan có thẩm quyền xem xét VBQPPL"
+      },
+      {
+        "field": "appeal_source",
+        "type": "enum",
+        "values": [
+          "khang_cao",
+          "khang_nghi"
+        ]
+      },
+      {
+        "field": "protest_authority",
+        "type": "enum",
+        "values": [
+          "chanh_an",
+          "vien_truong"
+        ]
+      },
+      {
+        "field": "protest_withdrawn",
+        "type": "boolean"
+      },
+      {
+        "field": "trial_result_appellate",
+        "type": "enum",
+        "values": [
+          "giu_nguyen",
+          "sua_mot_phan_so_tham_sai",
+          "sua_mot_phan_ly_do_khac",
+          "sua_toan_bo_so_tham_sai",
+          "sua_toan_bo_ly_do_khac",
+          "huy_mot_phan_so_tham_sai",
+          "huy_toan_bo_so_tham_sai",
+          "huy_va_dinh_chi",
+          "dinh_chi_phuc_tham_giu_nguyen_so_tham"
+        ]
+      },
+      {
+        "field": "trial_result_gdt",
+        "type": "enum",
+        "values": [
+          "khong_chap_nhan_khang_nghi",
+          "sua_mot_phan",
+          "sua_toan_bo",
+          "huy_dinh_chi",
+          "huy_phuc_tham_giu_so_tham",
+          "huy_gdt_giu_so_tham",
+          "huy_gdt_giu_phuc_tham",
+          "huy_de_so_tham_lai",
+          "huy_de_phuc_tham_lai"
+        ]
+      },
+      {
+        "field": "trial_result_tt",
+        "type": "enum",
+        "values": [
+          "khong_chap_nhan_khang_nghi",
+          "huy_de_so_tham_lai",
+          "huy_va_dinh_chi"
+        ]
+      },
+      {
+        "field": "applied_precedent",
+        "type": "boolean"
+      },
+      {
+        "field": "summary_procedure",
+        "type": "boolean"
+      },
+      {
+        "field": "provisional_measure",
+        "type": "boolean"
+      },
+      {
+        "field": "invalid_individual_decision_cancelled",
+        "type": "boolean/count"
+      },
+      {
+        "field": "third_party_public_interest_lawsuit",
+        "type": "boolean"
+      },
+      {
+        "field": "procuracy_participation",
+        "type": "boolean"
+      },
+      {
+        "field": "lawyer_participation",
+        "type": "boolean"
+      },
+      {
+        "field": "other_protector_participation",
+        "type": "boolean"
+      },
+      {
+        "field": "divorce_reconciled_reunion",
+        "type": "boolean"
+      },
+      {
+        "field": "divorce_not_accepted",
+        "type": "boolean"
+      },
+      {
+        "field": "not_recognized_as_spouses",
+        "type": "boolean"
+      },
+      {
+        "field": "divorce_accepted",
+        "type": "boolean"
+      },
+      {
+        "field": "spouses_18_to_30",
+        "type": "boolean"
+      },
+      {
+        "field": "children_under_18_count",
+        "type": "integer"
+      },
+      {
+        "field": "female_children_under_18_count",
+        "type": "integer"
+      },
+      {
+        "field": "children_under_7_count",
+        "type": "integer"
+      },
+      {
+        "field": "foreign_element",
+        "type": "boolean"
+      },
+      {
+        "field": "experience_trial",
+        "type": "boolean"
+      },
+      {
+        "field": "successful_mediation",
+        "type": "boolean"
+      }
+    ]
+  },
+  "source_forms": {
+    "HNGD_ST_3A": {
+      "sheet": "HonNhan_GiaDinh_SoTham",
+      "title": "TOÀ ÁN NHÂN DÂN THỐNG KÊ THỤ LÝ VÀ GIẢI QUYẾT CÁC VỤ, VIỆC HÔN NHÂN VÀ GIA ĐÌNH SƠ THẨM Mẫu 3A",
+      "max_row": 9,
+      "max_column": 38,
+      "number_row": 7,
+      "columns": [
+        {
+          "column": 1,
+          "code": "C1",
+          "label": "LOẠI VỤ ÁN VÀ VIỆC HÔN NHÂN VÀ GIA ĐÌNH",
+          "path": [
+            "LOẠI VỤ ÁN VÀ VIỆC HÔN NHÂN VÀ GIA ĐÌNH"
+          ],
+          "source": "category"
+        },
+        {
+          "column": 2,
+          "code": "C2",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Cũ còn lại",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Cũ còn lại"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 3,
+          "code": "C3",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Mới thụ lý",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Mới thụ lý"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 4,
+          "code": "C4",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Chuyển hồ sơ",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Chuyển hồ sơ"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 5,
+          "code": "C5",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Nhập vụ án",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Nhập vụ án"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 6,
+          "code": "C6",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Tổng số"
+          ],
+          "source": "formula",
+          "formula": "C2 + C3 - C4 + C5"
+        },
+        {
+          "column": 7,
+          "code": "C7",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT, XÉT XỬ > Đình chỉ > Tổng số",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT, XÉT XỬ",
+            "Đình chỉ",
+            "Tổng số"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 8,
+          "code": "C8",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT, XÉT XỬ > Đình chỉ > Hòa giải đoàn tụ thành",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT, XÉT XỬ",
+            "Đình chỉ",
+            "Hòa giải đoàn tụ thành"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 9,
+          "code": "C9",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT, XÉT XỬ > Công nhận thoả thuận của đương sự",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT, XÉT XỬ",
+            "Công nhận thoả thuận của đương sự"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 10,
+          "code": "C10",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT, XÉT XỬ > Không chấp nhận (công nhận) yêu cầu của đương sự > Tổng số",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT, XÉT XỬ",
+            "Không chấp nhận (công nhận) yêu cầu của đương sự",
+            "Tổng số"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 11,
+          "code": "C11",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT, XÉT XỬ > Không chấp nhận (công nhận) yêu cầu của đương sự > Số vụ án không chấp nhận đơn xin ly hôn",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT, XÉT XỬ",
+            "Không chấp nhận (công nhận) yêu cầu của đương sự",
+            "Số vụ án không chấp nhận đơn xin ly hôn"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 12,
+          "code": "C12",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT, XÉT XỬ > Không chấp nhận (công nhận) yêu cầu của đương sự > Số việc không công nhận là vợ chồng",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT, XÉT XỬ",
+            "Không chấp nhận (công nhận) yêu cầu của đương sự",
+            "Số việc không công nhận là vợ chồng"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 13,
+          "code": "C13",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT, XÉT XỬ > Chấp nhận (công nhận) yêu cầu của đương sự > Tổng số",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT, XÉT XỬ",
+            "Chấp nhận (công nhận) yêu cầu của đương sự",
+            "Tổng số"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 14,
+          "code": "C14",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT, XÉT XỬ > Chấp nhận (công nhận) yêu cầu của đương sự > Số vụ án cho ly hôn",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT, XÉT XỬ",
+            "Chấp nhận (công nhận) yêu cầu của đương sự",
+            "Số vụ án cho ly hôn"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 15,
+          "code": "C15",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT, XÉT XỬ > Tổng cộng",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT, XÉT XỬ",
+            "Tổng cộng"
+          ],
+          "source": "formula",
+          "formula": "C7 + C9 + C10 + C13"
+        },
+        {
+          "column": 16,
+          "code": "C16",
+          "label": "SỐ VỤ VIỆC CÒN LẠI > Tổng số",
+          "path": [
+            "SỐ VỤ VIỆC CÒN LẠI",
+            "Tổng số"
+          ],
+          "source": "formula",
+          "formula": "C6 - C15"
+        },
+        {
+          "column": 17,
+          "code": "C17",
+          "label": "SỐ VỤ VIỆC CÒN LẠI > Quá hạn luật định > Nguyên nhân chủ quan",
+          "path": [
+            "SỐ VỤ VIỆC CÒN LẠI",
+            "Quá hạn luật định",
+            "Nguyên nhân chủ quan"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 18,
+          "code": "C18",
+          "label": "SỐ VỤ VIỆC CÒN LẠI > Quá hạn luật định > Nguyên nhân khách quan",
+          "path": [
+            "SỐ VỤ VIỆC CÒN LẠI",
+            "Quá hạn luật định",
+            "Nguyên nhân khách quan"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 19,
+          "code": "C19",
+          "label": "SỐ VỤ VIỆC CÒN LẠI > Tạm đình chỉ > Tổng số",
+          "path": [
+            "SỐ VỤ VIỆC CÒN LẠI",
+            "Tạm đình chỉ",
+            "Tổng số"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 20,
+          "code": "C20",
+          "label": "SỐ VỤ VIỆC CÒN LẠI > Tạm đình chỉ > Trong đó > Tạm đình chỉ lần 2",
+          "path": [
+            "SỐ VỤ VIỆC CÒN LẠI",
+            "Tạm đình chỉ",
+            "Trong đó",
+            "Tạm đình chỉ lần 2"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 21,
+          "code": "C21",
+          "label": "SỐ VỤ VIỆC CÒN LẠI > Tạm đình chỉ > Trong đó > Tạm đình chỉ trên 2 lần",
+          "path": [
+            "SỐ VỤ VIỆC CÒN LẠI",
+            "Tạm đình chỉ",
+            "Trong đó",
+            "Tạm đình chỉ trên 2 lần"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 22,
+          "code": "C22",
+          "label": "SỐ VỤ VIỆC CÒN LẠI > Tạm đình chỉ > Trong đó > Chánh án TANDTC có văn bản kiến nghị cơ quan nhà nước có thẩm quyền xem xét, sửa đổi, bổ sung hoặc bãi bỏ VBQPPL",
+          "path": [
+            "SỐ VỤ VIỆC CÒN LẠI",
+            "Tạm đình chỉ",
+            "Trong đó",
+            "Chánh án TANDTC có văn bản kiến nghị cơ quan nhà nước có thẩm quyền xem xét, sửa đổi, bổ sung hoặc bãi bỏ VBQPPL"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 23,
+          "code": "C23",
+          "label": "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ GIẢI QUYẾT > Áp dụng án lệ",
+          "path": [
+            "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Áp dụng án lệ"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 24,
+          "code": "C24",
+          "label": "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ GIẢI QUYẾT > Giải quyết vụ án theo thủ tục rút gọn",
+          "path": [
+            "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Giải quyết vụ án theo thủ tục rút gọn"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 25,
+          "code": "C25",
+          "label": "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ GIẢI QUYẾT > Áp dụng biện pháp khẩn cấp tạm thời",
+          "path": [
+            "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Áp dụng biện pháp khẩn cấp tạm thời"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 26,
+          "code": "C26",
+          "label": "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ GIẢI QUYẾT > Số quyết định cá biệt trái pháp luật của cơ quan, tổ chức bị Tòa án hủy",
+          "path": [
+            "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Số quyết định cá biệt trái pháp luật của cơ quan, tổ chức bị Tòa án hủy"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 27,
+          "code": "C27",
+          "label": "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ GIẢI QUYẾT > Cơ quan, tổ chức khởi kiện bảo vệ quyền và lợi ích hợp pháp của người khác, lợi ích công cộng và nhà nước",
+          "path": [
+            "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Cơ quan, tổ chức khởi kiện bảo vệ quyền và lợi ích hợp pháp của người khác, lợi ích công cộng và nhà nước"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 28,
+          "code": "C28",
+          "label": "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ GIẢI QUYẾT > Viện kiểm sát tham gia",
+          "path": [
+            "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Viện kiểm sát tham gia"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 29,
+          "code": "C29",
+          "label": "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ GIẢI QUYẾT > Người bảo vệ quyền, lợi ích hợp pháp cho đương sự > Luật sư",
+          "path": [
+            "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Người bảo vệ quyền, lợi ích hợp pháp cho đương sự",
+            "Luật sư"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 30,
+          "code": "C30",
+          "label": "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ GIẢI QUYẾT > Người bảo vệ quyền, lợi ích hợp pháp cho đương sự > Người bảo vệ quyền, lợi ích hợp pháp khác",
+          "path": [
+            "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Người bảo vệ quyền, lợi ích hợp pháp cho đương sự",
+            "Người bảo vệ quyền, lợi ích hợp pháp khác"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 31,
+          "code": "C31",
+          "label": "ĐẶC ĐIỂM VỢ, CHỒNG, CON TRONG VỤ ÁN LY HÔN ĐÃ GIẢI QUYẾT > Vợ chồng từ 18 đến 30 tuổi",
+          "path": [
+            "ĐẶC ĐIỂM VỢ, CHỒNG, CON TRONG VỤ ÁN LY HÔN ĐÃ GIẢI QUYẾT",
+            "Vợ chồng từ 18 đến 30 tuổi"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 32,
+          "code": "C32",
+          "label": "ĐẶC ĐIỂM VỢ, CHỒNG, CON TRONG VỤ ÁN LY HÔN ĐÃ GIẢI QUYẾT > Số con dưới 18 tuổi > Tổng số",
+          "path": [
+            "ĐẶC ĐIỂM VỢ, CHỒNG, CON TRONG VỤ ÁN LY HÔN ĐÃ GIẢI QUYẾT",
+            "Số con dưới 18 tuổi",
+            "Tổng số"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 33,
+          "code": "C33",
+          "label": "ĐẶC ĐIỂM VỢ, CHỒNG, CON TRONG VỤ ÁN LY HÔN ĐÃ GIẢI QUYẾT > Số con dưới 18 tuổi > Trong đó > Nữ",
+          "path": [
+            "ĐẶC ĐIỂM VỢ, CHỒNG, CON TRONG VỤ ÁN LY HÔN ĐÃ GIẢI QUYẾT",
+            "Số con dưới 18 tuổi",
+            "Trong đó",
+            "Nữ"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 34,
+          "code": "C34",
+          "label": "ĐẶC ĐIỂM VỢ, CHỒNG, CON TRONG VỤ ÁN LY HÔN ĐÃ GIẢI QUYẾT > Số con dưới 18 tuổi > Trong đó > Số con dưới 7 tuổi",
+          "path": [
+            "ĐẶC ĐIỂM VỢ, CHỒNG, CON TRONG VỤ ÁN LY HÔN ĐÃ GIẢI QUYẾT",
+            "Số con dưới 18 tuổi",
+            "Trong đó",
+            "Số con dưới 7 tuổi"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 35,
+          "code": "C35",
+          "label": "ĐẶC ĐIỂM VỢ, CHỒNG, CON TRONG VỤ ÁN LY HÔN ĐÃ GIẢI QUYẾT > Có yếu tố nước ngoài",
+          "path": [
+            "ĐẶC ĐIỂM VỢ, CHỒNG, CON TRONG VỤ ÁN LY HÔN ĐÃ GIẢI QUYẾT",
+            "Có yếu tố nước ngoài"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 36,
+          "code": "C36",
+          "label": "Số vụ án Tòa án tổ chức phiên tòa rút kinh nghiệm",
+          "path": [
+            "Số vụ án Tòa án tổ chức phiên tòa rút kinh nghiệm"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 37,
+          "code": "C37",
+          "label": "Số vụ án Tòa án tổ chức hòa giải thành công",
+          "path": [
+            "Số vụ án Tòa án tổ chức hòa giải thành công"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 38,
+          "code": "C38",
+          "label": "",
+          "path": [],
+          "source": "manual"
+        }
+      ],
+      "row_labels": [
+        {
+          "row": 8,
+          "label": "Tổng cộng"
+        }
+      ]
+    },
+    "HNGD_PT_3B": {
+      "sheet": "HonNhan_GiaDinh_phuc_tham",
+      "title": "TOÀ ÁN NHÂN DÂN THỐNG KÊ THỤ LÝ VÀ GIẢI QUYẾT CÁC VỤ, VIỆC HÔN NHÂN VÀ GIA ĐÌNH PHÚC THẨM Mẫu 3B",
+      "max_row": 40,
+      "max_column": 49,
+      "number_row": 8,
+      "columns": [
+        {
+          "column": 1,
+          "code": "C1",
+          "label": "LOẠI VỤ ÁN VÀ VIỆC HÔN NHÂN VÀ GIA ĐÌNH",
+          "path": [
+            "LOẠI VỤ ÁN VÀ VIỆC HÔN NHÂN VÀ GIA ĐÌNH"
+          ],
+          "source": "category"
+        },
+        {
+          "column": 2,
+          "code": "C2",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Cũ còn lại > Kháng cáo",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Cũ còn lại",
+            "Kháng cáo"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 3,
+          "code": "C3",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Cũ còn lại > Kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Cũ còn lại",
+            "Kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 4,
+          "code": "C4",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Mới thụ lý > Kháng cáo",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Mới thụ lý",
+            "Kháng cáo"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 5,
+          "code": "C5",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Mới thụ lý > Kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Mới thụ lý",
+            "Kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 6,
+          "code": "C6",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số > Kháng cáo",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Tổng số",
+            "Kháng cáo"
+          ],
+          "source": "formula",
+          "formula": "C2 + C4"
+        },
+        {
+          "column": 7,
+          "code": "C7",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số > Kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Tổng số",
+            "Kháng nghị"
+          ],
+          "source": "formula",
+          "formula": "C3 + C5"
+        },
+        {
+          "column": 8,
+          "code": "C8",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số > Cộng",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Tổng số",
+            "Cộng"
+          ],
+          "source": "formula",
+          "formula": "C6 + C7"
+        },
+        {
+          "column": 9,
+          "code": "C9",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Đình chỉ > Rút kháng cáo",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Đình chỉ",
+            "Rút kháng cáo"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 10,
+          "code": "C10",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Đình chỉ > Rút kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Đình chỉ",
+            "Rút kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 11,
+          "code": "C11",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Đình chỉ > Lý do khác > Kháng cáo",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Đình chỉ",
+            "Lý do khác",
+            "Kháng cáo"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 12,
+          "code": "C12",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Đình chỉ > Lý do khác > Kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Đình chỉ",
+            "Lý do khác",
+            "Kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 13,
+          "code": "C13",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Đình chỉ > Cộng",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Đình chỉ",
+            "Cộng"
+          ],
+          "source": "formula",
+          "formula": "C9 + C10 + C11 + C12"
+        },
+        {
+          "column": 14,
+          "code": "C14",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Xét xử hoặc giải quyết > Kháng cáo",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Xét xử hoặc giải quyết",
+            "Kháng cáo"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 15,
+          "code": "C15",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Xét xử hoặc giải quyết > Kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Xét xử hoặc giải quyết",
+            "Kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 16,
+          "code": "C16",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Xét xử hoặc giải quyết > Cộng",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Xét xử hoặc giải quyết",
+            "Cộng"
+          ],
+          "source": "formula",
+          "formula": "C14 + C15"
+        },
+        {
+          "column": 17,
+          "code": "C17",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Tổng số > Kháng cáo",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Tổng số",
+            "Kháng cáo"
+          ],
+          "source": "formula",
+          "formula": "C9 + C11 + C14"
+        },
+        {
+          "column": 18,
+          "code": "C18",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Tổng số > Kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Tổng số",
+            "Kháng nghị"
+          ],
+          "source": "formula",
+          "formula": "C10 + C12 + C15"
+        },
+        {
+          "column": 19,
+          "code": "C19",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Tổng số > Cộng",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Tổng số",
+            "Cộng"
+          ],
+          "source": "formula",
+          "formula": "C17 + C18"
+        },
+        {
+          "column": 20,
+          "code": "C20",
+          "label": "SỐ VỤ, VIỆC CÒN LẠI > Tổng số > Kháng cáo",
+          "path": [
+            "SỐ VỤ, VIỆC CÒN LẠI",
+            "Tổng số",
+            "Kháng cáo"
+          ],
+          "source": "formula",
+          "formula": "C6 - C17"
+        },
+        {
+          "column": 21,
+          "code": "C21",
+          "label": "SỐ VỤ, VIỆC CÒN LẠI > Tổng số > Kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC CÒN LẠI",
+            "Tổng số",
+            "Kháng nghị"
+          ],
+          "source": "formula",
+          "formula": "C7 - C18"
+        },
+        {
+          "column": 22,
+          "code": "C22",
+          "label": "SỐ VỤ, VIỆC CÒN LẠI > Tổng số > Cộng",
+          "path": [
+            "SỐ VỤ, VIỆC CÒN LẠI",
+            "Tổng số",
+            "Cộng"
+          ],
+          "source": "formula",
+          "formula": "C20 + C21"
+        },
+        {
+          "column": 23,
+          "code": "C23",
+          "label": "SỐ VỤ, VIỆC CÒN LẠI > Quá hạn luật định > Nguyên nhân chủ quan",
+          "path": [
+            "SỐ VỤ, VIỆC CÒN LẠI",
+            "Quá hạn luật định",
+            "Nguyên nhân chủ quan"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 24,
+          "code": "C24",
+          "label": "SỐ VỤ, VIỆC CÒN LẠI > Quá hạn luật định > Nguyên nhân khách quan",
+          "path": [
+            "SỐ VỤ, VIỆC CÒN LẠI",
+            "Quá hạn luật định",
+            "Nguyên nhân khách quan"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 25,
+          "code": "C25",
+          "label": "SỐ VỤ, VIỆC CÒN LẠI > Tạm đình chỉ > Tổng số",
+          "path": [
+            "SỐ VỤ, VIỆC CÒN LẠI",
+            "Tạm đình chỉ",
+            "Tổng số"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 26,
+          "code": "C26",
+          "label": "SỐ VỤ, VIỆC CÒN LẠI > Tạm đình chỉ > Trong đó > Tạm đình chỉ lần 2",
+          "path": [
+            "SỐ VỤ, VIỆC CÒN LẠI",
+            "Tạm đình chỉ",
+            "Trong đó",
+            "Tạm đình chỉ lần 2"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 27,
+          "code": "C27",
+          "label": "SỐ VỤ, VIỆC CÒN LẠI > Tạm đình chỉ > Trong đó > Tạm đình chỉ trên 2 lần",
+          "path": [
+            "SỐ VỤ, VIỆC CÒN LẠI",
+            "Tạm đình chỉ",
+            "Trong đó",
+            "Tạm đình chỉ trên 2 lần"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 28,
+          "code": "C28",
+          "label": "SỐ VỤ, VIỆC CÒN LẠI > Tạm đình chỉ > Trong đó > Chánh án TANDTC có văn bản kiến nghị cơ quan nhà nước có thẩm quyền xem xét, sửa đổi, bổ sung hoặc bãi bỏ VBQPPL do có dấu hiệu trái PL",
+          "path": [
+            "SỐ VỤ, VIỆC CÒN LẠI",
+            "Tạm đình chỉ",
+            "Trong đó",
+            "Chánh án TANDTC có văn bản kiến nghị cơ quan nhà nước có thẩm quyền xem xét, sửa đổi, bổ sung hoặc bãi bỏ VBQPPL do có dấu hiệu trái PL"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 29,
+          "code": "C29",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Giữ nguyên bản án, quyết định sơ thẩm",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Giữ nguyên bản án, quyết định sơ thẩm"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 30,
+          "code": "C30",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Sửa một phần bản án, quyết định sơ thẩm > Do cấp sơ thẩm sai",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Sửa một phần bản án, quyết định sơ thẩm",
+            "Do cấp sơ thẩm sai"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 31,
+          "code": "C31",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Sửa một phần bản án, quyết định sơ thẩm > Lý do khác",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Sửa một phần bản án, quyết định sơ thẩm",
+            "Lý do khác"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 32,
+          "code": "C32",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Sửa toàn bộ bản án, quyết định sơ thẩm > Do cấp sơ thẩm sai",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Sửa toàn bộ bản án, quyết định sơ thẩm",
+            "Do cấp sơ thẩm sai"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 33,
+          "code": "C33",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Sửa toàn bộ bản án, quyết định sơ thẩm > Lý do khác",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Sửa toàn bộ bản án, quyết định sơ thẩm",
+            "Lý do khác"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 34,
+          "code": "C34",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Hủy một phần bản án, quyết định sơ thẩm để giải quyết lại vụ án theo thủ tục sơ thẩm > Do cấp sơ thẩm sai",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Hủy một phần bản án, quyết định sơ thẩm để giải quyết lại vụ án theo thủ tục sơ thẩm",
+            "Do cấp sơ thẩm sai"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 35,
+          "code": "C35",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Hủy một phần bản án, quyết định sơ thẩm để giải quyết lại vụ án theo thủ tục sơ thẩm > Lý do khác",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Hủy một phần bản án, quyết định sơ thẩm để giải quyết lại vụ án theo thủ tục sơ thẩm",
+            "Lý do khác"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 36,
+          "code": "C36",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Hủy toàn bộ bản án, quyết định sơ thẩm để giải quyết lại vụ án theo thủ tục sơ thẩm > Do cấp sơ thẩm sai",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Hủy toàn bộ bản án, quyết định sơ thẩm để giải quyết lại vụ án theo thủ tục sơ thẩm",
+            "Do cấp sơ thẩm sai"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 37,
+          "code": "C37",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Hủy toàn bộ bản án, quyết định sơ thẩm để giải quyết lại vụ án theo thủ tục sơ thẩm > Lý do khác",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Hủy toàn bộ bản án, quyết định sơ thẩm để giải quyết lại vụ án theo thủ tục sơ thẩm",
+            "Lý do khác"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 38,
+          "code": "C38",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Hủy bản án, quyết định sơ thẩm và đình chỉ giải quyết vụ án > Do cấp sơ thẩm sai",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Hủy bản án, quyết định sơ thẩm và đình chỉ giải quyết vụ án",
+            "Do cấp sơ thẩm sai"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 39,
+          "code": "C39",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Hủy bản án, quyết định sơ thẩm và đình chỉ giải quyết vụ án > Lý do khác",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Hủy bản án, quyết định sơ thẩm và đình chỉ giải quyết vụ án",
+            "Lý do khác"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 40,
+          "code": "C40",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Đình chỉ xét xử phúc thẩm và giữ nguyên bản án sơ thẩm",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Đình chỉ xét xử phúc thẩm và giữ nguyên bản án sơ thẩm"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 41,
+          "code": "C41",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Số vụ việc Viện kiểm sát có kháng nghị nhưng không được chấp nhận",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Số vụ việc Viện kiểm sát có kháng nghị nhưng không được chấp nhận"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 42,
+          "code": "C42",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Số vụ việc VKS rút kháng nghị nhưng đương sự không rút kháng cáo",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Số vụ việc VKS rút kháng nghị nhưng đương sự không rút kháng cáo"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 43,
+          "code": "C43",
+          "label": "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Áp dụng án lệ",
+          "path": [
+            "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Áp dụng án lệ"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 44,
+          "code": "C44",
+          "label": "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Giải quyết vụ án theo thủ tục rút gọn",
+          "path": [
+            "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Giải quyết vụ án theo thủ tục rút gọn"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 45,
+          "code": "C45",
+          "label": "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Áp dụng biện pháp khẩn cấp tạm thời",
+          "path": [
+            "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Áp dụng biện pháp khẩn cấp tạm thời"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 46,
+          "code": "C46",
+          "label": "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Viện kiểm sát tham gia",
+          "path": [
+            "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Viện kiểm sát tham gia"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 47,
+          "code": "C47",
+          "label": "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Có người bảo vệ quyền, lợi ích hợp pháp cho đương sự > Luật sư",
+          "path": [
+            "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Có người bảo vệ quyền, lợi ích hợp pháp cho đương sự",
+            "Luật sư"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 48,
+          "code": "C48",
+          "label": "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT > Có người bảo vệ quyền, lợi ích hợp pháp cho đương sự > Người bảo vệ quyền, lợi ích hợp pháp khác",
+          "path": [
+            "ĐẶC ĐIỂM CÁC VỤ, VIỆC ĐÃ XÉT XỬ, GIẢI QUYẾT",
+            "Có người bảo vệ quyền, lợi ích hợp pháp cho đương sự",
+            "Người bảo vệ quyền, lợi ích hợp pháp khác"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 49,
+          "code": "C49",
+          "label": "Số vụ án Tòa án tổ chức phiên tòa rút kinh nghiệm",
+          "path": [
+            "Số vụ án Tòa án tổ chức phiên tòa rút kinh nghiệm"
+          ],
+          "source": "manual"
+        }
+      ],
+      "row_labels": [
+        {
+          "row": 9,
+          "label": "Tòa án nhân dân khu vực 1 - Quảng Ngãi"
+        },
+        {
+          "row": 10,
+          "label": "A. Loại vụ án"
+        },
+        {
+          "row": 11,
+          "label": "1. Vụ án ly hôn"
+        },
+        {
+          "row": 12,
+          "label": "- Các nguyên nhân khác"
+        },
+        {
+          "row": 13,
+          "label": "Tổng cộng"
+        },
+        {
+          "row": 14,
+          "label": "Tổng cộng của đơn vị"
+        },
+        {
+          "row": 15,
+          "label": "Tòa án nhân dân khu vực 11 - Quảng Ngãi"
+        },
+        {
+          "row": 16,
+          "label": "A. Loại vụ án"
+        },
+        {
+          "row": 17,
+          "label": "2. Vụ án liên quan đến Hôn nhân và gia đình"
+        },
+        {
+          "row": 18,
+          "label": "- Tranh chấp về nuôi con, chia tài sản của nam, nữ chung sống với nhau như vợ chồng mà không đăng ký kết hôn hoặc hủy kết hôn trái pháp luật"
+        },
+        {
+          "row": 19,
+          "label": "Tổng cộng"
+        },
+        {
+          "row": 20,
+          "label": "Tổng cộng của đơn vị"
+        },
+        {
+          "row": 21,
+          "label": "Tòa án nhân dân khu vực 6 - Quảng Ngãi"
+        },
+        {
+          "row": 22,
+          "label": "A. Loại vụ án"
+        },
+        {
+          "row": 23,
+          "label": "1. Vụ án ly hôn"
+        },
+        {
+          "row": 24,
+          "label": "- Mâu thuẫn gia đình"
+        },
+        {
+          "row": 25,
+          "label": "Tổng cộng"
+        },
+        {
+          "row": 26,
+          "label": "Tổng cộng của đơn vị"
+        },
+        {
+          "row": 27,
+          "label": "Tòa án nhân dân khu vực 7 - Quảng Ngãi"
+        },
+        {
+          "row": 28,
+          "label": "A. Loại vụ án"
+        },
+        {
+          "row": 29,
+          "label": "2. Vụ án liên quan đến Hôn nhân và gia đình"
+        },
+        {
+          "row": 30,
+          "label": "- Tranh chấp về chia tài sản sau khi ly hôn"
+        },
+        {
+          "row": 31,
+          "label": "Tổng cộng"
+        },
+        {
+          "row": 32,
+          "label": "Tổng cộng của đơn vị"
+        },
+        {
+          "row": 33,
+          "label": "Tòa án nhân dân khu vực 8 - Quảng Ngãi"
+        },
+        {
+          "row": 34,
+          "label": "A. Loại vụ án"
+        },
+        {
+          "row": 35,
+          "label": "1. Vụ án ly hôn"
+        },
+        {
+          "row": 36,
+          "label": "- Mâu thuẫn gia đình"
+        },
+        {
+          "row": 37,
+          "label": "Tổng cộng"
+        },
+        {
+          "row": 38,
+          "label": "Tổng cộng của đơn vị"
+        },
+        {
+          "row": 39,
+          "label": "Tổng cộng"
+        }
+      ]
+    },
+    "HNGD_GDT_3C": {
+      "sheet": "HonNhan_GiaDinh_GĐT",
+      "title": "TOÀ ÁN NHÂN DÂN THỐNG KÊ THỤ LÝ VÀ GIẢI QUYẾT CÁC VỤ, VIỆC HÔN NHÂN VÀ GIA ĐÌNH GIÁM ĐỐC THẨM Mẫu 3C",
+      "max_row": 8,
+      "max_column": 30,
+      "number_row": 6,
+      "columns": [
+        {
+          "column": 1,
+          "code": "C1",
+          "label": "LOẠI VỤ ÁN VÀ VIỆC HÔN NHÂN VÀ GIA ĐÌNH",
+          "path": [
+            "LOẠI VỤ ÁN VÀ VIỆC HÔN NHÂN VÀ GIA ĐÌNH"
+          ],
+          "source": "category"
+        },
+        {
+          "column": 2,
+          "code": "C2",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Cũ còn lại > Chánh án kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Cũ còn lại",
+            "Chánh án kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 3,
+          "code": "C3",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Cũ còn lại > Viện trưởng kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Cũ còn lại",
+            "Viện trưởng kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 4,
+          "code": "C4",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Mới thụ lý > Chánh án kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Mới thụ lý",
+            "Chánh án kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 5,
+          "code": "C5",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Mới thụ lý > Viện trưởng kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Mới thụ lý",
+            "Viện trưởng kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 6,
+          "code": "C6",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số > Chánh án kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Tổng số",
+            "Chánh án kháng nghị"
+          ],
+          "source": "formula",
+          "formula": "C2 + C4"
+        },
+        {
+          "column": 7,
+          "code": "C7",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số > Viện trưởng kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Tổng số",
+            "Viện trưởng kháng nghị"
+          ],
+          "source": "formula",
+          "formula": "C3 + C5"
+        },
+        {
+          "column": 8,
+          "code": "C8",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số > Cộng",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Tổng số",
+            "Cộng"
+          ],
+          "source": "formula",
+          "formula": "C6 + C7"
+        },
+        {
+          "column": 9,
+          "code": "C9",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Đình chỉ xét xử giám đốc thẩm > Chánh án rút kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Đình chỉ xét xử giám đốc thẩm",
+            "Chánh án rút kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 10,
+          "code": "C10",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Đình chỉ xét xử giám đốc thẩm > Viện trưởng rút kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Đình chỉ xét xử giám đốc thẩm",
+            "Viện trưởng rút kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 11,
+          "code": "C11",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Đã xét xử > Chánh án kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Đã xét xử",
+            "Chánh án kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 12,
+          "code": "C12",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Đã xét xử > Viện trưởng kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Đã xét xử",
+            "Viện trưởng kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 13,
+          "code": "C13",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Tổng số",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Tổng số"
+          ],
+          "source": "formula",
+          "formula": "C9 + C10 + C11 + C12"
+        },
+        {
+          "column": 14,
+          "code": "C14",
+          "label": "SỐ VỤ, VIỆC CÒN LẠI > Chánh án kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC CÒN LẠI",
+            "Chánh án kháng nghị"
+          ],
+          "source": "formula",
+          "formula": "C6 - C9 - C11"
+        },
+        {
+          "column": 15,
+          "code": "C15",
+          "label": "SỐ VỤ, VIỆC CÒN LẠI > Viện trưởng kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC CÒN LẠI",
+            "Viện trưởng kháng nghị"
+          ],
+          "source": "formula",
+          "formula": "C7 - C10 - C12"
+        },
+        {
+          "column": 16,
+          "code": "C16",
+          "label": "SỐ VỤ, VIỆC CÒN LẠI > Tổng số",
+          "path": [
+            "SỐ VỤ, VIỆC CÒN LẠI",
+            "Tổng số"
+          ],
+          "source": "formula",
+          "formula": "C14 + C15"
+        },
+        {
+          "column": 17,
+          "code": "C17",
+          "label": "SỐ VỤ, VIỆC CÒN LẠI > Quá hạn luật định > Nguyên nhân chủ quan",
+          "path": [
+            "SỐ VỤ, VIỆC CÒN LẠI",
+            "Quá hạn luật định",
+            "Nguyên nhân chủ quan"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 18,
+          "code": "C18",
+          "label": "SỐ VỤ, VIỆC CÒN LẠI > Quá hạn luật định > Nguyên nhân khách quan",
+          "path": [
+            "SỐ VỤ, VIỆC CÒN LẠI",
+            "Quá hạn luật định",
+            "Nguyên nhân khách quan"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 19,
+          "code": "C19",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ > Giữ nguyên bản án, quyết định có hiệu lực pháp luật > Không chấp nhận kháng nghị của Chánh án",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ",
+            "Giữ nguyên bản án, quyết định có hiệu lực pháp luật",
+            "Không chấp nhận kháng nghị của Chánh án"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 20,
+          "code": "C20",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ > Giữ nguyên bản án, quyết định có hiệu lực pháp luật > Không chấp nhận kháng nghị của Viện trưởng",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ",
+            "Giữ nguyên bản án, quyết định có hiệu lực pháp luật",
+            "Không chấp nhận kháng nghị của Viện trưởng"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 21,
+          "code": "C21",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ > Sửa một phần bản án, quyết định của Tòa án đã có hiệu lực pháp luật",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ",
+            "Sửa một phần bản án, quyết định của Tòa án đã có hiệu lực pháp luật"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 22,
+          "code": "C22",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ > Sửa toàn bộ bản án, quyết định của Tòa án đã có hiệu lực pháp luật",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ",
+            "Sửa toàn bộ bản án, quyết định của Tòa án đã có hiệu lực pháp luật"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 23,
+          "code": "C23",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ > Hủy bản án, quyết định có hiệu lực pháp luật và đình chỉ giải quyết vụ án",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ",
+            "Hủy bản án, quyết định có hiệu lực pháp luật và đình chỉ giải quyết vụ án"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 24,
+          "code": "C24",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ > Hủy bản án, quyết định phúc thẩm, giữ nguyên bản án, quyết định sơ thẩm",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ",
+            "Hủy bản án, quyết định phúc thẩm, giữ nguyên bản án, quyết định sơ thẩm"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 25,
+          "code": "C25",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ > Hủy quyết định giám đốc thẩm, giữ nguyên bản án, quyết định sơ thẩm",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ",
+            "Hủy quyết định giám đốc thẩm, giữ nguyên bản án, quyết định sơ thẩm"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 26,
+          "code": "C26",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ > Hủy quyết định giám đốc thẩm, giữ nguyên bản án, quyết định phúc thẩm",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ",
+            "Hủy quyết định giám đốc thẩm, giữ nguyên bản án, quyết định phúc thẩm"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 27,
+          "code": "C27",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ > Hủy quyết định của giám đốc thẩm,bản án quyết định phúc thẩm,giữ nguyên bản án,quyết định sơ thẩm",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ",
+            "Hủy quyết định của giám đốc thẩm,bản án quyết định phúc thẩm,giữ nguyên bản án,quyết định sơ thẩm"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 28,
+          "code": "C28",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ > Hủy bản án, quyết định có hiệu lực pháp luật để xét xử lại theo thủ tục sơ thẩm",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ",
+            "Hủy bản án, quyết định có hiệu lực pháp luật để xét xử lại theo thủ tục sơ thẩm"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 29,
+          "code": "C29",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ > Hủy bản án, quyết định có hiệu lực pháp luật để xét xử lại theo thủ tục phúc thẩm",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ",
+            "Hủy bản án, quyết định có hiệu lực pháp luật để xét xử lại theo thủ tục phúc thẩm"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 30,
+          "code": "C30",
+          "label": "Áp dụng án lệ",
+          "path": [
+            "Áp dụng án lệ"
+          ],
+          "source": "manual"
+        }
+      ],
+      "row_labels": [
+        {
+          "row": 7,
+          "label": "Tổng cộng"
+        }
+      ]
+    },
+    "HNGD_TT_3D": {
+      "sheet": "HonNhan_GiaDinh_TT",
+      "title": "TOÀ ÁN NHÂN DÂN THỐNG KÊ THỤ LÝ VÀ GIẢI QUYẾT CÁC VỤ, VIỆC HÔN NHÂN VÀ GIA ĐÌNH TÁI THẨM Mẫu 3D",
+      "max_row": 8,
+      "max_column": 21,
+      "number_row": 6,
+      "columns": [
+        {
+          "column": 1,
+          "code": "C1",
+          "label": "LOẠI VỤ ÁN VÀ VIỆC HÔN NHÂN VÀ GIA ĐÌNH",
+          "path": [
+            "LOẠI VỤ ÁN VÀ VIỆC HÔN NHÂN VÀ GIA ĐÌNH"
+          ],
+          "source": "category"
+        },
+        {
+          "column": 2,
+          "code": "C2",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Cũ còn lại > Chánh án kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Cũ còn lại",
+            "Chánh án kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 3,
+          "code": "C3",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Cũ còn lại > Viện trưởng kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Cũ còn lại",
+            "Viện trưởng kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 4,
+          "code": "C4",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Mới thụ lý > Chánh án kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Mới thụ lý",
+            "Chánh án kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 5,
+          "code": "C5",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Mới thụ lý > Viện trưởng kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Mới thụ lý",
+            "Viện trưởng kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 6,
+          "code": "C6",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số > Chánh án kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Tổng số",
+            "Chánh án kháng nghị"
+          ],
+          "source": "formula",
+          "formula": "C2 + C4"
+        },
+        {
+          "column": 7,
+          "code": "C7",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số > Viện trưởng kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Tổng số",
+            "Viện trưởng kháng nghị"
+          ],
+          "source": "formula",
+          "formula": "C3 + C5"
+        },
+        {
+          "column": 8,
+          "code": "C8",
+          "label": "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT > Tổng số > Cộng",
+          "path": [
+            "SỐ VỤ, VIỆC PHẢI GIẢI QUYẾT",
+            "Tổng số",
+            "Cộng"
+          ],
+          "source": "formula",
+          "formula": "C6 + C7"
+        },
+        {
+          "column": 9,
+          "code": "C9",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Đình chỉ xét xử tái thẩm > Chánh án rút kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Đình chỉ xét xử tái thẩm",
+            "Chánh án rút kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 10,
+          "code": "C10",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Đình chỉ xét xử tái thẩm > Viện trưởng rút kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Đình chỉ xét xử tái thẩm",
+            "Viện trưởng rút kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 11,
+          "code": "C11",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Đã xét xử > Chánh án kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Đã xét xử",
+            "Chánh án kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 12,
+          "code": "C12",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Đã xét xử > Viện trưởng kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Đã xét xử",
+            "Viện trưởng kháng nghị"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 13,
+          "code": "C13",
+          "label": "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT > Tổng số",
+          "path": [
+            "SỐ VỤ, VIỆC ĐÃ GIẢI QUYẾT",
+            "Tổng số"
+          ],
+          "source": "formula",
+          "formula": "C9 + C10 + C11 + C12"
+        },
+        {
+          "column": 14,
+          "code": "C14",
+          "label": "SỐ VỤ, VIỆC CÒN LẠI > Chánh án kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC CÒN LẠI",
+            "Chánh án kháng nghị"
+          ],
+          "source": "formula",
+          "formula": "C6 - C9 - C11"
+        },
+        {
+          "column": 15,
+          "code": "C15",
+          "label": "SỐ VỤ, VIỆC CÒN LẠI > Viện trưởng kháng nghị",
+          "path": [
+            "SỐ VỤ, VIỆC CÒN LẠI",
+            "Viện trưởng kháng nghị"
+          ],
+          "source": "formula",
+          "formula": "C7 - C10 - C12"
+        },
+        {
+          "column": 16,
+          "code": "C16",
+          "label": "SỐ VỤ, VIỆC CÒN LẠI > Tổng số",
+          "path": [
+            "SỐ VỤ, VIỆC CÒN LẠI",
+            "Tổng số"
+          ],
+          "source": "formula",
+          "formula": "C14 + C15"
+        },
+        {
+          "column": 17,
+          "code": "C17",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ > Giữ nguyên bản án, quyết định có hiệu lực pháp luật > Không chấp nhận kháng nghị của Chánh án",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ",
+            "Giữ nguyên bản án, quyết định có hiệu lực pháp luật",
+            "Không chấp nhận kháng nghị của Chánh án"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 18,
+          "code": "C18",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ > Giữ nguyên bản án, quyết định có hiệu lực pháp luật > Không chấp nhận kháng nghị của Viên trưởng",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ",
+            "Giữ nguyên bản án, quyết định có hiệu lực pháp luật",
+            "Không chấp nhận kháng nghị của Viên trưởng"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 19,
+          "code": "C19",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ > Hủy bản án, quyết định đã có hiệu lực pháp luật để xét xử sơ thẩm lại",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ",
+            "Hủy bản án, quyết định đã có hiệu lực pháp luật để xét xử sơ thẩm lại"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 20,
+          "code": "C20",
+          "label": "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ > Hủy bản án, quyết định đã có hiệu lực pháp luật và đình chỉ giải quyết vụ án",
+          "path": [
+            "PHÂN TÍCH CÁC VỤ, VIỆC ĐÃ XÉT XỬ",
+            "Hủy bản án, quyết định đã có hiệu lực pháp luật và đình chỉ giải quyết vụ án"
+          ],
+          "source": "manual"
+        },
+        {
+          "column": 21,
+          "code": "C21",
+          "label": "Áp dụng án lệ",
+          "path": [
+            "Áp dụng án lệ"
+          ],
+          "source": "manual"
+        }
+      ],
+      "row_labels": [
+        {
+          "row": 7,
+          "label": "Tổng cộng"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "skill": "labor_statistics",
+  "version": "1.0",
+  "rules": [
+    {
+      "id": "RULE_LD_ST_005",
+      "form": "LD_ST_5A",
+      "expression": "C15 + C16 <= C14",
+      "severity": "error",
+      "description": "Quá hạn luật định không vượt quá số còn lại"
+    },
+    {
+      "id": "RULE_LD_ST_006",
+      "form": "LD_ST_5A",
+      "expression": "C18 + C19 <= C17; C20 <= C17",
+      "severity": "error",
+      "description": "Các cột trong đó của tạm đình chỉ không vượt quá tổng tạm đình chỉ"
+    },
+    {
+      "id": "RULE_LD_PT_012",
+      "form": "LD_PT_5B",
+      "expression": "C23 + C24 <= C22",
+      "severity": "error",
+      "description": "Quá hạn không vượt quá còn lại"
+    },
+    {
+      "id": "RULE_LD_PT_013",
+      "form": "LD_PT_5B",
+      "expression": "C26 + C27 <= C25; C28 <= C25",
+      "severity": "error",
+      "description": "Chi tiết tạm đình chỉ không vượt tổng"
+    },
+    {
+      "id": "RULE_LD_PT_020",
+      "form": "LD_PT_5B",
+      "expression": "C29+C30+C31+C32+C33+C34+C35+C36+C37+C38+C39+C40 = C16",
+      "severity": "error",
+      "description": "Phân tích kết quả xét xử phải bằng số xét xử/giải quyết"
+    },
+    {
+      "id": "RULE_LD_GDT_008",
+      "form": "LD_GDT",
+      "expression": "C17 + C18 <= C16",
+      "severity": "error",
+      "description": "Quá hạn không vượt quá còn lại"
+    },
+    {
+      "id": "RULE_LD_GDT_011",
+      "form": "LD_GDT",
+      "expression": "C19+C20+C21+C22+C23+C24+C25+C26+C27+C28+C29 = C11+C12",
+      "severity": "error",
+      "description": "Phân tích xét xử bằng số đã xét xử"
+    },
+    {
+      "id": "RULE_LD_TT_009",
+      "form": "LD_TT",
+      "expression": "C17 + C18 + C19 + C20 = C11 + C12",
+      "severity": "error",
+      "description": "Phân tích xét xử bằng số đã xét xử"
+    },
+    {
+      "id": "RULE_LD_NON_NEGATIVE_ALL",
+      "form": "ALL",
+      "expression": "Mọi cột số lượng phải là số nguyên không âm; cột tỷ lệ/tiền tính theo kiểu số thực không âm",
+      "severity": "error",
+      "description": "Kiểm tra dữ liệu đầu vào cơ bản"
+    },
+    {
+      "id": "RULE_LD_ST_TOTAL",
+      "form": "LD_ST_5A",
+      "expression": "C6 = C2 + C3 - C4 + C5; C12 = C9+C10+C11; C13=C7+C8+C12; C14=C6-C13",
+      "severity": "error",
+      "description": "Bảo toàn số liệu sơ thẩm"
+    },
+    {
+      "id": "RULE_LD_PT_TOTAL",
+      "form": "LD_PT_5B",
+      "expression": "C6=C2+C4; C7=C3+C5; C8=C6+C7; C19=C17+C18; C22=C8-C19",
+      "severity": "error",
+      "description": "Bảo toàn số liệu phúc thẩm"
+    },
+    {
+      "id": "RULE_LD_GDT_TOTAL",
+      "form": "LD_GDT",
+      "expression": "C8=C6+C7; C13=C9+C10+C11+C12; C16=C8-C13",
+      "severity": "error",
+      "description": "Bảo toàn số liệu giám đốc thẩm"
+    },
+    {
+      "id": "RULE_LD_TT_TOTAL",
+      "form": "LD_TT",
+      "expression": "C8=C6+C7; C13=C9+C10+C11+C12; C16=C8-C13",
+      "severity": "error",
+      "description": "Bảo toàn số liệu tái thẩm"
+    },
+    {
+      "id": "RULE_LD_DETAIL_NOT_EXCEED_RESOLVED",
+      "form": "ALL",
+      "expression": "Các cột đặc điểm vụ việc đã giải quyết không được vượt Cột tổng đã giải quyết tương ứng",
+      "severity": "warning",
+      "description": "Áp dụng án lệ, rút gọn, biện pháp khẩn cấp, VKS tham gia, luật sư..."
+    },
+    {
+      "id": "RULE_LD_PT_APPEAL_PROTEST_PRIORITY",
+      "form": "LD_PT_5B",
+      "expression": "Nếu cùng vụ việc vừa kháng cáo vừa kháng nghị thì ưu tiên thống kê theo nhóm kháng nghị khi quy định của biểu mẫu yêu cầu",
+      "severity": "warning",
+      "description": "Quy tắc tránh cộng trùng phúc thẩm"
+    },
+    {
+      "id": "RULE_LD_GDT_TT_PROTEST_SOURCE",
+      "form": "LD_GDT,LD_TT",
+      "expression": "Mỗi hồ sơ giám đốc thẩm/tái thẩm phải xác định nguồn kháng nghị: Chánh án hoặc Viện trưởng",
+      "severity": "error",
+      "description": "Nguồn kháng nghị là trục tổng hợp chính"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "skill_name": "civil_case_statistics",
+  "version": "2.0.0",
+  "rules": [
+    {
+      "id": "DS_RULE_001",
+      "form": "ALL",
+      "severity": "error",
+      "expression": "total_to_resolve == total_resolved + remaining",
+      "message": "Tổng phải giải quyết phải bằng đã giải quyết cộng còn lại"
+    },
+    {
+      "id": "DS_RULE_002",
+      "form": "ALL",
+      "severity": "error",
+      "expression": "all_numeric_fields >= 0",
+      "message": "Không được có số âm"
+    },
+    {
+      "id": "DS_RULE_003",
+      "form": "ALL",
+      "severity": "error",
+      "expression": "overdue_subjective + overdue_objective <= remaining",
+      "message": "Quá hạn không được lớn hơn số còn lại"
+    },
+    {
+      "id": "DS_RULE_004",
+      "form": "ALL",
+      "severity": "error",
+      "expression": "suspended <= remaining",
+      "message": "Tạm đình chỉ không được lớn hơn số còn lại"
+    },
+    {
+      "id": "DS_ST_RULE_001",
+      "form": "DS_ST_2A",
+      "severity": "error",
+      "expression": "C6 == C2 + C3 - C4 + C5",
+      "message": "Mẫu 2A sai tổng phải giải quyết"
+    },
+    {
+      "id": "DS_ST_RULE_002",
+      "form": "DS_ST_2A",
+      "severity": "error",
+      "expression": "C10 == C7 + C8 + C9",
+      "message": "Mẫu 2A sai tổng đã giải quyết"
+    },
+    {
+      "id": "DS_ST_RULE_003",
+      "form": "DS_ST_2A",
+      "severity": "error",
+      "expression": "C11 == C6 - C10",
+      "message": "Mẫu 2A sai số còn lại"
+    },
+    {
+      "id": "DS_PT_RULE_001",
+      "form": "DS_PT_2B",
+      "severity": "error",
+      "expression": "C8 == (C2+C4) + (C3+C5)",
+      "message": "Mẫu 2B sai tổng phải giải quyết"
+    },
+    {
+      "id": "DS_PT_RULE_002",
+      "form": "DS_PT_2B",
+      "severity": "error",
+      "expression": "C19 == (C9+C11+C14) + (C10+C12+C15)",
+      "message": "Mẫu 2B sai tổng đã giải quyết"
+    },
+    {
+      "id": "DS_PT_RULE_003",
+      "form": "DS_PT_2B",
+      "severity": "error",
+      "expression": "C22 == (C6-C17)+(C7-C18)",
+      "message": "Mẫu 2B sai số còn lại"
+    },
+    {
+      "id": "DS_PT_RULE_004",
+      "form": "DS_PT_2B",
+      "severity": "warning",
+      "expression": "C29+C30+C31+C32+C33+C34+C35+C36+C37+C38+C39+C40 == C16",
+      "message": "Tổng phân tích kết quả xét xử phúc thẩm không khớp số đã xét xử"
+    },
+    {
+      "id": "DS_GDT_RULE_001",
+      "form": "DS_GDT_2C",
+      "severity": "error",
+      "expression": "C8 == C2+C3+C4+C5",
+      "message": "Mẫu 2C sai tổng phải giải quyết"
+    },
+    {
+      "id": "DS_GDT_RULE_002",
+      "form": "DS_GDT_2C",
+      "severity": "error",
+      "expression": "C13 == C9+C10+C11+C12",
+      "message": "Mẫu 2C sai tổng đã giải quyết"
+    },
+    {
+      "id": "DS_GDT_RULE_003",
+      "form": "DS_GDT_2C",
+      "severity": "error",
+      "expression": "C16 == (C6-C9-C11)+(C7-C10-C12)",
+      "message": "Mẫu 2C sai số còn lại"
+    },
+    {
+      "id": "DS_GDT_RULE_004",
+      "form": "DS_GDT_2C",
+      "severity": "warning",
+      "expression": "C19+C20+C21+C22+C23+C24+C25+C26+C27+C28+C29 == C11+C12",
+      "message": "Tổng phân tích kết quả GĐT không khớp số đã xét xử"
+    },
+    {
+      "id": "DS_TT_RULE_001",
+      "form": "DS_TT_2D",
+      "severity": "error",
+      "expression": "C8 == C2+C3+C4+C5",
+      "message": "Mẫu 2D sai tổng phải giải quyết"
+    },
+    {
+      "id": "DS_TT_RULE_002",
+      "form": "DS_TT_2D",
+      "severity": "error",
+      "expression": "C13 == C9+C10+C11+C12",
+      "message": "Mẫu 2D sai tổng đã giải quyết"
+    },
+    {
+      "id": "DS_TT_RULE_003",
+      "form": "DS_TT_2D",
+      "severity": "error",
+      "expression": "C16 == (C6-C9-C11)+(C7-C10-C12)",
+      "message": "Mẫu 2D sai số còn lại"
+    },
+    {
+      "id": "DS_TT_RULE_004",
+      "form": "DS_TT_2D",
+      "severity": "warning",
+      "expression": "C17+C18+C19+C20 == C11+C12",
+      "message": "Tổng phân tích kết quả tái thẩm không khớp số đã xét xử"
+    }
+  ]
+}

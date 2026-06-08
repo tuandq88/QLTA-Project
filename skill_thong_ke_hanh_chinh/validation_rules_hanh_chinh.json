@@ -1,0 +1,320 @@
+{
+  "skill": "hanh_chinh_statistics",
+  "rules": [
+    {
+      "id": "HC_ST_RULE_001",
+      "form": "HC_ST_6A",
+      "assertion": "C6 == C2 + C3 - C4 + C5",
+      "severity": "error",
+      "message": "Số phải giải quyết sơ thẩm phải bằng cũ còn lại + mới thụ lý - chuyển hồ sơ + nhập vụ án"
+    },
+    {
+      "id": "HC_ST_RULE_002",
+      "form": "HC_ST_6A",
+      "assertion": "C9 == C7 + C8",
+      "severity": "error",
+      "message": "C9 == C7 + C8"
+    },
+    {
+      "id": "HC_ST_RULE_003",
+      "form": "HC_ST_6A",
+      "assertion": "C13 == C10 + C11 + C12",
+      "severity": "error",
+      "message": "C13 == C10 + C11 + C12"
+    },
+    {
+      "id": "HC_ST_RULE_004",
+      "form": "HC_ST_6A",
+      "assertion": "C15 == C9 + C13",
+      "severity": "error",
+      "message": "C15 == C9 + C13"
+    },
+    {
+      "id": "HC_ST_RULE_005",
+      "form": "HC_ST_6A",
+      "assertion": "C17 == C6 - C15",
+      "severity": "error",
+      "message": "C17 == C6 - C15"
+    },
+    {
+      "id": "HC_ST_RULE_006",
+      "form": "HC_ST_6A",
+      "assertion": "C18 + C19 <= C17",
+      "severity": "warning",
+      "message": "Quá hạn không được vượt số còn lại"
+    },
+    {
+      "id": "HC_ST_RULE_007",
+      "form": "HC_ST_6A",
+      "assertion": "C20 <= C17",
+      "severity": "warning",
+      "message": "Tạm đình chỉ không được vượt số còn lại"
+    },
+    {
+      "id": "HC_ST_RULE_008",
+      "form": "HC_ST_6A",
+      "assertion": "C21 <= C20 and C22 <= C20 and C23 <= C20",
+      "severity": "warning",
+      "message": "Các chỉ tiêu trong đó của tạm đình chỉ không vượt tổng tạm đình chỉ"
+    },
+    {
+      "id": "HC_ST_RULE_009",
+      "form": "HC_ST_6A",
+      "assertion": "C29 <= C13",
+      "severity": "warning",
+      "message": "Số vụ có bồi thường không vượt số vụ xét xử"
+    },
+    {
+      "id": "HC_ST_RULE_010",
+      "form": "HC_ST_6A",
+      "assertion": "C31 + C32 <= C15",
+      "severity": "warning",
+      "message": "Số vụ có người bảo vệ quyền lợi không vượt số vụ đã giải quyết"
+    },
+    {
+      "id": "HC_ST_RULE_011",
+      "form": "HC_ST_6A",
+      "assertion": "C33 + C34 >= C15 or C33 + C34 == 0",
+      "severity": "info",
+      "message": "Đối chiếu phân loại người khởi kiện theo hồ sơ nhập"
+    },
+    {
+      "id": "HC_ST_RULE_012",
+      "form": "HC_ST_6A",
+      "assertion": "C35 + C36 >= C15 or C35 + C36 == 0",
+      "severity": "info",
+      "message": "Đối chiếu phân loại người bị kiện theo hồ sơ nhập"
+    },
+    {
+      "id": "HC_PT_RULE_001",
+      "form": "HC_PT_6B",
+      "assertion": "C6 == C2 + C4",
+      "severity": "error",
+      "message": "C6 == C2 + C4"
+    },
+    {
+      "id": "HC_PT_RULE_002",
+      "form": "HC_PT_6B",
+      "assertion": "C7 == C3 + C5",
+      "severity": "error",
+      "message": "C7 == C3 + C5"
+    },
+    {
+      "id": "HC_PT_RULE_003",
+      "form": "HC_PT_6B",
+      "assertion": "C8 == C6 + C7",
+      "severity": "error",
+      "message": "C8 == C6 + C7"
+    },
+    {
+      "id": "HC_PT_RULE_004",
+      "form": "HC_PT_6B",
+      "assertion": "C13 == C9 + C10 + C11 + C12",
+      "severity": "error",
+      "message": "C13 == C9 + C10 + C11 + C12"
+    },
+    {
+      "id": "HC_PT_RULE_005",
+      "form": "HC_PT_6B",
+      "assertion": "C16 == C14 + C15",
+      "severity": "error",
+      "message": "C16 == C14 + C15"
+    },
+    {
+      "id": "HC_PT_RULE_006",
+      "form": "HC_PT_6B",
+      "assertion": "C19 == C17 + C18",
+      "severity": "error",
+      "message": "C19 == C17 + C18"
+    },
+    {
+      "id": "HC_PT_RULE_007",
+      "form": "HC_PT_6B",
+      "assertion": "C22 == C8 - C19",
+      "severity": "error",
+      "message": "C22 == C8 - C19"
+    },
+    {
+      "id": "HC_PT_RULE_008",
+      "form": "HC_PT_6B",
+      "assertion": "C23 + C24 <= C22",
+      "severity": "warning",
+      "message": "C23 + C24 <= C22"
+    },
+    {
+      "id": "HC_PT_RULE_009",
+      "form": "HC_PT_6B",
+      "assertion": "all_numeric_columns_are_non_negative",
+      "severity": "error",
+      "message": "all_numeric_columns_are_non_negative"
+    },
+    {
+      "id": "HC_PT_RULE_010",
+      "form": "HC_PT_6B",
+      "assertion": "detail_columns_do_not_exceed_parent_total",
+      "severity": "warning",
+      "message": "detail_columns_do_not_exceed_parent_total"
+    },
+    {
+      "id": "HC_GDT_RULE_001",
+      "form": "HC_GDT_6C",
+      "assertion": "C6 == C2 + C4",
+      "severity": "error",
+      "message": "C6 == C2 + C4"
+    },
+    {
+      "id": "HC_GDT_RULE_002",
+      "form": "HC_GDT_6C",
+      "assertion": "C7 == C3 + C5",
+      "severity": "error",
+      "message": "C7 == C3 + C5"
+    },
+    {
+      "id": "HC_GDT_RULE_003",
+      "form": "HC_GDT_6C",
+      "assertion": "C8 == C6 + C7",
+      "severity": "error",
+      "message": "C8 == C6 + C7"
+    },
+    {
+      "id": "HC_GDT_RULE_004",
+      "form": "HC_GDT_6C",
+      "assertion": "C11 == C9 + C10",
+      "severity": "error",
+      "message": "C11 == C9 + C10"
+    },
+    {
+      "id": "HC_GDT_RULE_005",
+      "form": "HC_GDT_6C",
+      "assertion": "C14 == C12 + C13",
+      "severity": "error",
+      "message": "C14 == C12 + C13"
+    },
+    {
+      "id": "HC_GDT_RULE_006",
+      "form": "HC_GDT_6C",
+      "assertion": "C17 == C15 + C16",
+      "severity": "error",
+      "message": "C17 == C15 + C16"
+    },
+    {
+      "id": "HC_GDT_RULE_007",
+      "form": "HC_GDT_6C",
+      "assertion": "C20 == C8 - C17",
+      "severity": "error",
+      "message": "C20 == C8 - C17"
+    },
+    {
+      "id": "HC_GDT_RULE_008",
+      "form": "HC_GDT_6C",
+      "assertion": "C21 + C22 <= C20",
+      "severity": "warning",
+      "message": "C21 + C22 <= C20"
+    },
+    {
+      "id": "HC_GDT_RULE_009",
+      "form": "HC_GDT_6C",
+      "assertion": "all_numeric_columns_are_non_negative",
+      "severity": "error",
+      "message": "all_numeric_columns_are_non_negative"
+    },
+    {
+      "id": "HC_GDT_RULE_010",
+      "form": "HC_GDT_6C",
+      "assertion": "detail_columns_do_not_exceed_parent_total",
+      "severity": "warning",
+      "message": "detail_columns_do_not_exceed_parent_total"
+    },
+    {
+      "id": "HC_TT_RULE_001",
+      "form": "HC_TT_6D",
+      "assertion": "C6 == C2 + C4",
+      "severity": "error",
+      "message": "C6 == C2 + C4"
+    },
+    {
+      "id": "HC_TT_RULE_002",
+      "form": "HC_TT_6D",
+      "assertion": "C7 == C3 + C5",
+      "severity": "error",
+      "message": "C7 == C3 + C5"
+    },
+    {
+      "id": "HC_TT_RULE_003",
+      "form": "HC_TT_6D",
+      "assertion": "C8 == C6 + C7",
+      "severity": "error",
+      "message": "C8 == C6 + C7"
+    },
+    {
+      "id": "HC_TT_RULE_004",
+      "form": "HC_TT_6D",
+      "assertion": "C11 == C9 + C10",
+      "severity": "error",
+      "message": "C11 == C9 + C10"
+    },
+    {
+      "id": "HC_TT_RULE_005",
+      "form": "HC_TT_6D",
+      "assertion": "C14 == C12 + C13",
+      "severity": "error",
+      "message": "C14 == C12 + C13"
+    },
+    {
+      "id": "HC_TT_RULE_006",
+      "form": "HC_TT_6D",
+      "assertion": "C17 == C15 + C16",
+      "severity": "error",
+      "message": "C17 == C15 + C16"
+    },
+    {
+      "id": "HC_TT_RULE_007",
+      "form": "HC_TT_6D",
+      "assertion": "C20 == C8 - C17",
+      "severity": "error",
+      "message": "C20 == C8 - C17"
+    },
+    {
+      "id": "HC_TT_RULE_008",
+      "form": "HC_TT_6D",
+      "assertion": "C21 + C22 <= C20",
+      "severity": "warning",
+      "message": "C21 + C22 <= C20"
+    },
+    {
+      "id": "HC_TT_RULE_009",
+      "form": "HC_TT_6D",
+      "assertion": "all_numeric_columns_are_non_negative",
+      "severity": "error",
+      "message": "all_numeric_columns_are_non_negative"
+    },
+    {
+      "id": "HC_TT_RULE_010",
+      "form": "HC_TT_6D",
+      "assertion": "detail_columns_do_not_exceed_parent_total",
+      "severity": "warning",
+      "message": "detail_columns_do_not_exceed_parent_total"
+    },
+    {
+      "id": "HC_PT_RULE_011",
+      "form": "HC_PT_6B",
+      "assertion": "C30 + C31 <= C16 and C32 + C33 <= C16 and C34 + C35 <= C16 and C36 + C37 <= C16",
+      "severity": "warning",
+      "message": "Các nhóm sửa/hủy không vượt tổng số xét xử"
+    },
+    {
+      "id": "HC_GDT_RULE_011",
+      "form": "HC_GDT_6C",
+      "assertion": "C23 + C24 + C25 + C26 + C27 + C28 + C29 + C30 + C31 + C32 + C33 == C14",
+      "severity": "warning",
+      "message": "Tổng kết quả xét xử giám đốc thẩm nên khớp số đã xét xử"
+    },
+    {
+      "id": "HC_TT_RULE_011",
+      "form": "HC_TT_6D",
+      "assertion": "C23 + C24 + C25 + C26 + C27 + C28 == C14",
+      "severity": "warning",
+      "message": "Tổng kết quả xét xử tái thẩm nên khớp số đã xét xử"
+    }
+  ]
+}

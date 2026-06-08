@@ -1,0 +1,572 @@
+{
+  "skill": "commercial_business_case_statistics",
+  "version": "3.0.0",
+  "rule_count": 43,
+  "rules": [
+    {
+      "id": "KDTM_ST_R001",
+      "form": "KDTM_ST_4A",
+      "expression": "C6 == C2 + C3 - C4 + C5",
+      "severity": "error",
+      "message": "Tổng số phải giải quyết sơ thẩm không khớp.",
+      "columns": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "KDTM_ST_R002",
+      "form": "KDTM_ST_4A",
+      "expression": "C12 == C9 + C10 + C11",
+      "severity": "error",
+      "message": "Tổng xét xử/giải quyết không khớp.",
+      "columns": [
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "KDTM_ST_R003",
+      "form": "KDTM_ST_4A",
+      "expression": "C13 == C7 + C8 + C12",
+      "severity": "error",
+      "message": "Tổng đã giải quyết không khớp.",
+      "columns": [
+        7,
+        8,
+        12,
+        13
+      ]
+    },
+    {
+      "id": "KDTM_ST_R004",
+      "form": "KDTM_ST_4A",
+      "expression": "C14 == C6 - C13",
+      "severity": "error",
+      "message": "Tổng còn lại không khớp.",
+      "columns": [
+        6,
+        13,
+        14
+      ]
+    },
+    {
+      "id": "KDTM_ST_R005",
+      "form": "KDTM_ST_4A",
+      "expression": "C15 + C16 <= C14",
+      "severity": "warning",
+      "message": "Số quá hạn không được vượt quá số còn lại.",
+      "columns": [
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "id": "KDTM_ST_R006",
+      "form": "KDTM_ST_4A",
+      "expression": "C17 <= C14",
+      "severity": "warning",
+      "message": "Tạm đình chỉ là một phần của số còn lại.",
+      "columns": [
+        14,
+        17
+      ]
+    },
+    {
+      "id": "KDTM_ST_R007",
+      "form": "KDTM_ST_4A",
+      "expression": "C18 + C19 + C20 <= C17",
+      "severity": "warning",
+      "message": "Chi tiết tạm đình chỉ không được vượt tổng tạm đình chỉ.",
+      "columns": [
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "id": "KDTM_ST_R008",
+      "form": "KDTM_ST_4A",
+      "expression": "C21 <= C13 and C22 <= C13 and C23 <= C13 and C25 <= C13",
+      "severity": "warning",
+      "message": "Các đặc điểm giải quyết không nên vượt tổng đã giải quyết.",
+      "columns": [
+        13,
+        21,
+        22,
+        23,
+        25
+      ]
+    },
+    {
+      "id": "KDTM_ST_R009",
+      "form": "KDTM_ST_4A",
+      "expression": "C26 + C27 <= C13",
+      "severity": "warning",
+      "message": "Số vụ có người bảo vệ quyền lợi không nên vượt tổng đã giải quyết.",
+      "columns": [
+        13,
+        26,
+        27
+      ]
+    },
+    {
+      "id": "KDTM_ST_R010",
+      "form": "KDTM_ST_4A",
+      "expression": "C28 + C29 >= C30",
+      "severity": "warning",
+      "message": "Nguyên đơn có yếu tố nước ngoài cần được phân loại phù hợp.",
+      "columns": [
+        28,
+        29,
+        30
+      ]
+    },
+    {
+      "id": "KDTM_ST_R011",
+      "form": "KDTM_ST_4A",
+      "expression": "C31 + C32 >= C33",
+      "severity": "warning",
+      "message": "Bị đơn có yếu tố nước ngoài cần được phân loại phù hợp.",
+      "columns": [
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "id": "KDTM_PT_R001",
+      "form": "KDTM_PT_4B",
+      "expression": "C6 == C2 + C4",
+      "severity": "error",
+      "message": "Tổng kháng cáo phải giải quyết không khớp.",
+      "columns": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "id": "KDTM_PT_R002",
+      "form": "KDTM_PT_4B",
+      "expression": "C7 == C3 + C5",
+      "severity": "error",
+      "message": "Tổng kháng nghị phải giải quyết không khớp.",
+      "columns": [
+        3,
+        5,
+        7
+      ]
+    },
+    {
+      "id": "KDTM_PT_R003",
+      "form": "KDTM_PT_4B",
+      "expression": "C8 == C6 + C7",
+      "severity": "error",
+      "message": "Tổng phải giải quyết phúc thẩm không khớp.",
+      "columns": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "KDTM_PT_R004",
+      "form": "KDTM_PT_4B",
+      "expression": "C13 == C9 + C10 + C11 + C12",
+      "severity": "error",
+      "message": "Tổng đình chỉ phúc thẩm không khớp.",
+      "columns": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "id": "KDTM_PT_R005",
+      "form": "KDTM_PT_4B",
+      "expression": "C16 == C14 + C15",
+      "severity": "error",
+      "message": "Tổng xét xử/giải quyết phúc thẩm không khớp.",
+      "columns": [
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "id": "KDTM_PT_R006",
+      "form": "KDTM_PT_4B",
+      "expression": "C17 == C9 + C11 + C14",
+      "severity": "error",
+      "message": "Đã giải quyết kháng cáo không khớp.",
+      "columns": [
+        9,
+        11,
+        14,
+        17
+      ]
+    },
+    {
+      "id": "KDTM_PT_R007",
+      "form": "KDTM_PT_4B",
+      "expression": "C18 == C10 + C12 + C15",
+      "severity": "error",
+      "message": "Đã giải quyết kháng nghị không khớp.",
+      "columns": [
+        10,
+        12,
+        15,
+        18
+      ]
+    },
+    {
+      "id": "KDTM_PT_R008",
+      "form": "KDTM_PT_4B",
+      "expression": "C19 == C17 + C18 and C19 == C13 + C16",
+      "severity": "error",
+      "message": "Tổng đã giải quyết phúc thẩm không khớp.",
+      "columns": [
+        13,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "id": "KDTM_PT_R009",
+      "form": "KDTM_PT_4B",
+      "expression": "C20 == C6 - C17",
+      "severity": "error",
+      "message": "Còn lại kháng cáo không khớp.",
+      "columns": [
+        6,
+        17,
+        20
+      ]
+    },
+    {
+      "id": "KDTM_PT_R010",
+      "form": "KDTM_PT_4B",
+      "expression": "C21 == C7 - C18",
+      "severity": "error",
+      "message": "Còn lại kháng nghị không khớp.",
+      "columns": [
+        7,
+        18,
+        21
+      ]
+    },
+    {
+      "id": "KDTM_PT_R011",
+      "form": "KDTM_PT_4B",
+      "expression": "C22 == C20 + C21 and C22 == C8 - C19",
+      "severity": "error",
+      "message": "Tổng còn lại phúc thẩm không khớp.",
+      "columns": [
+        8,
+        19,
+        20,
+        21,
+        22
+      ]
+    },
+    {
+      "id": "KDTM_PT_R012",
+      "form": "KDTM_PT_4B",
+      "expression": "C23 + C24 <= C22",
+      "severity": "warning",
+      "message": "Quá hạn không được vượt còn lại.",
+      "columns": [
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "id": "KDTM_PT_R013",
+      "form": "KDTM_PT_4B",
+      "expression": "C25 <= C22",
+      "severity": "warning",
+      "message": "Tạm đình chỉ phải thuộc số còn lại.",
+      "columns": [
+        22,
+        25
+      ]
+    },
+    {
+      "id": "KDTM_PT_R014",
+      "form": "KDTM_PT_4B",
+      "expression": "C26 + C27 + C28 <= C25",
+      "severity": "warning",
+      "message": "Chi tiết tạm đình chỉ vượt tổng.",
+      "columns": [
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "id": "KDTM_PT_R015",
+      "form": "KDTM_PT_4B",
+      "expression": "C29 + C30 + C31 + C32 + C33 + C34 + C35 + C36 + C37 + C38 + C39 + C40 <= C16",
+      "severity": "warning",
+      "message": "Phân tích kết quả xét xử vượt tổng xét xử/giải quyết.",
+      "columns": [
+        16,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ]
+    },
+    {
+      "id": "KDTM_GDT_R001",
+      "form": "KDTM_GDT_4C",
+      "expression": "C6 == C2 + C4",
+      "severity": "error",
+      "message": "Tổng Chánh án kháng nghị không khớp.",
+      "columns": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "id": "KDTM_GDT_R002",
+      "form": "KDTM_GDT_4C",
+      "expression": "C7 == C3 + C5",
+      "severity": "error",
+      "message": "Tổng Viện trưởng kháng nghị không khớp.",
+      "columns": [
+        3,
+        5,
+        7
+      ]
+    },
+    {
+      "id": "KDTM_GDT_R003",
+      "form": "KDTM_GDT_4C",
+      "expression": "C8 == C6 + C7",
+      "severity": "error",
+      "message": "Tổng phải giải quyết GĐT không khớp.",
+      "columns": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "KDTM_GDT_R004",
+      "form": "KDTM_GDT_4C",
+      "expression": "C13 == C9 + C10 + C11 + C12",
+      "severity": "error",
+      "message": "Tổng đã giải quyết GĐT không khớp.",
+      "columns": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "id": "KDTM_GDT_R005",
+      "form": "KDTM_GDT_4C",
+      "expression": "C14 == C6 - C9 - C11",
+      "severity": "error",
+      "message": "Còn lại Chánh án kháng nghị không khớp.",
+      "columns": [
+        6,
+        9,
+        11,
+        14
+      ]
+    },
+    {
+      "id": "KDTM_GDT_R006",
+      "form": "KDTM_GDT_4C",
+      "expression": "C15 == C7 - C10 - C12",
+      "severity": "error",
+      "message": "Còn lại Viện trưởng kháng nghị không khớp.",
+      "columns": [
+        7,
+        10,
+        12,
+        15
+      ]
+    },
+    {
+      "id": "KDTM_GDT_R007",
+      "form": "KDTM_GDT_4C",
+      "expression": "C16 == C14 + C15 and C16 == C8 - C13",
+      "severity": "error",
+      "message": "Tổng còn lại GĐT không khớp.",
+      "columns": [
+        8,
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "id": "KDTM_GDT_R008",
+      "form": "KDTM_GDT_4C",
+      "expression": "C17 + C18 <= C16",
+      "severity": "warning",
+      "message": "Quá hạn GĐT không được vượt còn lại.",
+      "columns": [
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "KDTM_GDT_R009",
+      "form": "KDTM_GDT_4C",
+      "expression": "C19 + C20 + C21 + C22 + C23 + C24 + C25 + C26 + C27 + C28 + C29 <= C11 + C12",
+      "severity": "warning",
+      "message": "Phân tích kết quả xét xử GĐT vượt số đã xét xử.",
+      "columns": [
+        11,
+        12,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "id": "KDTM_TT_R001",
+      "form": "KDTM_TT_4D",
+      "expression": "C6 == C2 + C4",
+      "severity": "error",
+      "message": "Tổng Chánh án kháng nghị không khớp.",
+      "columns": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "id": "KDTM_TT_R002",
+      "form": "KDTM_TT_4D",
+      "expression": "C7 == C3 + C5",
+      "severity": "error",
+      "message": "Tổng Viện trưởng kháng nghị không khớp.",
+      "columns": [
+        3,
+        5,
+        7
+      ]
+    },
+    {
+      "id": "KDTM_TT_R003",
+      "form": "KDTM_TT_4D",
+      "expression": "C8 == C6 + C7",
+      "severity": "error",
+      "message": "Tổng phải giải quyết tái thẩm không khớp.",
+      "columns": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "KDTM_TT_R004",
+      "form": "KDTM_TT_4D",
+      "expression": "C13 == C9 + C10 + C11 + C12",
+      "severity": "error",
+      "message": "Tổng đã giải quyết tái thẩm không khớp.",
+      "columns": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "id": "KDTM_TT_R005",
+      "form": "KDTM_TT_4D",
+      "expression": "C14 == C6 - C9 - C11",
+      "severity": "error",
+      "message": "Còn lại Chánh án kháng nghị không khớp.",
+      "columns": [
+        6,
+        9,
+        11,
+        14
+      ]
+    },
+    {
+      "id": "KDTM_TT_R006",
+      "form": "KDTM_TT_4D",
+      "expression": "C15 == C7 - C10 - C12",
+      "severity": "error",
+      "message": "Còn lại Viện trưởng kháng nghị không khớp.",
+      "columns": [
+        7,
+        10,
+        12,
+        15
+      ]
+    },
+    {
+      "id": "KDTM_TT_R007",
+      "form": "KDTM_TT_4D",
+      "expression": "C16 == C14 + C15 and C16 == C8 - C13",
+      "severity": "error",
+      "message": "Tổng còn lại tái thẩm không khớp.",
+      "columns": [
+        8,
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "id": "KDTM_TT_R008",
+      "form": "KDTM_TT_4D",
+      "expression": "C17 + C18 + C19 + C20 <= C11 + C12",
+      "severity": "warning",
+      "message": "Phân tích kết quả xét xử tái thẩm vượt số đã xét xử.",
+      "columns": [
+        11,
+        12,
+        17,
+        18,
+        19,
+        20
+      ]
+    }
+  ]
+}

@@ -1,0 +1,919 @@
+{
+  "skill": "hanh_chinh_statistics",
+  "version": "1.0",
+  "forms": {
+    "HC_ST_6A": {
+      "name": "Thống kê thụ lý và giải quyết các vụ án hành chính sơ thẩm",
+      "template": "Mẫu 6A",
+      "sheet": "HanhChinh_SoTham",
+      "level": "TAND cấp huyện và cấp tỉnh",
+      "columns": {
+        "1": "Loại vụ án/các khiếu kiện",
+        "2": "Cũ còn lại",
+        "3": "Mới thụ lý",
+        "4": "Chuyển hồ sơ",
+        "5": "Nhập vụ án",
+        "6": "Tổng số phải giải quyết",
+        "7": "Đình chỉ thông qua đối thoại",
+        "8": "Đình chỉ khác",
+        "9": "Cộng đình chỉ",
+        "10": "Bác yêu cầu khởi kiện",
+        "11": "Chấp nhận một phần yêu cầu khởi kiện",
+        "12": "Chấp nhận toàn bộ yêu cầu khởi kiện",
+        "13": "Cộng xét xử",
+        "14": "Kiến nghị xem xét trách nhiệm cơ quan/người có thẩm quyền",
+        "15": "Tổng số đã giải quyết",
+        "16": "Số vụ án có đối thoại",
+        "17": "Tổng số còn lại",
+        "18": "Quá hạn luật định - nguyên nhân chủ quan",
+        "19": "Quá hạn luật định - nguyên nhân khách quan",
+        "20": "Tạm đình chỉ - tổng số",
+        "21": "Tạm đình chỉ lần 2",
+        "22": "Tạm đình chỉ trên 2 lần",
+        "23": "Kiến nghị sửa đổi/bãi bỏ VBQPPL do có dấu hiệu trái pháp luật",
+        "24": "Áp dụng án lệ",
+        "25": "Giải quyết theo thủ tục rút gọn",
+        "26": "Áp dụng biện pháp khẩn cấp tạm thời",
+        "27": "Viện kiểm sát tham gia",
+        "28": "Có yếu tố nước ngoài",
+        "29": "Có giải quyết yêu cầu bồi thường thiệt hại - vụ",
+        "30": "Có giải quyết yêu cầu bồi thường thiệt hại - số tiền VNĐ",
+        "31": "Có luật sư bảo vệ quyền, lợi ích hợp pháp",
+        "32": "Người bảo vệ quyền, lợi ích hợp pháp khác",
+        "33": "Người khởi kiện là cơ quan, tổ chức",
+        "34": "Người khởi kiện là cá nhân",
+        "35": "Người bị kiện là cơ quan, tổ chức",
+        "36": "Người bị kiện là cá nhân",
+        "37": "Tòa án tổ chức phiên tòa rút kinh nghiệm"
+      }
+    },
+    "HC_PT_6B": {
+      "name": "Thống kê thụ lý và giải quyết các vụ án hành chính phúc thẩm",
+      "template": "Mẫu 6B",
+      "sheet": "HanhChinh_phuc_tham",
+      "level": "TAND cấp tỉnh và cấp cao",
+      "columns": {
+        "1": "Loại vụ án/các khiếu kiện",
+        "2": "Cũ còn lại - kháng cáo",
+        "3": "Cũ còn lại - kháng nghị",
+        "4": "Mới thụ lý - kháng cáo",
+        "5": "Mới thụ lý - kháng nghị",
+        "6": "Tổng số phải giải quyết - kháng cáo",
+        "7": "Tổng số phải giải quyết - kháng nghị",
+        "8": "Tổng số phải giải quyết - cộng",
+        "9": "Đình chỉ - rút kháng cáo",
+        "10": "Đình chỉ - rút kháng nghị",
+        "11": "Đình chỉ lý do khác - kháng cáo",
+        "12": "Đình chỉ lý do khác - kháng nghị",
+        "13": "Đình chỉ - cộng",
+        "14": "Xét xử - kháng cáo",
+        "15": "Xét xử - kháng nghị",
+        "16": "Xét xử - cộng",
+        "17": "Đã giải quyết - kháng cáo",
+        "18": "Đã giải quyết - kháng nghị",
+        "19": "Đã giải quyết - cộng",
+        "20": "Còn lại - kháng cáo",
+        "21": "Còn lại - kháng nghị",
+        "22": "Còn lại - cộng",
+        "23": "Quá hạn luật định - nguyên nhân chủ quan",
+        "24": "Quá hạn luật định - nguyên nhân khách quan",
+        "25": "Tạm đình chỉ - tổng",
+        "26": "Tạm đình chỉ lần 2",
+        "27": "Tạm đình chỉ trên 2 lần",
+        "28": "Kiến nghị sửa đổi/bãi bỏ VBQPPL do có dấu hiệu trái pháp luật",
+        "29": "Giữ nguyên bản án, quyết định sơ thẩm",
+        "30": "Sửa một phần do cấp sơ thẩm sai",
+        "31": "Sửa một phần lý do khác",
+        "32": "Sửa toàn bộ do cấp sơ thẩm sai",
+        "33": "Sửa toàn bộ lý do khác",
+        "34": "Hủy để giải quyết/xét xử lại sơ thẩm do cấp sơ thẩm sai",
+        "35": "Hủy để giải quyết/xét xử lại sơ thẩm lý do khác",
+        "36": "Hủy và đình chỉ do cấp sơ thẩm sai",
+        "37": "Hủy và đình chỉ lý do khác",
+        "38": "Đình chỉ xét xử phúc thẩm",
+        "39": "VKS có kháng nghị nhưng không được chấp nhận",
+        "40": "VKS rút kháng nghị nhưng đương sự không rút kháng cáo",
+        "41": "Áp dụng án lệ",
+        "42": "Giải quyết theo thủ tục rút gọn",
+        "43": "Áp dụng biện pháp khẩn cấp tạm thời",
+        "44": "Viện kiểm sát tham gia",
+        "45": "Có luật sư bảo vệ quyền, lợi ích hợp pháp",
+        "46": "Người bảo vệ quyền, lợi ích hợp pháp khác",
+        "47": "Tòa án tổ chức phiên tòa rút kinh nghiệm"
+      }
+    },
+    "HC_GDT_6C": {
+      "name": "Thống kê thụ lý và giải quyết các vụ án hành chính giám đốc thẩm",
+      "template": "Mẫu 6C",
+      "sheet": "HanhChinh_GDT",
+      "level": "TAND cấp cao và TAND tối cao",
+      "columns": {
+        "1": "Loại vụ án/các khiếu kiện",
+        "2": "Cũ còn lại - Chánh án kháng nghị",
+        "3": "Cũ còn lại - Viện trưởng kháng nghị",
+        "4": "Mới thụ lý - Chánh án kháng nghị",
+        "5": "Mới thụ lý - Viện trưởng kháng nghị",
+        "6": "Tổng số phải giải quyết - Chánh án kháng nghị",
+        "7": "Tổng số phải giải quyết - Viện trưởng kháng nghị",
+        "8": "Tổng số phải giải quyết - cộng",
+        "9": "Đình chỉ - Chánh án rút kháng nghị",
+        "10": "Đình chỉ - Viện trưởng rút kháng nghị",
+        "11": "Đình chỉ - cộng",
+        "12": "Đã xét xử - Chánh án kháng nghị",
+        "13": "Đã xét xử - Viện trưởng kháng nghị",
+        "14": "Đã xét xử - cộng",
+        "15": "Đã giải quyết - Chánh án kháng nghị",
+        "16": "Đã giải quyết - Viện trưởng kháng nghị",
+        "17": "Đã giải quyết - cộng",
+        "18": "Còn lại - Chánh án kháng nghị",
+        "19": "Còn lại - Viện trưởng kháng nghị",
+        "20": "Còn lại - tổng số",
+        "21": "Quá hạn luật định - nguyên nhân chủ quan",
+        "22": "Quá hạn luật định - nguyên nhân khách quan",
+        "23": "Không chấp nhận kháng nghị của Chánh án/giữ nguyên",
+        "24": "Không chấp nhận kháng nghị của Viện trưởng/giữ nguyên",
+        "25": "Sửa một phần bản án, quyết định đã có hiệu lực pháp luật",
+        "26": "Sửa toàn bộ bản án, quyết định đã có hiệu lực pháp luật",
+        "27": "Hủy bản án, quyết định có hiệu lực pháp luật và đình chỉ giải quyết vụ án",
+        "28": "Hủy bản án, quyết định phúc thẩm, giữ nguyên bản án/quyết định sơ thẩm",
+        "29": "Hủy quyết định giám đốc thẩm, giữ nguyên bản án/quyết định sơ thẩm",
+        "30": "Hủy quyết định giám đốc thẩm, giữ nguyên bản án/quyết định phúc thẩm",
+        "31": "Hủy quyết định giám đốc thẩm, bản án/quyết định phúc thẩm, giữ nguyên sơ thẩm",
+        "32": "Hủy bản án/quyết định có hiệu lực để xét xử lại sơ thẩm",
+        "33": "Hủy bản án/quyết định có hiệu lực để xét xử lại phúc thẩm",
+        "34": "Áp dụng án lệ"
+      }
+    },
+    "HC_TT_6D": {
+      "name": "Thống kê thụ lý và giải quyết các vụ án hành chính tái thẩm",
+      "template": "Mẫu 6D",
+      "sheet": "HanhChinh_TT",
+      "level": "TAND cấp cao và TAND tối cao",
+      "columns": {
+        "1": "Loại vụ án/các khiếu kiện",
+        "2": "Cũ còn lại - Chánh án kháng nghị",
+        "3": "Cũ còn lại - Viện trưởng kháng nghị",
+        "4": "Mới thụ lý - Chánh án kháng nghị",
+        "5": "Mới thụ lý - Viện trưởng kháng nghị",
+        "6": "Tổng số phải giải quyết - Chánh án kháng nghị",
+        "7": "Tổng số phải giải quyết - Viện trưởng kháng nghị",
+        "8": "Tổng số phải giải quyết - cộng",
+        "9": "Đình chỉ xét xử tái thẩm - Chánh án rút kháng nghị",
+        "10": "Đình chỉ xét xử tái thẩm - Viện trưởng rút kháng nghị",
+        "11": "Đình chỉ xét xử tái thẩm - cộng",
+        "12": "Đã xét xử - Chánh án kháng nghị",
+        "13": "Đã xét xử - Viện trưởng kháng nghị",
+        "14": "Đã xét xử - cộng",
+        "15": "Đã giải quyết - Chánh án kháng nghị",
+        "16": "Đã giải quyết - Viện trưởng kháng nghị",
+        "17": "Đã giải quyết - cộng",
+        "18": "Còn lại - Chánh án kháng nghị",
+        "19": "Còn lại - Viện trưởng kháng nghị",
+        "20": "Còn lại - tổng số",
+        "21": "Quá hạn luật định - nguyên nhân chủ quan",
+        "22": "Quá hạn luật định - nguyên nhân khách quan",
+        "23": "Giữ nguyên bản án/quyết định có hiệu lực - không chấp nhận kháng nghị Chánh án",
+        "24": "Giữ nguyên bản án/quyết định có hiệu lực - không chấp nhận kháng nghị Viện trưởng",
+        "25": "Hủy bản án/quyết định có hiệu lực để xét xử sơ thẩm lại - Chánh án kháng nghị",
+        "26": "Hủy bản án/quyết định có hiệu lực để xét xử sơ thẩm lại - Viện trưởng kháng nghị",
+        "27": "Hủy bản án/quyết định và đình chỉ giải quyết vụ án - Chánh án kháng nghị",
+        "28": "Hủy bản án/quyết định và đình chỉ giải quyết vụ án - Viện trưởng kháng nghị",
+        "29": "Áp dụng án lệ"
+      }
+    }
+  },
+  "formulas": [
+    {
+      "id": "HC_ST_001",
+      "form": "HC_ST_6A",
+      "name": "Tổng số phải giải quyết",
+      "expression": "C6 = C2 + C3 - C4 + C5",
+      "columns": [
+        6
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_ST_002",
+      "form": "HC_ST_6A",
+      "name": "Cộng đình chỉ",
+      "expression": "C9 = C7 + C8",
+      "columns": [
+        9
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_ST_003",
+      "form": "HC_ST_6A",
+      "name": "Cộng xét xử",
+      "expression": "C13 = C10 + C11 + C12",
+      "columns": [
+        13
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_ST_004",
+      "form": "HC_ST_6A",
+      "name": "Tổng số đã giải quyết",
+      "expression": "C15 = C9 + C13",
+      "columns": [
+        15
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_ST_005",
+      "form": "HC_ST_6A",
+      "name": "Tổng số còn lại",
+      "expression": "C17 = C6 - C15",
+      "columns": [
+        17
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_ST_KPI_001",
+      "form": "HC_ST_6A",
+      "name": "Tỷ lệ giải quyết",
+      "expression": "resolution_rate = safe_div(C15, C6) * 100",
+      "columns": [
+        15,
+        6
+      ],
+      "description": "KPI dashboard",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_ST_KPI_002",
+      "form": "HC_ST_6A",
+      "name": "Tỷ lệ tồn",
+      "expression": "remaining_rate = safe_div(C17, C6) * 100",
+      "columns": [
+        17,
+        6
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_ST_KPI_003",
+      "form": "HC_ST_6A",
+      "name": "Tỷ lệ đối thoại",
+      "expression": "dialogue_rate = safe_div(C16, C6) * 100",
+      "columns": [
+        16,
+        6
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_ST_KPI_004",
+      "form": "HC_ST_6A",
+      "name": "Tỷ lệ chấp nhận yêu cầu",
+      "expression": "accepted_rate = safe_div(C11 + C12, C13) * 100",
+      "columns": [
+        11,
+        12,
+        13
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_ST_KPI_005",
+      "form": "HC_ST_6A",
+      "name": "Tỷ lệ bác yêu cầu",
+      "expression": "rejected_rate = safe_div(C10, C13) * 100",
+      "columns": [
+        10,
+        13
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_ST_KPI_006",
+      "form": "HC_ST_6A",
+      "name": "Tỷ lệ quá hạn",
+      "expression": "overdue_rate = safe_div(C18 + C19, C17) * 100",
+      "columns": [
+        18,
+        19,
+        17
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_ST_KPI_007",
+      "form": "HC_ST_6A",
+      "name": "Tỷ lệ tạm đình chỉ",
+      "expression": "suspension_rate = safe_div(C20, C17) * 100",
+      "columns": [
+        20,
+        17
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_ST_KPI_008",
+      "form": "HC_ST_6A",
+      "name": "Tổng số tiền bồi thường",
+      "expression": "compensation_amount = SUM(C30)",
+      "columns": [
+        30
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_PT_001",
+      "form": "HC_PT_6B",
+      "name": "Tổng kháng cáo phải giải quyết",
+      "expression": "C6 = C2 + C4",
+      "columns": [
+        6
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_PT_002",
+      "form": "HC_PT_6B",
+      "name": "Tổng kháng nghị phải giải quyết",
+      "expression": "C7 = C3 + C5",
+      "columns": [
+        7
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_PT_003",
+      "form": "HC_PT_6B",
+      "name": "Tổng số phải giải quyết",
+      "expression": "C8 = C6 + C7",
+      "columns": [
+        8
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_PT_004",
+      "form": "HC_PT_6B",
+      "name": "Đình chỉ lý do khác cộng",
+      "expression": "C13 = C9 + C10 + C11 + C12",
+      "columns": [
+        13
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_PT_005",
+      "form": "HC_PT_6B",
+      "name": "Xét xử cộng",
+      "expression": "C16 = C14 + C15",
+      "columns": [
+        16
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_PT_006",
+      "form": "HC_PT_6B",
+      "name": "Đã giải quyết kháng cáo",
+      "expression": "C17 = C9 + C11 + C14",
+      "columns": [
+        17
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_PT_007",
+      "form": "HC_PT_6B",
+      "name": "Đã giải quyết kháng nghị",
+      "expression": "C18 = C10 + C12 + C15",
+      "columns": [
+        18
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_PT_008",
+      "form": "HC_PT_6B",
+      "name": "Đã giải quyết cộng",
+      "expression": "C19 = C17 + C18",
+      "columns": [
+        19
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_PT_009",
+      "form": "HC_PT_6B",
+      "name": "Còn lại kháng cáo",
+      "expression": "C20 = C6 - C17",
+      "columns": [
+        20
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_PT_010",
+      "form": "HC_PT_6B",
+      "name": "Còn lại kháng nghị",
+      "expression": "C21 = C7 - C18",
+      "columns": [
+        21
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_PT_011",
+      "form": "HC_PT_6B",
+      "name": "Còn lại cộng",
+      "expression": "C22 = C8 - C19",
+      "columns": [
+        22
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_PT_KPI_001",
+      "form": "HC_PT_6B",
+      "name": "Tỷ lệ giải quyết phúc thẩm",
+      "expression": "resolution_rate = safe_div(C19, C8) * 100",
+      "columns": [
+        19,
+        8
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_PT_KPI_002",
+      "form": "HC_PT_6B",
+      "name": "Tỷ lệ sửa án",
+      "expression": "modified_rate = safe_div(C30 + C31 + C32 + C33, C16) * 100",
+      "columns": [
+        30,
+        31,
+        32,
+        33,
+        16
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_PT_KPI_003",
+      "form": "HC_PT_6B",
+      "name": "Tỷ lệ hủy án",
+      "expression": "cancelled_rate = safe_div(C34 + C35 + C36 + C37, C16) * 100",
+      "columns": [
+        34,
+        35,
+        36,
+        37,
+        16
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_PT_KPI_004",
+      "form": "HC_PT_6B",
+      "name": "Tỷ lệ giữ nguyên",
+      "expression": "upheld_rate = safe_div(C29, C16) * 100",
+      "columns": [
+        29,
+        16
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_PT_KPI_005",
+      "form": "HC_PT_6B",
+      "name": "Tỷ lệ hủy/sửa do cấp sơ thẩm sai",
+      "expression": "first_instance_error_rate = safe_div(C30 + C32 + C34 + C36, C16) * 100",
+      "columns": [
+        30,
+        32,
+        34,
+        36,
+        16
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_PT_KPI_006",
+      "form": "HC_PT_6B",
+      "name": "Tỷ lệ quá hạn",
+      "expression": "overdue_rate = safe_div(C23 + C24, C22) * 100",
+      "columns": [
+        23,
+        24,
+        22
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_GDT_001",
+      "form": "HC_GDT_6C",
+      "name": "Tổng phải giải quyết - Chánh án kháng nghị",
+      "expression": "C6 = C2 + C4",
+      "columns": [
+        6
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_GDT_002",
+      "form": "HC_GDT_6C",
+      "name": "Tổng phải giải quyết - Viện trưởng kháng nghị",
+      "expression": "C7 = C3 + C5",
+      "columns": [
+        7
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_GDT_003",
+      "form": "HC_GDT_6C",
+      "name": "Tổng phải giải quyết - cộng",
+      "expression": "C8 = C6 + C7",
+      "columns": [
+        8
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_GDT_004",
+      "form": "HC_GDT_6C",
+      "name": "Đình chỉ/rút kháng nghị cộng",
+      "expression": "C11 = C9 + C10",
+      "columns": [
+        11
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_GDT_005",
+      "form": "HC_GDT_6C",
+      "name": "Đã xét xử cộng",
+      "expression": "C14 = C12 + C13",
+      "columns": [
+        14
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_GDT_006",
+      "form": "HC_GDT_6C",
+      "name": "Đã giải quyết - Chánh án kháng nghị",
+      "expression": "C15 = C9 + C12",
+      "columns": [
+        15
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_GDT_007",
+      "form": "HC_GDT_6C",
+      "name": "Đã giải quyết - Viện trưởng kháng nghị",
+      "expression": "C16 = C10 + C13",
+      "columns": [
+        16
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_GDT_008",
+      "form": "HC_GDT_6C",
+      "name": "Đã giải quyết cộng",
+      "expression": "C17 = C15 + C16",
+      "columns": [
+        17
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_GDT_009",
+      "form": "HC_GDT_6C",
+      "name": "Còn lại - Chánh án kháng nghị",
+      "expression": "C18 = C6 - C15",
+      "columns": [
+        18
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_GDT_010",
+      "form": "HC_GDT_6C",
+      "name": "Còn lại - Viện trưởng kháng nghị",
+      "expression": "C19 = C7 - C16",
+      "columns": [
+        19
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_GDT_011",
+      "form": "HC_GDT_6C",
+      "name": "Còn lại tổng số",
+      "expression": "C20 = C8 - C17",
+      "columns": [
+        20
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_GDT_KPI_001",
+      "form": "HC_GDT_6C",
+      "name": "Tỷ lệ giải quyết giám đốc thẩm",
+      "expression": "resolution_rate = safe_div(C17, C8) * 100",
+      "columns": [
+        17,
+        8
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_GDT_KPI_002",
+      "form": "HC_GDT_6C",
+      "name": "Tỷ lệ không chấp nhận kháng nghị giám đốc thẩm",
+      "expression": "not_accepted_rate = safe_div(C23 + C24, C14) * 100",
+      "columns": [
+        23,
+        24,
+        14
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_GDT_KPI_003",
+      "form": "HC_GDT_6C",
+      "name": "Tỷ lệ quá hạn giám đốc thẩm",
+      "expression": "overdue_rate = safe_div(C21 + C22, C20) * 100",
+      "columns": [
+        21,
+        22,
+        20
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_TT_001",
+      "form": "HC_TT_6D",
+      "name": "Tổng phải giải quyết - Chánh án kháng nghị",
+      "expression": "C6 = C2 + C4",
+      "columns": [
+        6
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_TT_002",
+      "form": "HC_TT_6D",
+      "name": "Tổng phải giải quyết - Viện trưởng kháng nghị",
+      "expression": "C7 = C3 + C5",
+      "columns": [
+        7
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_TT_003",
+      "form": "HC_TT_6D",
+      "name": "Tổng phải giải quyết - cộng",
+      "expression": "C8 = C6 + C7",
+      "columns": [
+        8
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_TT_004",
+      "form": "HC_TT_6D",
+      "name": "Đình chỉ/rút kháng nghị cộng",
+      "expression": "C11 = C9 + C10",
+      "columns": [
+        11
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_TT_005",
+      "form": "HC_TT_6D",
+      "name": "Đã xét xử cộng",
+      "expression": "C14 = C12 + C13",
+      "columns": [
+        14
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_TT_006",
+      "form": "HC_TT_6D",
+      "name": "Đã giải quyết - Chánh án kháng nghị",
+      "expression": "C15 = C9 + C12",
+      "columns": [
+        15
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_TT_007",
+      "form": "HC_TT_6D",
+      "name": "Đã giải quyết - Viện trưởng kháng nghị",
+      "expression": "C16 = C10 + C13",
+      "columns": [
+        16
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_TT_008",
+      "form": "HC_TT_6D",
+      "name": "Đã giải quyết cộng",
+      "expression": "C17 = C15 + C16",
+      "columns": [
+        17
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_TT_009",
+      "form": "HC_TT_6D",
+      "name": "Còn lại - Chánh án kháng nghị",
+      "expression": "C18 = C6 - C15",
+      "columns": [
+        18
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_TT_010",
+      "form": "HC_TT_6D",
+      "name": "Còn lại - Viện trưởng kháng nghị",
+      "expression": "C19 = C7 - C16",
+      "columns": [
+        19
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_TT_011",
+      "form": "HC_TT_6D",
+      "name": "Còn lại tổng số",
+      "expression": "C20 = C8 - C17",
+      "columns": [
+        20
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_TT_KPI_001",
+      "form": "HC_TT_6D",
+      "name": "Tỷ lệ giải quyết tái thẩm",
+      "expression": "resolution_rate = safe_div(C17, C8) * 100",
+      "columns": [
+        17,
+        8
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_TT_KPI_002",
+      "form": "HC_TT_6D",
+      "name": "Tỷ lệ không chấp nhận kháng nghị tái thẩm",
+      "expression": "not_accepted_rate = safe_div(C23 + C24, C14) * 100",
+      "columns": [
+        23,
+        24,
+        14
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_TT_KPI_003",
+      "form": "HC_TT_6D",
+      "name": "Tỷ lệ quá hạn tái thẩm",
+      "expression": "overdue_rate = safe_div(C21 + C22, C20) * 100",
+      "columns": [
+        21,
+        22,
+        20
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_GDT_KPI_004",
+      "form": "HC_GDT_6C",
+      "name": "Tỷ lệ hủy/sửa theo giám đốc thẩm",
+      "expression": "revision_rate = safe_div(C25+C26+C27+C28+C29+C30+C31+C32+C33, C14) * 100",
+      "columns": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        14
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_TT_KPI_004",
+      "form": "HC_TT_6D",
+      "name": "Tỷ lệ hủy án theo tái thẩm",
+      "expression": "cancelled_retrial_rate = safe_div(C25+C26+C27+C28, C14) * 100",
+      "columns": [
+        25,
+        26,
+        27,
+        28,
+        14
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_GDT_KPI_005",
+      "form": "HC_GDT_6C",
+      "name": "Tỷ lệ áp dụng án lệ",
+      "expression": "precedent_rate = safe_div(C34, C14) * 100",
+      "columns": [
+        34,
+        14
+      ],
+      "description": "",
+      "kind": "formula"
+    },
+    {
+      "id": "HC_TT_KPI_005",
+      "form": "HC_TT_6D",
+      "name": "Tỷ lệ áp dụng án lệ",
+      "expression": "precedent_rate = safe_div(C29, C14) * 100",
+      "columns": [
+        29,
+        14
+      ],
+      "description": "",
+      "kind": "formula"
+    }
+  ]
+}
