@@ -15,7 +15,8 @@ Hệ thống phục vụ lãnh đạo theo dõi:
 
 ## Nguyên tắc bắt buộc
 
-- Không xóa file hiện có nếu không có yêu cầu rõ ràng.
+- Có thể xóa file trùng nội dung khi file đó đã có bản chuẩn trong cấu trúc mới và không còn cần dùng trong dự án.
+- Không xóa dữ liệu nguồn chưa được gom, ví dụ PDF trong `Documents/`, Excel trong `bieu_mau/`, JSON mapping/formula/validation, hình ảnh diagram hoặc asset.
 - Không đổi nội dung nghiệp vụ của skill/rule khi chỉ làm nhiệm vụ sắp xếp cấu trúc.
 - Mọi rule pháp lý phải có căn cứ từ tài liệu trong `Documents/` hoặc `docs/legal/`.
 - Không tự bịa luật, biểu mẫu, chỉ tiêu hoặc công thức.
@@ -57,3 +58,16 @@ Validation:
 Owner Agent:
 Priority:
 ```
+
+## Checklist Task Format
+
+Trước khi nhận hoặc thực hiện task, kiểm tra đủ các mục sau:
+
+- [ ] `Task`: tên việc cần làm rõ ràng.
+- [ ] `Objective`: mục tiêu nghiệp vụ/kỹ thuật cụ thể.
+- [ ] `Input`: file, dữ liệu hoặc module đầu vào.
+- [ ] `Output`: file, thư mục hoặc kết quả cần tạo.
+- [ ] `Dependencies`: phụ thuộc nếu có; ghi `Không có` nếu không có.
+- [ ] `Validation`: tiêu chí kiểm tra sau khi làm.
+- [ ] `Owner Agent`: agent chịu trách nhiệm.
+- [ ] `Priority`: mức ưu tiên.

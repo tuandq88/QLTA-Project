@@ -17,17 +17,13 @@ Mục tiêu chính là giúp lãnh đạo nhìn được tình hình thụ lý, 
 ├── frontend/                         Mã nguồn frontend khi bắt đầu triển khai app
 ├── tests/                            Test nghiệp vụ và kỹ thuật
 ├── docs/                             Kế hoạch, review, tài liệu pháp lý
-├── Database_Diagram/                 ERD/schema nguồn cũ, giữ để đối chiếu
 ├── Documents/                        Văn bản pháp luật, hướng dẫn biểu mẫu PDF
 ├── knowledge_base/                   Rule nền, kiến trúc skill, KPI, validation
+│   ├── data/statistics/              JSON thống kê: formula, mapping, dictionary, validation
 │   ├── rules/                        Rule tổng cho AI Agent
 │   └── skills/                       Skill đã gom theo nhóm nghiệp vụ
-├── skill_phan_cong_an_ngau_nhien/    Skill phân công án theo Thông tư 01/2022
-├── skill_theo_doi_an_huy_sua/        Skill theo dõi kháng cáo, kháng nghị, hủy/sửa
-├── skill_thong_ke_*                  Skill thống kê theo từng nhóm án
 ├── AGENTS.md                         Hướng dẫn làm việc cho AI Agent
-├── KE_HOACH_TRIEN_KHAI_MOI_*.md      Kế hoạch triển khai dự án
-└── MASTER_PLAN_EXTRACTED_TEXT.txt    Master plan đã trích xuất
+└── .gitignore                        Quy tắc bỏ qua file môi trường/build
 ```
 
 Đây chưa phải là một app hoàn chỉnh có backend/frontend. Repo hiện đóng vai trò như "bản thiết kế nghiệp vụ" cho Vibe Coder hoặc AI Agent triển khai thành sản phẩm.
@@ -60,13 +56,37 @@ Khi Vibe Coder sửa rule, công thức hoặc schema, nên đối chiếu lại
 
 ## Các skill quan trọng
 
-`knowledge_base/TAND_QUANGNGAI_AI_AGENT_RULES_V1.1.md` là rule tổng cho AI Agent. File này quy định nguyên tắc không bịa luật, không đếm trùng số liệu, không ghi đè lịch sử, không để AI ghi trực tiếp vào dữ liệu chính nếu chưa có xác nhận.
+`knowledge_base/rules/TAND_QUANGNGAI_AI_AGENT_RULES_V1.1.md` là rule tổng cho AI Agent. File này quy định nguyên tắc không bịa luật, không đếm trùng số liệu, không ghi đè lịch sử, không để AI ghi trực tiếp vào dữ liệu chính nếu chưa có xác nhận.
 
-`skill_phan_cong_an_ngau_nhien/SKILL_PHAN_CONG_AN_NGAU_NHIEN_V1.md` mô tả cách lập danh sách vụ việc, danh sách Thẩm phán, tiêu chí loại trừ, tiêu chí sắp xếp và audit log khi phân công án.
+`knowledge_base/skills/random_assignment/SKILL_PHAN_CONG_AN_NGAU_NHIEN_V1.md` mô tả cách lập danh sách vụ việc, danh sách Thẩm phán, tiêu chí loại trừ, tiêu chí sắp xếp và audit log khi phân công án.
 
-`skill_theo_doi_an_huy_sua/SKILL_THEO_DOI_AN_KHANG_CAO_KHANG_NGHI_V1.md` mô tả cách theo dõi án bị kháng cáo, kháng nghị, kết quả cấp trên, phân loại hủy/sửa khách quan/chủ quan và tác động tới KPI.
+`knowledge_base/skills/appeal_protest_tracking/SKILL_THEO_DOI_AN_KHANG_CAO_KHANG_NGHI_V1.md` mô tả cách theo dõi án bị kháng cáo, kháng nghị, kết quả cấp trên, phân loại hủy/sửa khách quan/chủ quan và tác động tới KPI.
 
-Các thư mục `skill_thong_ke_*` chứa data dictionary, formula catalog, validation rules và mapping biểu mẫu cho từng nhóm án.
+`knowledge_base/skills/statistics/` chứa các skill thống kê đã gom theo từng nhóm án.
+
+`knowledge_base/data/statistics/` chứa các file JSON dùng cho thống kê:
+
+```text
+all_case_types/        Formula tổng cho tất cả loại án
+civil/                 Dân sự
+criminal/              Hình sự
+administrative/        Hành chính
+marriage_family/       Hôn nhân gia đình
+business_commercial/   Kinh doanh thương mại
+labor/                 Lao động
+```
+
+Tên file trong từng nhóm đã được chuẩn hóa:
+
+```text
+formula_catalog.json
+data_dictionary.json
+column_mapping.json
+input_mapping.json
+validation_rules.json
+```
+
+Không phải nhóm nào cũng có đủ 5 file; ví dụ dân sự hiện có `formula_catalog.json` và `validation_rules.json`, hình sự hiện có `formula_catalog.json` và `data_dictionary.json`.
 
 ## Database
 
@@ -78,10 +98,10 @@ database/schema/unified_postgresql_schema.sql
 
 File này gom mô hình từ:
 
-- `Database_Diagram/postgresql_starter_schema.sql`
-- `Database_Diagram/DATABASE_DIAGRAM_TAND_QUANGNGAI.md`
-- `skill_phan_cong_an_ngau_nhien/random_assignment_schema_extension.sql`
-- `skill_theo_doi_an_huy_sua/appeal_protest_tracking_schema_extension.sql`
+- `database/schema/postgresql_starter_schema.sql`
+- `database/diagrams/DATABASE_DIAGRAM_TAND_QUANGNGAI.md`
+- `database/migrations/random_assignment_schema_extension.sql`
+- `database/migrations/appeal_protest_tracking_schema_extension.sql`
 
 Triển khai PostgreSQL:
 
@@ -116,8 +136,21 @@ Nếu bắt đầu code app từ repo này, nên đi theo thứ tự:
 - Mọi chỉ tiêu thống kê cần có công thức và nguồn biểu mẫu.
 - Mọi validation liên quan thời hạn hoặc quyền tố tụng cần có `legal_basis`.
 - Khi sửa schema lõi, cập nhật lại ERD, migration và README.
-- Các formula sinh từ OCR trong `skill_thong_ke_tat_ca_loai_an/formula_catalog.json` cần được rà soát kỹ trước khi đưa vào code tính toán.
+- Các formula sinh từ OCR trong `knowledge_base/data/statistics/all_case_types/formula_catalog.json` cần được rà soát kỹ trước khi đưa vào code tính toán.
 
 ## Tình trạng hiện tại
 
 Repo đã có nền tảng tri thức và schema để bắt đầu triển khai database. Việc tiếp theo nên là biến các rule thành migration, seed danh mục, API và giao diện nhập liệu/dashboard.
+
+## Checklist Task Format
+
+Mỗi task nên có đủ:
+
+- [ ] `Task`
+- [ ] `Objective`
+- [ ] `Input`
+- [ ] `Output`
+- [ ] `Dependencies`
+- [ ] `Validation`
+- [ ] `Owner Agent`
+- [ ] `Priority`
