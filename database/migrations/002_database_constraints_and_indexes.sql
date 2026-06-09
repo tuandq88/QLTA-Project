@@ -389,13 +389,13 @@ CREATE INDEX IF NOT EXISTS idx_case_files_assignment_pool
     WHERE case_status = 'accepted';
 
 CREATE INDEX IF NOT EXISTS idx_case_events_case_time
-    ON case_events (case_id, event_time DESC);
+    ON case_events (case_id, created_at DESC);
 
 CREATE INDEX IF NOT EXISTS idx_case_assignments_user_status
     ON case_assignments (user_id, status, assigned_date);
 
 CREATE INDEX IF NOT EXISTS idx_hearings_schedule
-    ON hearings (court_id, scheduled_date, scheduled_time);
+    ON hearings (case_id, scheduled_date, scheduled_time);
 
 CREATE INDEX IF NOT EXISTS idx_deadlines_status_due
     ON deadlines (deadline_status, due_date);
@@ -440,7 +440,7 @@ CREATE INDEX IF NOT EXISTS idx_appellate_trackings_original_received
     ON appellate_trackings (original_court_id, received_date);
 
 CREATE INDEX IF NOT EXISTS idx_appellate_trackings_final_result
-    ON appellate_trackings (final_result_code, final_result_date);
+    ON appellate_trackings (final_result_code, resolved_date);
 
 CREATE INDEX IF NOT EXISTS idx_appeal_protest_items_status
     ON appeal_protest_items (appellate_tracking_id, item_type, status);

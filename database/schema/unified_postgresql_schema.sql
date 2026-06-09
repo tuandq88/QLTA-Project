@@ -774,6 +774,564 @@ CREATE TABLE IF NOT EXISTS audit_logs (
 );
 
 -- ---------------------------------------------------------------------
+-- Reference data foundation synchronized from migrations 003 and 004.
+-- These tables are required by database/seed/*.sql in UnifiedOnly mode.
+-- ---------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS dm_categories (
+    category_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    category_code VARCHAR(100) NOT NULL UNIQUE,
+    category_name VARCHAR(255) NOT NULL,
+    description TEXT,
+    is_system BOOLEAN NOT NULL DEFAULT TRUE,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    sort_order INTEGER NOT NULL DEFAULT 0,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT chk_dm_categories_code_format CHECK (category_code ~ '^[a-z][a-z0-9_]*$'),
+    CONSTRAINT chk_dm_categories_sort_order_nonnegative CHECK (sort_order >= 0)
+);
+
+CREATE TABLE IF NOT EXISTS dm_category_items (
+    item_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    category_id UUID NOT NULL REFERENCES dm_categories(category_id) ON DELETE RESTRICT,
+    item_code VARCHAR(150) NOT NULL,
+    item_name VARCHAR(255) NOT NULL,
+    parent_item_id UUID REFERENCES dm_category_items(item_id) ON DELETE RESTRICT,
+    description TEXT,
+    legal_basis TEXT,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    sort_order INTEGER NOT NULL DEFAULT 0,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    valid_from DATE,
+    valid_to DATE,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT uq_dm_category_items_category_code UNIQUE (category_id, item_code),
+    CONSTRAINT chk_dm_category_items_code_format CHECK (item_code ~ '^[A-Za-z0-9_.:-]+$'),
+    CONSTRAINT chk_dm_category_items_sort_order_nonnegative CHECK (sort_order >= 0),
+    CONSTRAINT chk_dm_category_items_valid_range CHECK (valid_to IS NULL OR valid_from IS NULL OR valid_to >= valid_from)
+);
+
+CREATE TABLE IF NOT EXISTS dm_table_reference_columns (
+    binding_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    category_id UUID NOT NULL REFERENCES dm_categories(category_id) ON DELETE RESTRICT,
+    table_name VARCHAR(100) NOT NULL,
+    source_column_name VARCHAR(100),
+    reference_column_name VARCHAR(100) NOT NULL,
+    is_required BOOLEAN NOT NULL DEFAULT FALSE,
+    migration_phase INTEGER NOT NULL DEFAULT 1,
+    notes TEXT,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT chk_dm_table_reference_columns_phase_positive CHECK (migration_phase > 0)
+);
+
+CREATE TABLE IF NOT EXISTS statistical_categories (
+    statistical_category_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    category_code VARCHAR(100) UNIQUE NOT NULL,
+    category_name VARCHAR(255) NOT NULL,
+    description TEXT,
+    case_type_scope VARCHAR(100),
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    sort_order INTEGER NOT NULL DEFAULT 0,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT chk_statistical_categories_code CHECK (category_code ~ '^[a-z][a-z0-9_]*$'),
+    CONSTRAINT chk_statistical_categories_sort CHECK (sort_order >= 0)
+);
+
+CREATE TABLE IF NOT EXISTS statistical_indicators (
+    statistical_indicator_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    statistical_category_id UUID NOT NULL REFERENCES statistical_categories(statistical_category_id) ON DELETE RESTRICT,
+    indicator_code VARCHAR(150) UNIQUE NOT NULL,
+    indicator_name VARCHAR(255) NOT NULL,
+    input_control_type VARCHAR(50) NOT NULL,
+    value_type VARCHAR(50) NOT NULL DEFAULT 'option',
+    is_required BOOLEAN NOT NULL DEFAULT FALSE,
+    allow_multiple BOOLEAN NOT NULL DEFAULT FALSE,
+    applies_to_entity VARCHAR(100) NOT NULL,
+    case_type_scope VARCHAR(100),
+    legal_basis TEXT,
+    description TEXT,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    sort_order INTEGER NOT NULL DEFAULT 0,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT chk_statistical_indicators_input_control
+        CHECK (input_control_type IN ('dropdown', 'radio', 'checkbox', 'checkbox_group', 'number', 'date', 'text')),
+    CONSTRAINT chk_statistical_indicators_value_type
+        CHECK (value_type IN ('option', 'boolean', 'numeric', 'date', 'text')),
+    CONSTRAINT chk_statistical_indicators_sort CHECK (sort_order >= 0)
+);
+
+CREATE TABLE IF NOT EXISTS statistical_indicator_options (
+    option_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    statistical_indicator_id UUID NOT NULL REFERENCES statistical_indicators(statistical_indicator_id) ON DELETE CASCADE,
+    option_code VARCHAR(150) NOT NULL,
+    option_name TEXT NOT NULL,
+    option_value VARCHAR(255),
+    parent_option_id UUID REFERENCES statistical_indicator_options(option_id) ON DELETE RESTRICT,
+    description TEXT,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    sort_order INTEGER NOT NULL DEFAULT 0,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT uq_statistical_indicator_options_code UNIQUE (statistical_indicator_id, option_code),
+    CONSTRAINT chk_statistical_indicator_options_sort CHECK (sort_order >= 0)
+);
+
+CREATE TABLE IF NOT EXISTS statistical_indicator_applicability (
+    applicability_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    statistical_indicator_id UUID NOT NULL REFERENCES statistical_indicators(statistical_indicator_id) ON DELETE CASCADE,
+    case_type VARCHAR(100),
+    entity_type VARCHAR(100) NOT NULL,
+    procedure_law VARCHAR(100),
+    applies_to_court_level VARCHAR(100),
+    is_required BOOLEAN NOT NULL DEFAULT FALSE,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    note TEXT
+);
+
+CREATE TABLE IF NOT EXISTS entity_statistical_attributes (
+    attribute_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    entity_type VARCHAR(100) NOT NULL,
+    entity_id UUID NOT NULL,
+    case_id UUID REFERENCES case_files(case_id) ON DELETE CASCADE,
+    statistical_indicator_id UUID NOT NULL REFERENCES statistical_indicators(statistical_indicator_id) ON DELETE RESTRICT,
+    option_id UUID REFERENCES statistical_indicator_options(option_id) ON DELETE RESTRICT,
+    boolean_value BOOLEAN,
+    numeric_value NUMERIC(18,4),
+    text_value TEXT,
+    date_value DATE,
+    source_table VARCHAR(100),
+    source_field VARCHAR(100),
+    created_by UUID REFERENCES users(user_id) ON DELETE SET NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT uq_entity_statistical_attribute_option UNIQUE (entity_type, entity_id, statistical_indicator_id, option_id),
+    CONSTRAINT chk_entity_statistical_attribute_one_value CHECK (
+        num_nonnulls(option_id, boolean_value, numeric_value, text_value, date_value) = 1
+    )
+);
+
+CREATE TABLE IF NOT EXISTS dm_penal_code_articles (
+    article_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    code VARCHAR(100) UNIQUE NOT NULL,
+    article_number VARCHAR(50) NOT NULL,
+    article_title TEXT,
+    chapter VARCHAR(100),
+    law_code VARCHAR(100),
+    effective_from DATE,
+    effective_to DATE,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    description TEXT,
+    source_document TEXT,
+    source_url TEXT,
+    notes TEXT,
+    requires_human_review BOOLEAN NOT NULL DEFAULT FALSE,
+    CONSTRAINT chk_dm_penal_code_articles_valid_range
+        CHECK (effective_to IS NULL OR effective_from IS NULL OR effective_to >= effective_from)
+);
+
+CREATE TABLE IF NOT EXISTS dm_crimes (
+    crime_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    article_id UUID REFERENCES dm_penal_code_articles(article_id) ON DELETE RESTRICT,
+    crime_code VARCHAR(100) UNIQUE NOT NULL,
+    crime_name TEXT NOT NULL,
+    crime_severity VARCHAR(100),
+    default_statistical_group VARCHAR(100),
+    legal_basis TEXT,
+    source_document TEXT,
+    source_url TEXT,
+    notes TEXT,
+    requires_human_review BOOLEAN NOT NULL DEFAULT FALSE,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    sort_order INTEGER NOT NULL DEFAULT 0,
+    CONSTRAINT chk_dm_crimes_sort CHECK (sort_order >= 0)
+);
+
+CREATE TABLE IF NOT EXISTS dm_defendant_statistical_features (
+    feature_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    feature_code VARCHAR(100) UNIQUE NOT NULL,
+    feature_name VARCHAR(255) NOT NULL,
+    input_control_type VARCHAR(50) NOT NULL DEFAULT 'checkbox',
+    description TEXT,
+    legal_basis TEXT,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    sort_order INTEGER NOT NULL DEFAULT 0,
+    CONSTRAINT chk_dm_defendant_features_input CHECK (input_control_type IN ('checkbox', 'radio', 'dropdown')),
+    CONSTRAINT chk_dm_defendant_features_sort CHECK (sort_order >= 0)
+);
+
+CREATE TABLE IF NOT EXISTS defendant_statistical_features (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    defendant_id UUID NOT NULL REFERENCES defendants(defendant_id) ON DELETE CASCADE,
+    feature_id UUID NOT NULL REFERENCES dm_defendant_statistical_features(feature_id) ON DELETE RESTRICT,
+    case_id UUID REFERENCES case_files(case_id) ON DELETE CASCADE,
+    selected BOOLEAN NOT NULL DEFAULT TRUE,
+    note TEXT,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE (defendant_id, feature_id)
+);
+
+CREATE TABLE IF NOT EXISTS dm_statistical_option_groups (
+    group_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    group_code VARCHAR(100) UNIQUE NOT NULL,
+    group_name VARCHAR(255) NOT NULL,
+    allow_multiple BOOLEAN NOT NULL DEFAULT FALSE,
+    applies_to_entity VARCHAR(100),
+    description TEXT,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    sort_order INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS dm_statistical_options (
+    option_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    group_id UUID NOT NULL REFERENCES dm_statistical_option_groups(group_id) ON DELETE CASCADE,
+    option_code VARCHAR(100) NOT NULL,
+    option_name VARCHAR(255) NOT NULL,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    sort_order INTEGER NOT NULL DEFAULT 0,
+    UNIQUE (group_id, option_code)
+);
+
+CREATE TABLE IF NOT EXISTS defendant_statistical_option_values (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    defendant_id UUID NOT NULL REFERENCES defendants(defendant_id) ON DELETE CASCADE,
+    group_id UUID NOT NULL REFERENCES dm_statistical_option_groups(group_id) ON DELETE RESTRICT,
+    option_id UUID NOT NULL REFERENCES dm_statistical_options(option_id) ON DELETE RESTRICT,
+    case_id UUID REFERENCES case_files(case_id) ON DELETE CASCADE,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE (defendant_id, option_id)
+);
+
+CREATE OR REPLACE FUNCTION enforce_defendant_statistical_option_group()
+RETURNS trigger
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    v_allow_multiple BOOLEAN;
+BEGIN
+    SELECT allow_multiple INTO v_allow_multiple
+    FROM dm_statistical_option_groups
+    WHERE group_id = NEW.group_id;
+
+    IF NOT EXISTS (
+        SELECT 1 FROM dm_statistical_options
+        WHERE option_id = NEW.option_id AND group_id = NEW.group_id
+    ) THEN
+        RAISE EXCEPTION 'statistical option % does not belong to group %', NEW.option_id, NEW.group_id;
+    END IF;
+
+    IF v_allow_multiple IS FALSE AND EXISTS (
+        SELECT 1 FROM defendant_statistical_option_values existing
+        WHERE existing.defendant_id = NEW.defendant_id
+          AND existing.group_id = NEW.group_id
+          AND existing.id <> COALESCE(NEW.id, uuid_nil())
+    ) THEN
+        RAISE EXCEPTION 'defendant % already has a value for single-select group %', NEW.defendant_id, NEW.group_id;
+    END IF;
+
+    RETURN NEW;
+END $$;
+
+DO $$
+BEGIN
+    CREATE TRIGGER trg_defendant_statistical_option_group
+    BEFORE INSERT OR UPDATE ON defendant_statistical_option_values
+    FOR EACH ROW EXECUTE FUNCTION enforce_defendant_statistical_option_group();
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
+
+CREATE TABLE IF NOT EXISTS dm_legal_relationships (
+    legal_relationship_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    relationship_code VARCHAR(150) UNIQUE NOT NULL,
+    relationship_name TEXT NOT NULL,
+    case_type_scope VARCHAR(100),
+    parent_id UUID REFERENCES dm_legal_relationships(legal_relationship_id) ON DELETE RESTRICT,
+    legal_basis TEXT,
+    source_document TEXT,
+    source_url TEXT,
+    notes TEXT,
+    requires_human_review BOOLEAN NOT NULL DEFAULT FALSE,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    sort_order INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS case_legal_relationships (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    case_id UUID NOT NULL REFERENCES case_files(case_id) ON DELETE CASCADE,
+    legal_relationship_id UUID NOT NULL REFERENCES dm_legal_relationships(legal_relationship_id) ON DELETE RESTRICT,
+    is_primary BOOLEAN NOT NULL DEFAULT FALSE,
+    note TEXT,
+    UNIQUE (case_id, legal_relationship_id)
+);
+
+CREATE TABLE IF NOT EXISTS dm_trial_result_types (
+    trial_result_type_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    result_code VARCHAR(100) UNIQUE NOT NULL,
+    result_name VARCHAR(255) NOT NULL,
+    case_type_scope VARCHAR(100),
+    stage_scope VARCHAR(100),
+    affects_kpi BOOLEAN NOT NULL DEFAULT TRUE,
+    is_final_result BOOLEAN NOT NULL DEFAULT FALSE,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    sort_order INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS decision_result_attributes (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    decision_id UUID NOT NULL REFERENCES decisions(decision_id) ON DELETE CASCADE,
+    statistical_indicator_id UUID NOT NULL REFERENCES statistical_indicators(statistical_indicator_id) ON DELETE RESTRICT,
+    option_id UUID NOT NULL REFERENCES statistical_indicator_options(option_id) ON DELETE RESTRICT,
+    UNIQUE (decision_id, statistical_indicator_id, option_id)
+);
+
+CREATE TABLE IF NOT EXISTS dm_appellate_result_codes (
+    appellate_result_code_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    result_code VARCHAR(100) UNIQUE NOT NULL,
+    result_name VARCHAR(255) NOT NULL,
+    is_cancelled BOOLEAN NOT NULL DEFAULT FALSE,
+    is_modified BOOLEAN NOT NULL DEFAULT FALSE,
+    is_upheld BOOLEAN NOT NULL DEFAULT FALSE,
+    is_withdrawn BOOLEAN NOT NULL DEFAULT FALSE,
+    requires_fault_classification BOOLEAN NOT NULL DEFAULT FALSE,
+    affects_quality_kpi BOOLEAN NOT NULL DEFAULT TRUE,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    sort_order INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS dm_fault_classifications (
+    fault_classification_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    classification_code VARCHAR(100) UNIQUE NOT NULL,
+    classification_name VARCHAR(255) NOT NULL,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    sort_order INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS dm_fault_reason_groups (
+    fault_reason_group_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    reason_code VARCHAR(100) UNIQUE NOT NULL,
+    reason_name VARCHAR(255) NOT NULL,
+    classification_scope VARCHAR(100),
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    sort_order INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS dm_appeal_protest_types (
+    appeal_protest_type_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    type_code VARCHAR(100) UNIQUE NOT NULL,
+    type_name VARCHAR(255) NOT NULL,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    sort_order INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS dm_statistical_forms (
+    form_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    form_code VARCHAR(100) UNIQUE NOT NULL,
+    form_name VARCHAR(255) NOT NULL,
+    case_type_scope VARCHAR(100),
+    report_period_type VARCHAR(100),
+    legal_basis TEXT,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE
+);
+
+CREATE TABLE IF NOT EXISTS dm_statistical_metrics (
+    metric_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    metric_code VARCHAR(100) UNIQUE NOT NULL,
+    metric_name VARCHAR(255) NOT NULL,
+    metric_group VARCHAR(100),
+    value_type VARCHAR(50) NOT NULL DEFAULT 'numeric',
+    aggregation_method VARCHAR(50) NOT NULL DEFAULT 'sum',
+    formula TEXT,
+    legal_basis TEXT,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE
+);
+
+CREATE TABLE IF NOT EXISTS dm_statistical_form_items (
+    form_item_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    form_id UUID NOT NULL REFERENCES dm_statistical_forms(form_id) ON DELETE CASCADE,
+    item_code VARCHAR(150) NOT NULL,
+    item_name VARCHAR(255) NOT NULL,
+    parent_item_id UUID REFERENCES dm_statistical_form_items(form_item_id) ON DELETE RESTRICT,
+    metric_code VARCHAR(100),
+    metric_id UUID REFERENCES dm_statistical_metrics(metric_id) ON DELETE RESTRICT,
+    input_control_type VARCHAR(50),
+    source_table VARCHAR(100),
+    source_field VARCHAR(100),
+    formula_ref VARCHAR(255),
+    sort_order INTEGER NOT NULL DEFAULT 0,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    UNIQUE (form_id, item_code)
+);
+
+-- Nullable FK columns for reference-data and statistical catalogs.
+ALTER TABLE courts ADD COLUMN IF NOT EXISTS court_level_id UUID;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS role_id UUID;
+ALTER TABLE case_files
+    ADD COLUMN IF NOT EXISTS case_type_id UUID,
+    ADD COLUMN IF NOT EXISTS case_status_id UUID,
+    ADD COLUMN IF NOT EXISTS case_group_id UUID,
+    ADD COLUMN IF NOT EXISTS procedure_law_id UUID,
+    ADD COLUMN IF NOT EXISTS current_stage_id UUID,
+    ADD COLUMN IF NOT EXISTS resolution_status_id UUID;
+ALTER TABLE participants ADD COLUMN IF NOT EXISTS participant_type_id UUID;
+ALTER TABLE documents ADD COLUMN IF NOT EXISTS document_type_id UUID;
+ALTER TABLE decisions
+    ADD COLUMN IF NOT EXISTS decision_type_id UUID,
+    ADD COLUMN IF NOT EXISTS result_code_id UUID,
+    ADD COLUMN IF NOT EXISTS trial_result_type_id UUID;
+ALTER TABLE deadlines
+    ADD COLUMN IF NOT EXISTS deadline_type_id UUID,
+    ADD COLUMN IF NOT EXISTS deadline_status_id UUID,
+    ADD COLUMN IF NOT EXISTS warning_level_id UUID;
+ALTER TABLE validation_results
+    ADD COLUMN IF NOT EXISTS rule_id UUID,
+    ADD COLUMN IF NOT EXISTS severity_id UUID,
+    ADD COLUMN IF NOT EXISTS validation_status_id UUID;
+ALTER TABLE kpi_metrics
+    ADD COLUMN IF NOT EXISTS metric_group_id UUID,
+    ADD COLUMN IF NOT EXISTS statistical_metric_id UUID;
+ALTER TABLE statistics_periods ADD COLUMN IF NOT EXISTS period_type_id UUID;
+ALTER TABLE statistics_snapshots
+    ADD COLUMN IF NOT EXISTS statistic_form_id UUID,
+    ADD COLUMN IF NOT EXISTS case_group_id UUID,
+    ADD COLUMN IF NOT EXISTS aggregation_level_id UUID,
+    ADD COLUMN IF NOT EXISTS metric_id UUID,
+    ADD COLUMN IF NOT EXISTS form_item_id UUID;
+ALTER TABLE charges
+    ADD COLUMN IF NOT EXISTS crime_severity_id UUID,
+    ADD COLUMN IF NOT EXISTS crime_id UUID,
+    ADD COLUMN IF NOT EXISTS article_id UUID;
+ALTER TABLE defendants
+    ADD COLUMN IF NOT EXISTS gender_id UUID,
+    ADD COLUMN IF NOT EXISTS criminal_record_status_id UUID;
+ALTER TABLE civil_case_details
+    ADD COLUMN IF NOT EXISTS civil_category_id UUID,
+    ADD COLUMN IF NOT EXISTS dispute_type_id UUID,
+    ADD COLUMN IF NOT EXISTS mediation_result_id UUID;
+ALTER TABLE appellate_trackings
+    ADD COLUMN IF NOT EXISTS tracking_status_id UUID,
+    ADD COLUMN IF NOT EXISTS final_result_id UUID,
+    ADD COLUMN IF NOT EXISTS final_result_code_id UUID,
+    ADD COLUMN IF NOT EXISTS appeal_protest_type_catalog_id UUID,
+    ADD COLUMN IF NOT EXISTS fault_classification_catalog_id UUID;
+ALTER TABLE appellate_results ADD COLUMN IF NOT EXISTS result_code_id UUID;
+ALTER TABLE appellate_fault_assessments
+    ADD COLUMN IF NOT EXISTS fault_reason_group_id UUID,
+    ADD COLUMN IF NOT EXISTS fault_classification_catalog_id UUID,
+    ADD COLUMN IF NOT EXISTS fault_reason_group_catalog_id UUID;
+ALTER TABLE case_risk_flags
+    ADD COLUMN IF NOT EXISTS risk_type_id UUID,
+    ADD COLUMN IF NOT EXISTS severity_id UUID,
+    ADD COLUMN IF NOT EXISTS status_id UUID;
+ALTER TABLE audit_logs ADD COLUMN IF NOT EXISTS action_id UUID;
+
+DO $$
+DECLARE
+    r record;
+    constraint_name text;
+BEGIN
+    FOR r IN
+        SELECT * FROM (VALUES
+            ('case_files', 'case_group_id'),
+            ('case_files', 'procedure_law_id'),
+            ('case_files', 'current_stage_id'),
+            ('participants', 'participant_type_id'),
+            ('documents', 'document_type_id'),
+            ('decisions', 'decision_type_id'),
+            ('deadlines', 'deadline_type_id'),
+            ('validation_results', 'rule_id'),
+            ('kpi_metrics', 'metric_group_id'),
+            ('appellate_trackings', 'tracking_status_id'),
+            ('appellate_results', 'result_code_id'),
+            ('case_risk_flags', 'risk_type_id'),
+            ('audit_logs', 'action_id')
+        ) AS v(table_name, column_name)
+    LOOP
+        constraint_name := 'fk_' || r.table_name || '_' || r.column_name || '_dm_item';
+        IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = constraint_name) THEN
+            EXECUTE format(
+                'ALTER TABLE %I ADD CONSTRAINT %I FOREIGN KEY (%I) REFERENCES dm_category_items(item_id) ON DELETE RESTRICT',
+                r.table_name,
+                constraint_name,
+                r.column_name
+            );
+        END IF;
+        EXECUTE format('CREATE INDEX IF NOT EXISTS %I ON %I (%I)', 'idx_' || r.table_name || '_' || r.column_name, r.table_name, r.column_name);
+    END LOOP;
+END $$;
+
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'fk_charges_crime_id_dm_crimes') THEN
+        ALTER TABLE charges ADD CONSTRAINT fk_charges_crime_id_dm_crimes
+            FOREIGN KEY (crime_id) REFERENCES dm_crimes(crime_id) ON DELETE RESTRICT;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'fk_charges_article_id_dm_penal_code_articles') THEN
+        ALTER TABLE charges ADD CONSTRAINT fk_charges_article_id_dm_penal_code_articles
+            FOREIGN KEY (article_id) REFERENCES dm_penal_code_articles(article_id) ON DELETE RESTRICT;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'fk_decisions_trial_result_type') THEN
+        ALTER TABLE decisions ADD CONSTRAINT fk_decisions_trial_result_type
+            FOREIGN KEY (trial_result_type_id) REFERENCES dm_trial_result_types(trial_result_type_id) ON DELETE RESTRICT;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'fk_appellate_trackings_final_result_code') THEN
+        ALTER TABLE appellate_trackings ADD CONSTRAINT fk_appellate_trackings_final_result_code
+            FOREIGN KEY (final_result_code_id) REFERENCES dm_appellate_result_codes(appellate_result_code_id) ON DELETE RESTRICT;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'fk_statistics_snapshots_metric_catalog') THEN
+        ALTER TABLE statistics_snapshots ADD CONSTRAINT fk_statistics_snapshots_metric_catalog
+            FOREIGN KEY (metric_id) REFERENCES dm_statistical_metrics(metric_id) ON DELETE RESTRICT;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'fk_statistics_snapshots_form_item') THEN
+        ALTER TABLE statistics_snapshots ADD CONSTRAINT fk_statistics_snapshots_form_item
+            FOREIGN KEY (form_item_id) REFERENCES dm_statistical_form_items(form_item_id) ON DELETE RESTRICT;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'fk_kpi_metrics_statistical_metric') THEN
+        ALTER TABLE kpi_metrics ADD CONSTRAINT fk_kpi_metrics_statistical_metric
+            FOREIGN KEY (statistical_metric_id) REFERENCES dm_statistical_metrics(metric_id) ON DELETE RESTRICT;
+    END IF;
+END $$;
+
+-- Stable constraints and indexes synchronized from migration 002 for UnifiedOnly tests.
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'chk_courts_parent_not_self') THEN
+        ALTER TABLE courts ADD CONSTRAINT chk_courts_parent_not_self
+            CHECK (parent_court_id IS NULL OR parent_court_id <> court_id);
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'chk_case_files_closed_after_acceptance') THEN
+        ALTER TABLE case_files ADD CONSTRAINT chk_case_files_closed_after_acceptance
+            CHECK (closed_date IS NULL OR acceptance_date IS NULL OR closed_date >= acceptance_date);
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'chk_preventive_measures_end_after_start') THEN
+        ALTER TABLE preventive_measures ADD CONSTRAINT chk_preventive_measures_end_after_start
+            CHECK (end_date IS NULL OR start_date IS NULL OR end_date >= start_date);
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'chk_statistics_snapshots_metric_nonnegative') THEN
+        ALTER TABLE statistics_snapshots ADD CONSTRAINT chk_statistics_snapshots_metric_nonnegative
+            CHECK (metric_value >= 0);
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'chk_kpi_values_actual_nonnegative') THEN
+        ALTER TABLE kpi_values ADD CONSTRAINT chk_kpi_values_actual_nonnegative
+            CHECK (actual_value >= 0);
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'chk_assignment_batch_cases_order_positive') THEN
+        ALTER TABLE assignment_batch_cases ADD CONSTRAINT chk_assignment_batch_cases_order_positive
+            CHECK (case_order > 0);
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'chk_appeal_protest_items_not_both') THEN
+        ALTER TABLE appeal_protest_items ADD CONSTRAINT chk_appeal_protest_items_not_both
+            CHECK (item_type::text IN ('APPEAL', 'PROTEST'));
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'chk_appellate_fault_subjective_requires_reason') THEN
+        ALTER TABLE appellate_fault_assessments ADD CONSTRAINT chk_appellate_fault_subjective_requires_reason
+            CHECK (fault_classification <> 'subjective' OR fault_reason_group IS NOT NULL);
+    END IF;
+END $$;
+
+-- ---------------------------------------------------------------------
 -- Indexes
 -- ---------------------------------------------------------------------
 
@@ -801,3 +1359,98 @@ CREATE INDEX IF NOT EXISTS idx_appellate_trackings_status ON appellate_trackings
 CREATE INDEX IF NOT EXISTS idx_appellate_trackings_final_result ON appellate_trackings(final_result_code);
 CREATE INDEX IF NOT EXISTS idx_appellate_fault_responsible_judge ON appellate_fault_assessments(responsible_judge_id);
 CREATE INDEX IF NOT EXISTS idx_appellate_fault_classification ON appellate_fault_assessments(fault_classification);
+
+CREATE INDEX IF NOT EXISTS idx_dm_categories_active_sort ON dm_categories(is_active, sort_order, category_code);
+CREATE INDEX IF NOT EXISTS idx_dm_category_items_category_active_sort ON dm_category_items(category_id, is_active, sort_order, item_code);
+CREATE INDEX IF NOT EXISTS idx_dm_category_items_parent ON dm_category_items(parent_item_id);
+CREATE INDEX IF NOT EXISTS idx_dm_table_reference_columns_table ON dm_table_reference_columns(table_name, reference_column_name);
+CREATE UNIQUE INDEX IF NOT EXISTS uq_dm_table_reference_columns_scope
+    ON dm_table_reference_columns(category_id, table_name, COALESCE(source_column_name, ''), reference_column_name);
+
+CREATE INDEX IF NOT EXISTS idx_statistical_categories_active_sort ON statistical_categories(is_active, sort_order, category_code);
+CREATE INDEX IF NOT EXISTS idx_statistical_indicators_category ON statistical_indicators(statistical_category_id, is_active, sort_order);
+CREATE INDEX IF NOT EXISTS idx_statistical_indicator_options_indicator ON statistical_indicator_options(statistical_indicator_id, is_active, sort_order);
+CREATE INDEX IF NOT EXISTS idx_stat_indicator_applicability_entity ON statistical_indicator_applicability(entity_type, case_type, is_active);
+CREATE UNIQUE INDEX IF NOT EXISTS uq_stat_indicator_applicability_scope
+    ON statistical_indicator_applicability(
+        statistical_indicator_id,
+        COALESCE(case_type, ''),
+        entity_type,
+        COALESCE(procedure_law, ''),
+        COALESCE(applies_to_court_level, '')
+    );
+CREATE INDEX IF NOT EXISTS idx_entity_stat_attributes_case ON entity_statistical_attributes(case_id);
+CREATE INDEX IF NOT EXISTS idx_entity_stat_attributes_entity ON entity_statistical_attributes(entity_type, entity_id);
+CREATE INDEX IF NOT EXISTS idx_entity_stat_attributes_indicator ON entity_statistical_attributes(statistical_indicator_id);
+CREATE UNIQUE INDEX IF NOT EXISTS uq_entity_statistical_attribute_value_scope
+    ON entity_statistical_attributes(entity_type, entity_id, statistical_indicator_id, COALESCE(option_id, uuid_nil()));
+
+CREATE UNIQUE INDEX IF NOT EXISTS uq_case_files_court_number_type
+    ON case_files(court_id, case_number, case_type)
+    WHERE case_number IS NOT NULL;
+CREATE UNIQUE INDEX IF NOT EXISTS uq_case_assignments_active_primary
+    ON case_assignments(case_id)
+    WHERE is_primary IS TRUE AND status = 'active';
+CREATE UNIQUE INDEX IF NOT EXISTS uq_case_assignments_active_user_role
+    ON case_assignments(case_id, user_id, assignment_role)
+    WHERE status = 'active';
+CREATE UNIQUE INDEX IF NOT EXISTS uq_statistics_periods_type_range
+    ON statistics_periods(period_type, start_date, end_date);
+CREATE UNIQUE INDEX IF NOT EXISTS uq_statistics_snapshots_period_scope_metric
+    ON statistics_snapshots(
+        period_id,
+        COALESCE(court_id, '00000000-0000-0000-0000-000000000000'::uuid),
+        COALESCE(case_id, '00000000-0000-0000-0000-000000000000'::uuid),
+        COALESCE(statistic_form_code, ''),
+        metric_code,
+        COALESCE(aggregation_level, '')
+    );
+CREATE UNIQUE INDEX IF NOT EXISTS uq_kpi_values_metric_period_scope
+    ON kpi_values(
+        metric_id,
+        period_id,
+        COALESCE(court_id, '00000000-0000-0000-0000-000000000000'::uuid),
+        COALESCE(judge_id, '00000000-0000-0000-0000-000000000000'::uuid)
+    );
+CREATE UNIQUE INDEX IF NOT EXISTS uq_appellate_trackings_case_decision_type
+    ON appellate_trackings(
+        original_case_id,
+        COALESCE(original_decision_id, '00000000-0000-0000-0000-000000000000'::uuid),
+        appeal_protest_type
+    );
+CREATE UNIQUE INDEX IF NOT EXISTS uq_appeal_protest_items_document
+    ON appeal_protest_items(
+        appellate_tracking_id,
+        item_type,
+        COALESCE(document_number, ''),
+        received_date,
+        COALESCE(appellant_participant_id, '00000000-0000-0000-0000-000000000000'::uuid),
+        COALESCE(protest_agency_name, '')
+    );
+CREATE UNIQUE INDEX IF NOT EXISTS uq_validation_results_open_rule_field
+    ON validation_results(case_id, rule_code, COALESCE(field_name, ''))
+    WHERE validation_status = 'open';
+CREATE UNIQUE INDEX IF NOT EXISTS uq_case_risk_flags_open_rule
+    ON case_risk_flags(case_id, risk_type, COALESCE(source_rule_code, ''))
+    WHERE status = 'open';
+CREATE UNIQUE INDEX IF NOT EXISTS uq_case_legal_relationship_primary
+    ON case_legal_relationships(case_id)
+    WHERE is_primary IS TRUE;
+
+CREATE INDEX IF NOT EXISTS idx_case_files_dashboard_status ON case_files(court_id, case_type, case_status, acceptance_date);
+CREATE INDEX IF NOT EXISTS idx_assignment_batches_court_status_date ON assignment_batches(court_id, status, batch_date DESC);
+CREATE INDEX IF NOT EXISTS idx_appellate_trackings_upper_status ON appellate_trackings(upper_court_id, tracking_status, upper_court_acceptance_date);
+CREATE INDEX IF NOT EXISTS idx_validation_results_status_severity ON validation_results(validation_status, severity, checked_at DESC);
+CREATE INDEX IF NOT EXISTS idx_audit_logs_record_time ON audit_logs(table_name, record_id, action_at DESC);
+CREATE INDEX IF NOT EXISTS idx_defendant_stat_features_defendant ON defendant_statistical_features(defendant_id);
+CREATE INDEX IF NOT EXISTS idx_defendant_stat_features_feature ON defendant_statistical_features(feature_id);
+CREATE INDEX IF NOT EXISTS idx_defendant_stat_option_values_defendant ON defendant_statistical_option_values(defendant_id);
+CREATE INDEX IF NOT EXISTS idx_case_legal_relationships_case ON case_legal_relationships(case_id);
+CREATE INDEX IF NOT EXISTS idx_case_legal_relationships_relationship ON case_legal_relationships(legal_relationship_id);
+CREATE INDEX IF NOT EXISTS idx_dm_statistical_form_items_form ON dm_statistical_form_items(form_id, sort_order);
+CREATE INDEX IF NOT EXISTS idx_charges_crime_id ON charges(crime_id);
+CREATE INDEX IF NOT EXISTS idx_charges_article_id ON charges(article_id);
+CREATE INDEX IF NOT EXISTS idx_decisions_trial_result_type ON decisions(trial_result_type_id);
+CREATE INDEX IF NOT EXISTS idx_appellate_trackings_final_result_code_id ON appellate_trackings(final_result_code_id);
+CREATE INDEX IF NOT EXISTS idx_statistics_snapshots_metric_id ON statistics_snapshots(metric_id);
+CREATE INDEX IF NOT EXISTS idx_statistics_snapshots_form_item_id ON statistics_snapshots(form_item_id);

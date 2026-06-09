@@ -1,0 +1,5728 @@
+[
+  {
+    "file": "Dân sự mở rộng - Phúc thẩm.xlsx",
+    "sheets": [
+      {
+        "sheet": "Projects 3 ",
+        "header_row": 2,
+        "data_rows": 552,
+        "columns": [
+          "Chủ toạ",
+          "Thành viên",
+          "Thư ký",
+          "Loại án",
+          "Số án",
+          "Ngày xử",
+          "Số/Ngày TL",
+          "Nguyên đơn",
+          "Bị đơn",
+          "Vụ việc",
+          "Số BA/QĐ ST",
+          "Ngày BA/QĐ ST",
+          "Tòa án xét xử sơ thẩm",
+          "KC/KN",
+          "Kết quả XXPT"
+        ],
+        "counters": {
+          "loại án": [
+            [
+              "Dân sự",
+              442
+            ],
+            [
+              "Hôn nhân gia đình",
+              63
+            ],
+            [
+              "Kinh doanh, thương mại",
+              33
+            ],
+            [
+              "Hành chính",
+              12
+            ],
+            [
+              "Lao động",
+              2
+            ]
+          ],
+          "vụ việc": [
+            [
+              "Tranh chấp hợp đồng vay tài sản",
+              39
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất",
+              33
+            ],
+            [
+              "Tranh chấp hợp đồng tín dụng",
+              24
+            ],
+            [
+              "tranh chấp hợp đồng vay tài sản",
+              23
+            ],
+            [
+              "tranh chấp quyền sử dụng đất",
+              14
+            ],
+            [
+              "tranh chấp hợp đồng tín dụng",
+              11
+            ],
+            [
+              "Tranh chấp hợp đồng chuyển nhượng quyền sử dụng đất",
+              10
+            ],
+            [
+              "Ly hôn, tranh chấp về nuôi con",
+              10
+            ],
+            [
+              "Tranh chấp về thừa kế tài sản",
+              8
+            ],
+            [
+              "Tranh chấp đòi lại tài sản là quyền sử dụng đất",
+              8
+            ],
+            [
+              "tranh chấp hợp đồng chuyển nhượng quyền sử dụng đất",
+              7
+            ],
+            [
+              "ly hôn",
+              7
+            ],
+            [
+              "Tranh chấp thừa kế",
+              6
+            ],
+            [
+              "Tranh chấp hợp đồng mua bán tài sản",
+              5
+            ],
+            [
+              "Tranh chấp về yêu cầu tuyên bố văn bản công chứng vô hiệu",
+              5
+            ],
+            [
+              "Tranh chấp chia di sản thừa kế",
+              4
+            ],
+            [
+              "Tranh chấp về quyền sử dụng đất",
+              4
+            ],
+            [
+              "Đòi nợ tiền",
+              4
+            ],
+            [
+              "kiện dân sự",
+              4
+            ],
+            [
+              "Khiếu kiện hành vi hành chính",
+              4
+            ],
+            [
+              "Tranh chấp hợp đồng đặt cọc",
+              4
+            ],
+            [
+              "Tranh chấp đòi lại tài sản",
+              4
+            ],
+            [
+              "tranh chấp về thừa kế tài sản",
+              3
+            ],
+            [
+              "Tranh chấp hợp đồng kinh tế",
+              3
+            ],
+            [
+              "tranh chấp đất đai",
+              3
+            ],
+            [
+              "Ly hôn",
+              3
+            ],
+            [
+              "Tranh chap đòi lại tài sản là QSDĐ",
+              3
+            ],
+            [
+              "tranh chấp",
+              3
+            ],
+            [
+              "vay tài sản",
+              3
+            ],
+            [
+              "tranh chấp hợp đồng tặng cho quyền sử dụng đất",
+              3
+            ],
+            [
+              "tranh chấp đòi lại tài sản quyền sử dụng đất",
+              3
+            ],
+            [
+              "tranh chấp hợp đồng thuê nhà",
+              3
+            ],
+            [
+              "Tranh chấp hợp đồng chuyển nhượng đất",
+              2
+            ],
+            [
+              "Tranh chấp thừa kế quyền sử dụng đất",
+              2
+            ],
+            [
+              "tranh chấp đòi lại giấy chứng nhận quyền sử dụng đất",
+              2
+            ],
+            [
+              "Chia di sản thừa kế",
+              2
+            ],
+            [
+              "Tranh chấp hợp đồng mua bán hàng hóa",
+              2
+            ],
+            [
+              "Khiếu kiện quyết định hành chính",
+              2
+            ],
+            [
+              "Dân sự",
+              2
+            ],
+            [
+              "thừa kế tài sản",
+              2
+            ],
+            [
+              "Tranh chấp về thay đổi người trực tiếp nuôi con sau khi ly hôn",
+              2
+            ],
+            [
+              "Ly hôn, chia tài sản chung",
+              2
+            ],
+            [
+              "Tranh chấp thừa kế tài sản",
+              2
+            ],
+            [
+              "tranh chấp hợp đồng đặt cọc",
+              2
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất",
+              2
+            ],
+            [
+              "Tranh chấp HĐ tặng cho quyền sử dụng đất",
+              2
+            ],
+            [
+              "Tranh chấp về bồi thường thiệt hại ngoài hợp đồng do tài sản bị xâm phạm",
+              2
+            ],
+            [
+              "Tranh chấp chia tài sản chung",
+              2
+            ],
+            [
+              "Tranh chấp đòi lại quyền sử dụng đất",
+              2
+            ],
+            [
+              "Tuyên bố hợp đồng chuyển nhượng quyền sử dụng đất vô hiệu",
+              2
+            ],
+            [
+              "tranh chấp chia thừa kế quyền sử dụng đất",
+              2
+            ],
+            [
+              "Yêu cầu bồi thường thiệt hại ngoài hợp đồng",
+              2
+            ],
+            [
+              "Tranh chấp hợp đồng dịch vụ",
+              2
+            ],
+            [
+              "Tranh chấp hợp đồng tín dụng",
+              2
+            ],
+            [
+              "tranh chấp hợp đồng bảo hiểm",
+              2
+            ],
+            [
+              "Tranh chấp hợp đồng tặng cho quyền sử dụng đất, tranh chấp thừa kế tài sản là quyền sử dụng đất",
+              2
+            ],
+            [
+              "Tranh chấp yêu cầu tuyên bố hợp đồng chuyển nhượng quyền sử dụng đất vô hiệu",
+              2
+            ],
+            [
+              "Tranh chấp nợ hụi",
+              2
+            ],
+            [
+              "tranh chấp liên quan đến yêu cầu tuyên bố văn bản công chứng vô hiệu",
+              2
+            ],
+            [
+              "Kiện đòi tài sản",
+              2
+            ],
+            [
+              "Đất đai",
+              2
+            ],
+            [
+              "Khiếu kiện hành vi hành chính của Chủ tịch UBND xã Phổ Phong",
+              2
+            ],
+            [
+              "Tín dụng",
+              2
+            ],
+            [
+              "ly hôn, tranh chấp về nuôi con",
+              2
+            ],
+            [
+              "Tranh chấp về Hợp đồng vay tài sản",
+              2
+            ],
+            [
+              "Yêu cầu tuyên bố một người là đã chết",
+              2
+            ],
+            [
+              "Tranh chấp HĐ thuê nhà",
+              1
+            ],
+            [
+              "Tranh chấp đất đai",
+              1
+            ],
+            [
+              "tranh chấp quyền sử dụng đất bị lấn chiếm",
+              1
+            ],
+            [
+              "Tranh chấp quyền sử dụng đât",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng NQSDĐ",
+              1
+            ],
+            [
+              "tranh chấp hợp đồng",
+              1
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất, yêu cầu tháo dỡ công trình xây dựng trái phép trên đất",
+              1
+            ],
+            [
+              "tranh chấp về yêu cầu tuyên bố văn bản công chứng, chứng thực vô hiệu, chia tài sản chung và chia thừa kế tài sản",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng vay tài sản.",
+              1
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất bị lấn chiếm",
+              1
+            ],
+            [
+              "chia thừa kế",
+              1
+            ],
+            [
+              "TRANH CHẤP HỢP ĐỒNG CHUYỂN NHƯỢNG QUYỀN SỬ DỤNG ĐẤT",
+              1
+            ],
+            [
+              "H\\Tranh chấp hợp đồng vay tài sản",
+              1
+            ],
+            [
+              "tranh chap hợp đồng thuê nhà",
+              1
+            ],
+            [
+              "Yêu cầu bồi hoàn tiền bảo hiểm",
+              1
+            ],
+            [
+              "Tranh chấp chia tài sản chung của nam nữ sống chung với nhau như vợ chồng",
+              1
+            ],
+            [
+              "Chia tài sản sau khi ly hôn",
+              1
+            ],
+            [
+              "Ly hôn, tranh chấp nuôi con chia tài sản khi ly hôn",
+              1
+            ],
+            [
+              "Ly hôn, tranh chấp về nuôi con và cấp dưỡng nuôi con khi ly hôn",
+              1
+            ],
+            [
+              "Kiện hợp đồng",
+              1
+            ],
+            [
+              "HĐ tín dụng",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng tín dụng và hợp đồng thế chấp tài sản",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng tín dụng, tranh chấp hợp đồng tặng cho quyền sử dụng đất và tranh chấp hợp đồng thế chấp tài sản",
+              1
+            ],
+            [
+              "Tranh chấp chia thừa kế",
+              1
+            ],
+            [
+              "Tranh chấp qsd đất",
+              1
+            ],
+            [
+              "Chia tài sản chung sau khi ly hôn",
+              1
+            ],
+            [
+              "Tranh chấp yêu cầu bồi thường thiệt hại do sức khỏe bị xâm phạm",
+              1
+            ],
+            [
+              "tranh chấp hợp đồng tín dụng, tranh chấp hợp đồng chuyển nhượng quyền sử dụng đất và yêu cầu tuyên bố hợp đồng thế chấp quyền sử dụng đất vô hiệu",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng vay tín dụng",
+              1
+            ],
+            [
+              "tranh chấp về thực hiện nghĩa vụ trả nợ thay trong hợp đồng vay tài sản",
+              1
+            ],
+            [
+              "Hợp đông vay tài sản",
+              1
+            ],
+            [
+              "Tranh chấp kiện đòi nợ tiền",
+              1
+            ],
+            [
+              "Tranh chấp hợp đông thi công, xây lắp công trình",
+              1
+            ],
+            [
+              "tranh chấp hợp đồng tặng cho QSDĐ",
+              1
+            ],
+            [
+              "tranh chấp di sản thừa kế",
+              1
+            ],
+            [
+              "“Tranh chấp hợp đồng chuyển nhượng quyền sử dụng đất và tranh chấp hợp đồng đặt cọc chuyển nhượng quyền sử dụng đất”",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng hợp tác",
+              1
+            ],
+            [
+              "Tranh chấp yêu cầu chấm dứt hành vi cản trở trái pháp luật quyền sử dụng đất, tranh chấp hợp đồng chuyển nhượng quyền sử dụng đất",
+              1
+            ],
+            [
+              "tranh chấp về quyền sử dụng đất",
+              1
+            ],
+            [
+              "Ly hôn, tranh chấp nuôi con khi ly hôn",
+              1
+            ],
+            [
+              "Ly hôn, chia tài sản khi ly hôn",
+              1
+            ],
+            [
+              "Không công nhận vợ chồng, tranh chấp quyền nuôi con",
+              1
+            ],
+            [
+              "tranh chấp hợp đồng hợp tác đầu tư",
+              1
+            ],
+            [
+              "Tranh chấp HĐ đặt cọc",
+              1
+            ],
+            [
+              "tranh chấp đất bị lấn chiếm",
+              1
+            ],
+            [
+              "yêu cầu chấm dứt hành vi cản trở lối đi chung",
+              1
+            ],
+            [
+              "Khởi kiện ly hôn",
+              1
+            ],
+            [
+              "Ly hôn, tranh chấp chia tài sản chung",
+              1
+            ],
+            [
+              "huỷ hợp đồng kinh tế",
+              1
+            ],
+            [
+              "Thay đổi người trực tiếp nuôi con",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng bảo hiểm",
+              1
+            ],
+            [
+              "Tranh chấp yêu cầu tuyên bố hợp đồng tặng cho quyền sử dụng đất, chia tài sản chung c",
+              1
+            ],
+            [
+              "tranh chấp chia thừa kế tài sản",
+              1
+            ],
+            [
+              "Tranh chấp hợp oddofng vay tài sản",
+              1
+            ],
+            [
+              "tranh chấp hợp đồng mua bán hàng hóa (yêu cầu thanh toán tiềm mua thiết bị hàng hải, thanh toán tiền lãi chậm trả, chi phí phát sinh chạy thử và tranh chấp về nghĩa vụ bảo hành thiết bị hàng hóa",
+              1
+            ],
+            [
+              "tranh chấp quyền sử dụng đất và yêu cầu hủy giấy chứng nhận quyền sử dụng đất",
+              1
+            ],
+            [
+              "tranh chấp chia tài sản chung",
+              1
+            ],
+            [
+              "tranh chấp hợp đồng dặt cọc",
+              1
+            ],
+            [
+              "tranh chấp lối đi chung",
+              1
+            ],
+            [
+              "ly hôn, tranh chấp về nuôi con khi ly hôn",
+              1
+            ],
+            [
+              "Tranh chấp về chia tài sản sau khi ly hôn",
+              1
+            ],
+            [
+              "Tranh chấp đòi lại giấy chứng nhận quyền sử dụng đất, đòi lại tài sản là tiền cho thuê nhà, tranh chấp về chia tài sản chung sau khi ly hôn và tranh chấp hợp đồng vay tài sản",
+              1
+            ],
+            [
+              "Tranh chấp quyến sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp lối đi chung",
+              1
+            ],
+            [
+              "tranh chấp hợp đồng kinh tế",
+              1
+            ],
+            [
+              "Ly hôn, chia tài sản chung, trả nợ chung",
+              1
+            ],
+            [
+              "Tranh chấp chia tài sản sau khi ly hôn",
+              1
+            ],
+            [
+              "Tranh chấp về chia tài sản chung",
+              1
+            ],
+            [
+              "Bồi thường thiệt hại",
+              1
+            ],
+            [
+              "Tranh chấp di sản thừa kế",
+              1
+            ],
+            [
+              "Ly lôn, tranh chấp về nuôi con",
+              1
+            ],
+            [
+              "Tranh chấp hơp đồng chuyển nhượng quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp lao động qua đơn phương chấm dứt hợp đồng lao động và chưa thanh toán đủ tiền Nghị định 76/2019/NĐ-CP ngày 08/10/2019 của Chính phủ",
+              1
+            ],
+            [
+              "tranh châs hợp đồng tặng cho quyền sử dụng đất, tranh chấp về thừa kế tài sản",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng chuyền nhượng quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp quyền sở hữu tài sản",
+              1
+            ],
+            [
+              "Ly hôn, tranh chấp về nuôi con khi ly hôn, nghĩa vụ trả nợ chung khi ly hôn",
+              1
+            ],
+            [
+              "Ly hôn, tranh chấp nuôi con",
+              1
+            ],
+            [
+              "Tranh chấp về yêu cầu chấm dứt hành vi cản trở quyền sử dụng đất và nhà ở",
+              1
+            ],
+            [
+              "tranh chấp về bồi thường thiệt hại ngoài hợp đồng do tài sản bị xâm phạm",
+              1
+            ],
+            [
+              "yêu cầu bồi thường thiệt hại",
+              1
+            ],
+            [
+              "ly hôn, tranh chấp về nuôi con và nghĩa vụ trả nợ chung khi ly hôn",
+              1
+            ],
+            [
+              "tranh chấp hợp đồng đặt cọc và hợp đồng vay tài sản",
+              1
+            ],
+            [
+              "Ly hôn , tranh chấp nuôi con, chia tài sản",
+              1
+            ],
+            [
+              "tranh chấp đồi lại tài sản",
+              1
+            ],
+            [
+              "ly hôn, chia tài sản chung khi ly hôn",
+              1
+            ],
+            [
+              "tranh chấp đòi lại tài sản là quyền sử dụng nhà đất",
+              1
+            ],
+            [
+              "tranh chấp về chấm dứt hành vi cản trở quyền sử dụng đất",
+              1
+            ],
+            [
+              "tranh chấp hợp đồng chuyển nhượng tài sản và yêu cầu bồi thường thiệt hại ngoài hợp đồng",
+              1
+            ],
+            [
+              "tranh chấp về tuyên bố di chúc vô hiệu, chia thừa kế tài sản",
+              1
+            ],
+            [
+              "tranh chấp về nuôi con, xác định cha cho con",
+              1
+            ],
+            [
+              "đòi lại TS",
+              1
+            ],
+            [
+              "Tranh chấp về hợp đồng đặt cọc",
+              1
+            ],
+            [
+              "Tranh chấp nghĩa vụ thanh toán trong hợp đồng tín dụng, tranh chấp hợp đồng thé chấp tài sản và hợp đồng chuyển nhượng quyền sử dụng đất.",
+              1
+            ],
+            [
+              "tranh chấp yêu cầu chấm dứt hành vi cản trở quyền sử dụng đất, yêu cầu xác định quyền sử dụng đất và chia di sản thừa kế quyền sử dụng đất\"",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng tín dụng và hợp đồng chuyển nhượng quyền sử dụng đất",
+              1
+            ],
+            [
+              "tranh chấp đòi lại tài sản",
+              1
+            ],
+            [
+              "bồi thường thiệt hại",
+              1
+            ],
+            [
+              "Tranh chấp về hợp đồng dân sự",
+              1
+            ],
+            [
+              "Tranh chấp yêu cầu hủy Giấy chứng nhận QSDĐ",
+              1
+            ],
+            [
+              "Tranh chấp về yêu cầu tuyên bố hợp đồng chuyển nhượng quyền sử dụng đất vô hiệu",
+              1
+            ],
+            [
+              "Tranh chấp liên quan đến yêu cầu tuyên bố văn bản công chứng vô hiệu và tranh chấp về thừa kế tài sản",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng chuyển nhượng quyền sử dụng đất, chia tài sản chung, thanh toán chi phí thực hiện công việc không có ủy quyền.",
+              1
+            ],
+            [
+              "Tranh chấp yêu cầu chấm dứt hành vi cản trở quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp Hợp đồng uỷ quyền",
+              1
+            ],
+            [
+              "Tranh chấp bồi thường thiệt hại ngoài hợp đồng do tài sản bị xâm phạm",
+              1
+            ],
+            [
+              "Ly hôn, tranh chấp nuôi con, chia tài sản khi ly hôn",
+              1
+            ],
+            [
+              "tranh chấp về yêu cầu buộc chấm dứt hành vi cản trở quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chap quyền sử dung đất",
+              1
+            ],
+            [
+              "tranh chấp hợp đồng mua bán hàng hóa",
+              1
+            ],
+            [
+              "Tranh chấp yêu cầu công nhận việc chuyển nhượng quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp về hợp đồng gởi giữ hàng hóa",
+              1
+            ],
+            [
+              "Tranh chấp chia tài sản sau ly hôn, tranh chấp hợp đồng vay tài sản",
+              1
+            ],
+            [
+              "Khiếu kiện quyết định hành chính, hành vi hành chính trong lĩnh vực quản lý đất đai",
+              1
+            ],
+            [
+              "Tranh chấp bồi thường thiệt hại ngoài hợp đồng",
+              1
+            ],
+            [
+              "tranh chấp về thừa kế tài sản, yêu cầu tuyên bố văn bản công chứng vô hiệu",
+              1
+            ],
+            [
+              "tranh chấp dân sự",
+              1
+            ],
+            [
+              "Tuyên bố hợp đồng đặt cọc vô hiệu",
+              1
+            ],
+            [
+              "Tranh chấp HĐ chuyển nhượng QSDĐ",
+              1
+            ],
+            [
+              "Yêu cầu huỷ một phần hợp đồng tặng cho quyền sử dụng đất",
+              1
+            ],
+            [
+              "tranh chấp về việc đòi lại tài sản",
+              1
+            ],
+            [
+              "Tranh chấp HĐ chuyển nhượng quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng vay tài sản, yêu cầu tuyên bố hợp đồng chuyển nhượng quyền sử dụng đất và văn bản thỏa thuận phân chia tài sản riêng là vô hiệu",
+              1
+            ],
+            [
+              "tranh chấp đòi lại đất",
+              1
+            ],
+            [
+              "Đời lại quyền sử dụng đắt",
+              1
+            ],
+            [
+              "Tranh chấp bồi hoàn tiền bảo hiểm",
+              1
+            ],
+            [
+              "Ly hôn, tranh chấp về tài sản chung",
+              1
+            ],
+            [
+              "LY HÔN, TRANH CHẤP VỀ NUÔI CON KHI LY HÔN",
+              1
+            ],
+            [
+              "tranh chấp về chia tài sản chung",
+              1
+            ],
+            [
+              "Tranh chấp đòi lại quyền sử dụng đất và bồi thường thiệt hại về tài sản",
+              1
+            ],
+            [
+              "chía thừa kế",
+              1
+            ],
+            [
+              "Sức khỏe",
+              1
+            ],
+            [
+              "Quyết định xử phạt vi phạm hành chính",
+              1
+            ],
+            [
+              "Chia thừa kế",
+              1
+            ],
+            [
+              "Đòi nợ tiền",
+              1
+            ],
+            [
+              "Mâu thuẫn gia đình",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng vay tài sản và đòi lại giấy chứng nhận quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp HĐ đặt cọc",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng đặt cọc, chuyển nhượng quyền sử dụng đất",
+              1
+            ],
+            [
+              "Yêu cầu chấm dút hành vi cản trở trái pháp luật, bồi thường thiệt hại, tuyên vô hiệu hợp đồng tặng cho quyền sử dụng đất, tuyên vô hiệu hợp đồng chuyển nhượng quyền sử dụng đất",
+              1
+            ],
+            [
+              "tranh chấp hợp đồng vay tài sản,đòi lại tài sản",
+              1
+            ],
+            [
+              "đòi lại tài sản",
+              1
+            ],
+            [
+              "tranh chấp quyền sử dụng đất bị lấn chiếm và yêu cầu tháo dỡ công trình xây dựng trên đất",
+              1
+            ],
+            [
+              "Ly hôn, chia tài sản chung khi ly hôn",
+              1
+            ],
+            [
+              "chấm dứt hành vi cản trở QSD đất",
+              1
+            ],
+            [
+              "tranh chấp chia tài sản là tiền đền bù về đất",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng đặt cọc chuyển nhượng quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp bồi thường thiệt hại do tài sản bị xâm phạm.",
+              1
+            ],
+            [
+              "tranh chấp hợp đồng thuê mặt bằng",
+              1
+            ],
+            [
+              "Ly hôn, tranh chấp về nuôi con, chia tài sản chung khi ly hôn",
+              1
+            ],
+            [
+              "Hủy hợp đồng tặng cho quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp về xử lý kỷ luật theo hình thức sa thả",
+              1
+            ],
+            [
+              "bồi thường thiệt hại ngoài hợp đồng",
+              1
+            ],
+            [
+              "tranh chấp bồi thường thiệt hại",
+              1
+            ],
+            [
+              "TRANH CHẤP HỢP ĐỒNG VAY TÀI SẢN",
+              1
+            ],
+            [
+              "Tranh chấp về yêu cầu bồi thường thiệt hại về tài sản trong hợp đồng vận chuyển hàng hóa.",
+              1
+            ],
+            [
+              "Tranh chấp về đất đai theo quy định về đất đai",
+              1
+            ],
+            [
+              "Tranh chấp vê chia tài sản chung của vợ chồng sau ly hôn",
+              1
+            ],
+            [
+              "Tranh chấp về tài sản chung của vợ chồng sau ly hôn",
+              1
+            ],
+            [
+              "tranh chấp hợp đồng mua bán tài sản",
+              1
+            ],
+            [
+              "tranh chấp chia tài sản chung sau khi ly hôn",
+              1
+            ],
+            [
+              "tranh chấp qsd đất",
+              1
+            ],
+            [
+              "Tranh chấp về thay đổi người trực tiếp nuôi con , chia tài sản sau khi ly hôn",
+              1
+            ],
+            [
+              "Tranh chấp dân sự",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng tín dụng, yêu cầu bồi thường thiệt hại ngoài hợp đồng",
+              1
+            ],
+            [
+              "tranh chấp hợp đồng mua bán nhà máy",
+              1
+            ],
+            [
+              "Tranh chấp về quyền sở hữu tài sản",
+              1
+            ],
+            [
+              "Tranh chấp về hợp đồng bảo hiểm",
+              1
+            ],
+            [
+              "Tranh chấp về đòi lại tài sản là quyền sử dụng đất do lấn chiếm”.",
+              1
+            ],
+            [
+              "Tranh chấp quyền sử dugnj đất",
+              1
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất, chia thừa kế",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng thuê tài sản",
+              1
+            ],
+            [
+              "Nghĩa vụ thanh toán tiền",
+              1
+            ],
+            [
+              "tranh chấp hợp đồng cung cấp dịch vụ",
+              1
+            ],
+            [
+              "Tranh chấp yêu cầu tuyên bố HĐ đặt cọc vô hiệu giải quyết hậu quả của HĐ vô hiệu",
+              1
+            ],
+            [
+              "tranh chấp hợp đồng góp vốn",
+              1
+            ],
+            [
+              "t/c quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng góp vốn",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng thi công xây lắp công trình",
+              1
+            ],
+            [
+              "Tranh chấp vay tài sản",
+              1
+            ],
+            [
+              "TRanh chấp yêu câu tháo dỡ tài sản",
+              1
+            ],
+            [
+              "KHIẾU KIỆN QUYẾT ĐỊNH HÀNH CHÍNH",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng sửa chữa định kỳ tàu biển",
+              1
+            ],
+            [
+              "Tranh chấp về tuyên bố hợp đồng chuyển nhượng quyền sử dụng đất là vô hiệu và giải quyết hậu quả của hợp đồng vô hiệu",
+              1
+            ],
+            [
+              "Tranh chấp xác định con cho mẹ",
+              1
+            ],
+            [
+              "Tranh chấp giao dịch dân sự, hợp đồng dân sự - yêu cầu hủy văn bản thỏa thuận phân chia di sản, tuyên hợp đồng chuyển nhượng quyền sử dụng đất vô hiệu và hủy giấy chứng nhận quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp chia thừa kê",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng tặng cho quyền sử dụng đất",
+              1
+            ],
+            [
+              "đòi lại quyền sử dụng đất",
+              1
+            ],
+            [
+              "tranh chấp QSD đất",
+              1
+            ],
+            [
+              "Tranh chấp về bồi thường thiệt hại ngoài hợp đồng do sức khỏe bị xâm phạm",
+              1
+            ],
+            [
+              "Ly hôn, tranh chấp về nuôi con khi ly hôn",
+              1
+            ],
+            [
+              "Tranh chấp đòi lại nhà và quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp chia di sản thừa kế, tuyên hợp đồng tặng cho quyền sử dụng đất vô hiệu",
+              1
+            ],
+            [
+              "Tranh chấp chia tài sản sau ly hôn",
+              1
+            ],
+            [
+              "tranh chấp hợp đồng tín dụng và hợp đồng thế chấp tài sản",
+              1
+            ],
+            [
+              "Phân chia di sản thừa kế",
+              1
+            ],
+            [
+              "Tranh chấp hợp động tặng cho quyền sử dụng đất",
+              1
+            ],
+            [
+              "khiếu kiện quyết định hành chinh",
+              1
+            ],
+            [
+              "khởi kiện ly hôn",
+              1
+            ],
+            [
+              "tranh chấp kiện đòi lại đất bị lấn chiếm",
+              1
+            ],
+            [
+              "Tranh chấo hợp đồng chuyển nhượng quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp về mở lối đi vào nền mộ",
+              1
+            ],
+            [
+              "Đòi lại tài sản nhà, đất và yêu cầu buộc tháo dỡ công trình xây dựng trên đất trái pháp luật",
+              1
+            ],
+            [
+              "tín dụng",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng đặt cọc",
+              1
+            ],
+            [
+              "đất đai",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng vay",
+              1
+            ],
+            [
+              "tranh chấp đòi lại tài sản QSDĐ",
+              1
+            ],
+            [
+              "Chậm thực hiện nghĩa vụ dân sự",
+              1
+            ],
+            [
+              "Tranh chấp lấn chiếm quyền sử dụng đất",
+              1
+            ],
+            [
+              "Chấm dứt hành vi cản trở trái pháp luật quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng dân sư chia tài sản chung về quyền sử dụng đất",
+              1
+            ],
+            [
+              "Chỉ định người giám hộ cho người khó khăn trong nhận thức, làm chủ hành vi",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng chuyển nhượng quyền sử dụng đất và hủy Giấy chứng nhận quyền sử dụng đất",
+              1
+            ],
+            [
+              "tranh chấp thừa kế",
+              1
+            ],
+            [
+              "tranh chấp Hợp đồng chuyển nhượng quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng chuyển nhượng QSD đất",
+              1
+            ],
+            [
+              "Yêu cầu huỷ hợp đồng tặng cho quyền sử dụng đất",
+              1
+            ],
+            [
+              "“Tranh chấp yêu cầu tháo dỡ công trình xây dựng trái phép trên đất và đòi lại tài sản là quyền sử dụng đất”.",
+              1
+            ]
+          ],
+          "kết quả xxpt": [
+            [
+              "Giữ nguyên bản án, quyết định sơ thẩm",
+              211
+            ],
+            [
+              "Sửa một phần bản án, quyết định sơ thẩm",
+              114
+            ],
+            [
+              "QĐ đình chỉ",
+              62
+            ],
+            [
+              "Hủy toàn bộ bản án, quyết định sơ thẩm để giải quyết lại vụ án theo thủ tục sơ thẩm",
+              49
+            ],
+            [
+              "Hủy một phần bản án, quyết định sơ thẩm để giải quyết lại vụ án theo thủ tục sơ thẩm",
+              18
+            ],
+            [
+              "Sửa toàn bộ bản án, quyết định sơ thẩm",
+              16
+            ],
+            [
+              "Giữ nguyên quyết định của Tòa án cấp sơ thẩm",
+              12
+            ],
+            [
+              "Quyết định huỷ bản án sơ thẩm và đình chỉ giải quyết vụ án dân sự",
+              10
+            ],
+            [
+              "Hủy bản án, quyết định sơ thẩm và đình chỉ giải quyết vụ án",
+              5
+            ],
+            [
+              "Hủy quyết định của Tòa án cấp sơ thẩm và chuyển hồ sơ vụ án cho Tòa án cấp sơ thẩm để tiếp tục giải quyết vụ án",
+              3
+            ],
+            [
+              "Sửa quyết định của Tòa án cấp sơ thẩm",
+              2
+            ],
+            [
+              "Quyết định phúc thẩm giải quyết việc dân sự",
+              2
+            ],
+            [
+              "Quyết định huỷ bản án sơ thẩm và đình chỉ giải quyết vụ án hành chính",
+              1
+            ]
+          ],
+          "kc/kn": [
+            [
+              "1 BĐ k/c",
+              327
+            ],
+            [
+              "1 NĐ k/c",
+              191
+            ],
+            [
+              "1 NLQ k/c",
+              43
+            ],
+            [
+              "2 NLQ k/c",
+              12
+            ],
+            [
+              "2 BĐ k/c",
+              12
+            ],
+            [
+              "VKS k/n",
+              10
+            ],
+            [
+              "1 NĐ k/cVKS k/n",
+              9
+            ],
+            [
+              "2 NĐ k/c",
+              6
+            ],
+            [
+              "1 BĐ k/cVKS k/n",
+              6
+            ],
+            [
+              "3 NLQ k/c",
+              2
+            ],
+            [
+              "8 BĐ k/c",
+              1
+            ],
+            [
+              "1 NLQ k/cVKS k/n",
+              1
+            ],
+            [
+              "2 NĐ k/cVKS k/n",
+              1
+            ],
+            [
+              "4 NĐ k/c",
+              1
+            ],
+            [
+              "4 NLQ k/c",
+              1
+            ],
+            [
+              "3 BĐ k/c",
+              1
+            ],
+            [
+              "3 NĐ k/c",
+              1
+            ],
+            [
+              "5 NLQ k/c",
+              1
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "file": "Dân sự mở rộng - Sơ thẩm.xlsx",
+    "sheets": [
+      {
+        "sheet": "Projects 3 ",
+        "header_row": 2,
+        "data_rows": 673,
+        "columns": [
+          "STT",
+          "Loại án",
+          "Số/ngày thụ lý",
+          "Nguyên đơn/NKK",
+          "Bị đơn/NBK",
+          "Quan hệ pháp luật",
+          "Thẩm phán",
+          "Hội đồng",
+          "Thư ký",
+          "Số/Ngày BA/QD",
+          "Kháng cáo/Kháng nghị",
+          "Hình thức xét xử",
+          "Ghi chú"
+        ],
+        "counters": {
+          "loại án": [
+            [
+              "Hành chính",
+              376
+            ],
+            [
+              "Dân sự",
+              245
+            ],
+            [
+              "HNGD",
+              48
+            ],
+            [
+              "KDTM",
+              4
+            ]
+          ],
+          "quan hệ pháp luật": [
+            [
+              "Khiếu kiện quyết định hành chính",
+              129
+            ],
+            [
+              "Khiếu kiện hành vi hành chính",
+              53
+            ],
+            [
+              "Khiếu kiện quyết định hành chính trong lĩnh vực quản lý đất đai",
+              38
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất",
+              37
+            ],
+            [
+              "Hành vi hành chính",
+              36
+            ],
+            [
+              "Ly hôn",
+              20
+            ],
+            [
+              "khiếu kiện quyết định hành chính",
+              20
+            ],
+            [
+              "Quyết định hành chính",
+              16
+            ],
+            [
+              "Tranh chấp về thừa kế tài sản",
+              15
+            ],
+            [
+              "Khiếu kiện hành vi hành chính trong lĩnh vực quản lý đất đai",
+              14
+            ],
+            [
+              "khiếu kiện hành vi hành chính",
+              14
+            ],
+            [
+              "tranh chấp quyền sử dụng đất",
+              12
+            ],
+            [
+              "Tranh chấp đòi lại tài sản là quyền sử dụng đất",
+              11
+            ],
+            [
+              "Tranh chấp chia di sản thừa kế",
+              10
+            ],
+            [
+              "Ly hôn, tranh chấp về nuôi con khi ly hôn",
+              8
+            ],
+            [
+              "Tranh chấp về quyền sử dụng đất",
+              7
+            ],
+            [
+              "Khiếu kiện quyết định hành chính, hành vi hành chính",
+              6
+            ],
+            [
+              "Tranh chấp thừa kế",
+              6
+            ],
+            [
+              "Tranh chấp về quyền sở hữu tài sản",
+              6
+            ],
+            [
+              "tranh chấp thừa kế",
+              5
+            ],
+            [
+              "Tranh chấp đất đai",
+              4
+            ],
+            [
+              "ly hôn",
+              4
+            ],
+            [
+              "Tranh chấp chia thừa kế",
+              4
+            ],
+            [
+              "Khiêu kiện quyết định hành chính",
+              3
+            ],
+            [
+              "Khiếu kiện Quyết định hành chính",
+              3
+            ],
+            [
+              "Hủy Giấy chứng nhận quyền sử dụng đất",
+              3
+            ],
+            [
+              "yêu cầu hủy Giấy chứng nhận quyền sử dụng đất",
+              3
+            ],
+            [
+              "tranh chấp đòi lại quyền sử dụng đất",
+              3
+            ],
+            [
+              "Hành vi hành chính, quyết định hành chính",
+              3
+            ],
+            [
+              "tranh chấp chia di sản thừa kế",
+              3
+            ],
+            [
+              "Quyết định hành chính, hành vi hành chính",
+              3
+            ],
+            [
+              "tranh chấp về thừa kế tài sản",
+              3
+            ],
+            [
+              "Tranh chấp hợp đồng chuyển nhượng quyền sử dụng đất",
+              3
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất, quyền sở hữu tài sản và hủy Quyết định cá biệt",
+              3
+            ],
+            [
+              "Tranh chấp thừa kế tài sản",
+              2
+            ],
+            [
+              "Tranh chấp về chia di sản thừa kế",
+              2
+            ],
+            [
+              "Tuyên bố một người đã chết",
+              2
+            ],
+            [
+              "Khiếu kiện quyết định hành chính, hành vi hành chính trong lĩnh vực quản lý đất đai",
+              2
+            ],
+            [
+              "Tranh chấp hợp đồng tín dụng",
+              2
+            ],
+            [
+              "Khiếu kiện quyết định xử phạt vi phạm hành chính",
+              2
+            ],
+            [
+              "Tranh chấp phân chia di sản thừa kế",
+              2
+            ],
+            [
+              "Tranh chấp đòi lại tài sản",
+              2
+            ],
+            [
+              "Tranh chấp hợp đồng chuyển nhượng vốn góp",
+              2
+            ],
+            [
+              "Khiếu kiện Quyết định hành chính trong lĩnh vực quản lý đất đai",
+              2
+            ],
+            [
+              "Ly hôn, tranh chấp nuôi con",
+              2
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất, tháo dỡ tài sản trên đất và hủy giấy chứng nhận quyền sử dụng đất",
+              2
+            ],
+            [
+              "Ly hôn, tranh chấp về nuôi con",
+              2
+            ],
+            [
+              "Công nhận thuận tình ly hôn",
+              2
+            ],
+            [
+              "Tranh chấp chia di sản thừa kế là quyền sử dụng đất",
+              2
+            ],
+            [
+              "Đòi lại tài sản là quyền sử dụng đất",
+              2
+            ],
+            [
+              "hủy Giấy chứng nhận quyền sử dụng đất",
+              2
+            ],
+            [
+              "Tranh chấp về thừa kế tài sản là quyền sử dụng đất",
+              2
+            ],
+            [
+              "Khiếu kiện quyết định phê duyệt phương án bồi thường",
+              2
+            ],
+            [
+              "Khiếu kiện QĐHC",
+              2
+            ],
+            [
+              "Khiếu kiện QDHC",
+              2
+            ],
+            [
+              "chia di sản thừa kế",
+              2
+            ],
+            [
+              "Dân sự",
+              2
+            ],
+            [
+              "khiếu kiện hành vi hành chính trong lĩnh vực đất đai",
+              1
+            ],
+            [
+              "Tranh chấp đất đai theo quy định pháp luật về đất đai",
+              1
+            ],
+            [
+              "Đòi lại tài sản quyền sử dụng đất",
+              1
+            ],
+            [
+              "ly hôn, tranh chấp về nuôi con khi ly hôn",
+              1
+            ],
+            [
+              "tranh chấp chia tài sản chung",
+              1
+            ],
+            [
+              "Tranh chấp về quyền sử dụng đất, yêu cầu hủy giấy chứng nhận quyền sử dụng đất",
+              1
+            ],
+            [
+              "Khiếu kiện hành vi hành chính trong lĩnh vực quản lý đất đai và yêu cầu bồi thường thiệt hại",
+              1
+            ],
+            [
+              "Tranh chấp yêu cầu thực hiện nghĩa vụ dân sự và xác định về quyền tài sản, đòi lại tài sản là quyền sử dụng đất.",
+              1
+            ],
+            [
+              "Khởi kiện quyết định hành chính trong lĩnh vực quản lý đất đai",
+              1
+            ],
+            [
+              "Tranh chấp giữa Công ty với các thành viên Công ty",
+              1
+            ],
+            [
+              "Tranh chấp về thừa kế tài sản, yêu cầu tuyên bố hợp đồng chuyển nhượng quyền sử dụng đất vô hiệu và giải quyết hậu quả pháp lý của hợp đồng vô hiệu",
+              1
+            ],
+            [
+              "Tranh chấp yêu cầu hủy Giấy chứng nhận quyền sử dụng đất, tranh chấp về thừa kế",
+              1
+            ],
+            [
+              "Tranh chấp về di sản thừa kế",
+              1
+            ],
+            [
+              "Tranh chấp HĐ Tín Dụng",
+              1
+            ],
+            [
+              "Tranh chấp về thừa kế tài sản.",
+              1
+            ],
+            [
+              "Tranh chấp ranh giới QSDĐ",
+              1
+            ],
+            [
+              "“Tranh chấp quyền sử dụng đất và yêu cầu dỡ dọn tài sản trên đất”.",
+              1
+            ],
+            [
+              "Tranh chấp về đất đai theo quy định của pháp luật về đất đai",
+              1
+            ],
+            [
+              "Khiếu kiện quyết định hành chính trong lĩnh vực quản lý đất đai và yêu cầu bồi thường thiệt hại",
+              1
+            ],
+            [
+              "Tranh chấp đòi lại quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất, yêu cầu tháo dỡ tài sản trên đất đường đi, đòi lại quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tuyên bố hợp đồng chuyển nhượng quyền sử dụng đất vô hiệu",
+              1
+            ],
+            [
+              "chia tài sản chung là quyền sử dụng đất",
+              1
+            ],
+            [
+              "chia thừa kế về tài sản",
+              1
+            ],
+            [
+              "Tranh chấp chia tài sản chung, chia di sản thừa kế là quyền sử dụng đất và đời lại tài sản",
+              1
+            ],
+            [
+              "Yêu cầu tháo dỡ tài sản, trả lại quyền sử dụng đát",
+              1
+            ],
+            [
+              "Quyết định hành chính trong lĩnh vực quản lý thuế",
+              1
+            ],
+            [
+              "Tranh chấp yêu cầu chấm dứt hành vi cản trở trái pháp luật",
+              1
+            ],
+            [
+              "tranh chấp quyền sử dụng đất, yêu cầu chấm dứt hành vi lấn chiếm đất, yêu cầu tháo dỡ rào chắn trên đất",
+              1
+            ],
+            [
+              "Yêu cầu chấm dứt hành vị cản trở quyền sử dụng đất trái pháp luật",
+              1
+            ],
+            [
+              "Yêu cầu tháo dỡ công trình xây dựng trái phép, trả lại QSDĐ",
+              1
+            ],
+            [
+              "Khiếu kiện quyết định hành chính trong",
+              1
+            ],
+            [
+              "lĩnh vực quản lý đất đai",
+              1
+            ],
+            [
+              "tranh chấp chia tài sản chung, chia di sản thừa kế",
+              1
+            ],
+            [
+              "Khiếu kiện quyết định giải quyết khiếu nại",
+              1
+            ],
+            [
+              "Tranh chấp di sản thừa kế, buộc tháo dở tài sản trên đất",
+              1
+            ],
+            [
+              "tranh chấp",
+              1
+            ],
+            [
+              "yêu cầu công nhận thuận tình ly hôn",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng chuyển nhượng quyền sử dụng đất, hợp đồng thuê tài sản và chia di sản thừa kế",
+              1
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất và yêu cầu bồi thường thiệt hại ngoài hợp đồng",
+              1
+            ],
+            [
+              "Chia tài sản chung là quyền sử dụng đất",
+              1
+            ],
+            [
+              "Chia thừa kế về tài sản",
+              1
+            ],
+            [
+              "Khiếu kiện hành vi hành chính trong lĩnh vực đất đai",
+              1
+            ],
+            [
+              "Tranh chấp đất",
+              1
+            ],
+            [
+              "khiếu kiện quyết định hành chính trong lĩnh vực quản lý đất đai",
+              1
+            ],
+            [
+              "Tranh chấp chia thừa kế qsd đất",
+              1
+            ],
+            [
+              "Phân chia di sản thừa kế",
+              1
+            ],
+            [
+              "Khiếu kiện quyết dịnh hành chính, hành vi hành chính",
+              1
+            ],
+            [
+              "tranh chấp hợp đồng tín dụng",
+              1
+            ],
+            [
+              "Tranh chấp quyển sử dụng đất",
+              1
+            ],
+            [
+              "Ly hôn, tranh chấp chia tài sản khi ly hôn",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng tặng cho quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp về chia di sản thừa kế là quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng chuyển nhượng quyền sử dụng đất, yêu cầu hủy giấy chứng nhận quyền sử dụng đất",
+              1
+            ],
+            [
+              "Hủy Quyết định hành chính",
+              1
+            ],
+            [
+              "Quyết định hành chính trong lĩnh vực quản lý đất đai",
+              1
+            ],
+            [
+              "Hành vi hành chính trong lĩnh vực quản lý đất đai",
+              1
+            ],
+            [
+              "khiếu kiện quyết định hành chính, hành vi hành chính",
+              1
+            ],
+            [
+              "tranh chấp chia di sản thừa kế, tuyên hợp đồng tặng cho quyền sử dụng đất vô hiệu",
+              1
+            ],
+            [
+              "yêu cầu hủy Giấy chứng nhận đăng ký kinh doanh",
+              1
+            ],
+            [
+              "khiếu kiện hành vi hành chính trong lĩnh vực quản lý đất đai",
+              1
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất, tranh chấp chia di sản thừa kế, tranh chấp liên quan đến yêu cầu tuyên bố văn bản công chứng vô hiệu",
+              1
+            ],
+            [
+              "Tranh chấp chia thừa kế Quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp thừa kế tài sản quyền sử dụng đất",
+              1
+            ],
+            [
+              "Yêu cầu công nhận về thay đổi người trực tiếp nuôi con sau khi ly hôn",
+              1
+            ],
+            [
+              "Tranh chấp chia tài sản chung, chia di sản thừa kế",
+              1
+            ],
+            [
+              "Trạnh chấp quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp chia di sản thừa kế là nhà và quyền sử dụng đất",
+              1
+            ],
+            [
+              "Chia di sản thừa kế",
+              1
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất, quyền sở hữu tài sản và huyer Quyết định cá biệt",
+              1
+            ],
+            [
+              "Thay đổi người trực tiếp nuôi con",
+              1
+            ],
+            [
+              "Tranh chấp lối đi chung và yêu cầu huỷ quyết định cá biệt",
+              1
+            ],
+            [
+              "Trành chấp quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp giữa người chưa phải là thành viên công ty nhưng có giao dịch về chuyển nhượng phần vốn góp với công ty",
+              1
+            ],
+            [
+              "Tranh chấp về thừa kế",
+              1
+            ],
+            [
+              "Tranh chấp đòi lại tài sản là quyền sử dụng đất và tranh chấp về quyền sử dụng đất",
+              1
+            ],
+            [
+              "kHIẾU KIỆN HÀNH VI HÀNH CHÍNH TRONG LĨNH VỰC QUẢN LÝ ĐẤT ĐAI",
+              1
+            ],
+            [
+              "Tranh chấp về hợp đồng tặng cho quyền sử dụng đất, tránh chấp về đòi lại di sản (quyền sử dụng đơn), về tài sản chung của hộ gia đình và về chia thừa kế tài sản (quyền sử dụng đất).",
+              1
+            ],
+            [
+              "khiếu kiện Quyết định hành chính",
+              1
+            ],
+            [
+              "Khiếu kiện Hành vi hành chính trong lĩnh vực quản lý đất đai",
+              1
+            ],
+            [
+              "Xin ly hôn",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng chuyển nhượng vốn góp vô hiệu",
+              1
+            ],
+            [
+              "giải quyết hậu quả của hợp đồng vô hiệu",
+              1
+            ],
+            [
+              "Tranh chấp lối đi",
+              1
+            ],
+            [
+              "tranh chấp chia di sản thừa kế là quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp chia tài sản chung là quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp đòi lại tài sản là quyền sử dụng đất, hủy Giấy chứng nhận quyền sử dụng đất",
+              1
+            ],
+            [
+              "Khiếu kiện quyết định hành chính trong lĩnh vực quản lý y tế",
+              1
+            ],
+            [
+              "Tranh chấp đòi lại tài sản quyền sử dụng đất",
+              1
+            ],
+            [
+              "Khiếu kiện quyết định hành chính trong lĩnh vực đấu thầu",
+              1
+            ],
+            [
+              "Ly hôn, tranh chấp về nuôi con chung",
+              1
+            ],
+            [
+              "Đòi lại quyền sử dụng đất bị lấn chiếm",
+              1
+            ],
+            [
+              "Tranh chấp hợp đồng vay tài sản",
+              1
+            ],
+            [
+              "khiếu kiện quyết định hành chính`",
+              1
+            ],
+            [
+              "tuyên bố một người mất năng lực hành vi dân sự",
+              1
+            ],
+            [
+              "Tranh chấp về thừa kế quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp thừa kế quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp chia tài sản chung, chia thừa kế",
+              1
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất là lối đi",
+              1
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất và hủy quyết định cá biệt",
+              1
+            ],
+            [
+              "chấm dứt hành vi cản trở quyền sử dụng đất",
+              1
+            ],
+            [
+              "tranh chấp đòi lại tài sản là quyền sử dụng đất",
+              1
+            ],
+            [
+              "Ly hôn và tranh chấp nuôi con chung",
+              1
+            ],
+            [
+              "Tranh chấp yêu cầu tuyên bố hợp đồng chuyển nhượng quyền sử dụng đất vô hiệu",
+              1
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất và yêu cầu bồi thường thiệt hại ngoài hợp đồng do tài sản bị xâm phạm",
+              1
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất và huỷ giấy chứng nhận QSD đất",
+              1
+            ],
+            [
+              "Tranh chấp yêu cầu chia tài sản chung là quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp đòi lại tài sản là quyền sử dụng đất và yêu cầu hủy giấy chứng nhận quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp đất đai (tranh chấp quyền sử dụng đất)",
+              1
+            ],
+            [
+              "Yêu cầu công nhận thuận tình ly hôn",
+              1
+            ],
+            [
+              "Yêu cầu công nhận thuận tình ly hôn, thỏa thuận nuôi con",
+              1
+            ],
+            [
+              "Khiếu kiện quyết định hành chính trong lĩnh vực chính sách thương binh - xã hội",
+              1
+            ],
+            [
+              "tranh chấp lối đi chung, yêu cầu tháo dỡ vật kiến trúc",
+              1
+            ],
+            [
+              "Tranh chấp yêu cầu tuyên bố các giao dịch chuyển nhượng quyền sử dụng đất vô hiệu",
+              1
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất, yêu cầu hủy hợp đồng chuyển nhượng quyền sử dụng đất và hủy giấy chứng nhận quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất và yêu cầu tháo dỡ tài sản trên đất",
+              1
+            ],
+            [
+              "Tranh chấp lối đi chung",
+              1
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất và yêu cầu huỷ Quyết định cá biệt",
+              1
+            ],
+            [
+              "Tranh chấp về thừa kế tái sản",
+              1
+            ],
+            [
+              "Tranh chấp đòi lại tài sản là nhà và quyền sử dụng đất",
+              1
+            ],
+            [
+              "Khiếu kiện quyết định hành chính về lĩnh vực quản lý đất đai",
+              1
+            ],
+            [
+              "Khiếu kiện quyết định hành chính và yêu cầu bồi thường thiệt hại",
+              1
+            ],
+            [
+              "Tranh chấp yêu cầu chia di sản thừa kế",
+              1
+            ],
+            [
+              "Xác định di sản thừa kế và chia di sản thừa kế theo pháp luật, yêu cầu hủy giấy CNQSĐĐ",
+              1
+            ],
+            [
+              "kHIẾU KIỆN QUYẾT ĐỊNH HÀNH CHÍNH",
+              1
+            ],
+            [
+              "Tranh chấp yêu cầu chia di sản thừa kế là quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp yêu cầu hủy hợp đồng chuyển nhượng QSDĐ",
+              1
+            ],
+            [
+              "Tranh chấp quyền sử dụng đất bị lấn chiếm",
+              1
+            ],
+            [
+              "tranh chấp yêu cầu tuyên bố văn bản công chứng vô hiệu và yêu cầu hủy chỉnh lý biến động trong giấy chứng nhận quyền sử dụng đất",
+              1
+            ],
+            [
+              "Tranh chấp về chia tài sản chung",
+              1
+            ],
+            [
+              "Khiếu kiện hành vi hành chính và yêu cầu bồi thường thiệt hại",
+              1
+            ],
+            [
+              "tranh chấp chia tài sản chung là quyền sử dụng đất",
+              1
+            ],
+            [
+              "TRANH CHẤP VỀ QUYỀN SỬ DỤNG ĐẤT",
+              1
+            ],
+            [
+              "tranh chấp thừa kế quyền sử dụng đất",
+              1
+            ]
+          ],
+          "hình thức xét xử": [
+            [
+              "Xử/Họp công khai trực tiếp",
+              386
+            ],
+            [
+              "Xử/Họp công khai trực tuyến",
+              10
+            ],
+            [
+              "Xử/Họp kín trực tiếp",
+              1
+            ]
+          ],
+          "kháng cáo/kháng nghị": [
+            [
+              "Huỳnh Văn Hoàng - NĐ",
+              6
+            ],
+            [
+              "Viện trưởng VKS nhân dân tỉnh Kon Tum kháng nghị",
+              5
+            ],
+            [
+              "Giam Đốc Sở Tài Nguyên Và Môi Trường Tỉnh Kon Tum - Bị đơn",
+              3
+            ],
+            [
+              "Uỷ Ban Nhân Dân Tỉnh Kon Tum - Bị đơn",
+              3
+            ],
+            [
+              "Sở Tài Nguyên Và Môi Trường Tỉnh Kon Tum - Bị đơn",
+              3
+            ],
+            [
+              "Nguyễn Văn Mai - NĐ",
+              2
+            ],
+            [
+              "Lê Văn Tình - NĐ",
+              2
+            ],
+            [
+              "Nguyễn Thị Thu Hiền - NĐ",
+              2
+            ],
+            [
+              "Phan Tiến Dồi - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Tấn Thanh - NĐ",
+              1
+            ],
+            [
+              "Đỗ Thanh Cư - NĐ",
+              1
+            ],
+            [
+              "Bùi Biên - NĐ",
+              1
+            ],
+            [
+              "Uỷ Ban Nhân Dân Huyện Ngọc Hồi, Tỉnh Kon Tum - Bị đơn",
+              1
+            ],
+            [
+              "Công Ty Tnhh Mtv Cao Su Kon Tum - NLQ",
+              1
+            ],
+            [
+              "Ủy Ban Nhân Dân Tỉnh Kon Tum - Bị đơn",
+              1
+            ],
+            [
+              "Phan Thị Anh Đào - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Dậu - NĐ",
+              1
+            ],
+            [
+              "Hoàng Thị Xuân Tình - NLQ",
+              1
+            ],
+            [
+              "Nguyễn Thị Thu Hồng - NLQ",
+              1
+            ],
+            [
+              "Lê Quang Dương - NLQ",
+              1
+            ],
+            [
+              "Huỳnh Cao - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thế Danh - NĐ",
+              1
+            ],
+            [
+              "Phạm Thân - NĐ",
+              1
+            ],
+            [
+              "Huỳnh Tấn Bửu - NĐ",
+              1
+            ],
+            [
+              "Y Nương - NĐ",
+              1
+            ],
+            [
+              "Phan Quang Lâm - Bị đơn",
+              1
+            ],
+            [
+              "Công Ty Cổ Phần Du Lịch Qt&t - NĐ",
+              1
+            ],
+            [
+              "Hoàng Thanh Tùng - NLQ",
+              1
+            ],
+            [
+              "Đoàn Thị Nhị - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thị Minh Dưỡng - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thị Thanh Tuyền, Nguyễn Hồ Thanh Duyên - Bị đơn",
+              1
+            ],
+            [
+              "Trần Thị Bích - NĐ",
+              1
+            ],
+            [
+              "Huỳnh Thị Trang - NĐ",
+              1
+            ],
+            [
+              "Chế Thị Thanh Kiều - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thị Tự - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thị Út - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Võ - NĐ",
+              1
+            ],
+            [
+              "Lê Hồng Hải - NĐ",
+              1
+            ],
+            [
+              "Đoàn Chức - NĐ",
+              1
+            ],
+            [
+              "Đoàn Minh Trị - Bị đơn",
+              1
+            ],
+            [
+              "Nguyễn Thị Thanh Lan - Bị đơn",
+              1
+            ],
+            [
+              "Phạm Thị Huỳnh - NLQ",
+              1
+            ],
+            [
+              "Đoàn Thị Thảo Linh - NLQ",
+              1
+            ],
+            [
+              "Đoàn Minh Thiện - NLQ",
+              1
+            ],
+            [
+              "Đoàn Thị Như Ngọc - NLQ",
+              1
+            ],
+            [
+              "Trần Thị Chiến - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Huệ - NLQ",
+              1
+            ],
+            [
+              "Phạm Nuôi - NĐ",
+              1
+            ],
+            [
+              "Võ Thị Trinh - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Hữu Nghiệp - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thị Nhành - Bị đơn",
+              1
+            ],
+            [
+              "Đặng Chì - Bị đơn",
+              1
+            ],
+            [
+              "Đặng Thị Dung - NLQ",
+              1
+            ],
+            [
+              "Đặng Thị Tuyết - NLQ",
+              1
+            ],
+            [
+              "Phan Thị Hoa - NLQ",
+              1
+            ],
+            [
+              "Đặng Kỳ - NLQ",
+              1
+            ],
+            [
+              "Đặng Văn Lắm - NLQ",
+              1
+            ],
+            [
+              "Đặng Thị Quy - NLQ",
+              1
+            ],
+            [
+              "Đặng Chung - NLQ",
+              1
+            ],
+            [
+              "Đặng Thị Hà - NLQ",
+              1
+            ],
+            [
+              "Đặng Thị Hận - NLQ",
+              1
+            ],
+            [
+              "Trần Liên - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thị Thanh Sương - NĐ",
+              1
+            ],
+            [
+              "Trương Thị Kim Loan - NĐ",
+              1
+            ],
+            [
+              "Trần Thị Tý - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Văn Hoàng - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Tiến Lộc - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Văn Hiếu - NĐ",
+              1
+            ],
+            [
+              "Thao Đoàn Và Y Châu - NLQ",
+              1
+            ],
+            [
+              "Mai Thị Phượng - NĐ",
+              1
+            ],
+            [
+              "Lê Văn Bảy - NĐ",
+              1
+            ],
+            [
+              "Chủ Tịch Uỷ Ban Nhân Dân Huyện Sa Thầy, Tỉnh Kon Tum - Bị đơn",
+              1
+            ],
+            [
+              "Phạm Tỵ - NĐ",
+              1
+            ],
+            [
+              "Trương Thị Hạnh - NĐ",
+              1
+            ],
+            [
+              "Ngô Sỹ Ngạn - NĐ",
+              1
+            ],
+            [
+              "Trương Thị Lực - NĐ",
+              1
+            ],
+            [
+              "Huỳnh Đức Sang - NĐ",
+              1
+            ],
+            [
+              "Tống Thị Tuyết - NĐ",
+              1
+            ],
+            [
+              "Võ Văn Hà - NĐ",
+              1
+            ],
+            [
+              "Phạm Văn Sơn - NĐ",
+              1
+            ],
+            [
+              "Hồ Thị Thuộc, Trân Đình Duy Anh (tâm) - Bị đơn",
+              1
+            ],
+            [
+              "Đặng Thị Của - NĐ",
+              1
+            ],
+            [
+              "Cù Văn Biên - NĐ",
+              1
+            ],
+            [
+              "Lê Duy Chương - NĐ",
+              1
+            ],
+            [
+              "Đặng Thanh Vương - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thị Thu Minh - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Ngọc Minh - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thị Ngọc Tuyến - NĐ",
+              1
+            ],
+            [
+              "Dương Thị Đủ - NĐ",
+              1
+            ],
+            [
+              "Võ Lân - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Trần Tấn Hiệp - NĐ",
+              1
+            ],
+            [
+              "Phùng Thị Mùi - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thị Nga - Bị đơn",
+              1
+            ],
+            [
+              "Phùng Đình Thôi - NLQ",
+              1
+            ],
+            [
+              "Phùng Thị Mười - NLQ",
+              1
+            ],
+            [
+              "Phùng Thị Tý - NLQ",
+              1
+            ],
+            [
+              "Phùng Đinh Trạng - NLQ",
+              1
+            ],
+            [
+              "Trần Mai - NĐ",
+              1
+            ],
+            [
+              "Trần Thanh - Bị đơn",
+              1
+            ],
+            [
+              "Lê Văn Việt - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Ân - NĐ",
+              1
+            ],
+            [
+              "Lê Thị Kim Anh - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thanh Hà - Bị đơn",
+              1
+            ],
+            [
+              "Viện trưởng VKS nhân dân tối cao kháng nghị",
+              1
+            ],
+            [
+              "Trần Trung Tín - Bị đơn",
+              1
+            ],
+            [
+              "Lê Thị Út - NĐ",
+              1
+            ],
+            [
+              "Võ Thị Thùy Hương - NĐ",
+              1
+            ],
+            [
+              "Trần Anh Đức - NĐ",
+              1
+            ],
+            [
+              "Ubnd Huyện Sơn Tịnh - Bị đơn",
+              1
+            ],
+            [
+              "Phan Văn Thất - NLQ",
+              1
+            ],
+            [
+              "Phan Thị Thêu - NLQ",
+              1
+            ],
+            [
+              "Phan Dung - NLQ",
+              1
+            ],
+            [
+              "Phạm Văn Thành - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thị Tuấn Anh - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thị Kim Cúc - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thị Nguyệt - NĐ",
+              1
+            ],
+            [
+              "Lương Thị Diễm My - Bị đơn",
+              1
+            ],
+            [
+              "Nguyễn Thị Nghiêng - NĐ",
+              1
+            ],
+            [
+              "Lê Văn Nghiêm - NĐ",
+              1
+            ],
+            [
+              "Trần Kiệt - NĐ",
+              1
+            ],
+            [
+              "Huỳnh Thị Chính - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Xuân Định - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Tự Vui - NĐ",
+              1
+            ],
+            [
+              "Thái Nhật Tiên - NĐ",
+              1
+            ],
+            [
+              "Mai Văn Duy - NĐ",
+              1
+            ],
+            [
+              "Lê Minh - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thành Tâm - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Bạn - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thị Thu An - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thị Bé Phương - NLQ",
+              1
+            ],
+            [
+              "Trần Thị Hồ - NĐ",
+              1
+            ],
+            [
+              "Phạm Văn Đùa - NĐ",
+              1
+            ],
+            [
+              "Phạm Thị Thầy - NLQ",
+              1
+            ],
+            [
+              "Phạm Thị Hua - NLQ",
+              1
+            ],
+            [
+              "Phạm Thị Hia - NLQ",
+              1
+            ],
+            [
+              "Phạm Thị Thu - NLQ",
+              1
+            ],
+            [
+              "Nguyễn Trí Quang - Bị đơn",
+              1
+            ],
+            [
+              "Nguyễn Thị Mười - Bị đơn",
+              1
+            ],
+            [
+              "Nguyễn Quang Nguyên - Bị đơn",
+              1
+            ],
+            [
+              "Trần Thị Yến Thu - NĐ",
+              1
+            ],
+            [
+              "Lê Thị Mỹ Hoàng - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thị Những - NĐ",
+              1
+            ],
+            [
+              "Lương Văn Minh - NĐ",
+              1
+            ],
+            [
+              "Ngô Thị Na - NĐ",
+              1
+            ],
+            [
+              "Ngô Chí Thành - NĐ",
+              1
+            ],
+            [
+              "Lê Văn Ánh - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Hồng Tố - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Đơm - Bị đơn",
+              1
+            ],
+            [
+              "Nguyễn Thị Nở - Bị đơn",
+              1
+            ],
+            [
+              "Nguyễn Mạnh Tuấn - NLQ",
+              1
+            ],
+            [
+              "Nguyễn Văn Thanh - NLQ",
+              1
+            ],
+            [
+              "Nguyễn Thị Ngọc Ánh - NLQ",
+              1
+            ],
+            [
+              "Đỗ Thị Chút - NĐ",
+              1
+            ],
+            [
+              "Phan Thanh Bình - Bị đơn",
+              1
+            ],
+            [
+              "Nguyễn Văn Thanh - NĐ",
+              1
+            ],
+            [
+              "Bùi Thành - NLQ",
+              1
+            ],
+            [
+              "Trần Thị Anh - NĐ",
+              1
+            ],
+            [
+              "Vũ Hồng Cứ - NĐ",
+              1
+            ],
+            [
+              "Võ Tấn Huỳnh - NĐ",
+              1
+            ],
+            [
+              "Chủ tịch UBND xã Ba Tơ, tỉnh Quảng Ngãi - Người kế thừa quyền và nghĩa vụ tố tụng của Bị đơn",
+              1
+            ],
+            [
+              "Trần Thế Tịnh - NĐ",
+              1
+            ],
+            [
+              "Võ Thị Liểu - NĐ",
+              1
+            ],
+            [
+              "Lê Thị Ánh Minh - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Phi Hùng - NLQ",
+              1
+            ],
+            [
+              "Võ Thị Hoàng Oanh - NĐ",
+              1
+            ],
+            [
+              "Phan Đình Hòa - NĐ",
+              1
+            ],
+            [
+              "Võ Văn Toàn - Bị đơn",
+              1
+            ],
+            [
+              "Huỳnh Thị Nga - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Văn Ngọc - NĐ",
+              1
+            ],
+            [
+              "Võ Thanh Bình - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thị Hương - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Triều - NĐ",
+              1
+            ],
+            [
+              "Võ Duy Tám - NĐ",
+              1
+            ],
+            [
+              "Trương Đình Nhất - NĐ",
+              1
+            ],
+            [
+              "Ngô Minh Sơn - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thanh Tuấn - NĐ",
+              1
+            ],
+            [
+              "Võ Châu - Bị đơn",
+              1
+            ],
+            [
+              "Lượng Thị Đức - NLQ",
+              1
+            ],
+            [
+              "Phạm Thanh Quang - NĐ",
+              1
+            ],
+            [
+              "Trịnh Minh Thông - Bị đơn",
+              1
+            ],
+            [
+              "Trần Thị Thiều Quang - NĐ",
+              1
+            ],
+            [
+              "Võ Văn Thành - NĐ",
+              1
+            ],
+            [
+              "Hoàng Thị Yến - NĐ",
+              1
+            ],
+            [
+              "Hồ Văn Hảo - Bị đơn",
+              1
+            ],
+            [
+              "Nguyễn Thị Vân - NĐ",
+              1
+            ],
+            [
+              "Lê Thị Thành - NĐ",
+              1
+            ],
+            [
+              "Phạm Thị Ba Lan - NĐ",
+              1
+            ],
+            [
+              "Mai Thiện Đức - Bị đơn",
+              1
+            ],
+            [
+              "Nguyễn Văn Tấn Tuấn - Bị đơn",
+              1
+            ],
+            [
+              "Nguyễn Thị Bé - NLQ",
+              1
+            ],
+            [
+              "Võ Thị Nhật Triều - NĐ",
+              1
+            ],
+            [
+              "Trần Ta - NĐ",
+              1
+            ],
+            [
+              "Lê Thị Em - NĐ",
+              1
+            ],
+            [
+              "Đinh Thị Lượng - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Trung Ngôn - NĐ",
+              1
+            ],
+            [
+              "Mai Thị Hồng Thảo - NĐ",
+              1
+            ],
+            [
+              "Phan Văn Việt - NĐ",
+              1
+            ],
+            [
+              "Huỳnh Văn Bổ - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Hữu Tiến - Bị đơn",
+              1
+            ],
+            [
+              "Nguyễn Văn Đợi - NĐ",
+              1
+            ],
+            [
+              "Lê Thị Giàu - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thanh Bình - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thị Dạ Thảo - NLQ",
+              1
+            ],
+            [
+              "Trần Thị Trinh - NLQ",
+              1
+            ],
+            [
+              "Lưu Văn Huấn - NLQ",
+              1
+            ],
+            [
+              "Đinh Thế Hùng - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Hoài - Bị đơn",
+              1
+            ],
+            [
+              "Nguyễn Thị Kim Bích - Bị đơn",
+              1
+            ],
+            [
+              "Lê Văn Bê - NĐ",
+              1
+            ],
+            [
+              "Bùi Đức Quang - NĐ",
+              1
+            ],
+            [
+              "Trương Đức Lâm - NĐ",
+              1
+            ],
+            [
+              "Trần Thị Nhân - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thị Xanh - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thành Hiếu - NĐ",
+              1
+            ],
+            [
+              "Huỳnh Văn Dũng - NĐ",
+              1
+            ],
+            [
+              "Phạm Thành - NĐ",
+              1
+            ],
+            [
+              "Phạm Phước - Bị đơn",
+              1
+            ],
+            [
+              "Trần Thị Lang - NLQ",
+              1
+            ],
+            [
+              "Lê Văn Mãnh - NĐ",
+              1
+            ],
+            [
+              "Trịnh Dũng - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Đức Dân - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Đức Đoàn - NLQ",
+              1
+            ],
+            [
+              "Nguyễn Thị Đông Sương - NLQ",
+              1
+            ],
+            [
+              "Lê Văn Tám - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Văn Đường - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thị Chỉnh - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Văn Hoành - Bị đơn",
+              1
+            ],
+            [
+              "Nguyễn Đức Long - NĐ",
+              1
+            ],
+            [
+              "Trần Đức Chức - NĐ",
+              1
+            ],
+            [
+              "Phan Đức Tín - Người kế thừa quyền và nghĩa vụ của Người có quyền nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Trần Ngọc Nên - NĐ",
+              1
+            ],
+            [
+              "Lê Thị Lương - Bị đơn",
+              1
+            ],
+            [
+              "Đào Văn Muống - NĐ",
+              1
+            ],
+            [
+              "Đoàn Thị Lộc - Bị đơn",
+              1
+            ],
+            [
+              "Trương Thanh Sơn - Bị đơn",
+              1
+            ],
+            [
+              "Bùi Thị Tuyết - NLQ",
+              1
+            ],
+            [
+              "Nguyễn Văn Bảo - NĐ",
+              1
+            ],
+            [
+              "Lê Hoàng - NĐ",
+              1
+            ],
+            [
+              "Công Ty Tnhh Phú Mỹ Hưng Kon Tum - NĐ",
+              1
+            ],
+            [
+              "Nguyễn Thanh Cận - Người được uỷ quyền",
+              1
+            ],
+            [
+              "Phạm Minh Tùng - NĐ",
+              1
+            ],
+            [
+              "Trần Văn Nhựt - NĐ",
+              1
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "file": "Hình sự - Phúc thẩm.xlsx",
+    "sheets": [
+      {
+        "sheet": "Projects 3 ",
+        "header_row": 2,
+        "data_rows": 575,
+        "columns": [
+          "Chủ toạ",
+          "Thành viên",
+          "Thư ký",
+          "Số BA/QĐ PT",
+          "Ngày BA/QĐ PT",
+          "Số/Ngày TL",
+          "Họ và tên",
+          "Số BC",
+          "KC/KN",
+          "Tội danh",
+          "Mức án ST",
+          "Số BA/QĐ ST",
+          "Ngày BA/QĐ ST",
+          "Tòa án xét xử Sơ thẩm",
+          "Kết quả XXPT"
+        ],
+        "counters": {
+          "tội danh": [
+            [
+              "Tội đánh bạc",
+              143
+            ],
+            [
+              "Tội cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác",
+              133
+            ],
+            [
+              "Tội gây rối trật tự công cộng",
+              124
+            ],
+            [
+              "Tội vi phạm quy định về tham gia giao thông đường bộ",
+              81
+            ],
+            [
+              "Tội trộm cắp tài sản",
+              65
+            ],
+            [
+              "Tội tổ chức đánh bạc hoặc gá bạc",
+              57
+            ],
+            [
+              "Tội tổ chức sử dụng trái phép chất ma túy",
+              49
+            ],
+            [
+              "Tội bắt, giữ hoặc giam người trái pháp luật",
+              36
+            ],
+            [
+              "Tội tàng trữ trái phép chất ma túy",
+              21
+            ],
+            [
+              "Tội cướp tài sản",
+              20
+            ],
+            [
+              "Tội lừa đảo chiếm đoạt tài sản",
+              19
+            ],
+            [
+              "Tội hủy hoại hoặc cố ý làm hư hỏng tài sản",
+              16
+            ],
+            [
+              "Tội cho vay lãi nặng trong giao dịch dân sự",
+              13
+            ],
+            [
+              "Tội giao cấu hoặc thực hiện hành vi quan hệ tình dục khác với người từ đủ 13 tuổi đến dưới 16 tuổi",
+              13
+            ],
+            [
+              "Tội mua bán trái phép chất ma túy",
+              9
+            ],
+            [
+              "Tội làm giả con dấu, tài liệu của cơ quan, tổ chức",
+              8
+            ],
+            [
+              "tội sử dụng con dấu hoặc tài liệu giả của cơ quan, tổ chức",
+              8
+            ],
+            [
+              "Người nào tàng trữ trái phép chất ma túy mà không nhằm mục đích mua bán, vận chuyển, sản xuất trái phép chất ma túy thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 01 năm đến 05 năm:",
+              8
+            ],
+            [
+              "Tội chứa mại dâm",
+              7
+            ],
+            [
+              "Tội chứa chấp việc sử dụng trái phép chất ma túy",
+              6
+            ],
+            [
+              "Tội lạm dụng tín nhiệm chiếm đoạt tài sản",
+              6
+            ],
+            [
+              "Tội tham ô tài sản",
+              6
+            ],
+            [
+              "Tội dâm ô đối với người dưới 16 tuổi",
+              5
+            ],
+            [
+              "Tội chứa chấp hoặc tiêu thụ tài sản do người khác phạm tội mà có",
+              4
+            ],
+            [
+              "Tội chống người thi hành công vụ",
+              4
+            ],
+            [
+              "Tội vi phạm quy định về bồi thường, hỗ trợ, tái định cư khi Nhà nước thu hồi đất",
+              4
+            ],
+            [
+              "Tội chế tạo, tàng trữ, vận chuyển, sử dụng, mua bán trái phép hoặc chiếm đoạt vật liệu nổ",
+              3
+            ],
+            [
+              "Tội cưỡng đoạt tài sản",
+              3
+            ],
+            [
+              "Tội hiếp dâm người dưới 16 tuổi",
+              3
+            ],
+            [
+              "Tội hủy hoại rừng",
+              3
+            ],
+            [
+              "Tội vô ý làm chết người",
+              3
+            ],
+            [
+              "Tội sử dụng mạng máy tính, mạng viễn thông, phương tiện điện tử thực hiện hành vi chiếm đoạt tài sản",
+              3
+            ],
+            [
+              "Tội môi giới mại dâm",
+              2
+            ],
+            [
+              "Tội cướp giật tài sản",
+              2
+            ],
+            [
+              "Tội sản xuất, buôn bán hàng cấm",
+              2
+            ],
+            [
+              "Tội chế tạo, tàng trữ, vận chuyển, sử dụng, mua bán trái phép hoặc chiếm đoạt vũ khí quân dụng, phương tiện kỹ thuật quân sự",
+              2
+            ],
+            [
+              "Tội làm nhục người khác",
+              2
+            ],
+            [
+              "Tội vi phạm quy định về an toàn thực phẩm",
+              2
+            ],
+            [
+              "Tội vô ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác",
+              2
+            ],
+            [
+              "Tội đe dọa giết người",
+              1
+            ],
+            [
+              "Tội vi phạm quy định về phòng cháy, chữa cháy",
+              1
+            ],
+            [
+              "Tội giả mạo trong công tác",
+              1
+            ],
+            [
+              "Tội giao cấu với trẻ em",
+              1
+            ],
+            [
+              "Điều 332. Tội trốn tránh nghĩa vụ quân sự",
+              1
+            ],
+            [
+              "Tội lợi dụng các quyền tự do dân chủ xâm phạm lợi ích của Nhà nước, quyền, lợi ích hợp pháp của tổ chức, cá nhân",
+              1
+            ],
+            [
+              "Tội cưỡng dâm",
+              1
+            ],
+            [
+              "Tội hiếp dâm",
+              1
+            ],
+            [
+              "Tội bạo loạn",
+              1
+            ],
+            [
+              "Tội nhận hối lộ",
+              1
+            ],
+            [
+              "Tội vi phạm việc niêm phong, kê biên tài sản, phong tỏa tài khoản",
+              1
+            ],
+            [
+              "Tội xâm phạm thi thể, mồ mả, hài cốt",
+              1
+            ],
+            [
+              "Tội vi phạm quy định về khai thác, bảo vệ rừng và lâm sản",
+              1
+            ],
+            [
+              "Tội sử dụng trái phép chất ma túy",
+              1
+            ]
+          ],
+          "kết quả xxpt": [
+            [
+              "Giữ nguyên bản án, quyết định sơ thẩm",
+              186
+            ],
+            [
+              "QĐ đình chỉ",
+              114
+            ],
+            [
+              "Hủy toàn bộ bản án, quyết định sơ thẩm để giải quyết lại vụ án theo thủ tục sơ thẩm",
+              19
+            ],
+            [
+              "Hủy bản án, quyết định sơ thẩm để điều tra lại",
+              8
+            ],
+            [
+              "Hủy một phần bản án, quyết định sơ thẩm để giải quyết lại vụ án theo thủ tục sơ thẩm",
+              6
+            ],
+            [
+              "Hủy bản án, quyết định sơ thẩm và đình chỉ giải quyết vụ án",
+              5
+            ]
+          ],
+          "kc/kn": [
+            [
+              "1 BC k/c,",
+              390
+            ],
+            [
+              "2 BC k/c,",
+              50
+            ],
+            [
+              ", VKS k/n",
+              24
+            ],
+            [
+              "1 Bị hại k/c,",
+              15
+            ],
+            [
+              "1 BC k/c, 2 BC k/c,",
+              12
+            ],
+            [
+              "1 BC k/c, VKS k/n",
+              11
+            ],
+            [
+              "3 BC k/c,",
+              10
+            ],
+            [
+              "1 BC k/c, 1 Bị hại k/c,",
+              6
+            ],
+            [
+              "5 BC k/c,",
+              5
+            ],
+            [
+              "1 BC k/c, 1 Người đại diện hợp pháp của bị hại k/c,",
+              4
+            ],
+            [
+              "1 Người đại diện hợp pháp của bị hại k/c,",
+              4
+            ],
+            [
+              "1 BC k/c, 3 BC k/c,",
+              3
+            ],
+            [
+              ", VKS k/n, VKS k/n",
+              3
+            ],
+            [
+              "7 BC k/c,",
+              3
+            ],
+            [
+              "4 BC k/c,",
+              3
+            ],
+            [
+              "1 BC k/c, 1 Người làm chứng k/c,",
+              2
+            ],
+            [
+              "1 Người có quyền lợi nghĩa vụ liên quan k/c,",
+              2
+            ],
+            [
+              "6 BC k/c,",
+              2
+            ],
+            [
+              "1 BC k/c, 1 Người có quyền lợi nghĩa vụ liên quan k/c, 2 Người bào chữa là trợ giúp viên pháp lý nhà nước k/c,",
+              1
+            ],
+            [
+              "1 Bị hại k/c, 2 Người đại diện hợp pháp của bị hại k/c,",
+              1
+            ],
+            [
+              "1 BC k/c, 1 Người có quyền lợi nghĩa vụ liên quan k/c,",
+              1
+            ],
+            [
+              "1 BC k/c, 1 Bị đơn dân sự k/c, 1 Người có quyền lợi nghĩa vụ liên quan k/c, 2 k/c, 4 Người đại diện hợp pháp của bị hại k/c,",
+              1
+            ],
+            [
+              "1 BC k/c, 1 Bị hại k/c, 1 Người có quyền lợi nghĩa vụ liên quan k/c,",
+              1
+            ],
+            [
+              "1 BC k/c, 2 k/c,",
+              1
+            ],
+            [
+              "1 BC k/c, 1 Bị hại k/c, VKS k/n",
+              1
+            ],
+            [
+              "1 BC k/c, 2 BC k/c, 4 BC k/c,",
+              1
+            ],
+            [
+              "1 Bị hại k/c, 2 BC k/c, 3 Người có quyền lợi nghĩa vụ liên quan k/c,",
+              1
+            ],
+            [
+              "1 BC k/c, 3 BC k/c, 4 BC k/c,",
+              1
+            ],
+            [
+              "2 BC k/c, 3 BC k/c,",
+              1
+            ],
+            [
+              "1 BC k/c, VKS k/n, VKS k/n, VKS k/n, VKS k/n, VKS k/n, VKS k/n, VKS k/n, VKS k/n, VKS k/n, VKS k/n, VKS k/n",
+              1
+            ],
+            [
+              "1 BC k/c, 2 BC k/c, 3 BC k/c,",
+              1
+            ],
+            [
+              "1 BC k/c, 7 BC k/c,",
+              1
+            ],
+            [
+              ", VKS k/n, VKS k/n, VKS k/n, VKS k/n, VKS k/n",
+              1
+            ],
+            [
+              "1 BC k/c, 3 Bị hại k/c,",
+              1
+            ],
+            [
+              "1 BC k/c, 2 Người đại diện hợp pháp của bị hại k/c,",
+              1
+            ],
+            [
+              "1 Người đại diện hợp pháp của bị can, bị cáo k/c, 7 BC k/c,",
+              1
+            ],
+            [
+              "2 BC k/c, 2 Người đại diện hợp pháp của bị hại k/c, 3 Bị hại k/c,",
+              1
+            ],
+            [
+              "1 BC k/c, 4 Bị hại k/c,",
+              1
+            ],
+            [
+              "2 BC k/c, VKS k/n, VKS k/n",
+              1
+            ],
+            [
+              "1 k/c, 5 BC k/c,",
+              1
+            ],
+            [
+              "11 BC k/c,",
+              1
+            ],
+            [
+              "1 BC k/c, 1 Bị đơn dân sự k/c,",
+              1
+            ],
+            [
+              "3 Người đại diện hợp pháp của bị hại k/c,",
+              1
+            ],
+            [
+              "1 BC k/c, VKS k/n, VKS k/n",
+              1
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "file": "Hình sự - Sơ thẩm.xlsx",
+    "sheets": [
+      {
+        "sheet": "Projects 3 ",
+        "header_row": 2,
+        "data_rows": 509,
+        "columns": [
+          "STT",
+          "Số/ngày thụ lý",
+          "Họ và tên bị cáo",
+          "Năm sinh",
+          "Tội danh",
+          "Thẩm phán",
+          "Hội đồng",
+          "Thư ký",
+          "Số/Ngày BA/QD",
+          "Kết quả XXST",
+          "Kháng cáo/Kháng nghị",
+          "Hình thức xét xử",
+          "Ghi chú"
+        ],
+        "counters": {
+          "tội danh": [
+            [
+              "Tội giết người",
+              498
+            ],
+            [
+              "Tội lừa đảo chiếm đoạt tài sản",
+              118
+            ],
+            [
+              "Tội gây rối trật tự công cộng",
+              114
+            ],
+            [
+              "Tội đánh bạc",
+              57
+            ],
+            [
+              "Tội tham ô tài sản",
+              56
+            ],
+            [
+              "Tội mua bán trái phép chất ma túy",
+              53
+            ],
+            [
+              "Tội cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác",
+              37
+            ],
+            [
+              "Tội tổ chức đánh bạc hoặc gá bạc",
+              35
+            ],
+            [
+              "Tội vi phạm quy định về đấu thầu gây hậu quả nghiêm trọng",
+              33
+            ],
+            [
+              "Tội thiếu trách nhiệm gây hậu quả nghiêm trọng",
+              31
+            ],
+            [
+              "Tội hiếp dâm người dưới 16 tuổi",
+              31
+            ],
+            [
+              "Tội chế tạo, tàng trữ, vận chuyển, sử dụng, mua bán trái phép hoặc chiếm đoạt vũ khí quân dụng, phương tiện kỹ thuật quân sự",
+              31
+            ],
+            [
+              "Tội nhận hối lộ",
+              27
+            ],
+            [
+              "Tội tàng trữ trái phép chất ma túy",
+              23
+            ],
+            [
+              "Tội vận chuyển trái phép chất ma túy",
+              22
+            ],
+            [
+              "Tội trộm cắp tài sản",
+              22
+            ],
+            [
+              "Tội tổ chức sử dụng trái phép chất ma túy",
+              18
+            ],
+            [
+              "Tội tổ chức, môi giới cho người khác xuất cảnh, nhập cảnh hoặc ở lại Việt Nam trái phép",
+              15
+            ],
+            [
+              "Tội lạm dụng tín nhiệm chiếm đoạt tài sản",
+              14
+            ],
+            [
+              "Tội làm giả con dấu, tài liệu của cơ quan, tổ chức",
+              14
+            ],
+            [
+              "tội sử dụng con dấu hoặc tài liệu giả của cơ quan, tổ chức",
+              14
+            ],
+            [
+              "Tội vi phạm quy định về đầu tư công trình xây dựng gây hậu quả nghiêm trọng",
+              12
+            ],
+            [
+              "Tội đưa hối lộ",
+              11
+            ],
+            [
+              "Tội chế tạo, tàng trữ, vận chuyển, sử dụng, mua bán trái phép hoặc chiếm đoạt vật liệu nổ",
+              10
+            ],
+            [
+              "Tội giả mạo trong công tác",
+              9
+            ],
+            [
+              "Tội in, phát hành, mua bán trái phép hóa đơn, chứng từ thu nộp ngân sách nhà nước",
+              8
+            ],
+            [
+              "Tội vi phạm quy định về nghiên cứu, thăm dò, khai thác tài nguyên",
+              7
+            ],
+            [
+              "Tội lợi dụng chức vụ, quyền hạn trong khi thi hành công vụ",
+              7
+            ],
+            [
+              "Tội cố ý làm trái quy định của Nhà nước về quản lý kinh tế gây hậu quả nghiêm trọng",
+              6
+            ],
+            [
+              "Tội môi giới hối lộ",
+              6
+            ],
+            [
+              "Tội tàng trữ, vận chuyển hàng cấm",
+              6
+            ],
+            [
+              "Tội giết người trong trạng thái tinh thần bị kích động mạnh",
+              4
+            ],
+            [
+              "Tội cho vay lãi nặng trong giao dịch dân sự",
+              4
+            ],
+            [
+              "Tội làm, tàng trữ, phát tán hoặc tuyên truyền thông tin, tài liệu, vật phẩm nhằm chống Nhà nước Cộng hòa xã hội chủ nghĩa Việt Nam",
+              3
+            ],
+            [
+              "Tội lạm dụng chức vụ, quyền hạn chiếm đoạt tài sản",
+              3
+            ],
+            [
+              "Tội vi phạm quy định về kế toán gây hậu quả nghiêm trọng",
+              3
+            ],
+            [
+              "Tội cưỡng đoạt tài sản",
+              3
+            ],
+            [
+              "Tội sản xuất, buôn bán hàng cấm",
+              3
+            ],
+            [
+              "Tội vi phạm quy định về quản lý, sử dụng tài sản Nhà nước gây thất thoát, lãng phí",
+              2
+            ],
+            [
+              "Tội sản xuất, mua bán, trao đổi hoặc tặng cho công cụ, thiết bị, phần mềm để sử dụng vào mục đích trái pháp luật",
+              2
+            ],
+            [
+              "Tội xâm nhập trái phép vào mạng máy tính, mạng viễn thông hoặc phương tiện điện tử của người khác",
+              2
+            ],
+            [
+              "Tội hủy hoại hoặc cố ý làm hư hỏng tài sản",
+              2
+            ],
+            [
+              "Tội vi phạm quy định về tham gia giao thông đường bộ",
+              2
+            ],
+            [
+              "Tội sản xuất, buôn bán hàng giả là thức ăn dùng để chăn nuôi, phân bón, thuốc thú y, thuốc bảo vệ thực vật, giống cây trồng, giống vật nuôi",
+              2
+            ],
+            [
+              "Tội chứa chấp hoặc tiêu thụ tài sản do người khác phạm tội mà có",
+              2
+            ],
+            [
+              "Tội buôn lậu",
+              2
+            ],
+            [
+              "Tội vô ý làm chết người",
+              1
+            ],
+            [
+              "Tội sản xuất, buôn bán hàng giả",
+              1
+            ],
+            [
+              "Tội giao cấu hoặc thực hiện hành vi quan hệ tình dục khác với người từ đủ 13 tuổi đến dưới 16 tuổi",
+              1
+            ],
+            [
+              "Tội cướp tài sản",
+              1
+            ],
+            [
+              "Tội chứa chấp việc sử dụng trái phép chất ma túy",
+              1
+            ],
+            [
+              "Tội vi phạm quy định về điều khiển phương tiện giao thông đường thủy",
+              1
+            ],
+            [
+              "Tội lợi dụng các quyền tự do dân chủ xâm phạm lợi ích của Nhà nước, quyền, lợi ích hợp pháp của tổ chức, cá nhân",
+              1
+            ],
+            [
+              "Tội sửa chữa và sử dụng giấy chứng nhận, các tài liệu của cơ quan, tổ chức",
+              1
+            ],
+            [
+              "Tội sản xuất trái phép chất ma túy",
+              1
+            ],
+            [
+              "Tội hoạt động nhằm lật đổ chính quyền nhân dân.",
+              1
+            ]
+          ],
+          "kết quả xxst": [
+            [
+              "3 năm tù giam",
+              67
+            ],
+            [
+              "7 năm tù giam",
+              64
+            ],
+            [
+              "2 năm tù giam",
+              64
+            ],
+            [
+              "Quyết định trả hồ sơ để điều tra bổ sung (dùng cho Hội đồng xét xử)",
+              56
+            ],
+            [
+              "4 năm tù giam",
+              45
+            ],
+            [
+              "5 năm tù giam",
+              39
+            ],
+            [
+              "2 năm 6 tháng tù giam",
+              35
+            ],
+            [
+              "15 năm tù giam",
+              27
+            ],
+            [
+              "Quyết định trả hồ sơ để điều tra bổ sung (dùng cho Thẩm phán được phân công chủ tọa phiên tòa)",
+              27
+            ],
+            [
+              "9 năm tù giam",
+              27
+            ],
+            [
+              "20 năm tù giam",
+              26
+            ],
+            [
+              "8 năm tù giam",
+              25
+            ],
+            [
+              "3 năm 6 tháng tù giam",
+              25
+            ],
+            [
+              "6 năm tù giam",
+              25
+            ],
+            [
+              "12 năm tù giam",
+              24
+            ],
+            [
+              "10 năm tù giam",
+              21
+            ],
+            [
+              "1 năm 6 tháng tù giam",
+              21
+            ],
+            [
+              "2 năm án treo",
+              19
+            ],
+            [
+              "1 năm án treo",
+              17
+            ],
+            [
+              "1 năm tù giam",
+              17
+            ],
+            [
+              "13 năm tù giam",
+              16
+            ],
+            [
+              "5 năm 6 tháng tù giam",
+              16
+            ],
+            [
+              "Thử thách: 2 năm",
+              15
+            ],
+            [
+              "18 năm tù giam",
+              14
+            ],
+            [
+              "17 năm tù giam",
+              14
+            ],
+            [
+              "4 năm 6 tháng tù giam",
+              14
+            ],
+            [
+              "Tù chung thân",
+              14
+            ],
+            [
+              "3 năm án treo",
+              13
+            ],
+            [
+              "16 năm tù giam",
+              13
+            ],
+            [
+              "18 tháng tù giam",
+              13
+            ],
+            [
+              "Cải tạo không giam giữ 12 tháng",
+              12
+            ],
+            [
+              "Thử thách: 5 năm",
+              10
+            ],
+            [
+              "18 tháng án treo",
+              10
+            ],
+            [
+              "Phạt tiền 100000000 VND",
+              10
+            ],
+            [
+              "6 năm 6 tháng tù giam",
+              10
+            ],
+            [
+              "Cải tạo không giam giữ 9 tháng",
+              9
+            ],
+            [
+              "Thử thách: 3 năm",
+              9
+            ],
+            [
+              "11 năm tù giam",
+              9
+            ],
+            [
+              "15 tháng tù giam",
+              8
+            ],
+            [
+              "1 năm 3 tháng án treo",
+              8
+            ],
+            [
+              "Thử thách: 2 năm 6 tháng",
+              8
+            ],
+            [
+              "12 tháng tù giam",
+              7
+            ],
+            [
+              "1 năm 6 tháng án treo",
+              7
+            ],
+            [
+              "Thử thách: 4 năm",
+              7
+            ],
+            [
+              "7 năm 6 tháng tù giam",
+              7
+            ],
+            [
+              "24 tháng án treo",
+              7
+            ],
+            [
+              "14 năm tù giam",
+              7
+            ],
+            [
+              "1 năm 3 tháng tù giam",
+              7
+            ],
+            [
+              "Phạt tiền 50000000 VND",
+              6
+            ],
+            [
+              "19 năm tù giam",
+              6
+            ],
+            [
+              "22 tháng 1 ngày tù giam",
+              6
+            ],
+            [
+              "Cải tạo không giam giữ 2 năm",
+              5
+            ],
+            [
+              "Từ hình",
+              5
+            ],
+            [
+              "20 tháng tù giam",
+              4
+            ],
+            [
+              "2 năm 3 tháng tù giam",
+              4
+            ],
+            [
+              "Phạt tiền 200000000 VND",
+              4
+            ],
+            [
+              "12 tháng án treo",
+              4
+            ],
+            [
+              "Phạt tiền 40000000 VND",
+              4
+            ],
+            [
+              "13 năm 6 tháng tù giam",
+              4
+            ],
+            [
+              "Phạt tiền 150000000 VND",
+              4
+            ],
+            [
+              "Cải tạo không giam giữ 1 năm 6 tháng",
+              4
+            ],
+            [
+              "8 năm 3 tháng tù giam",
+              4
+            ],
+            [
+              "Quyết định trả hồ sơ vụ án",
+              4
+            ],
+            [
+              "16 năm 6 tháng tù giam",
+              3
+            ],
+            [
+              "2 năm 6 tháng án treo",
+              3
+            ],
+            [
+              "Cải tạo không giam giữ 18 tháng",
+              3
+            ],
+            [
+              "Miễn hình phạt",
+              3
+            ],
+            [
+              "Trả lại tài sản, sửa chữa hoặc bồi thường thiệt hại",
+              3
+            ],
+            [
+              "Thử thách: 36 tháng",
+              3
+            ],
+            [
+              "1 năm 9 tháng 29 ngày tù giam",
+              3
+            ],
+            [
+              "1 năm 4 tháng 21 ngày tù giam",
+              3
+            ],
+            [
+              "6 tháng án treo",
+              3
+            ],
+            [
+              "Không có tội (Do hành vi không cấu thành tội phạm)",
+              2
+            ],
+            [
+              "26 năm tù giam",
+              2
+            ],
+            [
+              "Thử thách: 24 tháng",
+              2
+            ],
+            [
+              "6 tháng tù giam",
+              2
+            ],
+            [
+              "12 năm 6 tháng tù giam",
+              2
+            ],
+            [
+              "1 năm 12 tháng tù giam",
+              2
+            ],
+            [
+              "Phạt tiền 60000000 VND",
+              2
+            ],
+            [
+              "Cải tạo không giam giữ 1 năm",
+              2
+            ],
+            [
+              "Phạt tiền 20000000 VND",
+              2
+            ],
+            [
+              "Phạt tiền 80000000 VND",
+              2
+            ],
+            [
+              "15 tháng án treo",
+              2
+            ],
+            [
+              "28 năm tù giam",
+              2
+            ],
+            [
+              "28 tháng án treo",
+              2
+            ],
+            [
+              "26 tháng án treo",
+              2
+            ],
+            [
+              "24 năm tù giam",
+              2
+            ],
+            [
+              "14 tháng tù giam",
+              2
+            ],
+            [
+              "8 năm 6 tháng tù giam",
+              2
+            ],
+            [
+              "36 tháng án treo",
+              2
+            ],
+            [
+              "Thử thách: 60 tháng",
+              2
+            ],
+            [
+              "Cải tạo không giam giữ 6 tháng",
+              1
+            ],
+            [
+              "1 năm 29 tháng tù giam",
+              1
+            ],
+            [
+              "42 tháng tù giam",
+              1
+            ],
+            [
+              "5 tháng 25 ngày tù giam",
+              1
+            ],
+            [
+              "9 tháng tù giam",
+              1
+            ],
+            [
+              "5 năm 9 tháng tù giam",
+              1
+            ],
+            [
+              "Miễn trách nhiệm hình sự",
+              1
+            ],
+            [
+              "10 tháng 11 ngày tù giam",
+              1
+            ],
+            [
+              "27 năm tù giam",
+              1
+            ],
+            [
+              "Thử thách: 48 tháng",
+              1
+            ],
+            [
+              "22 năm tù giam",
+              1
+            ],
+            [
+              "14 năm 20 tháng tù giam",
+              1
+            ],
+            [
+              "Phạt tiền 800000000 VND",
+              1
+            ],
+            [
+              "29 năm tù giam",
+              1
+            ],
+            [
+              "10 năm 6 tháng tù giam",
+              1
+            ],
+            [
+              "3 năm 9 tháng tù giam",
+              1
+            ],
+            [
+              "Thử thách: 1 năm",
+              1
+            ],
+            [
+              "Phạt tiền 30000000 VND",
+              1
+            ],
+            [
+              "2 năm 12 tháng tù giam",
+              1
+            ],
+            [
+              "Cải tạo không giam giữ 3 năm",
+              1
+            ],
+            [
+              "15 năm 6 tháng tù giam",
+              1
+            ],
+            [
+              "17 tháng tù giam",
+              1
+            ],
+            [
+              "20 tháng án treo",
+              1
+            ],
+            [
+              "Thử thách: 40 tháng",
+              1
+            ],
+            [
+              "30 tháng án treo",
+              1
+            ],
+            [
+              "Thử thách: 30 tháng",
+              1
+            ],
+            [
+              "24 tháng tù giam",
+              1
+            ],
+            [
+              "3 năm 3 tháng tù giam",
+              1
+            ],
+            [
+              "4 năm 2 tháng tù giam",
+              1
+            ],
+            [
+              "13 tháng tù giam",
+              1
+            ],
+            [
+              "26 tháng tù giam",
+              1
+            ],
+            [
+              "Phạt tiền 90000000 VND",
+              1
+            ],
+            [
+              "36 tháng tù giam",
+              1
+            ],
+            [
+              "30 năm tù giam",
+              1
+            ],
+            [
+              "Phạt tiền 220000000 VND",
+              1
+            ],
+            [
+              "Phạt tiền 170000000 VND",
+              1
+            ],
+            [
+              "Phạt tiền 140000000 VND",
+              1
+            ],
+            [
+              "Phạt tiền 250000000 VND",
+              1
+            ]
+          ],
+          "hình thức xét xử": [
+            [
+              "Xử/Họp công khai trực tiếp",
+              416
+            ],
+            [
+              "Xử/Họp công khai trực tuyến",
+              25
+            ],
+            [
+              "Xử/Họp kín trực tiếp",
+              23
+            ],
+            [
+              "Xử/Họp kín trực tuyến",
+              1
+            ]
+          ],
+          "kháng cáo/kháng nghị": [
+            [
+              "Viện trưởng kháng nghị",
+              11
+            ],
+            [
+              "Trương Lê Xuân Vũ - Bị cáo",
+              3
+            ],
+            [
+              "Nguyễn Thị Thuý Hồng - Bị cáo",
+              3
+            ],
+            [
+              "Nguyễn Hoàng Quốc Dương - Người có quyền lợi nghĩa vụ liên quan",
+              3
+            ],
+            [
+              "Trần Văn Tiên - Bị cáo",
+              2
+            ],
+            [
+              "Bùi Minh Khương - Bị cáo",
+              2
+            ],
+            [
+              "Phạm Ngọc Diễn - Bị cáo",
+              2
+            ],
+            [
+              "Viện trưởng VKS nhân dân tối cao kháng nghị",
+              2
+            ],
+            [
+              "Đinh Trương Bảo Ân - Bị cáo",
+              2
+            ],
+            [
+              "Nguyễn Ngọc Bách - Bị cáo",
+              2
+            ],
+            [
+              "Mai Anh Vương - Bị cáo",
+              2
+            ],
+            [
+              "Trần Công Giang - Bị cáo",
+              2
+            ],
+            [
+              "Trần Quốc Doanh - Bị cáo",
+              2
+            ],
+            [
+              "Phạm Tiến Đạt - Bị cáo",
+              2
+            ],
+            [
+              "Huỳnh Nguyễn Thanh Hiễn - Bị cáo",
+              2
+            ],
+            [
+              "Đỗ Văn Vinh - Bị cáo",
+              2
+            ],
+            [
+              "Lê Đình Thanh - Bị cáo",
+              2
+            ],
+            [
+              "Nguyễn Xuân Thành - Bị cáo",
+              2
+            ],
+            [
+              "Võ Minh Thái - Bị cáo",
+              2
+            ],
+            [
+              "Võ Thị Viễn - Bị cáo",
+              2
+            ],
+            [
+              "Mai Phạm Bảo Chấn - Bị cáo",
+              2
+            ],
+            [
+              "Lê Quang Vinh - Bị cáo",
+              2
+            ],
+            [
+              "Nguyễn Phúc An - Bị cáo",
+              2
+            ],
+            [
+              "Phạm Quốc Quang - Bị cáo",
+              2
+            ],
+            [
+              "Nguyễn Văn Chiến - Bị cáo",
+              2
+            ],
+            [
+              "Trần Bảo Duy Phong - Bị cáo",
+              2
+            ],
+            [
+              "Nguyễn Tấn Lợi - Bị cáo",
+              2
+            ],
+            [
+              "Dương Ngọc Chí Thành - Bị cáo",
+              2
+            ],
+            [
+              "Tăng Đình Thiên - Bị cáo",
+              2
+            ],
+            [
+              "Phạm Minh Khoa - Bị cáo",
+              2
+            ],
+            [
+              "Huỳnh Tấn Duy - Bị cáo",
+              2
+            ],
+            [
+              "Nguyễn Tuấn Khang - Bị cáo",
+              2
+            ],
+            [
+              "Phạm Lê Nin - Bị cáo",
+              2
+            ],
+            [
+              "Trần Nguyễn Đăng Khoa - Bị cáo",
+              2
+            ],
+            [
+              "Phạm Quang Trí - Bị cáo",
+              2
+            ],
+            [
+              "Huỳnh Ngọc Anh - Bị cáo",
+              2
+            ],
+            [
+              "Giả Tấn Tàu - Bị cáo",
+              2
+            ],
+            [
+              "Công ty Cổ phần Tập đoàn TiMa - Người có quyền lợi nghĩa vụ liên quan",
+              2
+            ],
+            [
+              "Hà Thị Kim Vân - Bị cáo",
+              1
+            ],
+            [
+              "Lê Thị Thanh Liên - Người bào chữa là trợ giúp viên pháp lý nhà nước",
+              1
+            ],
+            [
+              "Trần Thanh Tới - Bị hại",
+              1
+            ],
+            [
+              "Đinh Văn Dành - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Thị Phi Phượng - Bị cáo",
+              1
+            ],
+            [
+              "Tòng Thị Còn - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Lê Văn Đức - Bị cáo",
+              1
+            ],
+            [
+              "Võ Thành Long - Bị cáo",
+              1
+            ],
+            [
+              "Vương Thành Sơn - Bị cáo",
+              1
+            ],
+            [
+              "Lục Quốc Triều - Bị cáo",
+              1
+            ],
+            [
+              "Lê Quang Dự - Bị cáo",
+              1
+            ],
+            [
+              "Huỳnh Hòa Phương - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Xuân Trường - Bị cáo",
+              1
+            ],
+            [
+              "Lâm Tấn Tới - Bị cáo",
+              1
+            ],
+            [
+              "Phan Minh Trực - Bị cáo",
+              1
+            ],
+            [
+              "Đào Ngọc Thạch - Bị cáo",
+              1
+            ],
+            [
+              "Mai Văn Phụng - Bị cáo",
+              1
+            ],
+            [
+              "Ngô Quốc Hưng - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Ngọc Vũ - Bị cáo",
+              1
+            ],
+            [
+              "Lê Quang Thành - Bị cáo",
+              1
+            ],
+            [
+              "Võ Tấn Diệu - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Văn Lộc - Bị cáo",
+              1
+            ],
+            [
+              "Trương Đình Tài - Bị cáo",
+              1
+            ],
+            [
+              "A Trinh - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Thị Chính - Bị cáo",
+              1
+            ],
+            [
+              "Ao Công Hoài Nguyên - Bị cáo",
+              1
+            ],
+            [
+              "Lê Văn Ka - Bị hại",
+              1
+            ],
+            [
+              "Hoàng Thị Thu Hương - Bị hại",
+              1
+            ],
+            [
+              "Trương Thị Hồng Trinh - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Phạm Tiến Thùy - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Phạm Ngọc Điệp - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Mậu Lịch - Bị cáo",
+              1
+            ],
+            [
+              "Lê Văn Luyến - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Mậu Dương - Bị cáo",
+              1
+            ],
+            [
+              "Võ Nhật Duy - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Thị Trang - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Trần Văn Biên - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Vỹ Cường - Bị cáo",
+              1
+            ],
+            [
+              "Công ty Cổ phần Thủy điện Đăk Đrinh - Bị hại",
+              1
+            ],
+            [
+              "Phan Tấn Thanh - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Nguyễn Thị Học - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Hồ Thị Lý - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Nguyễn Ngọc Vinh - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Vũ Thanh Khiết - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Ngô Tấn Dũng - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Tân Ngọc Trang - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Đỗ Minh Đức - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Nguyễn Ngọc Sinh - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Võ Khắc Anh - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Võ Duy Tin - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Ngô Đình Tuấn - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Đỗ Thị Bích Liên - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Huỳnh Thơ - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Trương Bá Vương - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Phạm Ngọc Minh - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Phan Thanh Phong - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Nguyễn Hữu Nghĩa - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Nguyễn Văn Định - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Đinh Văn Bột - Bị cáo",
+              1
+            ],
+            [
+              "Đinh Kà Để - Bị cáo",
+              1
+            ],
+            [
+              "Lê Khắc Tâm Anh - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Thị Thu Hà - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Phạm Tấn Dũng - Bị cáo",
+              1
+            ],
+            [
+              "Hồ Anh Bảo - Bị cáo",
+              1
+            ],
+            [
+              "Hồ Quang Dĩ - Bị cáo",
+              1
+            ],
+            [
+              "Y Nu - Bị cáo",
+              1
+            ],
+            [
+              "Đặng Hữu Kỹ - Bị cáo",
+              1
+            ],
+            [
+              "Huỳnh Thị Thanh Thảo - Bị hại",
+              1
+            ],
+            [
+              "Nguyễn Lượng - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Đàm Thị Kết - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Đỗ Thanh Hiệp - Bị cáo",
+              1
+            ],
+            [
+              "Đỗ Thị Xuân Hoanh - Bị hại",
+              1
+            ],
+            [
+              "Phạm Thị Thanh Cẩm - Bị hại",
+              1
+            ],
+            [
+              "Phạm Thị Liên - Bị hại",
+              1
+            ],
+            [
+              "Võ Thị Mỹ Dung - Bị hại",
+              1
+            ],
+            [
+              "Ngô Thị Hạ - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Lê Thị Thu Hà - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Mai Tấn Lợi - Bị hại",
+              1
+            ],
+            [
+              "A Tiểu - Bị cáo",
+              1
+            ],
+            [
+              "A Khẩu - Bị cáo",
+              1
+            ],
+            [
+              "Trần Cao Hơn - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Hoàng Giao - Bị cáo",
+              1
+            ],
+            [
+              "Trần Võ Bảo Ngọc - Bị cáo",
+              1
+            ],
+            [
+              "Chu Đức Hùng - Bị cáo",
+              1
+            ],
+            [
+              "Bùi Văn Vượng - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Nữ Hà Ngân - Bị cáo",
+              1
+            ],
+            [
+              "Mai Xuân Trung - Bị cáo",
+              1
+            ],
+            [
+              "Trần Thị Hoàng Diễm - Bị cáo",
+              1
+            ],
+            [
+              "Võ Thị Ngân - Bị cáo",
+              1
+            ],
+            [
+              "Hà Minh Thạnh - Bị hại",
+              1
+            ],
+            [
+              "A Thúk - Bị cáo",
+              1
+            ],
+            [
+              "Lê Ngọc Vinh - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Minh Hồng - Bị cáo",
+              1
+            ],
+            [
+              "Phan Thành Thông - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Minh Trí - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Văn Minh - Bị cáo",
+              1
+            ],
+            [
+              "Huỳnh Minh Kiều - Bị cáo",
+              1
+            ],
+            [
+              "Huỳnh Ngọc Thanh Thảo - Bị cáo",
+              1
+            ],
+            [
+              "Đoàn Trần Tuấn Vỹ - Bị cáo",
+              1
+            ],
+            [
+              "Quách Công Bạo - Bị cáo",
+              1
+            ],
+            [
+              "Lương Thị Diễm Trang - Bị cáo",
+              1
+            ],
+            [
+              "Huỳnh Việt Thái - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Văn Tầm - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Huỳnh Phi - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Anh Trà - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Xuân Đến - Bị cáo",
+              1
+            ],
+            [
+              "Lê Văn Vân - Bị hại",
+              1
+            ],
+            [
+              "Huỳnh Minh Trí - Bị cáo",
+              1
+            ],
+            [
+              "Đoàn Thị Thúy Hằng - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Nguyễn Phi Hải - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Nguyễn Thị Minh Lệ - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Trần Tấn Hùng - Bị cáo",
+              1
+            ],
+            [
+              "Võ Tấn Hưng - Bị cáo",
+              1
+            ],
+            [
+              "Võ Duy Nghĩa - Bị cáo",
+              1
+            ],
+            [
+              "Hà Văn Như - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Văn Đức - Bị cáo",
+              1
+            ],
+            [
+              "Võ Phi Hậu - Bị cáo",
+              1
+            ],
+            [
+              "Võ Văn Thạch - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Thị Sa - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Nguyễn Đình Huy - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Văn Tây - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Văn Chiến - Người đại diện hợp pháp của bị can, bị cáo",
+              1
+            ],
+            [
+              "Phạm Văn Đoang - Người đại diện hợp pháp của bị can, bị cáo",
+              1
+            ],
+            [
+              "Trương Quang Thảo - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Thị Loan - Bị cáo",
+              1
+            ],
+            [
+              "Trần Thị Bạch Lan - Bị hại",
+              1
+            ],
+            [
+              "Võ Thị Thúy Kiều - Bị hại",
+              1
+            ],
+            [
+              "Đỗ Tấn Cảm - Bị hại",
+              1
+            ],
+            [
+              "Nguyễn Thị Lâm - Bị hại",
+              1
+            ],
+            [
+              "Phạm Mỹ Kiều Oanh - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Phạm Minh Lưu - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Mỹ Huyền - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Phạm Minh Hiếu - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Hà Ngọc Thuận - Bị cáo",
+              1
+            ],
+            [
+              "Đỗ Tấn Vinh - Bị cáo",
+              1
+            ],
+            [
+              "Ngô Thị Thùy Quyên - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Thanh Tùng - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Thị Chi Linh - Bị cáo",
+              1
+            ],
+            [
+              "Công ty TNHH Thương mại Sản xuất và Dịch vụ Tân Thành Phú - Bị hại",
+              1
+            ],
+            [
+              "Nguyễn Thị Phương Thảo - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Văn Chỉa - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Văn Chen - Bị cáo",
+              1
+            ],
+            [
+              "Phùng Ngọc Xanh - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Đức Nhật - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Thanh Nhân - Bị cáo",
+              1
+            ],
+            [
+              "Tạ Sĩ - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Nguyễn Thị Lý - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Vương Thị Nga - Bị hại",
+              1
+            ],
+            [
+              "Trượng Đức Thạnh - Bị cáo",
+              1
+            ],
+            [
+              "Đặng Quang Phụng - Bị cáo",
+              1
+            ],
+            [
+              "Đinh Minh Hồ - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Việt Hà - Bị cáo",
+              1
+            ],
+            [
+              "Công ty TNHH Trung Nghĩa - Bị hại",
+              1
+            ],
+            [
+              "Phan Thị Hồng Hoa - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Nguyễn Ngọc Phúc - Giết Người - Bị cáo",
+              1
+            ],
+            [
+              "Đỗ Văn Ninh - Bị cáo",
+              1
+            ],
+            [
+              "Huỳnh Tấn Bình - Bị cáo",
+              1
+            ],
+            [
+              "Võ Quốc Tống - Bị cáo",
+              1
+            ],
+            [
+              "Hồ Thanh Vân - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Hữu Ngà - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Yến - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Hồ Thanh Thang - Bị cáo",
+              1
+            ],
+            [
+              "Đinh Văn Phương - Bị cáo",
+              1
+            ],
+            [
+              "Đinh Văn Phong - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Minh Long - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Thành Tín - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Bá Nhật - Bị cáo",
+              1
+            ],
+            [
+              "Đỗ Văn Thương - Bị cáo",
+              1
+            ],
+            [
+              "Võ Quang Sa - Bị cáo",
+              1
+            ],
+            [
+              "Trương Đình Nhạt - Bị cáo",
+              1
+            ],
+            [
+              "Đoàn Nam Phước - Bị cáo",
+              1
+            ],
+            [
+              "Hồ Thị Truyền - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Lê Thành Hiệp - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Nguyễn Thị Bé Tý - Người đại diện hợp pháp của bị can, bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Tân - Người đại diện hợp pháp của bị can, bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Văn Triết - Bị cáo",
+              1
+            ],
+            [
+              "Trần Thiện Chí - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Tuấn - Bị hại",
+              1
+            ],
+            [
+              "Nguyễn Thị Bích Loan - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Phạm Thị Lệ - Bị hại",
+              1
+            ],
+            [
+              "Phạm Diệp Anh Tuấn - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Xuân Cường - Bị cáo",
+              1
+            ],
+            [
+              "Võ Dũng - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Thanh Hiếu - Bị cáo",
+              1
+            ],
+            [
+              "Võ Duy Linh - Bị cáo",
+              1
+            ],
+            [
+              "Đoàn Văn Vĩ - Bị cáo",
+              1
+            ],
+            [
+              "Thiều Văn Bửu - Bị hại",
+              1
+            ],
+            [
+              "Võ Tấn Đình - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Dương Đình Phúc - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Dương Hồng Hường - Bị cáo",
+              1
+            ],
+            [
+              "Trần Ngọc Thiên - Bị cáo",
+              1
+            ],
+            [
+              "Du Soh Ab Dul Ra Z Ak - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Đình Thân - Bị cáo",
+              1
+            ],
+            [
+              "Lê Thị Lan - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Thị Hậu - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Tôn Nhân - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Văn Quang - Bị hại",
+              1
+            ],
+            [
+              "Lê Thị Phượng - Bị hại",
+              1
+            ],
+            [
+              "Trà Thị Anh Thư - Bị cáo",
+              1
+            ],
+            [
+              "Châu Thị Tường Vi - Bị hại",
+              1
+            ],
+            [
+              "Võ Kim Út - Bị hại",
+              1
+            ],
+            [
+              "Võ Vương Kim Hằng - Bị hại",
+              1
+            ],
+            [
+              "Lê Thị Mỹ Loan - Bị hại",
+              1
+            ],
+            [
+              "Phan Thanh Việt - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Văn Hải - Bị cáo",
+              1
+            ],
+            [
+              "Trần Minh Dương - Bị cáo",
+              1
+            ],
+            [
+              "Hồ Văn Chiến - Bị hại",
+              1
+            ],
+            [
+              "Đặng Thị Ý Nguyện - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Nguyễn Duy Cường - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Thị Tuyết - Bị hại",
+              1
+            ],
+            [
+              "Lê Đình Thuyết - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Quốc Hùng - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Thanh Khiết - Bị cáo",
+              1
+            ],
+            [
+              "Võ Thành Sỹ - Bị cáo",
+              1
+            ],
+            [
+              "Đỗ Văn Thuận - Bị cáo",
+              1
+            ],
+            [
+              "Võ Thành Công - Bị cáo",
+              1
+            ],
+            [
+              "Tống Đình Khánh - Bị cáo",
+              1
+            ],
+            [
+              "Vũ Đức Thuận - Bị cáo",
+              1
+            ],
+            [
+              "Trần Thanh Đức Hòa - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Thành Linh - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Thị Như Thủy - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Nguyễn Hoàng Như Trâm - Bị cáo",
+              1
+            ],
+            [
+              "Võ Quang Phát - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Phi Hùng - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Văn Hậu - Bị cáo",
+              1
+            ],
+            [
+              "Cao Văn Hoàng - Bị cáo",
+              1
+            ],
+            [
+              "Bạch Văn Lực - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Công Toàn - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Huỳnh Minh Thịnh - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Ngọc Vương - Bị cáo",
+              1
+            ],
+            [
+              "Võ Văn Trọng - Bị cáo",
+              1
+            ],
+            [
+              "Phan Văn Quý - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Tiến Du - Bị cáo",
+              1
+            ],
+            [
+              "Lương Văn By - Bị cáo",
+              1
+            ],
+            [
+              "Bùi Ngọc Thạch - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Minh Vương - Bị cáo",
+              1
+            ],
+            [
+              "Bùi Ngọc Thành - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Minh Thuyết - Bị cáo",
+              1
+            ],
+            [
+              "Võ Thanh Vĩ - Bị cáo",
+              1
+            ],
+            [
+              "Đào Văn Vượng - Bị cáo",
+              1
+            ],
+            [
+              "Trần Hoài Trang - Bị cáo",
+              1
+            ],
+            [
+              "Phan Cao Thái - Bị cáo",
+              1
+            ],
+            [
+              "Đinh Xuân Quang - Bị cáo",
+              1
+            ],
+            [
+              "Dương Văn Thái - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Thị Min - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Đỗ Văn Trường - Bị cáo",
+              1
+            ],
+            [
+              "Đinh Ngọc Long - Bị cáo",
+              1
+            ],
+            [
+              "Phạm Duy Khải - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Trung Nguyên - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Thành Luân - Bị cáo",
+              1
+            ],
+            [
+              "Lê Văn Tường - Bị cáo",
+              1
+            ],
+            [
+              "A Dân - Người đại diện hợp pháp của bị can, bị cáo",
+              1
+            ],
+            [
+              "Phạm Khánh Trình - Bị cáo",
+              1
+            ],
+            [
+              "Trần Đình Thuật - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Tấn Vũ - Lừa Đảo Chiếm Đoạt Tài Sản - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Tạ Nữ DIệu Hằng - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Phạm Thị Lý Phương - Bị hại",
+              1
+            ],
+            [
+              "Nguyễn Thị Minh Hiếu - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Trần Phạm ThanH Xuân - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Phạm Ngọc Tiên - Bị cáo",
+              1
+            ],
+            [
+              "Xa Phúc - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Hùng - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Anh Phúc - Bị cáo",
+              1
+            ],
+            [
+              "Lê Trung Tiên - Bị cáo",
+              1
+            ],
+            [
+              "Đinh Văn Thề - Bị cáo",
+              1
+            ],
+            [
+              "Đinh Minh Thoáng - Bị cáo",
+              1
+            ],
+            [
+              "Đinh Văn Sơn - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Thị Thanh Thúy - Bị cáo",
+              1
+            ],
+            [
+              "Trần Văn Quyền - Bị cáo",
+              1
+            ],
+            [
+              "Hồ Linh Phi - Bị cáo",
+              1
+            ],
+            [
+              "Võ Thanh Phước - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Thị Hạnh - Bị cáo",
+              1
+            ],
+            [
+              "Trần Phú Quốc - Bị cáo",
+              1
+            ],
+            [
+              "Huỳnh Ngọc Thu - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Tấn Tài - Bị cáo",
+              1
+            ],
+            [
+              "Trương Minh Tuấn - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Văn Cảm - Bị hại",
+              1
+            ],
+            [
+              "Hà Anh Triều - Bị cáo",
+              1
+            ],
+            [
+              "Trần Quang Nhật - Bị hại",
+              1
+            ],
+            [
+              "Nguyễn Thị Sương - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Trần Vũ Hoàn - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Bùi Quang Huy - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Hồ Tuấn Dũ - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Trần Trọng Trí - Bị cáo",
+              1
+            ],
+            [
+              "Phan Gia Lộc - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Văn Thủy - Bị cáo",
+              1
+            ],
+            [
+              "Bùi Thị Thoa - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Phạm Ngọc Quý - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Văn Thuận - Bị cáo",
+              1
+            ],
+            [
+              "Trần Thanh Tùng - Bị cáo",
+              1
+            ],
+            [
+              "Nguyễn Ngọc Tuế - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Lê Tiến Thành - Bị cáo",
+              1
+            ],
+            [
+              "Vũ Thị Lệ Thu - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Trần Phước Dương - Bị cáo",
+              1
+            ],
+            [
+              "A Khang - Bị cáo",
+              1
+            ],
+            [
+              "Tô Hữu Chí - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Đinh Thị Hiêm - Người đại diện hợp pháp của bị hại",
+              1
+            ],
+            [
+              "Nguyễn Thị Quyên - Bị cáo",
+              1
+            ],
+            [
+              "NGUYỄN THỊ HỒNG HẠNH - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "BÙI QUANG LONG - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "BÙI THỊ HOA - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Lê Thị Ánh Nguyệt - Bị cáo",
+              1
+            ],
+            [
+              "VÕ THÀNH LÂN - Người có quyền lợi nghĩa vụ liên quan",
+              1
+            ],
+            [
+              "Nguyễn Hữu Quyết - Bị cáo",
+              1
+            ]
+          ]
+        }
+      }
+    ]
+  }
+]

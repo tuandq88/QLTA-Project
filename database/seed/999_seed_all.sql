@@ -1,0 +1,15 @@
+-- File ghi chú thứ tự chạy seed cho QLTA-Project.
+-- Không dùng file này để chạy seed tự động nếu công cụ không hỗ trợ include an toàn.
+-- Script PowerShell trong tests/database chạy trực tiếp từng file seed theo thứ tự tên file
+-- và bỏ qua 999_seed_all.sql để tránh chạy trùng.
+
+-- Thứ tự chạy đề xuất:
+-- 1. database/seed/003_reference_data_seed.sql
+-- 2. database/seed/004_statistical_reference_data_seed.sql
+-- 3. database/seed/010_legal_seed_data_tand_vietnam.sql
+-- 4. database/seed/020_excel_seed_case_categories.sql
+-- 5. database/seed/021_excel_seed_criminal_categories.sql
+-- 6. database/seed/022_excel_seed_civil_categories.sql
+-- 7. database/seed/023_excel_seed_administrative_categories.sql
+-- 8. database/seed/024_excel_seed_labor_business_marriage_categories.sql
+-- 9. database/seed/025_excel_seed_statistical_indicators.sql

@@ -96,6 +96,19 @@ Schema hợp nhất để tạo database nằm tại:
 database/schema/unified_postgresql_schema.sql
 ```
 
+Core schema độc lập cho phần lõi nằm tại:
+
+```text
+database/schema/core_database_schema.sql
+database/migrations/001_core_database_schema.sql
+```
+
+Chạy riêng core schema trên database trống:
+
+```bash
+psql -d tand_quangngai -f database/migrations/001_core_database_schema.sql
+```
+
 File này gom mô hình từ:
 
 - `database/schema/postgresql_starter_schema.sql`

@@ -72,29 +72,29 @@ BEGIN
 
     INSERT INTO statistics_snapshots (
         period_id, court_id, case_id, statistic_form_code, metric_code,
-        metric_name, metric_value, aggregation_level
+        metric_value, aggregation_level
     )
     VALUES (
         v_period_id, v_court_id, NULL, 'FORM-TEST', 'accepted_case_count',
-        'So thu ly', 1, 'court'
+        1, 'court'
     );
 
     BEGIN
         INSERT INTO statistics_snapshots (
             period_id, court_id, case_id, statistic_form_code, metric_code,
-            metric_name, metric_value, aggregation_level
+            metric_value, aggregation_level
         )
         VALUES (
             v_period_id, v_court_id, NULL, 'FORM-TEST', 'accepted_case_count',
-            'So thu ly lap', 2, 'court'
+            2, 'court'
         );
         RAISE EXCEPTION 'Expected duplicate statistics snapshot to fail';
     EXCEPTION WHEN unique_violation THEN
         NULL;
     END;
 
-    INSERT INTO kpi_metrics (metric_code, metric_name, metric_group, unit)
-    VALUES ('KPI-DUP-001', 'KPI duplicate test', 'case_quality', 'count')
+    INSERT INTO kpi_metrics (metric_code, metric_name, metric_group)
+    VALUES ('KPI-DUP-001', 'KPI duplicate test', 'case_quality')
     RETURNING metric_id INTO v_metric_id;
 
     INSERT INTO kpi_values (metric_id, period_id, court_id, judge_id, actual_value)
@@ -137,9 +137,9 @@ BEGIN
     END;
 
     INSERT INTO appellate_results (
-        appellate_tracking_id, result_code, result_name, result_date
+        appellate_tracking_id, result_code, result_date
     )
-    VALUES (v_tracking_id, 'uphold', 'Giu nguyen', DATE '2026-03-01')
+    VALUES (v_tracking_id, 'uphold', DATE '2026-03-01')
     RETURNING appellate_result_id INTO v_result_id;
 
     BEGIN
