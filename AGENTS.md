@@ -46,6 +46,17 @@ bieu_mau/        Biểu mẫu Excel gốc
 5. Nếu task liên quan quy định pháp luật hoặc biểu mẫu, đối chiếu tài liệu trong `Documents/` hoặc `docs/legal/`.
 6. Sau khi sửa, kiểm tra không làm mất file nguồn và không đổi nội dung nghiệp vụ ngoài phạm vi task.
 
+## Quy tắc kết nối PostgreSQL và tài liệu
+
+- Khi chạy `psql` hoặc script database, AI Agent phải đọc cấu hình từ `.env.local` ở thư mục gốc repo hoặc từ environment variables tương ứng: `PGHOST`, `PGPORT`, `PGUSER`, `PGPASSWORD`, `PGDATABASE`, `DATABASE_URL`.
+- Không hard-code mật khẩu PostgreSQL trong script, tài liệu, log hoặc báo cáo.
+- Không commit `.env.local` hoặc bất kỳ secret nào.
+- Script kiểm tra database phải hỗ trợ chạy trên Windows PowerShell và kiểm soát lỗi tiếng Việt/mojibake khi ghi log.
+- Báo cáo hoàn thành, README, checklist và tài liệu mô tả phải viết bằng tiếng Việt, mã hóa UTF-8.
+- Nếu xuất tài liệu sang định dạng có font chữ như DOCX/PDF/HTML in ấn, dùng font Tahoma.
+- Không chạy unified schema và migrations trong cùng một mode kiểm tra.
+- `database/schema/unified_postgresql_schema.sql` là source of truth cho database mới sau khi migration ổn định đã được đồng bộ.
+
 ## Định dạng task khuyến nghị
 
 ```yaml

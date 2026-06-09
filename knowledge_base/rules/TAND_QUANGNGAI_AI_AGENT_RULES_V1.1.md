@@ -267,6 +267,36 @@ AI Agent phải tuân theo mô hình 05 lớp:
 
 ## 8. Quy tắc database
 
+### 8.0. Quy tắc kết nối PostgreSQL và bảo mật môi trường
+
+```text
+- Khi chạy psql hoặc script database, AI Agent phải lấy cấu hình từ .env.local ở thư mục gốc repo hoặc environment variables.
+- Các biến được phép đọc: PGHOST, PGPORT, PGUSER, PGPASSWORD, PGDATABASE, DATABASE_URL.
+- Không hard-code mật khẩu PostgreSQL.
+- Không ghi mật khẩu hoặc secret vào báo cáo, README, log hoặc file kết quả.
+- Không commit .env.local.
+- Script Windows PowerShell phải kiểm soát nguy cơ mojibake khi hiển thị tiếng Việt; nếu cần, dùng thông điệp runtime không dấu và ghi tài liệu UTF-8.
+```
+
+### 8.1. Quy tắc source of truth schema
+
+```text
+- database/schema/unified_postgresql_schema.sql là source of truth cho database mới.
+- database/migrations/*.sql là lịch sử thay đổi và dùng cho database đã tồn tại.
+- Chỉ gộp migration vào unified schema khi migration tương thích, ổn định, additive hoặc có thể chuyển thành idempotent an toàn.
+- Không gộp migration legacy nếu có bảng trùng, không idempotent hoặc xung đột với unified schema.
+- Không chạy unified schema và migrations trong cùng một mode kiểm tra.
+- Không xóa constraint/index để làm test pass giả.
+```
+
+### 8.2. Quy tắc tài liệu database
+
+```text
+- Báo cáo, mô tả hoàn thành, README, checklist và tài liệu database phải viết bằng tiếng Việt UTF-8.
+- Nếu xuất tài liệu định dạng có font chữ, dùng font Tahoma.
+- Tài liệu database phải mô tả công dụng bảng, khóa chính, khóa ngoại và các cột liên kết quan trọng.
+```
+
 ### 8.1. Bảng trung tâm
 
 `case_files` là bảng trung tâm cho mọi loại án.

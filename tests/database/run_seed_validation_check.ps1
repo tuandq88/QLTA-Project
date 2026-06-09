@@ -12,6 +12,30 @@ if (Get-Variable -Name PSNativeCommandUseErrorActionPreference -Scope Global -Er
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $RepoRoot = (Resolve-Path (Join-Path $ScriptDir "..\..")).Path
 $ResultFile = Join-Path $ScriptDir "DATABASE_SEED_CHECK_RESULT.md"
+
+function Import-DotEnvLocal {
+    param([string]$Path)
+    if (-not (Test-Path -LiteralPath $Path)) {
+        return
+    }
+    Get-Content -LiteralPath $Path | ForEach-Object {
+        $line = $_.Trim()
+        if (-not $line -or $line.StartsWith("#") -or $line -notmatch '^([^=]+)=(.*)$') {
+            return
+        }
+        $name = $matches[1].Trim()
+        $value = $matches[2].Trim()
+        if (($value.StartsWith('"') -and $value.EndsWith('"')) -or ($value.StartsWith("'") -and $value.EndsWith("'"))) {
+            $value = $value.Substring(1, $value.Length - 2)
+        }
+        if (-not [Environment]::GetEnvironmentVariable($name, "Process")) {
+            [Environment]::SetEnvironmentVariable($name, $value, "Process")
+        }
+    }
+}
+
+Import-DotEnvLocal -Path (Join-Path $RepoRoot ".env.local")
+
 $PgHost = if ($env:PGHOST) { $env:PGHOST } else { "localhost" }
 $PgPort = if ($env:PGPORT) { $env:PGPORT } else { "5432" }
 $PgUser = if ($env:PGUSER) { $env:PGUSER } else { "postgres" }

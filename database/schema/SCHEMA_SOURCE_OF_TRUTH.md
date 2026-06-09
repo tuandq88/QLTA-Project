@@ -50,11 +50,13 @@ Không chạy migrations trong chế độ này.
 Chạy:
 
 1. Drop/recreate database test.
-2. Các migration đánh số trong `database/migrations/*.sql` theo thứ tự tên file.
+2. Các migration đánh số trong `database/migrations/*.sql` theo thứ tự tên file nếu migration đó đã được đánh dấu tương thích.
 3. Các file seed trong `database/seed/*.sql` theo thứ tự tên file, bỏ qua `999_seed_all.sql`.
 4. SQL test trong `tests/database/`.
 
 Không chạy unified schema trong chế độ này.
+
+Trạng thái hiện tại: `MigrationsOnly` chưa được coi là đường khởi tạo database mới hoàn chỉnh vì một số migration đang là migration bổ sung sau unified schema hoặc cần review thêm. Kết quả chi tiết xem `database/schema/MIGRATION_COMPATIBILITY_REVIEW.md`.
 
 ## Quy tắc không chạy trùng
 
@@ -68,3 +70,5 @@ Không chạy `database/schema/unified_postgresql_schema.sql` và chuỗi migrat
 - Seed mới phải chạy được sau unified schema.
 - Seed mới phải có căn cứ nguồn hoặc ghi rõ `requires_human_review`.
 - Test mới phải fail thật khi phát hiện thiếu bảng, lỗi FK, duplicate key hoặc seed không idempotent.
+- Script kiểm tra database phải đọc `.env.local` hoặc environment variables, không hard-code secret.
+- Báo cáo và tài liệu phải viết bằng tiếng Việt UTF-8; tài liệu xuất định dạng có font dùng Tahoma.

@@ -1,7 +1,7 @@
 ﻿# Ket qua kiem tra seed database
 
-- Thoi diem kiem tra: 2026-06-09 17:08:53 +07:00
-- Database: qlta_empty_test
+- Thoi diem kiem tra: 2026-06-09 18:43:59 +07:00
+- Database: qlta_schema_merge_test
 - ResetDatabase: False
 - SeedOnly: False
 - PGHOST: localhost

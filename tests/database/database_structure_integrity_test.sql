@@ -112,7 +112,18 @@ BEGIN
             ('idx_dm_category_items_category_active_sort'),
             ('idx_statistical_categories_active_sort'),
             ('idx_statistical_indicators_category'),
-            ('idx_dm_statistical_form_items_form')
+            ('idx_dm_statistical_form_items_form'),
+            ('uq_hearings_case_type_datetime'),
+            ('uq_appeals_case_type_appellant_date'),
+            ('uq_deadlines_case_type_start'),
+            ('uq_appellate_results_tracking_result'),
+            ('uq_appellate_fault_assessments_scope'),
+            ('uq_appellate_followup_actions_scope'),
+            ('idx_case_files_assignment_pool'),
+            ('idx_assignment_audit_logs_batch_time'),
+            ('idx_ai_suggestions_pending'),
+            ('idx_dm_crimes_active_sort'),
+            ('idx_dm_legal_relationships_scope_active_sort')
     )
     SELECT array_agg(index_name)
     INTO missing_items
@@ -121,6 +132,41 @@ BEGIN
 
     IF missing_items IS NOT NULL THEN
         RAISE EXCEPTION 'Thiếu index/unique constraint quan trọng: %', missing_items;
+    END IF;
+END $$;
+
+DO $$
+DECLARE
+    missing_items text[];
+BEGIN
+    WITH expected_constraints(con_name) AS (
+        VALUES
+            ('chk_courts_parent_not_self'),
+            ('chk_case_files_closed_after_acceptance'),
+            ('chk_preventive_measures_end_after_start'),
+            ('chk_admin_enforcement_compliance_after_due'),
+            ('chk_statistics_snapshots_metric_nonnegative'),
+            ('chk_kpi_values_actual_nonnegative'),
+            ('chk_kpi_values_target_nonnegative'),
+            ('chk_assignment_batch_cases_order_positive'),
+            ('chk_assignment_batch_judges_order_positive'),
+            ('chk_assignment_batch_judges_counts_nonnegative'),
+            ('chk_judge_workload_counts_nonnegative'),
+            ('chk_appeal_protest_items_not_both'),
+            ('chk_appellate_tracking_resolved_has_result'),
+            ('chk_appellate_fault_subjective_requires_reason')
+    )
+    SELECT array_agg(con_name)
+    INTO missing_items
+    FROM expected_constraints
+    WHERE NOT EXISTS (
+        SELECT 1
+        FROM pg_constraint
+        WHERE conname = expected_constraints.con_name
+    );
+
+    IF missing_items IS NOT NULL THEN
+        RAISE EXCEPTION 'Thieu check constraint quan trong: %', missing_items;
     END IF;
 END $$;
 

@@ -1,7 +1,7 @@
 ﻿# Káº¿t quáº£ kiá»ƒm tra PostgreSQL trá»‘ng
 
-- Thá»i Ä‘iá»ƒm kiá»ƒm tra: 2026-06-09 17:06:56 +07:00
-- Database test: qlta_empty_test
+- Thá»i Ä‘iá»ƒm kiá»ƒm tra: 2026-06-09 18:45:19 +07:00
+- Database test: qlta_schema_merge_test
 - Cháº¿ Ä‘á»™: UnifiedOnly
 - PGHOST: localhost
 - PGPORT: 5432
@@ -222,6 +222,57 @@ CREATE INDEX
 CREATE INDEX
 CREATE INDEX
 CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
 [Chay seed / database/seed/003_reference_data_seed.sql]
 INSERT 0 36
 INSERT 0 184
@@ -271,8 +322,9 @@ BEGIN
 DO
 DO
 DO
+DO
 ROLLBACK
-psql:D:/QLTA-Project/tests/database/database_structure_integrity_test.sql:132: NOTICE:  PASSED: database_structure_integrity_test.sql
+psql:D:/QLTA-Project/tests/database/database_structure_integrity_test.sql:178: NOTICE:  PASSED: database_structure_integrity_test.sql
 DO
 [Chay SQL test / tests/database/seed_data_integrity_test.sql]
 BEGIN
@@ -282,8 +334,8 @@ DO
 DO
 DO
 ROLLBACK
-psql:D:/QLTA-Project/tests/database/seed_data_integrity_test.sql:122: NOTICE:  PASSED: seed_data_integrity_test.sql
 DO
+psql:D:/QLTA-Project/tests/database/seed_data_integrity_test.sql:122: NOTICE:  PASSED: seed_data_integrity_test.sql
 [Chay SQL test / tests/database/statistics_algorithm_precheck.sql]
 BEGIN
 DO
