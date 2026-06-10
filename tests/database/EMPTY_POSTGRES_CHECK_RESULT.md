@@ -1,6 +1,6 @@
 ﻿# Káº¿t quáº£ kiá»ƒm tra PostgreSQL trá»‘ng
 
-- Thá»i Ä‘iá»ƒm kiá»ƒm tra: 2026-06-10 10:30:36 +07:00
+- Thá»i Ä‘iá»ƒm kiá»ƒm tra: 2026-06-10 16:12:06 +07:00
 - Database test: qlta_schema_merge_test
 - Cháº¿ Ä‘á»™: UnifiedOnly
 - PGHOST: localhost
@@ -33,6 +33,7 @@
 - database/seed/031_excel_seed_case_details.sql
 - database/seed/032_excel_seed_case_parties.sql
 - database/seed/033_excel_seed_case_events_and_resolutions.sql
+- database/seed/034_excel_seed_hearing_members.sql
 - tests/database/database_structure_integrity_test.sql
 - tests/database/seed_data_integrity_test.sql
 - tests/database/statistics_algorithm_precheck.sql
@@ -95,6 +96,8 @@ CREATE TABLE
 CREATE TABLE
 CREATE TABLE
 CREATE TABLE
+CREATE TABLE
+CREATE TABLE
 ALTER TABLE
 CREATE TABLE
 CREATE TABLE
@@ -113,6 +116,7 @@ CREATE TABLE
 CREATE TABLE
 CREATE TABLE
 CREATE TABLE
+DO
 CREATE TABLE
 CREATE TABLE
 CREATE TABLE
@@ -277,10 +281,14 @@ CREATE INDEX
 CREATE INDEX
 CREATE INDEX
 CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
 [Chay seed / database/seed/003_reference_data_seed.sql]
+INSERT 0 37
+INSERT 0 189
 INSERT 0 36
-INSERT 0 184
-INSERT 0 35
 [Chay seed / database/seed/004_statistical_reference_data_seed.sql]
 INSERT 0 6
 INSERT 0 6
@@ -351,6 +359,11 @@ INSERT 0 1138
 INSERT 0 1053
 INSERT 0 835
 COMMIT
+[Chay seed / database/seed/034_excel_seed_hearing_members.sql]
+BEGIN
+INSERT 0 98
+INSERT 0 4954
+COMMIT
 [Chay SQL test / tests/database/database_structure_integrity_test.sql]
 BEGIN
 DO
@@ -358,8 +371,8 @@ DO
 DO
 DO
 ROLLBACK
-DO
 psql:D:/QLTA-Project/tests/database/database_structure_integrity_test.sql:178: NOTICE:  PASSED: database_structure_integrity_test.sql
+DO
 [Chay SQL test / tests/database/seed_data_integrity_test.sql]
 BEGIN
 DO
@@ -368,8 +381,8 @@ DO
 DO
 DO
 ROLLBACK
-DO
 psql:D:/QLTA-Project/tests/database/seed_data_integrity_test.sql:122: NOTICE:  PASSED: seed_data_integrity_test.sql
+DO
 [Chay SQL test / tests/database/statistics_algorithm_precheck.sql]
 BEGIN
 DO

@@ -19,6 +19,7 @@ Thứ tự chạy mặc định theo tên file:
 11. `031_excel_seed_case_details.sql`
 12. `032_excel_seed_case_parties.sql`
 13. `033_excel_seed_case_events_and_resolutions.sql`
+14. `034_excel_seed_hearing_members.sql`
 
 `999_seed_all.sql` chỉ là file ghi chú thứ tự chạy, không được dùng để chạy trùng seed.
 
@@ -32,6 +33,7 @@ Thứ tự chạy mặc định theo tên file:
 - `031`: detail theo loại án (`civil_case_details`, `administrative_case_details`, `criminal_case_details`) và bảng con phù hợp.
 - `032`: đương sự/bị cáo/người tham gia tố tụng từ Excel khi có tên rõ.
 - `033`: event, hearing, decision, appeal và appellate tracking/result khi Excel có dữ liệu tương ứng.
+- `034`: danh sach can bo va thanh phan phien toa tu cac cot Tham phan/Chu toa, Hoi dong/Thanh vien, Thu ky trong Excel; o trong duoc bao cao la thieu du lieu, khong tao placeholder.
 
 ## Sinh lại seed hồ sơ từ Excel
 
@@ -48,7 +50,9 @@ Script này sinh lại:
 - `database/seed/031_excel_seed_case_details.sql`
 - `database/seed/032_excel_seed_case_parties.sql`
 - `database/seed/033_excel_seed_case_events_and_resolutions.sql`
+- `database/seed/034_excel_seed_hearing_members.sql`
 - `tests/database/EXCEL_CASE_FULL_IMPORT_MAPPING_RESULT.md`
+- `tests/database/EXCEL_CASE_TRIAL_LEVEL_AND_HEARING_MEMBERS_RESULT.md`
 - `docs/review/excel_case_full_import_records.csv`
 
 ## Quy tắc tiếng Việt

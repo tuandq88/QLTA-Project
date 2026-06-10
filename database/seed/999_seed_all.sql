@@ -17,3 +17,4 @@
 -- 11. database/seed/031_excel_seed_case_details.sql
 -- 12. database/seed/032_excel_seed_case_parties.sql
 -- 13. database/seed/033_excel_seed_case_events_and_resolutions.sql
+-- 14. database/seed/034_excel_seed_hearing_members.sql

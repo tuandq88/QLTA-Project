@@ -99,6 +99,7 @@ VALUES
     ('court_level', 'Court level', 'Core court-level codes', 10),
     ('user_role', 'User role', 'Core system role codes', 20),
     ('case_type', 'Case type', 'Core case type codes', 30),
+    ('case_group', 'Case group', 'Core trial-level case group codes', 35),
     ('case_status', 'Case status', 'Core case status codes', 40),
     ('participant_type', 'Participant type', 'Core participant type codes', 50),
     ('document_type', 'Document type', 'Core document type codes', 60),
@@ -108,7 +109,8 @@ VALUES
     ('assignment_role', 'Assignment role', 'Core assignment role codes', 100),
     ('deadline_status', 'Deadline status', 'Core deadline status codes', 110),
     ('validation_severity', 'Validation severity', 'Core validation severity codes', 120),
-    ('audit_action_type', 'Audit action type', 'Core audit action codes', 130)
+    ('audit_action_type', 'Audit action type', 'Core audit action codes', 130),
+    ('hearing_member_role', 'Hearing member role', 'Core hearing member role codes', 140)
 ON CONFLICT (category_code) DO NOTHING;
 
 WITH seed_items(category_code, item_code, item_name, sort_order) AS (
@@ -127,6 +129,8 @@ WITH seed_items(category_code, item_code, item_name, sort_order) AS (
     ('case_type', 'labor', 'labor', 40),
     ('case_type', 'criminal', 'criminal', 50),
     ('case_type', 'administrative', 'administrative', 60),
+    ('case_group', 'SO_THAM', 'So tham', 10),
+    ('case_group', 'PHUC_THAM', 'Phuc tham', 20),
     ('case_status', 'draft', 'draft', 10),
     ('case_status', 'accepted', 'accepted', 20),
     ('case_status', 'preparing', 'preparing', 30),
@@ -167,7 +171,10 @@ WITH seed_items(category_code, item_code, item_name, sort_order) AS (
     ('audit_action_type', 'update', 'update', 20),
     ('audit_action_type', 'delete', 'delete', 30),
     ('audit_action_type', 'validate', 'validate', 40),
-    ('audit_action_type', 'assign', 'assign', 50)
+    ('audit_action_type', 'assign', 'assign', 50),
+    ('hearing_member_role', 'PRESIDING_JUDGE', 'Presiding judge', 10),
+    ('hearing_member_role', 'PANEL_JUDGE', 'Panel judge', 20),
+    ('hearing_member_role', 'HEARING_CLERK', 'Hearing clerk', 30)
 )
 INSERT INTO dm_category_items (category_id, item_code, item_name, sort_order)
 SELECT c.category_id, s.item_code, s.item_name, s.sort_order
@@ -300,6 +307,35 @@ CREATE TABLE IF NOT EXISTS hearings (
     CONSTRAINT chk_hearings_actual_range CHECK (actual_opened_date IS NULL OR actual_closed_date IS NULL OR actual_opened_date <= actual_closed_date)
 );
 
+CREATE TABLE IF NOT EXISTS court_staff (
+    staff_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    court_id UUID NOT NULL REFERENCES courts(court_id) ON DELETE CASCADE,
+    full_name VARCHAR(255) NOT NULL,
+    normalized_name VARCHAR(255) NOT NULL,
+    staff_type VARCHAR(100),
+    position_title VARCHAR(255),
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT chk_court_staff_normalized_name_not_blank CHECK (btrim(normalized_name) <> '')
+);
+
+CREATE TABLE IF NOT EXISTS case_hearing_members (
+    case_hearing_member_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    case_id UUID NOT NULL REFERENCES case_files(case_id) ON DELETE CASCADE,
+    staff_id UUID NOT NULL REFERENCES court_staff(staff_id) ON DELETE RESTRICT,
+    role_code VARCHAR(50) NOT NULL,
+    role_id UUID REFERENCES dm_category_items(item_id) ON DELETE RESTRICT,
+    member_order INTEGER NOT NULL DEFAULT 1,
+    source_file VARCHAR(255),
+    source_sheet VARCHAR(255),
+    source_row INTEGER,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT chk_case_hearing_members_role_code CHECK (role_code IN ('PRESIDING_JUDGE', 'PANEL_JUDGE', 'HEARING_CLERK')),
+    CONSTRAINT chk_case_hearing_members_member_order CHECK (member_order > 0)
+);
+
 CREATE TABLE IF NOT EXISTS decisions (
     decision_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     case_id UUID NOT NULL REFERENCES case_files(case_id) ON DELETE CASCADE,
@@ -422,6 +458,10 @@ CREATE INDEX IF NOT EXISTS idx_documents_checksum ON documents(checksum);
 CREATE INDEX IF NOT EXISTS idx_hearings_case ON hearings(case_id);
 CREATE INDEX IF NOT EXISTS idx_hearings_scheduled_date ON hearings(scheduled_date);
 CREATE INDEX IF NOT EXISTS idx_hearings_status ON hearings(hearing_status);
+CREATE UNIQUE INDEX IF NOT EXISTS uq_court_staff_court_normalized_name ON court_staff(court_id, normalized_name);
+CREATE UNIQUE INDEX IF NOT EXISTS uq_case_hearing_members_case_staff_role ON case_hearing_members(case_id, staff_id, role_code);
+CREATE INDEX IF NOT EXISTS idx_case_hearing_members_case_role ON case_hearing_members(case_id, role_code, member_order);
+CREATE INDEX IF NOT EXISTS idx_case_hearing_members_staff ON case_hearing_members(staff_id);
 CREATE INDEX IF NOT EXISTS idx_decisions_case ON decisions(case_id);
 CREATE INDEX IF NOT EXISTS idx_decisions_type ON decisions(decision_type);
 CREATE INDEX IF NOT EXISTS idx_decisions_date ON decisions(decision_date);

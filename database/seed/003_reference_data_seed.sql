@@ -39,7 +39,8 @@ VALUES
     ('gender', 'Gioi tinh', 'Danh muc gioi tinh toi thieu.', 300),
     ('risk_type', 'Loai canh bao rui ro', 'Loai canh bao do rule/AI phat hien.', 310),
     ('audit_action', 'Hanh dong audit', 'Loai hanh dong ghi audit.', 320),
-    ('ai_suggestion_type', 'Loai goi y AI', 'Loai goi y/canh bao do AI tao.', 330)
+    ('ai_suggestion_type', 'Loai goi y AI', 'Loai goi y/canh bao do AI tao.', 330),
+    ('hearing_member_role', 'Vai tro thanh phan phien toa', 'Vai tro cua Tham phan chu toa, Tham phan thanh vien Hoi dong va Thu ky phien toa.', 340)
 ON CONFLICT (category_code) DO UPDATE SET
     category_name = EXCLUDED.category_name,
     description = EXCLUDED.description,
@@ -79,6 +80,8 @@ WITH items(category_code, item_code, item_name, sort_order) AS (
         ('case_group', 'business_commercial', 'Kinh doanh thuong mai', 50),
         ('case_group', 'labor', 'Lao dong', 60),
         ('case_group', 'other', 'Khac', 100),
+        ('case_group', 'SO_THAM', 'So tham', 210),
+        ('case_group', 'PHUC_THAM', 'Phuc tham', 220),
         ('procedure_law', 'BLTTDS', 'Bo luat To tung dan su', 10),
         ('procedure_law', 'BLTTHS', 'Bo luat To tung hinh su', 20),
         ('procedure_law', 'LTTHC', 'Luat To tung hanh chinh', 30),
@@ -231,7 +234,10 @@ WITH items(category_code, item_code, item_name, sort_order) AS (
         ('audit_action', 'VALIDATION_CHECK', 'Kiem tra validation', 50),
         ('ai_suggestion_type', 'validation', 'Goi y validation', 10),
         ('ai_suggestion_type', 'risk_warning', 'Canh bao rui ro', 20),
-        ('ai_suggestion_type', 'report_summary', 'Tom tat bao cao', 30)
+        ('ai_suggestion_type', 'report_summary', 'Tom tat bao cao', 30),
+        ('hearing_member_role', 'PRESIDING_JUDGE', 'Tham phan chu toa phien toa', 10),
+        ('hearing_member_role', 'PANEL_JUDGE', 'Tham phan thanh vien Hoi dong', 20),
+        ('hearing_member_role', 'HEARING_CLERK', 'Thu ky phien toa', 30)
 )
 INSERT INTO dm_category_items (category_id, item_code, item_name, sort_order)
 SELECT c.category_id, i.item_code, i.item_name, i.sort_order
@@ -278,7 +284,8 @@ WITH bindings(category_code, table_name, source_column_name, reference_column_na
         ('risk_type', 'case_risk_flags', 'risk_type', 'risk_type_id', 'Chay song song voi text cu.'),
         ('validation_severity', 'case_risk_flags', 'severity', 'severity_id', 'Enum goc van giu lai trong phase 1.'),
         ('item_status', 'case_risk_flags', 'status', 'status_id', 'Chay song song voi text cu.'),
-        ('audit_action', 'audit_logs', 'action', 'action_id', 'Chay song song voi text cu.')
+        ('audit_action', 'audit_logs', 'action', 'action_id', 'Chay song song voi text cu.'),
+        ('hearing_member_role', 'case_hearing_members', 'role_code', 'role_id', 'Vai tro thanh phan phien toa duoc seed tu Excel.')
 )
 INSERT INTO dm_table_reference_columns (
     category_id, table_name, source_column_name, reference_column_name, notes

@@ -1,6 +1,6 @@
 ﻿# Ket qua kiem tra seed database
 
-- Thoi diem kiem tra: 2026-06-10 10:31:35 +07:00
+- Thoi diem kiem tra: 2026-06-10 16:12:32 +07:00
 - Database: qlta_schema_merge_test
 - ResetDatabase: False
 - SeedOnly: False
@@ -31,6 +31,7 @@
 - database/seed/031_excel_seed_case_details.sql
 - database/seed/032_excel_seed_case_parties.sql
 - database/seed/033_excel_seed_case_events_and_resolutions.sql
+- database/seed/034_excel_seed_hearing_members.sql
 - database/seed/003_reference_data_seed.sql
 - database/seed/004_statistical_reference_data_seed.sql
 - database/seed/010_legal_seed_data_tand_vietnam.sql
@@ -44,18 +45,20 @@
 - database/seed/031_excel_seed_case_details.sql
 - database/seed/032_excel_seed_case_parties.sql
 - database/seed/033_excel_seed_case_events_and_resolutions.sql
+- database/seed/034_excel_seed_hearing_members.sql
 - tests/database/seed_data_integrity_test.sql
 - tests/database/excel_seed_integrity_test.sql
 - tests/database/excel_seed_duplicate_prevention_test.sql
 - tests/database/case_file_excel_seed_integrity_test.sql
 - tests/database/excel_case_full_import_integrity_test.sql
+- tests/database/trial_level_and_hearing_members_integrity_test.sql
 
 ## Log PostgreSQL
 ```text
 [Chay seed lan 1 / database/seed/003_reference_data_seed.sql]
+INSERT 0 37
+INSERT 0 189
 INSERT 0 36
-INSERT 0 184
-INSERT 0 35
 [Chay seed lan 1 / database/seed/004_statistical_reference_data_seed.sql]
 INSERT 0 6
 INSERT 0 6
@@ -126,10 +129,15 @@ INSERT 0 0
 INSERT 0 0
 INSERT 0 0
 COMMIT
+[Chay seed lan 1 / database/seed/034_excel_seed_hearing_members.sql]
+BEGIN
+INSERT 0 98
+INSERT 0 4954
+COMMIT
 [Chay seed lan 2 / database/seed/003_reference_data_seed.sql]
+INSERT 0 37
+INSERT 0 189
 INSERT 0 36
-INSERT 0 184
-INSERT 0 35
 [Chay seed lan 2 / database/seed/004_statistical_reference_data_seed.sql]
 INSERT 0 6
 INSERT 0 6
@@ -200,6 +208,11 @@ INSERT 0 0
 INSERT 0 0
 INSERT 0 0
 COMMIT
+[Chay seed lan 2 / database/seed/034_excel_seed_hearing_members.sql]
+BEGIN
+INSERT 0 98
+INSERT 0 4954
+COMMIT
 [Chay seed test / tests/database/seed_data_integrity_test.sql]
 BEGIN
 DO
@@ -240,8 +253,8 @@ DO
 DO
 DO
 ROLLBACK
-psql:D:/QLTA-Project/tests/database/case_file_excel_seed_integrity_test.sql:179: NOTICE:  PASSED: case_file_excel_seed_integrity_test.sql
 DO
+psql:D:/QLTA-Project/tests/database/case_file_excel_seed_integrity_test.sql:179: NOTICE:  PASSED: case_file_excel_seed_integrity_test.sql
 [Chay seed test / tests/database/excel_case_full_import_integrity_test.sql]
 BEGIN
 DO
@@ -250,5 +263,18 @@ DO
 DO
 ROLLBACK
 psql:D:/QLTA-Project/tests/database/excel_case_full_import_integrity_test.sql:149: NOTICE:  PASSED: excel_case_full_import_integrity_test.sql
+DO
+[Chay seed test / tests/database/trial_level_and_hearing_members_integrity_test.sql]
+BEGIN
+DO
+DO
+DO
+psql:D:/QLTA-Project/tests/database/trial_level_and_hearing_members_integrity_test.sql:198: NOTICE:  CANH BAO DU LIEU NGUON: ho so Excel thieu thu ky: 1228
+psql:D:/QLTA-Project/tests/database/trial_level_and_hearing_members_integrity_test.sql:198: NOTICE:  CANH BAO DU LIEU NGUON: so tham co hon 1 PANEL_JUDGE: 15
+psql:D:/QLTA-Project/tests/database/trial_level_and_hearing_members_integrity_test.sql:198: NOTICE:  CANH BAO DU LIEU NGUON: phuc tham khong co dung 2 PANEL_JUDGE: 523
+psql:D:/QLTA-Project/tests/database/trial_level_and_hearing_members_integrity_test.sql:198: NOTICE:  Chi tiet file/sheet/row nam trong tests/database/EXCEL_CASE_TRIAL_LEVEL_AND_HEARING_MEMBERS_RESULT.md
+DO
+ROLLBACK
+psql:D:/QLTA-Project/tests/database/trial_level_and_hearing_members_integrity_test.sql:205: NOTICE:  PASSED: trial_level_and_hearing_members_integrity_test.sql
 DO
 ```

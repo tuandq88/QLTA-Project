@@ -4,7 +4,7 @@
 
 Hệ thống nên thiết kế theo mô hình **Core Case Management + Specialized Case Modules**.
 
-- `courts`, `users`, `case_files`, `participants`, `documents`, `hearings`, `decisions`, `appeals`, `deadlines`, `statistics_snapshots` là lõi chung.
+- `courts`, `users`, `court_staff`, `case_files`, `participants`, `documents`, `hearings`, `case_hearing_members`, `decisions`, `appeals`, `deadlines`, `statistics_snapshots` là lõi chung.
 - `civil_case_details` mở rộng cho dân sự, hôn nhân gia đình, kinh doanh thương mại, lao động, việc dân sự.
 - `criminal_case_details`, `defendants`, `charges`, `preventive_measures`, `sentences` mở rộng cho án hình sự.
 - `administrative_case_details`, `challenged_admin_objects`, `dialogue_sessions` mở rộng cho án hành chính.
@@ -20,6 +20,7 @@ Hệ thống nên thiết kế theo mô hình **Core Case Management + Specializ
 erDiagram
 
     COURTS ||--o{ USERS : employs
+    COURTS ||--o{ COURT_STAFF : has
     COURTS ||--o{ CASE_FILES : manages
     USERS ||--o{ CASE_ASSIGNMENTS : assigned
     CASE_FILES ||--o{ CASE_ASSIGNMENTS : has
@@ -27,6 +28,8 @@ erDiagram
     CASE_FILES ||--o{ CASE_EVENTS : logs
     CASE_FILES ||--o{ DOCUMENTS : stores
     CASE_FILES ||--o{ HEARINGS : schedules
+    CASE_FILES ||--o{ CASE_HEARING_MEMBERS : has
+    COURT_STAFF ||--o{ CASE_HEARING_MEMBERS : joins
     CASE_FILES ||--o{ DECISIONS : issues
     CASE_FILES ||--o{ APPEALS : may_have
     CASE_FILES ||--o{ DEADLINES : tracks
@@ -81,6 +84,16 @@ erDiagram
         string role_code
         string department
         string email
+        boolean is_active
+    }
+
+    COURT_STAFF {
+        uuid staff_id PK
+        uuid court_id FK
+        string full_name
+        string normalized_name
+        string staff_type
+        string position_title
         boolean is_active
     }
 
@@ -155,11 +168,22 @@ erDiagram
         text description
         string source_document_id
     }
+
+    CASE_HEARING_MEMBERS {
+        uuid case_hearing_member_id PK
+        uuid case_id FK
+        uuid staff_id FK
+        string role_code
+        integer member_order
+        string source_file
+        string source_sheet
+        integer source_row
+    }
 ```
 
 ### Ý nghĩa nhóm lõi
 
-Nhóm này giúp quản lý thống nhất mọi hồ sơ, bất kể là dân sự, hình sự hay hành chính. `case_files` là bảng trung tâm. Mọi bảng nghiệp vụ khác đều xoay quanh `case_id`.
+Nhóm này giúp quản lý thống nhất mọi hồ sơ, bất kể là dân sự, hình sự hay hành chính. `case_files` là bảng trung tâm. Mọi bảng nghiệp vụ khác đều xoay quanh `case_id`. Cấp xét xử sơ thẩm/phúc thẩm lưu ở `case_files.case_group`, không lưu vào `case_type`, `procedure_law` hoặc `current_stage`.
 
 ---
 

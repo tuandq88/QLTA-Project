@@ -9,6 +9,7 @@ Tài liệu này mô tả công dụng các bảng trong `database/schema/unifie
 | Bảng | Công dụng | Khóa chính | Cột liên kết chính |
 |---|---|---|---|
 | `courts` | Danh sách Tòa án/đơn vị trong hệ thống. | `court_id` | `parent_court_id -> courts.court_id`, `court_level_id -> dm_category_items.item_id` |
+| `court_staff` | Danh sách cán bộ xét xử/thư ký trích từ Excel hoặc danh mục đơn vị, dùng cho thành phần phiên tòa khi chưa có tài khoản `users`. | `staff_id` | `court_id -> courts.court_id` |
 | `users` | Người dùng hệ thống: lãnh đạo, thẩm phán, thư ký, admin, viewer. | `user_id` | `court_id -> courts.court_id`, `role_id -> dm_category_items.item_id` |
 | `judge_profiles` | Hồ sơ nghiệp vụ phục vụ phân công án của thẩm phán. | `judge_profile_id` | `user_id -> users.user_id` |
 | `dm_categories` | Nhóm danh mục dùng chung. | `category_id` | Không có FK bắt buộc ra bảng khác |
@@ -19,12 +20,13 @@ Tài liệu này mô tả công dụng các bảng trong `database/schema/unifie
 
 | Bảng | Công dụng | Khóa chính | Cột liên kết chính |
 |---|---|---|---|
-| `case_files` | Hồ sơ vụ án/vụ việc trung tâm. | `case_id` | `court_id -> courts.court_id`, `created_by/updated_by -> users.user_id`, các cột danh mục `case_type_id`, `case_status_id`, `case_group_id`, `procedure_law_id`, `current_stage_id`, `resolution_status_id` |
+| `case_files` | Hồ sơ vụ án/vụ việc trung tâm. `case_group/case_group_id` dùng cho cấp xét xử `SO_THAM`/`PHUC_THAM`; không dùng `case_type`, `procedure_law` hoặc `current_stage` để chứa cấp xét xử. | `case_id` | `court_id -> courts.court_id`, `created_by/updated_by -> users.user_id`, các cột danh mục `case_type_id`, `case_status_id`, `case_group_id`, `procedure_law_id`, `current_stage_id`, `resolution_status_id` |
 | `participants` | Cá nhân/tổ chức tham gia tố tụng. | `participant_id` | `case_id -> case_files.case_id`, `participant_type_id -> dm_category_items.item_id` |
 | `documents` | Tài liệu, văn bản, chứng cứ trong hồ sơ. | `document_id` | `case_id -> case_files.case_id`, `uploaded_by -> users.user_id`, `document_type_id -> dm_category_items.item_id` |
 | `case_events` | Dòng sự kiện vòng đời hồ sơ. | `event_id` | `case_id -> case_files.case_id`, `performed_by -> users.user_id`, `source_document_id -> documents.document_id` |
 | `case_assignments` | Phân công người xử lý hồ sơ. | `assignment_id` | `case_id -> case_files.case_id`, `user_id -> users.user_id`, `assigned_by -> users.user_id` |
 | `hearings` | Phiên tòa/phiên họp. | `hearing_id` | `case_id -> case_files.case_id` |
+| `case_hearing_members` | Thành phần xét xử/thư ký của hồ sơ từ Excel: `PRESIDING_JUDGE`, `PANEL_JUDGE`, `HEARING_CLERK`. | `case_hearing_member_id` | `case_id -> case_files.case_id`, `staff_id -> court_staff.staff_id`, `role_id -> dm_category_items.item_id` |
 | `decisions` | Bản án/quyết định của Tòa án. | `decision_id` | `case_id -> case_files.case_id`, `document_id -> documents.document_id`, `trial_result_type_id -> dm_trial_result_types.trial_result_type_id` |
 | `appeals` | Thông tin kháng cáo ở lớp core cũ. | `appeal_id` | `case_id -> case_files.case_id`, `appellate_case_id -> case_files.case_id` |
 | `deadlines` | Thời hạn xử lý, cảnh báo sắp hết hạn/quá hạn. | `deadline_id` | `case_id -> case_files.case_id`, các cột danh mục `deadline_type_id`, `deadline_status_id`, `warning_level_id` |
@@ -130,9 +132,9 @@ Tài liệu này mô tả công dụng các bảng trong `database/schema/unifie
 
 ## 11. Quan hệ liên kết trung tâm
 
-- `courts` là bảng đơn vị gốc, liên kết với `users`, `case_files`, `assignment_batches`, `statistics_snapshots`, `kpi_values`, `appellate_trackings`.
+- `courts` là bảng đơn vị gốc, liên kết với `users`, `court_staff`, `case_files`, `assignment_batches`, `statistics_snapshots`, `kpi_values`, `appellate_trackings`.
 - `users` liên kết với `judge_profiles`, `case_assignments`, các bảng phân công, audit, KPI và appellate follow-up.
-- `case_files` là bảng trung tâm liên kết hầu hết module: participants, documents, hearings, decisions, deadlines, validation, module chi tiết, assignment, appellate, statistics, AI/risk.
+- `case_files` là bảng trung tâm liên kết hầu hết module: participants, documents, hearings, case_hearing_members, decisions, deadlines, validation, module chi tiết, assignment, appellate, statistics, AI/risk.
 - `decisions` liên kết `appellate_trackings` và `appellate_results` để theo dõi kết quả cấp trên.
 - `dm_categories` và `dm_category_items` là lớp danh mục dùng chung, được map qua các cột `*_id`.
 - `statistical_*` và `dm_statistical_*` là lớp cấu hình thống kê, không chứa số liệu vụ án thật.

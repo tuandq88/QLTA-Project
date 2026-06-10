@@ -16,12 +16,14 @@ from zipfile import ZipFile
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE_DIR = ROOT / "database" / "seed" / "danh_sach"
 REPORT_PATH = ROOT / "tests" / "database" / "EXCEL_CASE_FULL_IMPORT_MAPPING_RESULT.md"
+TRIAL_MEMBER_REPORT_PATH = ROOT / "tests" / "database" / "EXCEL_CASE_TRIAL_LEVEL_AND_HEARING_MEMBERS_RESULT.md"
 CSV_PATH = ROOT / "docs" / "review" / "excel_case_full_import_records.csv"
 
 OUT_CASES = ROOT / "database" / "seed" / "030_excel_seed_case_files.sql"
 OUT_DETAILS = ROOT / "database" / "seed" / "031_excel_seed_case_details.sql"
 OUT_PARTIES = ROOT / "database" / "seed" / "032_excel_seed_case_parties.sql"
 OUT_EVENTS = ROOT / "database" / "seed" / "033_excel_seed_case_events_and_resolutions.sql"
+OUT_HEARING_MEMBERS = ROOT / "database" / "seed" / "034_excel_seed_hearing_members.sql"
 
 NS = {
     "a": "http://schemas.openxmlformats.org/spreadsheetml/2006/main",
@@ -149,6 +151,30 @@ def split_people(value: str | None) -> list[str]:
             seen.add(name)
             result.append(name)
     return result
+
+
+def split_staff_names(value: str | None) -> list[str]:
+    if not value:
+        return []
+    text = re.sub(r"\b(Thẩm\s*phán|TP\.?|Thư\s*ký|TK\.?)\b", "", value, flags=re.IGNORECASE)
+    parts = re.split(r"\n|;|\||/", text)
+    result: list[str] = []
+    seen: set[str] = set()
+    for part in parts:
+        name = part.strip(" \t\r\n,;")
+        name = re.sub(r"\s+", " ", name)
+        if name and name not in seen:
+            seen.add(name)
+            result.append(name)
+    return result
+
+
+def normalize_staff_name(value: str) -> str:
+    text = unicodedata.normalize("NFD", value)
+    text = "".join(ch for ch in text if unicodedata.category(ch) != "Mn")
+    text = text.replace("đ", "d").replace("Đ", "D").lower()
+    text = re.sub(r"[^a-z0-9]+", " ", text)
+    return re.sub(r"\s+", " ", text).strip()
 
 
 def split_parallel(value: str | None) -> list[str]:
@@ -287,7 +313,7 @@ def parse_row(file_name: str, sheet_name: str, excel_row: int, headers: list[str
         acceptance = extract_date(raw)
         if not acceptance:
             return None, "Thiếu hoặc không đọc được ngày thụ lý"
-        case_type, case_group, procedure = "criminal", "criminal", "BLTTHS"
+        case_type, source_group, procedure = "criminal", "criminal", "BLTTHS"
         decision_raw = values.get("Số/Ngày BA/QD")
         relation = values.get("Tội danh")
         defendants = values.get("Họ và tên bị cáo")
@@ -301,7 +327,7 @@ def parse_row(file_name: str, sheet_name: str, excel_row: int, headers: list[str
         acceptance = extract_date(raw)
         if not acceptance:
             return None, "Thiếu hoặc không đọc được ngày thụ lý"
-        case_type, case_group, procedure = "criminal", "criminal", "BLTTHS"
+        case_type, source_group, procedure = "criminal", "criminal", "BLTTHS"
         decision_raw = values.get("Số BA/QĐ PT")
         relation = values.get("Tội danh")
         defendants = values.get("Họ và tên")
@@ -315,7 +341,7 @@ def parse_row(file_name: str, sheet_name: str, excel_row: int, headers: list[str
         acceptance = extract_date(raw)
         if not acceptance:
             return None, "Thiếu hoặc không đọc được ngày thụ lý"
-        case_type, case_group, procedure = case_type_from_alias(values.get("Loại án"), file_name)
+        case_type, source_group, procedure = case_type_from_alias(values.get("Loại án"), file_name)
         decision_raw = values.get("Số/Ngày BA/QD")
         relation = values.get("Quan hệ pháp luật")
         defendants = None
@@ -329,7 +355,7 @@ def parse_row(file_name: str, sheet_name: str, excel_row: int, headers: list[str
         acceptance = extract_date(raw)
         if not acceptance:
             return None, "Thiếu hoặc không đọc được ngày thụ lý"
-        case_type, case_group, procedure = case_type_from_alias(values.get("Loại án"), file_name)
+        case_type, source_group, procedure = case_type_from_alias(values.get("Loại án"), file_name)
         decision_raw = None
         relation = values.get("Vụ việc")
         defendants = None
@@ -349,7 +375,7 @@ def parse_row(file_name: str, sheet_name: str, excel_row: int, headers: list[str
         case_code=case_code,
         trial_level=trial_level,
         case_type=case_type,
-        case_group=case_group,
+        case_group="PHUC_THAM" if trial_level == "phuc_tham" else "SO_THAM",
         procedure_law=procedure,
         case_number_raw=first_line_before_date(raw) or case_code,
         acceptance_date=acceptance,
@@ -1012,6 +1038,136 @@ COMMIT;
     OUT_EVENTS.write_text(sql, encoding="utf-8")
 
 
+def hearing_member_rows(records: list[SourceRow]) -> tuple[list[tuple], list[tuple], list[dict], Counter]:
+    staff: dict[tuple[str, str], tuple[str, str, str]] = {}
+    members: list[tuple] = []
+    warnings: list[dict] = []
+    stats: Counter = Counter()
+
+    def add_staff(name: str, role_code: str) -> None:
+        normalized = normalize_staff_name(name)
+        if not normalized:
+            return
+        staff_type = "judge" if role_code in ("PRESIDING_JUDGE", "PANEL_JUDGE") else "clerk"
+        staff.setdefault((normalized, staff_type), (name, normalized, staff_type))
+
+    for r in records:
+        presiding = split_staff_names(r.chair_judge)
+        panel = split_staff_names(r.panel_members)
+        clerks = split_staff_names(r.clerk)
+
+        if len(presiding) == 0:
+            warnings.append({"file": r.file_name, "sheet": r.sheet_name, "row": r.excel_row, "issue": "Thiếu thẩm phán chủ tọa"})
+        elif len(presiding) > 1:
+            warnings.append({"file": r.file_name, "sheet": r.sheet_name, "row": r.excel_row, "issue": f"Có {len(presiding)} thẩm phán chủ tọa, yêu cầu đúng 1"})
+        if len(clerks) == 0:
+            warnings.append({"file": r.file_name, "sheet": r.sheet_name, "row": r.excel_row, "issue": "Thiếu thư ký phiên tòa"})
+        if r.trial_level == "phuc_tham" and len(panel) != 2:
+            warnings.append({"file": r.file_name, "sheet": r.sheet_name, "row": r.excel_row, "issue": f"Phúc thẩm có {len(panel)} PANEL_JUDGE, yêu cầu đúng 2"})
+        if r.trial_level == "so_tham" and len(panel) > 1:
+            warnings.append({"file": r.file_name, "sheet": r.sheet_name, "row": r.excel_row, "issue": f"Sơ thẩm có {len(panel)} PANEL_JUDGE, yêu cầu 0 hoặc 1"})
+
+        stats[f"{r.file_name}|{r.sheet_name}|rows"] += 1
+        stats[f"{r.file_name}|{r.sheet_name}|presiding_present"] += int(len(presiding) > 0)
+        stats[f"{r.file_name}|{r.sheet_name}|presiding_missing"] += int(len(presiding) == 0)
+        stats[f"{r.file_name}|{r.sheet_name}|panel_present"] += int(len(panel) > 0)
+        stats[f"{r.file_name}|{r.sheet_name}|panel_missing"] += int(len(panel) == 0)
+        stats[f"{r.file_name}|{r.sheet_name}|panel_invalid_appeal"] += int(r.trial_level == "phuc_tham" and len(panel) != 2)
+        stats[f"{r.file_name}|{r.sheet_name}|clerk_present"] += int(len(clerks) > 0)
+        stats[f"{r.file_name}|{r.sheet_name}|clerk_missing"] += int(len(clerks) == 0)
+
+        member_order = 1
+        for name in presiding[:1]:
+            add_staff(name, "PRESIDING_JUDGE")
+            members.append((sql_string(r.case_code), sql_string(normalize_staff_name(name)), sql_string("judge"), sql_string("PRESIDING_JUDGE"), str(member_order), sql_string(r.file_name), sql_string(r.sheet_name), str(r.excel_row)))
+            member_order += 1
+        for name in panel:
+            add_staff(name, "PANEL_JUDGE")
+            members.append((sql_string(r.case_code), sql_string(normalize_staff_name(name)), sql_string("judge"), sql_string("PANEL_JUDGE"), str(member_order), sql_string(r.file_name), sql_string(r.sheet_name), str(r.excel_row)))
+            member_order += 1
+        for name in clerks:
+            add_staff(name, "HEARING_CLERK")
+            members.append((sql_string(r.case_code), sql_string(normalize_staff_name(name)), sql_string("clerk"), sql_string("HEARING_CLERK"), str(member_order), sql_string(r.file_name), sql_string(r.sheet_name), str(r.excel_row)))
+            member_order += 1
+
+    staff_rows = [
+        (sql_string(name), sql_string(normalized), sql_string(staff_type), sql_string("Thẩm phán" if staff_type == "judge" else "Thư ký"))
+        for name, normalized, staff_type in sorted(staff.values(), key=lambda item: (item[2], item[1]))
+    ]
+    return staff_rows, members, warnings, stats
+
+
+def write_hearing_member_seed(records: list[SourceRow]) -> tuple[list[dict], Counter, int, int]:
+    staff_rows, member_rows, warnings, stats = hearing_member_rows(records)
+    sql = f"""-- Seed 034: Excel-derived court staff and hearing members.
+-- Generated by database/seed/generate_excel_case_full_import.py.
+-- Does not create placeholder staff for blank Excel cells.
+
+BEGIN;
+
+WITH src(full_name, normalized_name, staff_type, position_title) AS (
+    VALUES
+{values_block(staff_rows) if staff_rows else "        (NULL, NULL, NULL, NULL)"}
+)
+INSERT INTO court_staff (court_id, full_name, normalized_name, staff_type, position_title)
+SELECT c.court_id, src.full_name, src.normalized_name, src.staff_type, src.position_title
+FROM src
+CROSS JOIN courts c
+WHERE c.court_code = 'EXCEL_SEED_TAND_QNG'
+  AND src.normalized_name IS NOT NULL
+ON CONFLICT (court_id, normalized_name) DO UPDATE SET
+    full_name = EXCLUDED.full_name,
+    staff_type = EXCLUDED.staff_type,
+    position_title = EXCLUDED.position_title,
+    is_active = TRUE,
+    updated_at = CURRENT_TIMESTAMP;
+
+WITH src(case_code, normalized_name, staff_type, role_code, member_order, source_file, source_sheet, source_row) AS (
+    VALUES
+{values_block(member_rows) if member_rows else "        (NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)"}
+),
+resolved AS (
+    SELECT
+        cf.case_id,
+        staff.staff_id,
+        src.role_code,
+        role_item.item_id AS role_id,
+        src.member_order::integer AS member_order,
+        src.source_file,
+        src.source_sheet,
+        src.source_row::integer AS source_row
+    FROM src
+    JOIN case_files cf ON cf.case_code = src.case_code
+    JOIN courts c ON c.court_id = cf.court_id
+    JOIN court_staff staff ON staff.court_id = c.court_id
+        AND staff.normalized_name = src.normalized_name
+    LEFT JOIN dm_categories role_cat ON role_cat.category_code = 'hearing_member_role'
+    LEFT JOIN dm_category_items role_item ON role_item.category_id = role_cat.category_id
+        AND role_item.item_code = src.role_code
+    WHERE src.case_code IS NOT NULL
+)
+INSERT INTO case_hearing_members (
+    case_id, staff_id, role_code, role_id, member_order,
+    source_file, source_sheet, source_row
+)
+SELECT
+    case_id, staff_id, role_code, role_id, member_order,
+    source_file, source_sheet, source_row
+FROM resolved
+ON CONFLICT (case_id, staff_id, role_code) DO UPDATE SET
+    role_id = EXCLUDED.role_id,
+    member_order = EXCLUDED.member_order,
+    source_file = EXCLUDED.source_file,
+    source_sheet = EXCLUDED.source_sheet,
+    source_row = EXCLUDED.source_row,
+    updated_at = CURRENT_TIMESTAMP;
+
+COMMIT;
+"""
+    OUT_HEARING_MEMBERS.write_text(sql, encoding="utf-8")
+    return warnings, stats, len(staff_rows), len(member_rows)
+
+
 def write_csv(records: list[SourceRow]) -> None:
     CSV_PATH.parent.mkdir(parents=True, exist_ok=True)
     with CSV_PATH.open("w", encoding="utf-8-sig", newline="") as f:
@@ -1023,7 +1179,7 @@ def write_csv(records: list[SourceRow]) -> None:
 
 def write_report(records: list[SourceRow], skipped: list[dict], workbook_report: list[dict]) -> None:
     counts_by_type = Counter(r.case_type for r in records)
-    counts_by_level = Counter(r.trial_level for r in records)
+    counts_by_level = Counter(r.case_group for r in records)
     detail_counts = {
         "civil_case_details": sum(1 for r in records if r.case_type not in ("criminal", "administrative")),
         "administrative_case_details": sum(1 for r in records if r.case_type == "administrative"),
@@ -1095,8 +1251,8 @@ def write_report(records: list[SourceRow], skipped: list[dict], workbook_report:
         f"- Tổng thụ lý: {len(records)}.",
         f"- Tổng đã giải quyết: {sum(1 for r in records if r.decision_date or r.result_text)}.",
         f"- Tổng tồn: {sum(1 for r in records if not (r.decision_date or r.result_text))}.",
-        f"- Sơ thẩm: {counts_by_level['so_tham']}.",
-        f"- Phúc thẩm: {counts_by_level['phuc_tham']}.",
+        f"- Sơ thẩm: {counts_by_level['SO_THAM']}.",
+        f"- Phúc thẩm: {counts_by_level['PHUC_THAM']}.",
     ]
     for case_type, count in sorted(counts_by_type.items()):
         lines.append(f"- {case_type}: {count}.")
@@ -1121,15 +1277,87 @@ def write_report(records: list[SourceRow], skipped: list[dict], workbook_report:
     REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def write_trial_member_report(
+    records: list[SourceRow],
+    workbook_report: list[dict],
+    hearing_warnings: list[dict],
+    hearing_stats: Counter,
+    staff_count: int,
+    hearing_member_count: int,
+) -> None:
+    counts_by_level = Counter(r.case_group for r in records)
+    lines = [
+        "# EXCEL_CASE_TRIAL_LEVEL_AND_HEARING_MEMBERS_RESULT",
+        "",
+        "## A. Sơ thẩm/phúc thẩm",
+        "",
+        "- Trường dùng để phân biệt cấp xét xử: `case_files.case_group` và `case_files.case_group_id`.",
+        "- Lý do chọn: `case_type` chỉ lưu loại án; `procedure_law` chỉ lưu luật tố tụng; `current_stage` chỉ lưu giai đoạn vòng đời hồ sơ.",
+        "- Không tạo cột `trial_level` mới vì schema đã có `case_group/case_group_id` và danh mục `dm_categories`.",
+        "- Danh mục: `dm_categories.category_code = 'case_group'`.",
+        "- Mã sơ thẩm: `SO_THAM`.",
+        "- Mã phúc thẩm: `PHUC_THAM`.",
+        f"- Số lượng `case_files` sơ thẩm: {counts_by_level['SO_THAM']}.",
+        f"- Số lượng `case_files` phúc thẩm: {counts_by_level['PHUC_THAM']}.",
+        "- Số dòng thiếu cấp xét xử: 0.",
+        "",
+        "## B. Thẩm phán/Hội đồng/Thư ký",
+        "",
+        "| File Excel | Sheet | Dòng đọc | Có chủ tọa | Thiếu chủ tọa | Có hội đồng | Thiếu hội đồng | Phúc thẩm không đủ 2 PANEL_JUDGE | Có thư ký | Thiếu thư ký |",
+        "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
+    ]
+    for item in workbook_report:
+        key = f"{item['file']}|{item['sheet']}"
+        lines.append(
+            f"| {item['file']} | {item['sheet']} | {hearing_stats[key + '|rows']} | "
+            f"{hearing_stats[key + '|presiding_present']} | {hearing_stats[key + '|presiding_missing']} | "
+            f"{hearing_stats[key + '|panel_present']} | {hearing_stats[key + '|panel_missing']} | "
+            f"{hearing_stats[key + '|panel_invalid_appeal']} | "
+            f"{hearing_stats[key + '|clerk_present']} | {hearing_stats[key + '|clerk_missing']} |"
+        )
+    lines += [
+        "",
+        f"- Số nhân sự tạo/cập nhật trong `court_staff`: {staff_count}.",
+        f"- Số thành phần phiên tòa tạo/cập nhật trong `case_hearing_members`: {hearing_member_count}.",
+        "",
+        "### Dòng lỗi/warning",
+        "",
+        "| File | Sheet | Row | Warning |",
+        "| --- | --- | ---: | --- |",
+    ]
+    if hearing_warnings:
+        for item in hearing_warnings:
+            lines.append(f"| {item['file']} | {item['sheet']} | {item['row']} | {item['issue']} |")
+    else:
+        lines.append("| Không có | | | |")
+    lines += [
+        "",
+        "## C. Bảng dữ liệu",
+        "",
+        "- Bảng nhân sự dùng: `court_staff`.",
+        "- Bảng thành phần phiên tòa dùng: `case_hearing_members`.",
+        "- Bảng danh mục role dùng: `dm_categories/dm_category_items` với `category_code = 'hearing_member_role'`.",
+        f"- Sau seed dự kiến `court_staff`: {staff_count} dòng.",
+        f"- Sau seed dự kiến `case_hearing_members`: {hearing_member_count} dòng.",
+        "",
+        "## D. Kết luận",
+        "",
+        "Seed không tạo nhân sự giả cho ô trống. Các ô trống hoặc sai số lượng thành viên hội đồng được ghi warning để test/report phát hiện.",
+    ]
+    TRIAL_MEMBER_REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def main() -> None:
     records, skipped, workbook_report = load_records()
     write_case_seed(records)
     write_detail_seed(records)
     write_party_seed(records)
     write_event_seed(records)
+    hearing_warnings, hearing_stats, staff_count, hearing_member_count = write_hearing_member_seed(records)
     write_csv(records)
     write_report(records, skipped, workbook_report)
-    print(json.dumps({"records": len(records), "skipped": len(skipped), "report": str(REPORT_PATH)}, ensure_ascii=False, indent=2))
+    write_trial_member_report(records, workbook_report, hearing_warnings, hearing_stats, staff_count, hearing_member_count)
+    print(json.dumps({"records": len(records), "skipped": len(skipped), "report": str(REPORT_PATH), "trial_member_report": str(TRIAL_MEMBER_REPORT_PATH)}, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
