@@ -1,6 +1,6 @@
 ﻿# Káº¿t quáº£ kiá»ƒm tra PostgreSQL trá»‘ng
 
-- Thá»i Ä‘iá»ƒm kiá»ƒm tra: 2026-06-09 21:03:52 +07:00
+- Thá»i Ä‘iá»ƒm kiá»ƒm tra: 2026-06-10 10:30:36 +07:00
 - Database test: qlta_schema_merge_test
 - Cháº¿ Ä‘á»™: UnifiedOnly
 - PGHOST: localhost
@@ -30,6 +30,9 @@
 - database/seed/024_excel_seed_labor_business_marriage_categories.sql
 - database/seed/025_excel_seed_statistical_indicators.sql
 - database/seed/030_excel_seed_case_files.sql
+- database/seed/031_excel_seed_case_details.sql
+- database/seed/032_excel_seed_case_parties.sql
+- database/seed/033_excel_seed_case_events_and_resolutions.sql
 - tests/database/database_structure_integrity_test.sql
 - tests/database/seed_data_integrity_test.sql
 - tests/database/statistics_algorithm_precheck.sql
@@ -319,8 +322,35 @@ INSERT 0 1
 INSERT 0 2
 INSERT 0 18
 [Chay seed / database/seed/030_excel_seed_case_files.sql]
+BEGIN
 INSERT 0 1
-INSERT 0 2244
+INSERT 0 2309
+COMMIT
+[Chay seed / database/seed/031_excel_seed_case_details.sql]
+BEGIN
+INSERT 0 837
+INSERT 0 837
+INSERT 0 388
+INSERT 0 388
+INSERT 0 1084
+INSERT 0 2233
+INSERT 0 2233
+INSERT 0 1677
+INSERT 0 1100
+COMMIT
+[Chay seed / database/seed/032_excel_seed_case_parties.sql]
+BEGIN
+INSERT 0 6259
+COMMIT
+[Chay seed / database/seed/033_excel_seed_case_events_and_resolutions.sql]
+BEGIN
+INSERT 0 2309
+INSERT 0 1662
+INSERT 0 2221
+INSERT 0 1138
+INSERT 0 1053
+INSERT 0 835
+COMMIT
 [Chay SQL test / tests/database/database_structure_integrity_test.sql]
 BEGIN
 DO
@@ -349,6 +379,6 @@ DO
 DO
 DO
 ROLLBACK
-DO
 psql:D:/QLTA-Project/tests/database/statistics_algorithm_precheck.sql:167: NOTICE:  PASSED: statistics_algorithm_precheck.sql
+DO
 ```

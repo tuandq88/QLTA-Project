@@ -15,6 +15,10 @@ Thứ tự chạy mặc định theo tên file:
 7. `023_excel_seed_administrative_categories.sql`
 8. `024_excel_seed_labor_business_marriage_categories.sql`
 9. `025_excel_seed_statistical_indicators.sql`
+10. `030_excel_seed_case_files.sql`
+11. `031_excel_seed_case_details.sql`
+12. `032_excel_seed_case_parties.sql`
+13. `033_excel_seed_case_events_and_resolutions.sql`
 
 `999_seed_all.sql` chỉ là file ghi chú thứ tự chạy, không được dùng để chạy trùng seed.
 
@@ -23,7 +27,29 @@ Thứ tự chạy mặc định theo tên file:
 - `003_reference_data_seed.sql`: danh mục nền tối thiểu cho schema.
 - `004_statistical_reference_data_seed.sql`: danh mục thống kê/KPI tối thiểu.
 - `010_legal_seed_data_tand_vietnam.sql`: dữ liệu từ `database/seed/legal_seed_data_tand_vietnam/all_legal_seed_master.csv`.
-- `020` đến `025`: dữ liệu trích từ Excel trong `database/seed/danh sach/` và các file preview trong `docs/review/`.
+- `020` đến `025`: dữ liệu trích từ Excel trong `database/seed/danh_sach/` và các file preview trong `docs/review/`.
+- `030`: hồ sơ `case_files` seed từ từng dòng Excel có ngày thụ lý đọc được.
+- `031`: detail theo loại án (`civil_case_details`, `administrative_case_details`, `criminal_case_details`) và bảng con phù hợp.
+- `032`: đương sự/bị cáo/người tham gia tố tụng từ Excel khi có tên rõ.
+- `033`: event, hearing, decision, appeal và appellate tracking/result khi Excel có dữ liệu tương ứng.
+
+## Sinh lại seed hồ sơ từ Excel
+
+Khi Excel nguồn trong `database/seed/danh_sach/` thay đổi, chạy:
+
+```powershell
+$env:PYTHONIOENCODING='utf-8'
+python database\seed\generate_excel_case_full_import.py
+```
+
+Script này sinh lại:
+
+- `database/seed/030_excel_seed_case_files.sql`
+- `database/seed/031_excel_seed_case_details.sql`
+- `database/seed/032_excel_seed_case_parties.sql`
+- `database/seed/033_excel_seed_case_events_and_resolutions.sql`
+- `tests/database/EXCEL_CASE_FULL_IMPORT_MAPPING_RESULT.md`
+- `docs/review/excel_case_full_import_records.csv`
 
 ## Quy tắc tiếng Việt
 
