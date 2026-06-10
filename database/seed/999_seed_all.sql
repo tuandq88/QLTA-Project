@@ -13,3 +13,4 @@
 -- 7. database/seed/023_excel_seed_administrative_categories.sql
 -- 8. database/seed/024_excel_seed_labor_business_marriage_categories.sql
 -- 9. database/seed/025_excel_seed_statistical_indicators.sql
+-- 10. database/seed/030_excel_seed_case_files.sql

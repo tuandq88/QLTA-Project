@@ -194,7 +194,15 @@ $StepStatus["Chay seed lan 2"] = "PASSED"
 if ($SeedOnly) {
     $StepStatus["Chay seed test"] = "SKIPPED"
 } else {
-    Invoke-PsqlFile -Database $DatabaseName -FilePath (Join-Path $ScriptDir "seed_data_integrity_test.sql") -StepName "Chay seed test"
+    $seedTestFiles = @(
+        "seed_data_integrity_test.sql",
+        "excel_seed_integrity_test.sql",
+        "excel_seed_duplicate_prevention_test.sql",
+        "case_file_excel_seed_integrity_test.sql"
+    )
+    foreach ($testFile in $seedTestFiles) {
+        Invoke-PsqlFile -Database $DatabaseName -FilePath (Join-Path $ScriptDir $testFile) -StepName "Chay seed test"
+    }
     $StepStatus["Chay seed test"] = "PASSED"
 }
 

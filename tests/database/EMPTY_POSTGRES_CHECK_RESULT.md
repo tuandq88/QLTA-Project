@@ -1,6 +1,6 @@
 ﻿# Káº¿t quáº£ kiá»ƒm tra PostgreSQL trá»‘ng
 
-- Thá»i Ä‘iá»ƒm kiá»ƒm tra: 2026-06-09 18:45:19 +07:00
+- Thá»i Ä‘iá»ƒm kiá»ƒm tra: 2026-06-09 21:03:52 +07:00
 - Database test: qlta_schema_merge_test
 - Cháº¿ Ä‘á»™: UnifiedOnly
 - PGHOST: localhost
@@ -29,6 +29,7 @@
 - database/seed/023_excel_seed_administrative_categories.sql
 - database/seed/024_excel_seed_labor_business_marriage_categories.sql
 - database/seed/025_excel_seed_statistical_indicators.sql
+- database/seed/030_excel_seed_case_files.sql
 - tests/database/database_structure_integrity_test.sql
 - tests/database/seed_data_integrity_test.sql
 - tests/database/statistics_algorithm_precheck.sql
@@ -317,6 +318,9 @@ INSERT 0 63
 INSERT 0 1
 INSERT 0 2
 INSERT 0 18
+[Chay seed / database/seed/030_excel_seed_case_files.sql]
+INSERT 0 1
+INSERT 0 2244
 [Chay SQL test / tests/database/database_structure_integrity_test.sql]
 BEGIN
 DO
@@ -324,8 +328,8 @@ DO
 DO
 DO
 ROLLBACK
-psql:D:/QLTA-Project/tests/database/database_structure_integrity_test.sql:178: NOTICE:  PASSED: database_structure_integrity_test.sql
 DO
+psql:D:/QLTA-Project/tests/database/database_structure_integrity_test.sql:178: NOTICE:  PASSED: database_structure_integrity_test.sql
 [Chay SQL test / tests/database/seed_data_integrity_test.sql]
 BEGIN
 DO
@@ -345,6 +349,6 @@ DO
 DO
 DO
 ROLLBACK
-psql:D:/QLTA-Project/tests/database/statistics_algorithm_precheck.sql:167: NOTICE:  PASSED: statistics_algorithm_precheck.sql
 DO
+psql:D:/QLTA-Project/tests/database/statistics_algorithm_precheck.sql:167: NOTICE:  PASSED: statistics_algorithm_precheck.sql
 ```
