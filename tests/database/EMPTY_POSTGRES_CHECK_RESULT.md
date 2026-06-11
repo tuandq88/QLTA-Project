@@ -1,6 +1,6 @@
 ﻿# Káº¿t quáº£ kiá»ƒm tra PostgreSQL trá»‘ng
 
-- Thá»i Ä‘iá»ƒm kiá»ƒm tra: 2026-06-10 16:12:06 +07:00
+- Thá»i Ä‘iá»ƒm kiá»ƒm tra: 2026-06-11 11:17:43 +07:00
 - Database test: qlta_schema_merge_test
 - Cháº¿ Ä‘á»™: UnifiedOnly
 - PGHOST: localhost
@@ -84,6 +84,11 @@ CREATE TABLE
 CREATE TABLE
 CREATE TABLE
 CREATE TABLE
+CREATE INDEX
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
 CREATE TABLE
 CREATE TABLE
 CREATE TABLE
@@ -163,7 +168,17 @@ ALTER TABLE
 ALTER TABLE
 DO
 DO
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
 DO
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
 CREATE INDEX
 CREATE INDEX
 CREATE INDEX
@@ -286,9 +301,9 @@ CREATE INDEX
 CREATE INDEX
 CREATE INDEX
 [Chay seed / database/seed/003_reference_data_seed.sql]
-INSERT 0 37
-INSERT 0 189
-INSERT 0 36
+INSERT 0 45
+INSERT 0 216
+INSERT 0 43
 [Chay seed / database/seed/004_statistical_reference_data_seed.sql]
 INSERT 0 6
 INSERT 0 6
@@ -381,8 +396,8 @@ DO
 DO
 DO
 ROLLBACK
-psql:D:/QLTA-Project/tests/database/seed_data_integrity_test.sql:122: NOTICE:  PASSED: seed_data_integrity_test.sql
 DO
+psql:D:/QLTA-Project/tests/database/seed_data_integrity_test.sql:122: NOTICE:  PASSED: seed_data_integrity_test.sql
 [Chay SQL test / tests/database/statistics_algorithm_precheck.sql]
 BEGIN
 DO

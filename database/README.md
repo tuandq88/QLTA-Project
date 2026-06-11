@@ -14,3 +14,7 @@ File chính để tạo database PostgreSQL:
 ```text
 database/schema/unified_postgresql_schema.sql
 ```
+
+Migration bổ sung mới nhất:
+
+- `database/migrations/008_criminal_appellate_defendant_results.sql`: thêm bảng kết quả phúc thẩm hình sự theo từng bị cáo và bảng tiêu chí sửa án.

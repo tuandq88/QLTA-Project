@@ -110,7 +110,11 @@ VALUES
     ('deadline_status', 'Deadline status', 'Core deadline status codes', 110),
     ('validation_severity', 'Validation severity', 'Core validation severity codes', 120),
     ('audit_action_type', 'Audit action type', 'Core audit action codes', 130),
-    ('hearing_member_role', 'Hearing member role', 'Core hearing member role codes', 140)
+    ('hearing_member_role', 'Hearing member role', 'Core hearing member role codes', 140),
+    ('acceptance_type', 'Acceptance type', 'Core occurrence acceptance type codes', 150),
+    ('resolution_type', 'Resolution type', 'Core occurrence resolution type codes', 160),
+    ('return_to_agency', 'Return-to agency', 'Core return-to-agency codes', 170),
+    ('statistical_count_unit', 'Statistical count unit', 'Core statistical count unit codes', 180)
 ON CONFLICT (category_code) DO NOTHING;
 
 WITH seed_items(category_code, item_code, item_name, sort_order) AS (
@@ -174,7 +178,13 @@ WITH seed_items(category_code, item_code, item_name, sort_order) AS (
     ('audit_action_type', 'assign', 'assign', 50),
     ('hearing_member_role', 'PRESIDING_JUDGE', 'Presiding judge', 10),
     ('hearing_member_role', 'PANEL_JUDGE', 'Panel judge', 20),
-    ('hearing_member_role', 'HEARING_CLERK', 'Hearing clerk', 30)
+    ('hearing_member_role', 'HEARING_CLERK', 'Hearing clerk', 30),
+    ('acceptance_type', 'INITIAL_ACCEPTANCE', 'Initial acceptance', 10),
+    ('acceptance_type', 'RE_ACCEPTANCE_AFTER_SUPPLEMENTAL_INVESTIGATION', 'Re-acceptance after supplemental investigation', 20),
+    ('resolution_type', 'RETURN_TO_PROCURACY_FOR_SUPPLEMENTAL_INVESTIGATION', 'Return to Procuracy for supplemental investigation', 10),
+    ('resolution_type', 'TRIAL_JUDGMENT', 'Trial judgment', 20),
+    ('return_to_agency', 'PROCURACY', 'Procuracy', 10),
+    ('statistical_count_unit', 'OCCURRENCE', 'Occurrence', 10)
 )
 INSERT INTO dm_category_items (category_id, item_code, item_name, sort_order)
 SELECT c.category_id, s.item_code, s.item_name, s.sort_order
@@ -252,6 +262,49 @@ CREATE TABLE IF NOT EXISTS case_files (
     CONSTRAINT uq_case_files_case_code UNIQUE (case_code),
     CONSTRAINT chk_case_files_acceptance_closed CHECK (acceptance_date IS NULL OR closed_date IS NULL OR acceptance_date <= closed_date),
     CONSTRAINT chk_case_files_closed_status CHECK (closed_date IS NULL OR case_status IN ('resolved', 'effective', 'closed'))
+);
+
+CREATE TABLE IF NOT EXISTS case_occurrences (
+    occurrence_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    case_id UUID NOT NULL REFERENCES case_files(case_id) ON DELETE CASCADE,
+    occurrence_no INTEGER NOT NULL,
+    acceptance_date DATE NOT NULL,
+    acceptance_type_code VARCHAR(100) NOT NULL,
+    acceptance_type_id UUID REFERENCES dm_category_items(item_id) ON DELETE RESTRICT,
+    previous_occurrence_id UUID REFERENCES case_occurrences(occurrence_id) ON DELETE SET NULL,
+    source_note TEXT,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT uq_case_occurrences_case_no UNIQUE (case_id, occurrence_no),
+    CONSTRAINT chk_case_occurrences_occurrence_no CHECK (occurrence_no > 0),
+    CONSTRAINT chk_case_occurrences_acceptance_type CHECK (
+        acceptance_type_code IN (
+            'INITIAL_ACCEPTANCE',
+            'RE_ACCEPTANCE_AFTER_SUPPLEMENTAL_INVESTIGATION'
+        )
+    )
+);
+
+CREATE TABLE IF NOT EXISTS case_resolution_events (
+    resolution_event_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    case_id UUID NOT NULL REFERENCES case_files(case_id) ON DELETE CASCADE,
+    occurrence_id UUID NOT NULL REFERENCES case_occurrences(occurrence_id) ON DELETE CASCADE,
+    event_type_code VARCHAR(100) NOT NULL DEFAULT 'RESOLUTION',
+    event_date DATE NOT NULL,
+    resolution_type_code VARCHAR(150) NOT NULL,
+    resolution_type_id UUID REFERENCES dm_category_items(item_id) ON DELETE RESTRICT,
+    return_to_agency_code VARCHAR(100),
+    return_to_agency_id UUID REFERENCES dm_category_items(item_id) ON DELETE RESTRICT,
+    decision_number VARCHAR(100),
+    counted_as_resolved BOOLEAN NOT NULL DEFAULT TRUE,
+    reason TEXT,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT chk_case_resolution_events_event_type CHECK (btrim(event_type_code) <> ''),
+    CONSTRAINT chk_case_resolution_events_resolution_type CHECK (btrim(resolution_type_code) <> ''),
+    CONSTRAINT chk_case_resolution_events_return_agency CHECK (
+        return_to_agency_code IS NULL OR btrim(return_to_agency_code) <> ''
+    )
 );
 
 CREATE TABLE IF NOT EXISTS participants (
@@ -448,6 +501,13 @@ CREATE INDEX IF NOT EXISTS idx_case_files_assigned_judge ON case_files(assigned_
 CREATE INDEX IF NOT EXISTS idx_case_files_current_stage ON case_files(current_stage);
 CREATE INDEX IF NOT EXISTS idx_case_files_court_status ON case_files(court_id, case_status);
 CREATE INDEX IF NOT EXISTS idx_case_files_court_type_acceptance ON case_files(court_id, case_type, acceptance_date);
+CREATE INDEX IF NOT EXISTS idx_case_occurrences_case_acceptance ON case_occurrences(case_id, acceptance_date);
+CREATE INDEX IF NOT EXISTS idx_case_occurrences_acceptance_type ON case_occurrences(acceptance_type_code, acceptance_date);
+CREATE INDEX IF NOT EXISTS idx_case_resolution_events_case_date ON case_resolution_events(case_id, event_date);
+CREATE INDEX IF NOT EXISTS idx_case_resolution_events_occurrence_date ON case_resolution_events(occurrence_id, event_date);
+CREATE INDEX IF NOT EXISTS idx_case_resolution_events_type_date ON case_resolution_events(resolution_type_code, event_date);
+CREATE UNIQUE INDEX IF NOT EXISTS uq_case_resolution_events_occurrence_type_date_decision
+    ON case_resolution_events(occurrence_id, resolution_type_code, event_date, COALESCE(decision_number, ''));
 CREATE INDEX IF NOT EXISTS idx_participants_case ON participants(case_id);
 CREATE INDEX IF NOT EXISTS idx_participants_type ON participants(participant_type);
 CREATE INDEX IF NOT EXISTS idx_participants_id_number ON participants(id_number) WHERE id_number IS NOT NULL;

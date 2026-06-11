@@ -1,6 +1,6 @@
 ﻿# Ket qua kiem tra seed database
 
-- Thoi diem kiem tra: 2026-06-10 16:12:32 +07:00
+- Thoi diem kiem tra: 2026-06-11 11:18:05 +07:00
 - Database: qlta_schema_merge_test
 - ResetDatabase: False
 - SeedOnly: False
@@ -56,9 +56,9 @@
 ## Log PostgreSQL
 ```text
 [Chay seed lan 1 / database/seed/003_reference_data_seed.sql]
-INSERT 0 37
-INSERT 0 189
-INSERT 0 36
+INSERT 0 45
+INSERT 0 216
+INSERT 0 43
 [Chay seed lan 1 / database/seed/004_statistical_reference_data_seed.sql]
 INSERT 0 6
 INSERT 0 6
@@ -135,9 +135,9 @@ INSERT 0 98
 INSERT 0 4954
 COMMIT
 [Chay seed lan 2 / database/seed/003_reference_data_seed.sql]
-INSERT 0 37
-INSERT 0 189
-INSERT 0 36
+INSERT 0 45
+INSERT 0 216
+INSERT 0 43
 [Chay seed lan 2 / database/seed/004_statistical_reference_data_seed.sql]
 INSERT 0 6
 INSERT 0 6
@@ -253,8 +253,8 @@ DO
 DO
 DO
 ROLLBACK
-DO
 psql:D:/QLTA-Project/tests/database/case_file_excel_seed_integrity_test.sql:179: NOTICE:  PASSED: case_file_excel_seed_integrity_test.sql
+DO
 [Chay seed test / tests/database/excel_case_full_import_integrity_test.sql]
 BEGIN
 DO
@@ -262,8 +262,8 @@ DO
 DO
 DO
 ROLLBACK
-psql:D:/QLTA-Project/tests/database/excel_case_full_import_integrity_test.sql:149: NOTICE:  PASSED: excel_case_full_import_integrity_test.sql
 DO
+psql:D:/QLTA-Project/tests/database/excel_case_full_import_integrity_test.sql:149: NOTICE:  PASSED: excel_case_full_import_integrity_test.sql
 [Chay seed test / tests/database/trial_level_and_hearing_members_integrity_test.sql]
 BEGIN
 DO

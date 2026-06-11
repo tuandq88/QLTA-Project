@@ -134,6 +134,49 @@ CREATE TABLE IF NOT EXISTS case_files (
     )
 );
 
+CREATE TABLE IF NOT EXISTS case_occurrences (
+    occurrence_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    case_id UUID NOT NULL REFERENCES case_files(case_id) ON DELETE CASCADE,
+    occurrence_no INTEGER NOT NULL,
+    acceptance_date DATE NOT NULL,
+    acceptance_type_code VARCHAR(100) NOT NULL,
+    acceptance_type_id UUID,
+    previous_occurrence_id UUID REFERENCES case_occurrences(occurrence_id) ON DELETE SET NULL,
+    source_note TEXT,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT uq_case_occurrences_case_no UNIQUE (case_id, occurrence_no),
+    CONSTRAINT chk_case_occurrences_occurrence_no CHECK (occurrence_no > 0),
+    CONSTRAINT chk_case_occurrences_acceptance_type CHECK (
+        acceptance_type_code IN (
+            'INITIAL_ACCEPTANCE',
+            'RE_ACCEPTANCE_AFTER_SUPPLEMENTAL_INVESTIGATION'
+        )
+    )
+);
+
+CREATE TABLE IF NOT EXISTS case_resolution_events (
+    resolution_event_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    case_id UUID NOT NULL REFERENCES case_files(case_id) ON DELETE CASCADE,
+    occurrence_id UUID NOT NULL REFERENCES case_occurrences(occurrence_id) ON DELETE CASCADE,
+    event_type_code VARCHAR(100) NOT NULL DEFAULT 'RESOLUTION',
+    event_date DATE NOT NULL,
+    resolution_type_code VARCHAR(150) NOT NULL,
+    resolution_type_id UUID,
+    return_to_agency_code VARCHAR(100),
+    return_to_agency_id UUID,
+    decision_number VARCHAR(100),
+    counted_as_resolved BOOLEAN NOT NULL DEFAULT TRUE,
+    reason TEXT,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT chk_case_resolution_events_event_type CHECK (btrim(event_type_code) <> ''),
+    CONSTRAINT chk_case_resolution_events_resolution_type CHECK (btrim(resolution_type_code) <> ''),
+    CONSTRAINT chk_case_resolution_events_return_agency CHECK (
+        return_to_agency_code IS NULL OR btrim(return_to_agency_code) <> ''
+    )
+);
+
 CREATE TABLE IF NOT EXISTS participants (
     participant_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     case_id UUID NOT NULL REFERENCES case_files(case_id) ON DELETE CASCADE,
@@ -370,6 +413,79 @@ CREATE TABLE IF NOT EXISTS defendants (
     is_detained BOOLEAN DEFAULT FALSE,
     detention_start_date DATE,
     detention_end_date DATE
+);
+
+CREATE TABLE IF NOT EXISTS criminal_appellate_defendant_results (
+    appellate_result_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    case_id UUID NOT NULL REFERENCES case_files(case_id) ON DELETE CASCADE,
+    defendant_id UUID NOT NULL REFERENCES defendants(defendant_id) ON DELETE CASCADE,
+    appeal_protest_scope_code VARCHAR(100),
+    decision_stage_code VARCHAR(50) NOT NULL,
+    decision_stage_id UUID,
+    result_group_code VARCHAR(50) NOT NULL,
+    result_group_id UUID,
+    result_type_code VARCHAR(100) NOT NULL,
+    result_type_id UUID,
+    result_date DATE NOT NULL,
+    decision_number VARCHAR(100),
+    is_final_result BOOLEAN NOT NULL DEFAULT TRUE,
+    counted_as_defendant_resolved BOOLEAN NOT NULL DEFAULT TRUE,
+    counted_as_case_resolved BOOLEAN,
+    note TEXT,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT chk_criminal_appellate_result_stage CHECK (
+        decision_stage_code IN ('BEFORE_HEARING', 'AT_HEARING', 'AFTER_HEARING')
+    ),
+    CONSTRAINT chk_criminal_appellate_result_group CHECK (
+        result_group_code IN ('TERMINATION', 'TRIAL')
+    ),
+    CONSTRAINT chk_criminal_appellate_result_type CHECK (
+        result_type_code IN (
+            'WITHDRAWAL_BEFORE_HEARING',
+            'WITHDRAWAL_AT_HEARING',
+            'OTHER_TERMINATION',
+            'UPHOLD_FIRST_INSTANCE',
+            'MODIFY_FIRST_INSTANCE_SUBJECTIVE',
+            'MODIFY_FIRST_INSTANCE_OBJECTIVE',
+            'CANCEL_FIRST_INSTANCE_SUBJECTIVE',
+            'CANCEL_FIRST_INSTANCE_OBJECTIVE'
+        )
+    ),
+    CONSTRAINT chk_criminal_appellate_result_stage_type CHECK (
+        (decision_stage_code = 'BEFORE_HEARING' AND result_type_code IN ('WITHDRAWAL_BEFORE_HEARING', 'OTHER_TERMINATION'))
+        OR (decision_stage_code = 'AT_HEARING' AND result_type_code IN ('WITHDRAWAL_AT_HEARING', 'OTHER_TERMINATION', 'UPHOLD_FIRST_INSTANCE', 'MODIFY_FIRST_INSTANCE_SUBJECTIVE', 'MODIFY_FIRST_INSTANCE_OBJECTIVE', 'CANCEL_FIRST_INSTANCE_SUBJECTIVE', 'CANCEL_FIRST_INSTANCE_OBJECTIVE'))
+        OR (decision_stage_code = 'AFTER_HEARING')
+    ),
+    CONSTRAINT chk_criminal_appellate_result_group_type CHECK (
+        (result_group_code = 'TERMINATION' AND result_type_code IN ('WITHDRAWAL_BEFORE_HEARING', 'WITHDRAWAL_AT_HEARING', 'OTHER_TERMINATION'))
+        OR (result_group_code = 'TRIAL' AND result_type_code IN ('UPHOLD_FIRST_INSTANCE', 'MODIFY_FIRST_INSTANCE_SUBJECTIVE', 'MODIFY_FIRST_INSTANCE_OBJECTIVE', 'CANCEL_FIRST_INSTANCE_SUBJECTIVE', 'CANCEL_FIRST_INSTANCE_OBJECTIVE'))
+    )
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uq_criminal_appellate_defendant_final_result
+    ON criminal_appellate_defendant_results(case_id, defendant_id)
+    WHERE is_final_result IS TRUE;
+
+CREATE TABLE IF NOT EXISTS criminal_appellate_modify_criteria (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    appellate_result_id UUID NOT NULL REFERENCES criminal_appellate_defendant_results(appellate_result_id) ON DELETE CASCADE,
+    criterion_code VARCHAR(100) NOT NULL,
+    criterion_id UUID,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT chk_criminal_appellate_modify_criterion CHECK (
+        criterion_code IN (
+            'EXEMPT_CRIMINAL_LIABILITY_OR_PENALTY',
+            'SUSPENDED_SENTENCE_GRANTED',
+            'SUSPENDED_SENTENCE_NOT_GRANTED',
+            'REDUCE_PENALTY',
+            'CHANGE_TO_LIGHTER_PENALTY',
+            'INCREASE_PENALTY',
+            'CHANGE_TO_HEAVIER_PENALTY',
+            'CHANGE_CHARGE'
+        )
+    ),
+    CONSTRAINT uq_criminal_appellate_modify_criteria UNIQUE (appellate_result_id, criterion_code)
 );
 
 CREATE TABLE IF NOT EXISTS charges (
@@ -866,6 +982,36 @@ BEGIN
         ADD CONSTRAINT fk_case_hearing_members_role_id
         FOREIGN KEY (role_id) REFERENCES dm_category_items(item_id) ON DELETE RESTRICT;
     END IF;
+
+    IF NOT EXISTS (
+        SELECT 1
+        FROM pg_constraint
+        WHERE conname = 'fk_case_occurrences_acceptance_type_id_dm_items'
+    ) THEN
+        ALTER TABLE case_occurrences
+        ADD CONSTRAINT fk_case_occurrences_acceptance_type_id_dm_items
+        FOREIGN KEY (acceptance_type_id) REFERENCES dm_category_items(item_id) ON DELETE RESTRICT;
+    END IF;
+
+    IF NOT EXISTS (
+        SELECT 1
+        FROM pg_constraint
+        WHERE conname = 'fk_case_resolution_events_resolution_type_id_dm_items'
+    ) THEN
+        ALTER TABLE case_resolution_events
+        ADD CONSTRAINT fk_case_resolution_events_resolution_type_id_dm_items
+        FOREIGN KEY (resolution_type_id) REFERENCES dm_category_items(item_id) ON DELETE RESTRICT;
+    END IF;
+
+    IF NOT EXISTS (
+        SELECT 1
+        FROM pg_constraint
+        WHERE conname = 'fk_case_resolution_events_return_to_agency_id_dm_items'
+    ) THEN
+        ALTER TABLE case_resolution_events
+        ADD CONSTRAINT fk_case_resolution_events_return_to_agency_id_dm_items
+        FOREIGN KEY (return_to_agency_id) REFERENCES dm_category_items(item_id) ON DELETE RESTRICT;
+    END IF;
 END $$;
 
 CREATE TABLE IF NOT EXISTS statistical_categories (
@@ -1350,7 +1496,32 @@ BEGIN
         ALTER TABLE kpi_metrics ADD CONSTRAINT fk_kpi_metrics_statistical_metric
             FOREIGN KEY (statistical_metric_id) REFERENCES dm_statistical_metrics(metric_id) ON DELETE RESTRICT;
     END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'fk_cadr_decision_stage_dm_item') THEN
+        ALTER TABLE criminal_appellate_defendant_results ADD CONSTRAINT fk_cadr_decision_stage_dm_item
+            FOREIGN KEY (decision_stage_id) REFERENCES dm_category_items(item_id) ON DELETE RESTRICT;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'fk_cadr_result_group_dm_item') THEN
+        ALTER TABLE criminal_appellate_defendant_results ADD CONSTRAINT fk_cadr_result_group_dm_item
+            FOREIGN KEY (result_group_id) REFERENCES dm_category_items(item_id) ON DELETE RESTRICT;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'fk_cadr_result_type_dm_item') THEN
+        ALTER TABLE criminal_appellate_defendant_results ADD CONSTRAINT fk_cadr_result_type_dm_item
+            FOREIGN KEY (result_type_id) REFERENCES dm_category_items(item_id) ON DELETE RESTRICT;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'fk_camc_criterion_dm_item') THEN
+        ALTER TABLE criminal_appellate_modify_criteria ADD CONSTRAINT fk_camc_criterion_dm_item
+            FOREIGN KEY (criterion_id) REFERENCES dm_category_items(item_id) ON DELETE RESTRICT;
+    END IF;
 END $$;
+
+CREATE INDEX IF NOT EXISTS idx_criminal_appellate_results_case_date
+    ON criminal_appellate_defendant_results(case_id, result_date);
+CREATE INDEX IF NOT EXISTS idx_criminal_appellate_results_defendant
+    ON criminal_appellate_defendant_results(defendant_id, is_final_result);
+CREATE INDEX IF NOT EXISTS idx_criminal_appellate_results_type_date
+    ON criminal_appellate_defendant_results(result_type_code, result_date);
+CREATE INDEX IF NOT EXISTS idx_criminal_appellate_modify_criteria_result
+    ON criminal_appellate_modify_criteria(appellate_result_id);
 
 -- Stable constraints and indexes synchronized from migration 002 for UnifiedOnly tests.
 DO $$
@@ -1433,6 +1604,13 @@ CREATE INDEX IF NOT EXISTS idx_users_court ON users(court_id);
 CREATE INDEX IF NOT EXISTS idx_case_files_court ON case_files(court_id);
 CREATE INDEX IF NOT EXISTS idx_case_files_type_status ON case_files(case_type, case_status);
 CREATE INDEX IF NOT EXISTS idx_case_files_acceptance_date ON case_files(acceptance_date);
+CREATE INDEX IF NOT EXISTS idx_case_occurrences_case_acceptance ON case_occurrences(case_id, acceptance_date);
+CREATE INDEX IF NOT EXISTS idx_case_occurrences_acceptance_type ON case_occurrences(acceptance_type_code, acceptance_date);
+CREATE INDEX IF NOT EXISTS idx_case_resolution_events_case_date ON case_resolution_events(case_id, event_date);
+CREATE INDEX IF NOT EXISTS idx_case_resolution_events_occurrence_date ON case_resolution_events(occurrence_id, event_date);
+CREATE INDEX IF NOT EXISTS idx_case_resolution_events_type_date ON case_resolution_events(resolution_type_code, event_date);
+CREATE UNIQUE INDEX IF NOT EXISTS uq_case_resolution_events_occurrence_type_date_decision
+    ON case_resolution_events(occurrence_id, resolution_type_code, event_date, COALESCE(decision_number, ''));
 CREATE INDEX IF NOT EXISTS idx_participants_case ON participants(case_id);
 CREATE INDEX IF NOT EXISTS idx_documents_case ON documents(case_id);
 CREATE INDEX IF NOT EXISTS idx_case_events_case_date ON case_events(case_id, event_date);

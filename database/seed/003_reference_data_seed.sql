@@ -40,7 +40,15 @@ VALUES
     ('risk_type', 'Loai canh bao rui ro', 'Loai canh bao do rule/AI phat hien.', 310),
     ('audit_action', 'Hanh dong audit', 'Loai hanh dong ghi audit.', 320),
     ('ai_suggestion_type', 'Loai goi y AI', 'Loai goi y/canh bao do AI tao.', 330),
-    ('hearing_member_role', 'Vai tro thanh phan phien toa', 'Vai tro cua Tham phan chu toa, Tham phan thanh vien Hoi dong va Thu ky phien toa.', 340)
+    ('hearing_member_role', 'Vai tro thanh phan phien toa', 'Vai tro cua Tham phan chu toa, Tham phan thanh vien Hoi dong va Thu ky phien toa.', 340),
+    ('acceptance_type', 'Loai thu ly', 'Loai lan thu ly dung cho vong doi thong ke cua ho so.', 350),
+    ('resolution_type', 'Loai ket qua giai quyet', 'Loai su kien giai quyet dung cho thong ke theo occurrence.', 360),
+    ('return_to_agency', 'Co quan nhan ho so tra', 'Co quan nhan ho so khi Toa an tra ho so de xu ly tiep.', 370),
+    ('statistical_count_unit', 'Don vi dem thong ke', 'Don vi dem so lieu thong ke de tranh dem trung theo ho so.', 380),
+    ('appellate_decision_stage', 'Giai doan quyet dinh phuc tham theo bi cao', 'Giai doan ghi nhan ket qua phuc tham hinh su theo tung bi cao.', 390),
+    ('appellate_defendant_result_group', 'Nhom ket qua phuc tham theo bi cao', 'Nhom dinh chi/xet xu cho ket qua phuc tham hinh su theo tung bi cao.', 400),
+    ('appellate_defendant_result_type', 'Loai ket qua phuc tham theo bi cao', 'Loai ket qua cuoi cung cua tung bi cao trong an hinh su phuc tham.', 410),
+    ('appellate_modify_criterion', 'Tieu chi sua an phuc tham hinh su', 'Tieu chi thong ke khi ket qua phuc tham cua bi cao la sua ban an so tham.', 420)
 ON CONFLICT (category_code) DO UPDATE SET
     category_name = EXCLUDED.category_name,
     description = EXCLUDED.description,
@@ -237,7 +245,34 @@ WITH items(category_code, item_code, item_name, sort_order) AS (
         ('ai_suggestion_type', 'report_summary', 'Tom tat bao cao', 30),
         ('hearing_member_role', 'PRESIDING_JUDGE', 'Tham phan chu toa phien toa', 10),
         ('hearing_member_role', 'PANEL_JUDGE', 'Tham phan thanh vien Hoi dong', 20),
-        ('hearing_member_role', 'HEARING_CLERK', 'Thu ky phien toa', 30)
+        ('hearing_member_role', 'HEARING_CLERK', 'Thu ky phien toa', 30),
+        ('acceptance_type', 'INITIAL_ACCEPTANCE', 'Thu ly ban dau', 10),
+        ('acceptance_type', 'RE_ACCEPTANCE_AFTER_SUPPLEMENTAL_INVESTIGATION', 'Thu ly lai sau dieu tra bo sung', 20),
+        ('resolution_type', 'RETURN_TO_PROCURACY_FOR_SUPPLEMENTAL_INVESTIGATION', 'Tra ho so cho VKS de dieu tra bo sung', 10),
+        ('resolution_type', 'TRIAL_JUDGMENT', 'Xet xu ra ban an', 20),
+        ('return_to_agency', 'PROCURACY', 'Vien kiem sat', 10),
+        ('statistical_count_unit', 'OCCURRENCE', 'Occurrence/vong doi thong ke', 10),
+        ('appellate_decision_stage', 'BEFORE_HEARING', 'Truoc khi mo phien toa phuc tham', 10),
+        ('appellate_decision_stage', 'AT_HEARING', 'Tai phien toa phuc tham', 20),
+        ('appellate_decision_stage', 'AFTER_HEARING', 'Sau phien toa phuc tham', 30),
+        ('appellate_defendant_result_group', 'TERMINATION', 'Dinh chi', 10),
+        ('appellate_defendant_result_group', 'TRIAL', 'Xet xu', 20),
+        ('appellate_defendant_result_type', 'WITHDRAWAL_BEFORE_HEARING', 'Rut khang cao/khang nghi truoc phien toa', 10),
+        ('appellate_defendant_result_type', 'WITHDRAWAL_AT_HEARING', 'Rut khang cao/khang nghi tai phien toa', 20),
+        ('appellate_defendant_result_type', 'OTHER_TERMINATION', 'Dinh chi khac', 30),
+        ('appellate_defendant_result_type', 'UPHOLD_FIRST_INSTANCE', 'Y an so tham', 40),
+        ('appellate_defendant_result_type', 'MODIFY_FIRST_INSTANCE_SUBJECTIVE', 'Sua ban an so tham do nguyen nhan chu quan', 50),
+        ('appellate_defendant_result_type', 'MODIFY_FIRST_INSTANCE_OBJECTIVE', 'Sua ban an so tham do nguyen nhan khach quan', 60),
+        ('appellate_defendant_result_type', 'CANCEL_FIRST_INSTANCE_SUBJECTIVE', 'Huy ban an so tham do nguyen nhan chu quan', 70),
+        ('appellate_defendant_result_type', 'CANCEL_FIRST_INSTANCE_OBJECTIVE', 'Huy ban an so tham do nguyen nhan khach quan', 80),
+        ('appellate_modify_criterion', 'EXEMPT_CRIMINAL_LIABILITY_OR_PENALTY', 'Mien trach nhiem hinh su hoac mien hinh phat', 10),
+        ('appellate_modify_criterion', 'SUSPENDED_SENTENCE_GRANTED', 'Cho huong an treo', 20),
+        ('appellate_modify_criterion', 'SUSPENDED_SENTENCE_NOT_GRANTED', 'Khong cho bi cao huong an treo', 30),
+        ('appellate_modify_criterion', 'REDUCE_PENALTY', 'Giam hinh phat', 40),
+        ('appellate_modify_criterion', 'CHANGE_TO_LIGHTER_PENALTY', 'Chuyen hinh phat khac nhe hon', 50),
+        ('appellate_modify_criterion', 'INCREASE_PENALTY', 'Tang hinh phat', 60),
+        ('appellate_modify_criterion', 'CHANGE_TO_HEAVIER_PENALTY', 'Chuyen hinh phat khac nang hon', 70),
+        ('appellate_modify_criterion', 'CHANGE_CHARGE', 'Thay doi toi danh', 80)
 )
 INSERT INTO dm_category_items (category_id, item_code, item_name, sort_order)
 SELECT c.category_id, i.item_code, i.item_name, i.sort_order
@@ -285,7 +320,14 @@ WITH bindings(category_code, table_name, source_column_name, reference_column_na
         ('validation_severity', 'case_risk_flags', 'severity', 'severity_id', 'Enum goc van giu lai trong phase 1.'),
         ('item_status', 'case_risk_flags', 'status', 'status_id', 'Chay song song voi text cu.'),
         ('audit_action', 'audit_logs', 'action', 'action_id', 'Chay song song voi text cu.'),
-        ('hearing_member_role', 'case_hearing_members', 'role_code', 'role_id', 'Vai tro thanh phan phien toa duoc seed tu Excel.')
+        ('hearing_member_role', 'case_hearing_members', 'role_code', 'role_id', 'Vai tro thanh phan phien toa duoc seed tu Excel.'),
+        ('acceptance_type', 'case_occurrences', 'acceptance_type_code', 'acceptance_type_id', 'Loai thu ly cua tung occurrence.'),
+        ('resolution_type', 'case_resolution_events', 'resolution_type_code', 'resolution_type_id', 'Loai su kien giai quyet cua occurrence.'),
+        ('return_to_agency', 'case_resolution_events', 'return_to_agency_code', 'return_to_agency_id', 'Co quan nhan ho so khi tra ho so.')
+        ,('appellate_decision_stage', 'criminal_appellate_defendant_results', 'decision_stage_code', 'decision_stage_id', 'Giai doan quyet dinh phuc tham theo tung bi cao.')
+        ,('appellate_defendant_result_group', 'criminal_appellate_defendant_results', 'result_group_code', 'result_group_id', 'Nhom ket qua phuc tham theo tung bi cao.')
+        ,('appellate_defendant_result_type', 'criminal_appellate_defendant_results', 'result_type_code', 'result_type_id', 'Loai ket qua phuc tham cuoi cung theo tung bi cao.')
+        ,('appellate_modify_criterion', 'criminal_appellate_modify_criteria', 'criterion_code', 'criterion_id', 'Tieu chi sua an phuc tham hinh su theo tung bi cao.')
 )
 INSERT INTO dm_table_reference_columns (
     category_id, table_name, source_column_name, reference_column_name, notes

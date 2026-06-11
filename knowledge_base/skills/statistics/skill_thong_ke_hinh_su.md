@@ -108,6 +108,14 @@ Skill này dùng riêng cho thống kê án hình sự trong hệ thống Tòa �
 - **VAL_OVERDUE_REMAINING** [error]: Số vụ quá hạn không được lớn hơn số vụ còn lại.
 - **VAL_APPEAL_PROTEST_PRIORITY** [warning]: Mẫu 1B: vụ án vừa có kháng cáo vừa có kháng nghị thì thống kê vào nhóm kháng nghị.
 
+## 7.1. Danh sách trả hồ sơ điều tra bổ sung
+
+Khi cần list chi tiết vụ án hình sự sơ thẩm mà Tòa án trả hồ sơ cho Viện kiểm sát để điều tra bổ sung, dùng skill:
+
+`knowledge_base/skills/statistics/skill_criminal_first_instance_return_to_procuracy_list.md`
+
+Quy tắc bắt buộc: đơn vị tính là occurrence/event, không phải distinct `case_id`. Trả hồ sơ cho Viện kiểm sát để điều tra bổ sung là một lần đã giải quyết; thụ lý lại sau điều tra bổ sung là một lần thụ lý mới.
+
 ## 8. Quy trình sử dụng skill
 1. Nhận diện `form_code`: HS_ST_1A, HS_PT_1B, HS_GDT_1C hoặc HS_TT_1D.
 2. Đọc `criminal_data_dictionary.json` để biết cột dữ liệu.

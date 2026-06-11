@@ -23,6 +23,24 @@ Thứ tự chạy mặc định theo tên file:
 
 `999_seed_all.sql` chỉ là file ghi chú thứ tự chạy, không được dùng để chạy trùng seed.
 
+## Seed test riêng
+
+`database/seed/test/040_test_criminal_first_instance_return_lifecycle.sql` là dữ liệu giả deterministic để kiểm tra nghiệp vụ án hình sự sơ thẩm trả hồ sơ cho Viện kiểm sát để điều tra bổ sung. File này không thuộc luồng seed production và không được thêm vào `999_seed_all.sql`.
+
+Chạy qua wrapper test:
+
+```powershell
+.\tests\database\run_criminal_return_lifecycle_skill_check.ps1 -DatabaseName qlta_schema_merge_test
+```
+
+`database/seed/test/050_test_criminal_appellate_defendant_results.sql` là dữ liệu giả deterministic cho án hình sự phúc thẩm theo từng bị cáo. File này tạo 5 vụ `HSPT-001` đến `HSPT-005`, kiểm tra đình chỉ trước phiên tòa, đình chỉ tại phiên tòa, y án, sửa án, hủy án và vụ còn bị cáo chưa có kết quả.
+
+Chạy qua wrapper test:
+
+```powershell
+.\tests\database\run_criminal_appellate_defendant_result_skill_check.ps1 -DatabaseName qlta_schema_merge_test
+```
+
 ## Nguồn dữ liệu seed
 
 - `003_reference_data_seed.sql`: danh mục nền tối thiểu cho schema.

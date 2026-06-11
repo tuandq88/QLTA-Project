@@ -1,6 +1,6 @@
 # Từ điển bảng dữ liệu database QLTA
 
-Ngày cập nhật: 09/06/2026
+Ngày cập nhật: 11/06/2026
 
 Tài liệu này mô tả công dụng các bảng trong `database/schema/unified_postgresql_schema.sql` và các cột liên kết quan trọng. Đây là tài liệu kỹ thuật, không tự tạo thêm dữ liệu nghiệp vụ, chỉ mô tả cấu trúc hiện có.
 
@@ -21,6 +21,8 @@ Tài liệu này mô tả công dụng các bảng trong `database/schema/unifie
 | Bảng | Công dụng | Khóa chính | Cột liên kết chính |
 |---|---|---|---|
 | `case_files` | Hồ sơ vụ án/vụ việc trung tâm. `case_group/case_group_id` dùng cho cấp xét xử `SO_THAM`/`PHUC_THAM`; không dùng `case_type`, `procedure_law` hoặc `current_stage` để chứa cấp xét xử. | `case_id` | `court_id -> courts.court_id`, `created_by/updated_by -> users.user_id`, các cột danh mục `case_type_id`, `case_status_id`, `case_group_id`, `procedure_law_id`, `current_stage_id`, `resolution_status_id` |
+| `case_occurrences` | Từng lần thụ lý/vòng đời thống kê của một hồ sơ; dùng để tính đúng thụ lý lại sau điều tra bổ sung, không ghi đè `case_files.acceptance_date`. | `occurrence_id` | `case_id -> case_files.case_id`, `previous_occurrence_id -> case_occurrences.occurrence_id`, `acceptance_type_id -> dm_category_items.item_id` |
+| `case_resolution_events` | Từng sự kiện giải quyết của occurrence; trả hồ sơ cho VKS để điều tra bổ sung và xét xử ra bản án đều là event riêng nếu `counted_as_resolved = TRUE`. | `resolution_event_id` | `case_id -> case_files.case_id`, `occurrence_id -> case_occurrences.occurrence_id`, `resolution_type_id/return_to_agency_id -> dm_category_items.item_id` |
 | `participants` | Cá nhân/tổ chức tham gia tố tụng. | `participant_id` | `case_id -> case_files.case_id`, `participant_type_id -> dm_category_items.item_id` |
 | `documents` | Tài liệu, văn bản, chứng cứ trong hồ sơ. | `document_id` | `case_id -> case_files.case_id`, `uploaded_by -> users.user_id`, `document_type_id -> dm_category_items.item_id` |
 | `case_events` | Dòng sự kiện vòng đời hồ sơ. | `event_id` | `case_id -> case_files.case_id`, `performed_by -> users.user_id`, `source_document_id -> documents.document_id` |
@@ -47,6 +49,8 @@ Tài liệu này mô tả công dụng các bảng trong `database/schema/unifie
 |---|---|---|---|
 | `criminal_case_details` | Thông tin chi tiết vụ án hình sự. | `criminal_detail_id` | `case_id -> case_files.case_id` |
 | `defendants` | Bị cáo trong vụ án hình sự. | `defendant_id` | `criminal_detail_id -> criminal_case_details.criminal_detail_id`, `gender_id`, `criminal_record_status_id -> dm_category_items.item_id` |
+| `criminal_appellate_defendant_results` | Kết quả giải quyết phúc thẩm hình sự theo từng bị cáo; dùng để tránh gán chung một kết quả cho toàn vụ án nhiều bị cáo. | `appellate_result_id` | `case_id -> case_files.case_id`, `defendant_id -> defendants.defendant_id`, `decision_stage_id/result_group_id/result_type_id -> dm_category_items.item_id` |
+| `criminal_appellate_modify_criteria` | Tiêu chí sửa án phúc thẩm hình sự theo từng kết quả bị cáo, ví dụ án treo, giảm/tăng hình phạt, thay đổi tội danh. | `id` | `appellate_result_id -> criminal_appellate_defendant_results.appellate_result_id`, `criterion_id -> dm_category_items.item_id` |
 | `charges` | Tội danh/truy tố/gắn điều luật. | `charge_id` | `defendant_id -> defendants.defendant_id`, `crime_id -> dm_crimes.crime_id`, `article_id -> dm_penal_code_articles.article_id`, `crime_severity_id -> dm_category_items.item_id` |
 | `preventive_measures` | Biện pháp ngăn chặn. | `measure_id` | `defendant_id -> defendants.defendant_id` |
 | `sentences` | Hình phạt/trách nhiệm dân sự trong án hình sự. | `sentence_id` | `defendant_id -> defendants.defendant_id` |
@@ -135,6 +139,7 @@ Tài liệu này mô tả công dụng các bảng trong `database/schema/unifie
 - `courts` là bảng đơn vị gốc, liên kết với `users`, `court_staff`, `case_files`, `assignment_batches`, `statistics_snapshots`, `kpi_values`, `appellate_trackings`.
 - `users` liên kết với `judge_profiles`, `case_assignments`, các bảng phân công, audit, KPI và appellate follow-up.
 - `case_files` là bảng trung tâm liên kết hầu hết module: participants, documents, hearings, case_hearing_members, decisions, deadlines, validation, module chi tiết, assignment, appellate, statistics, AI/risk.
+- `criminal_appellate_defendant_results` liên kết `case_files` và `defendants` để tính đúng án hình sự phúc thẩm theo từng bị cáo; vụ án chỉ được coi là đã giải quyết khi toàn bộ bị cáo có final result đến ngày chốt thống kê.
 - `decisions` liên kết `appellate_trackings` và `appellate_results` để theo dõi kết quả cấp trên.
 - `dm_categories` và `dm_category_items` là lớp danh mục dùng chung, được map qua các cột `*_id`.
 - `statistical_*` và `dm_statistical_*` là lớp cấu hình thống kê, không chứa số liệu vụ án thật.
