@@ -116,6 +116,14 @@ Khi cần list chi tiết vụ án hình sự sơ thẩm mà Tòa án trả hồ
 
 Quy tắc bắt buộc: đơn vị tính là occurrence/event, không phải distinct `case_id`. Trả hồ sơ cho Viện kiểm sát để điều tra bổ sung là một lần đã giải quyết; thụ lý lại sau điều tra bổ sung là một lần thụ lý mới.
 
+## 7.2. Hình sự phúc thẩm theo từng bị cáo
+
+Khi nhập dữ liệu, list danh sách hoặc thống kê án hình sự phúc thẩm theo Mẫu 1B, dùng skill:
+
+`knowledge_base/skills/statistics/skill_criminal_appellate_defendant_result_rules.md`
+
+Quy tắc bắt buộc: kết quả giải quyết phúc thẩm phải lưu theo từng `defendant_id`, không gán một kết quả chung cho toàn bộ `case_id` nếu vụ án có nhiều bị cáo. Vụ án chỉ được tính đã giải quyết khi toàn bộ bị cáo thuộc phạm vi phúc thẩm đã có final result đến ngày chốt thống kê.
+
 ## 8. Quy trình sử dụng skill
 1. Nhận diện `form_code`: HS_ST_1A, HS_PT_1B, HS_GDT_1C hoặc HS_TT_1D.
 2. Đọc `criminal_data_dictionary.json` để biết cột dữ liệu.

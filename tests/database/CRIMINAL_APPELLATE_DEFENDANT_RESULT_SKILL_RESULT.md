@@ -1,6 +1,6 @@
 ﻿# CRIMINAL_APPELLATE_DEFENDANT_RESULT_SKILL_RESULT
 
-- Thoi diem kiem tra: 2026-06-11 11:18:17 +07:00
+- Thoi diem kiem tra: 2026-06-11 14:58:44 +07:00
 - Database: qlta_schema_merge_test
 - Ket qua: PASSED
 - Migration: database/migrations/008_criminal_appellate_defendant_results.sql
@@ -116,11 +116,11 @@ SELECT 13
 psql:D:/QLTA-Project/tests/database/test_criminal_appellate_defendant_result_skill.sql:40: NOTICE:  table "tmp_hspt_case_status" does not exist, skipping
 DROP TABLE
 SELECT 20
+DROP TABLE
 psql:D:/QLTA-Project/tests/database/test_criminal_appellate_defendant_result_skill.sql:79: NOTICE:  table "tmp_hspt_case_result_counts" does not exist, skipping
-DROP TABLE
 SELECT 12
-psql:D:/QLTA-Project/tests/database/test_criminal_appellate_defendant_result_skill.sql:97: NOTICE:  table "tmp_hspt_expected" does not exist, skipping
 DROP TABLE
+psql:D:/QLTA-Project/tests/database/test_criminal_appellate_defendant_result_skill.sql:97: NOTICE:  table "tmp_hspt_expected" does not exist, skipping
 CREATE TABLE
 INSERT 0 19
 DO

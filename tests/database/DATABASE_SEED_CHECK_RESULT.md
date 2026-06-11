@@ -1,6 +1,6 @@
 ﻿# Ket qua kiem tra seed database
 
-- Thoi diem kiem tra: 2026-06-11 11:18:05 +07:00
+- Thoi diem kiem tra: 2026-06-11 14:58:23 +07:00
 - Database: qlta_schema_merge_test
 - ResetDatabase: False
 - SeedOnly: False
@@ -221,8 +221,8 @@ DO
 DO
 DO
 ROLLBACK
-psql:D:/QLTA-Project/tests/database/seed_data_integrity_test.sql:122: NOTICE:  PASSED: seed_data_integrity_test.sql
 DO
+psql:D:/QLTA-Project/tests/database/seed_data_integrity_test.sql:122: NOTICE:  PASSED: seed_data_integrity_test.sql
 [Chay seed test / tests/database/excel_seed_integrity_test.sql]
 BEGIN
 DO
@@ -262,8 +262,8 @@ DO
 DO
 DO
 ROLLBACK
-DO
 psql:D:/QLTA-Project/tests/database/excel_case_full_import_integrity_test.sql:149: NOTICE:  PASSED: excel_case_full_import_integrity_test.sql
+DO
 [Chay seed test / tests/database/trial_level_and_hearing_members_integrity_test.sql]
 BEGIN
 DO

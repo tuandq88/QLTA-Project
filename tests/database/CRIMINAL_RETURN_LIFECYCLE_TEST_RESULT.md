@@ -1,6 +1,6 @@
 ﻿# CRIMINAL_RETURN_LIFECYCLE_TEST_RESULT
 
-- Thoi diem kiem tra: 2026-06-11 09:36:14 +07:00
+- Thoi diem kiem tra: 2026-06-11 14:58:37 +07:00
 - Database: qlta_schema_merge_test
 - Ket qua: PASSED
 - Migration: database/migrations/007_case_occurrences_and_resolution_events.sql
@@ -40,10 +40,10 @@
 ```text
 psql:D:/QLTA-Project/database/migrations/007_case_occurrences_and_resolution_events.sql:5: NOTICE:  extension "uuid-ossp" already exists, skipping
 CREATE EXTENSION
+CREATE TABLE
 psql:D:/QLTA-Project/database/migrations/007_case_occurrences_and_resolution_events.sql:26: NOTICE:  relation "case_occurrences" already exists, skipping
 CREATE TABLE
 psql:D:/QLTA-Project/database/migrations/007_case_occurrences_and_resolution_events.sql:48: NOTICE:  relation "case_resolution_events" already exists, skipping
-CREATE TABLE
 psql:D:/QLTA-Project/database/migrations/007_case_occurrences_and_resolution_events.sql:51: NOTICE:  column "acceptance_type_id" of relation "case_occurrences" already exists, skipping
 ALTER TABLE
 psql:D:/QLTA-Project/database/migrations/007_case_occurrences_and_resolution_events.sql:56: NOTICE:  column "event_type_code" of relation "case_resolution_events" already exists, skipping
@@ -53,16 +53,16 @@ ALTER TABLE
 DO
 psql:D:/QLTA-Project/database/migrations/007_case_occurrences_and_resolution_events.sql:80: NOTICE:  relation "idx_case_occurrences_case_acceptance" already exists, skipping
 CREATE INDEX
-CREATE INDEX
 psql:D:/QLTA-Project/database/migrations/007_case_occurrences_and_resolution_events.sql:83: NOTICE:  relation "idx_case_occurrences_acceptance_type" already exists, skipping
-psql:D:/QLTA-Project/database/migrations/007_case_occurrences_and_resolution_events.sql:86: NOTICE:  relation "idx_case_resolution_events_case_date" already exists, skipping
 CREATE INDEX
+psql:D:/QLTA-Project/database/migrations/007_case_occurrences_and_resolution_events.sql:86: NOTICE:  relation "idx_case_resolution_events_case_date" already exists, skipping
 CREATE INDEX
 psql:D:/QLTA-Project/database/migrations/007_case_occurrences_and_resolution_events.sql:89: NOTICE:  relation "idx_case_resolution_events_occurrence_date" already exists, skipping
 CREATE INDEX
 psql:D:/QLTA-Project/database/migrations/007_case_occurrences_and_resolution_events.sql:92: NOTICE:  relation "idx_case_resolution_events_type_date" already exists, skipping
 CREATE INDEX
 psql:D:/QLTA-Project/database/migrations/007_case_occurrences_and_resolution_events.sql:95: NOTICE:  relation "uq_case_resolution_events_occurrence_type_date_decision" already exists, skipping
+CREATE INDEX
 ```
 
 ### seed 003 reference data
@@ -70,9 +70,9 @@ psql:D:/QLTA-Project/database/migrations/007_case_occurrences_and_resolution_eve
 - Exit code: 0
 
 ```text
-INSERT 0 41
-INSERT 0 195
-INSERT 0 39
+INSERT 0 45
+INSERT 0 216
+INSERT 0 43
 ```
 
 ### seed 040 test lifecycle

@@ -297,6 +297,18 @@ AI Agent phải tuân theo mô hình 05 lớp:
 - Tài liệu database phải mô tả công dụng bảng, khóa chính, khóa ngoại và các cột liên kết quan trọng.
 ```
 
+### 8.3. Quy tắc đặt tên kỹ thuật và dữ liệu tiếng Việt
+
+```text
+- Ngoại trừ dữ liệu nghiệp vụ bắt buộc phải lưu bằng tiếng Việt có dấu UTF-8, tất cả đối tượng kỹ thuật phải đặt tên bằng tiếng Anh.
+- Tên bảng, tên cột, enum, index, constraint, function, view, trigger, file migration, API route, DTO, service, repository và component frontend phải dùng tiếng Anh.
+- Không dùng tiếng Việt có dấu trong tên bảng/cột/constraint/index/function/API route.
+- Dữ liệu hiển thị cho người dùng, tên biểu mẫu, tên chỉ tiêu thống kê, tên tội danh, quan hệ pháp luật, kết quả giải quyết và mô tả nghiệp vụ có thể dùng tiếng Việt UTF-8.
+- Code danh mục nên dùng ASCII/English hoặc tiếng Việt không dấu dạng code ổn định, ví dụ HINH_SU, SO_THAM, PHUC_THAM, RETURN_TO_PROCURACY_FOR_SUPPLEMENTAL_INVESTIGATION.
+- File SQL/script phải lưu UTF-8.
+- Khi dùng PowerShell/psql cần tránh literal tiếng Việt trong câu lệnh trực tiếp nếu gây lỗi encoding; ưu tiên code danh mục.
+```
+
 ### 8.1. Bảng trung tâm
 
 `case_files` là bảng trung tâm cho mọi loại án.
@@ -316,7 +328,7 @@ validation_result
 kpi_value
 ```
 
-### 8.3. AI không ghi trực tiếp vào dữ liệu chính
+### 8.4. AI không ghi trực tiếp vào dữ liệu chính
 
 AI Agent chỉ được ghi vào:
 
@@ -329,6 +341,32 @@ appellate_status_history
 ```
 
 Dữ liệu chính chỉ được cập nhật khi có xác nhận của người dùng hoặc workflow được cấp quyền.
+
+### 8.5. Quy tắc cập nhật skill sau task
+
+Sau mỗi task, AI Agent phải tự kiểm tra:
+
+```text
+Có quy tắc, logic, công thức, mapping, validation, SQL template, API contract hoặc UI pattern nào cần ghi lại thành skill để dùng lại không?
+```
+
+Nếu có, AI Agent phải cập nhật skill hiện có hoặc tạo skill mới trong `knowledge_base/skills/`.
+
+Sau mỗi task thiết kế database, AI Agent phải cân nhắc tạo/cập nhật skill hoặc checklist cho:
+
+```text
+- backend entity/model/repository/service/API;
+- frontend form/list/detail/report;
+- validation rules;
+- seed/test data;
+- statistics/list report.
+```
+
+Quy tắc workflow chi tiết nằm tại:
+
+```text
+docs/AI_AGENT_RULES.md
+```
 
 ---
 

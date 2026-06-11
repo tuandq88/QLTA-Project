@@ -1,6 +1,6 @@
 ﻿# Ket qua kiem tra cap xet xu va thanh phan phien toa
 
-- Thoi diem kiem tra: 2026-06-10 16:12:40 +07:00
+- Thoi diem kiem tra: 2026-06-11 14:58:52 +07:00
 - Database: qlta_schema_merge_test
 - Ket qua: PASSED
 - PGHOST: localhost
@@ -19,6 +19,6 @@ psql:D:/QLTA-Project/tests/database/trial_level_and_hearing_members_integrity_te
 psql:D:/QLTA-Project/tests/database/trial_level_and_hearing_members_integrity_test.sql:198: NOTICE:  Chi tiet file/sheet/row nam trong tests/database/EXCEL_CASE_TRIAL_LEVEL_AND_HEARING_MEMBERS_RESULT.md
 DO
 ROLLBACK
-psql:D:/QLTA-Project/tests/database/trial_level_and_hearing_members_integrity_test.sql:205: NOTICE:  PASSED: trial_level_and_hearing_members_integrity_test.sql
 DO
+psql:D:/QLTA-Project/tests/database/trial_level_and_hearing_members_integrity_test.sql:205: NOTICE:  PASSED: trial_level_and_hearing_members_integrity_test.sql
 ```

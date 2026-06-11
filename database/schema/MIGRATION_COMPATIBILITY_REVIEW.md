@@ -17,6 +17,9 @@ Các phần migration ổn định, additive và an toàn đã được đồng 
 | `003_reference_data_and_foreign_keys.sql` | Tương thích | Bảng danh mục, cột tham chiếu và FK danh mục đã có trong unified schema. |
 | `004_statistical_reference_data.sql` | Tương thích | Bảng thống kê, danh mục pháp lý hỗ trợ seed và FK liên quan đã có trong unified schema. Các FK catalog còn thiếu đã được đồng bộ. |
 | `005_legal_seed_data_normalization.sql` | Tương thích | Kiểu cột TEXT, cột `requires_human_review`, source metadata và index hỗ trợ seed pháp lý đã có hoặc đã được đồng bộ vào unified schema. |
+| `006_trial_level_and_hearing_members.sql` | Active upgrade, đã đồng bộ unified | Thêm `court_staff`, `case_hearing_members` và index liên quan. Vẫn giữ để nâng cấp database đã tồn tại và phục vụ test thành phần phiên tòa. |
+| `007_case_occurrences_and_resolution_events.sql` | Active upgrade, đã đồng bộ unified | Thêm `case_occurrences`, `case_resolution_events` để thống kê vòng đời/occurrence. Được wrapper `run_criminal_return_lifecycle_skill_check.ps1` gọi trực tiếp. |
+| `008_criminal_appellate_defendant_results.sql` | Active upgrade, đã đồng bộ unified | Thêm `criminal_appellate_defendant_results`, `criminal_appellate_modify_criteria` để thống kê hình sự phúc thẩm theo từng bị cáo. Được wrapper `run_criminal_appellate_defendant_result_skill_check.ps1` gọi trực tiếp. |
 | `random_assignment_schema_extension.sql` | Legacy, không gộp trực tiếp | Tạo bảng trùng `judge_profiles`, `assignment_batches`, `assignment_batch_cases`, `assignment_batch_judges`, `judge_status_periods`, `judge_workload_snapshots`, `judge_case_conflicts`, `judge_replacement_history`, `assignment_audit_logs`; không dùng `IF NOT EXISTS`. Nội dung nghiệp vụ đã nằm trong unified schema. |
 | `appeal_protest_tracking_schema_extension.sql` | Legacy, không gộp trực tiếp | Tạo bảng trùng nhóm appellate tracking; không dùng `IF NOT EXISTS`. Nội dung nghiệp vụ đã nằm trong unified schema. |
 
@@ -33,12 +36,12 @@ Các phần migration ổn định, additive và an toàn đã được đồng 
 
 - `UnifiedOnly` schema-only: `PASSED`.
 - `UnifiedOnly` full schema + seed + SQL test: `PASSED`.
-- `MigrationsOnly` với chuỗi migration đánh số hiện tại: `FAILED` tại `002_database_constraints_and_indexes.sql` vì bảng `appeals` chưa tồn tại sau `001_core_database_schema.sql`.
+- `MigrationsOnly` với chuỗi migration đánh số hiện tại: chưa được coi là baseline khởi tạo mới hoàn chỉnh; lần rà soát trước `FAILED` tại `002_database_constraints_and_indexes.sql` vì bảng `appeals` chưa tồn tại sau `001_core_database_schema.sql`.
 
 ## Quyết định kiến trúc
 
 - Database mới dùng `database/schema/unified_postgresql_schema.sql`.
-- Migration đánh số dùng cho lịch sử thay đổi hoặc nâng cấp khi đã xác định đúng baseline.
+- Migration đánh số dùng cho lịch sử thay đổi hoặc nâng cấp khi đã xác định đúng baseline. Các migration 006-008 là active upgrade migrations dù đã được đồng bộ vào unified schema.
 - Không chạy unified schema và migrations trong cùng một mode kiểm tra.
 - Không xóa constraint/index để làm test pass.
 - Không gộp migration legacy dạng raw vì có nguy cơ trùng bảng.

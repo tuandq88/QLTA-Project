@@ -4,8 +4,10 @@ Thư mục chứa tài liệu dự án.
 
 ```text
 docs/
-├── legal/             Tài liệu pháp lý đã chuẩn hóa hoặc trích yếu
+├── AI_AGENT_RULES.md  Quy tắc workflow, naming, cleanup và cập nhật skill cho AI Agent
 ├── plans/             Master plan, kế hoạch triển khai
-├── reviews/           Báo cáo rà soát, đối chiếu
-└── source_documents/  Tài liệu nguồn phụ trợ nếu cần sao chép từ Documents
+├── review/            Báo cáo rà soát, đối chiếu, cleanup, database governance
+└── reviews/           Báo cáo rà soát pháp lý hoặc review chuyên đề
 ```
+
+Tài liệu pháp lý nguồn vẫn nằm trong `Documents/`. Không di chuyển hoặc xóa PDF nguồn nếu chưa có bản chuẩn thay thế.

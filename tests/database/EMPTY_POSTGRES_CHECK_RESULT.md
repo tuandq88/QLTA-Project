@@ -1,6 +1,6 @@
 ﻿# Káº¿t quáº£ kiá»ƒm tra PostgreSQL trá»‘ng
 
-- Thá»i Ä‘iá»ƒm kiá»ƒm tra: 2026-06-11 11:17:43 +07:00
+- Thá»i Ä‘iá»ƒm kiá»ƒm tra: 2026-06-11 14:57:59 +07:00
 - Database test: qlta_schema_merge_test
 - Cháº¿ Ä‘á»™: UnifiedOnly
 - PGHOST: localhost
@@ -407,6 +407,6 @@ DO
 DO
 DO
 ROLLBACK
-psql:D:/QLTA-Project/tests/database/statistics_algorithm_precheck.sql:167: NOTICE:  PASSED: statistics_algorithm_precheck.sql
 DO
+psql:D:/QLTA-Project/tests/database/statistics_algorithm_precheck.sql:167: NOTICE:  PASSED: statistics_algorithm_precheck.sql
 ```
