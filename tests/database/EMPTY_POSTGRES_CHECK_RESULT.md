@@ -1,6 +1,6 @@
 ﻿# Káº¿t quáº£ kiá»ƒm tra PostgreSQL trá»‘ng
 
-- Thá»i Ä‘iá»ƒm kiá»ƒm tra: 2026-06-11 14:57:59 +07:00
+- Thá»i Ä‘iá»ƒm kiá»ƒm tra: 2026-06-12 15:19:01 +07:00
 - Database test: qlta_schema_merge_test
 - Cháº¿ Ä‘á»™: UnifiedOnly
 - PGHOST: localhost
@@ -23,6 +23,7 @@
 - database/seed/003_reference_data_seed.sql
 - database/seed/004_statistical_reference_data_seed.sql
 - database/seed/010_legal_seed_data_tand_vietnam.sql
+- database/seed/011_courts_quang_ngai.sql
 - database/seed/020_excel_seed_case_categories.sql
 - database/seed/021_excel_seed_criminal_categories.sql
 - database/seed/022_excel_seed_civil_categories.sql
@@ -149,6 +150,10 @@ CREATE TABLE
 CREATE TABLE
 ALTER TABLE
 ALTER TABLE
+psql:D:/QLTA-Project/database/schema/unified_postgresql_schema.sql:1373: NOTICE:  column "first_instance_court_id" of relation "case_files" already exists, skipping
+psql:D:/QLTA-Project/database/schema/unified_postgresql_schema.sql:1373: NOTICE:  column "first_instance_case_number" of relation "case_files" already exists, skipping
+psql:D:/QLTA-Project/database/schema/unified_postgresql_schema.sql:1373: NOTICE:  column "first_instance_judgment_number" of relation "case_files" already exists, skipping
+psql:D:/QLTA-Project/database/schema/unified_postgresql_schema.sql:1373: NOTICE:  column "first_instance_judgment_date" of relation "case_files" already exists, skipping
 ALTER TABLE
 ALTER TABLE
 ALTER TABLE
@@ -173,6 +178,7 @@ CREATE INDEX
 CREATE INDEX
 CREATE INDEX
 DO
+CREATE INDEX
 CREATE INDEX
 CREATE INDEX
 CREATE INDEX
@@ -329,6 +335,10 @@ INSERT 0 312
 INSERT 0 312
 INSERT 0 79
 DROP TABLE
+[Chay seed / database/seed/011_courts_quang_ngai.sql]
+psql:D:/QLTA-Project/database/seed/011_courts_quang_ngai.sql:4: NOTICE:  extension "uuid-ossp" already exists, skipping
+CREATE EXTENSION
+INSERT 0 3
 [Chay seed / database/seed/020_excel_seed_case_categories.sql]
 INSERT 0 2
 INSERT 0 11
@@ -370,6 +380,7 @@ BEGIN
 INSERT 0 2309
 INSERT 0 1662
 INSERT 0 2221
+UPDATE 2221
 INSERT 0 1138
 INSERT 0 1053
 INSERT 0 835
@@ -396,8 +407,8 @@ DO
 DO
 DO
 ROLLBACK
-DO
 psql:D:/QLTA-Project/tests/database/seed_data_integrity_test.sql:122: NOTICE:  PASSED: seed_data_integrity_test.sql
+DO
 [Chay SQL test / tests/database/statistics_algorithm_precheck.sql]
 BEGIN
 DO

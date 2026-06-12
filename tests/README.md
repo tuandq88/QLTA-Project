@@ -81,3 +81,51 @@ Lệnh chạy:
 ```
 
 Test tạo 5 vụ `HSPT-001` đến `HSPT-005`, kiểm tra expected vs actual cho các kỳ A-D và ghi báo cáo tại `tests/database/CRIMINAL_APPELLATE_DEFENDANT_RESULT_SKILL_RESULT.md`. Logic bắt buộc: kết quả phúc thẩm ghi theo từng `defendant_id`; vụ án chỉ được tính đã giải quyết khi toàn bộ bị cáo có final result đến ngày chốt.
+
+### Test tòa án sơ thẩm của án phúc thẩm
+
+Migration/seed/test:
+
+- `database/migrations/009_appellate_first_instance_court.sql`
+- `database/seed/011_courts_quang_ngai.sql`
+- `database/seed/test/060_test_appellate_first_instance_courts.sql`
+- `tests/database/appellate_first_instance_court_integrity_test.sql`
+- `tests/database/run_appellate_first_instance_court_check.ps1`
+
+Lệnh chạy:
+
+```powershell
+.\tests\database\run_appellate_first_instance_court_check.ps1 -DatabaseName qlta_schema_merge_test
+```
+
+Test bảo vệ quy tắc: án `PHUC_THAM` dùng `case_files.court_id` cho tòa phúc thẩm/current court và dùng `case_files.first_instance_court_id` cho tòa đã xét xử sơ thẩm; query danh sách phúc thẩm không được fallback im lặng thành TAND tỉnh khi thiếu tòa sơ thẩm.
+
+### Test import Excel tòa án sơ thẩm của án phúc thẩm
+
+Test/wrapper:
+
+- `tests/database/appellate_first_instance_court_excel_import_test.sql`
+- `tests/database/run_appellate_first_instance_court_excel_import_check.ps1`
+
+Lệnh chạy:
+
+```powershell
+.\tests\database\run_appellate_first_instance_court_excel_import_check.ps1 -DatabaseName qlta_schema_merge_test
+```
+
+Test bảo vệ đường đi dữ liệu từ cột Excel `Tòa án xét xử sơ thẩm` trong hai file phúc thẩm đến `case_files.first_instance_court_id`, kiểm tra join được `courts`, có nhiều nhóm tòa sơ thẩm, có cả tòa `regional` và `district`, và không bị gán nhầm thành tòa phúc thẩm/current court.
+
+### Test import Excel kết quả XXPT của án phúc thẩm
+
+Test/wrapper:
+
+- `tests/database/appellate_xxpt_result_excel_import_test.sql`
+- `tests/database/run_appellate_xxpt_result_excel_import_check.ps1`
+
+Lệnh chạy:
+
+```powershell
+.\tests\database\run_appellate_xxpt_result_excel_import_check.ps1 -DatabaseName qlta_schema_merge_test
+```
+
+Test bảo vệ đường đi dữ liệu từ cột Excel `Kết quả XXPT` đến `decisions.result_summary`, `decisions.result_code`, `case_files.closed_date` khi có ngày hợp lệ, và bảo đảm query list không hiển thị `Chưa giải quyết` cho dòng đã import kết quả XXPT.

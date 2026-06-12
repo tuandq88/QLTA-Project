@@ -9,17 +9,18 @@ Thứ tự chạy mặc định theo tên file:
 1. `003_reference_data_seed.sql`
 2. `004_statistical_reference_data_seed.sql`
 3. `010_legal_seed_data_tand_vietnam.sql`
-4. `020_excel_seed_case_categories.sql`
-5. `021_excel_seed_criminal_categories.sql`
-6. `022_excel_seed_civil_categories.sql`
-7. `023_excel_seed_administrative_categories.sql`
-8. `024_excel_seed_labor_business_marriage_categories.sql`
-9. `025_excel_seed_statistical_indicators.sql`
-10. `030_excel_seed_case_files.sql`
-11. `031_excel_seed_case_details.sql`
-12. `032_excel_seed_case_parties.sql`
-13. `033_excel_seed_case_events_and_resolutions.sql`
-14. `034_excel_seed_hearing_members.sql`
+4. `011_courts_quang_ngai.sql`
+5. `020_excel_seed_case_categories.sql`
+6. `021_excel_seed_criminal_categories.sql`
+7. `022_excel_seed_civil_categories.sql`
+8. `023_excel_seed_administrative_categories.sql`
+9. `024_excel_seed_labor_business_marriage_categories.sql`
+10. `025_excel_seed_statistical_indicators.sql`
+11. `030_excel_seed_case_files.sql`
+12. `031_excel_seed_case_details.sql`
+13. `032_excel_seed_case_parties.sql`
+14. `033_excel_seed_case_events_and_resolutions.sql`
+15. `034_excel_seed_hearing_members.sql`
 
 `999_seed_all.sql` chỉ là file ghi chú thứ tự chạy, không được dùng để chạy trùng seed.
 
@@ -41,16 +42,25 @@ Chạy qua wrapper test:
 .\tests\database\run_criminal_appellate_defendant_result_skill_check.ps1 -DatabaseName qlta_schema_merge_test
 ```
 
+`database/seed/test/060_test_appellate_first_instance_courts.sql` là dữ liệu giả deterministic cho án phúc thẩm có `first_instance_court_id` thuộc nhiều tòa khu vực khác nhau. File này dùng để kiểm tra không gom nhầm tòa sơ thẩm thành tòa phúc thẩm/current court.
+
+Chạy qua wrapper test:
+
+```powershell
+.\tests\database\run_appellate_first_instance_court_check.ps1 -DatabaseName qlta_schema_merge_test
+```
+
 ## Nguồn dữ liệu seed
 
 - `003_reference_data_seed.sql`: danh mục nền tối thiểu cho schema.
 - `004_statistical_reference_data_seed.sql`: danh mục thống kê/KPI tối thiểu.
 - `010_legal_seed_data_tand_vietnam.sql`: dữ liệu từ `database/seed/legal_seed_data_tand_vietnam/all_legal_seed_master.csv`.
+- `011_courts_quang_ngai.sql`: TAND tỉnh Quảng Ngãi và các tòa khu vực placeholder có kiểm soát, cần xác minh nguồn chính thức trước production.
 - `020` đến `025`: dữ liệu trích từ Excel trong `database/seed/danh_sach/` và các file preview trong `docs/review/`.
-- `030`: hồ sơ `case_files` seed từ từng dòng Excel có ngày thụ lý đọc được.
+- `030`: hồ sơ `case_files` seed từ từng dòng Excel có ngày thụ lý đọc được; với án phúc thẩm, cột Excel `Tòa án xét xử sơ thẩm` được seed thành `case_files.first_instance_court_id` và tạo alias court deterministic khi cần; cột `Kết quả XXPT` kèm ngày hợp lệ cập nhật `case_files.closed_date`.
 - `031`: detail theo loại án (`civil_case_details`, `administrative_case_details`, `criminal_case_details`) và bảng con phù hợp.
 - `032`: đương sự/bị cáo/người tham gia tố tụng từ Excel khi có tên rõ.
-- `033`: event, hearing, decision, appeal và appellate tracking/result khi Excel có dữ liệu tương ứng.
+- `033`: event, hearing, decision, appeal và appellate tracking/result khi Excel có dữ liệu tương ứng; `Kết quả XXPT` được ghi vào `decisions.result_summary/result_code` và `appellate_results.summary/result_code` khi đủ dữ liệu tracking.
 - `034`: danh sach can bo va thanh phan phien toa tu cac cot Tham phan/Chu toa, Hoi dong/Thanh vien, Thu ky trong Excel; o trong duoc bao cao la thieu du lieu, khong tao placeholder.
 
 ## Sinh lại seed hồ sơ từ Excel

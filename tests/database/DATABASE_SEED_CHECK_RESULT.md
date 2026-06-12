@@ -1,6 +1,6 @@
 ﻿# Ket qua kiem tra seed database
 
-- Thoi diem kiem tra: 2026-06-11 14:58:23 +07:00
+- Thoi diem kiem tra: 2026-06-12 15:19:31 +07:00
 - Database: qlta_schema_merge_test
 - ResetDatabase: False
 - SeedOnly: False
@@ -21,6 +21,7 @@
 - database/seed/003_reference_data_seed.sql
 - database/seed/004_statistical_reference_data_seed.sql
 - database/seed/010_legal_seed_data_tand_vietnam.sql
+- database/seed/011_courts_quang_ngai.sql
 - database/seed/020_excel_seed_case_categories.sql
 - database/seed/021_excel_seed_criminal_categories.sql
 - database/seed/022_excel_seed_civil_categories.sql
@@ -35,6 +36,7 @@
 - database/seed/003_reference_data_seed.sql
 - database/seed/004_statistical_reference_data_seed.sql
 - database/seed/010_legal_seed_data_tand_vietnam.sql
+- database/seed/011_courts_quang_ngai.sql
 - database/seed/020_excel_seed_case_categories.sql
 - database/seed/021_excel_seed_criminal_categories.sql
 - database/seed/022_excel_seed_civil_categories.sql
@@ -84,6 +86,10 @@ INSERT 0 312
 INSERT 0 312
 INSERT 0 79
 DROP TABLE
+[Chay seed lan 1 / database/seed/011_courts_quang_ngai.sql]
+CREATE EXTENSION
+psql:D:/QLTA-Project/database/seed/011_courts_quang_ngai.sql:4: NOTICE:  extension "uuid-ossp" already exists, skipping
+INSERT 0 3
 [Chay seed lan 1 / database/seed/020_excel_seed_case_categories.sql]
 INSERT 0 2
 INSERT 0 11
@@ -125,6 +131,7 @@ BEGIN
 INSERT 0 0
 INSERT 0 0
 INSERT 0 0
+UPDATE 2221
 INSERT 0 0
 INSERT 0 0
 INSERT 0 0
@@ -163,6 +170,10 @@ INSERT 0 312
 INSERT 0 312
 INSERT 0 79
 DROP TABLE
+[Chay seed lan 2 / database/seed/011_courts_quang_ngai.sql]
+psql:D:/QLTA-Project/database/seed/011_courts_quang_ngai.sql:4: NOTICE:  extension "uuid-ossp" already exists, skipping
+CREATE EXTENSION
+INSERT 0 3
 [Chay seed lan 2 / database/seed/020_excel_seed_case_categories.sql]
 INSERT 0 2
 INSERT 0 11
@@ -204,6 +215,7 @@ BEGIN
 INSERT 0 0
 INSERT 0 0
 INSERT 0 0
+UPDATE 2221
 INSERT 0 0
 INSERT 0 0
 INSERT 0 0
@@ -221,8 +233,8 @@ DO
 DO
 DO
 ROLLBACK
-DO
 psql:D:/QLTA-Project/tests/database/seed_data_integrity_test.sql:122: NOTICE:  PASSED: seed_data_integrity_test.sql
+DO
 [Chay seed test / tests/database/excel_seed_integrity_test.sql]
 BEGIN
 DO
@@ -262,8 +274,8 @@ DO
 DO
 DO
 ROLLBACK
-psql:D:/QLTA-Project/tests/database/excel_case_full_import_integrity_test.sql:149: NOTICE:  PASSED: excel_case_full_import_integrity_test.sql
 DO
+psql:D:/QLTA-Project/tests/database/excel_case_full_import_integrity_test.sql:149: NOTICE:  PASSED: excel_case_full_import_integrity_test.sql
 [Chay seed test / tests/database/trial_level_and_hearing_members_integrity_test.sql]
 BEGIN
 DO
@@ -275,6 +287,6 @@ psql:D:/QLTA-Project/tests/database/trial_level_and_hearing_members_integrity_te
 psql:D:/QLTA-Project/tests/database/trial_level_and_hearing_members_integrity_test.sql:198: NOTICE:  Chi tiet file/sheet/row nam trong tests/database/EXCEL_CASE_TRIAL_LEVEL_AND_HEARING_MEMBERS_RESULT.md
 DO
 ROLLBACK
-psql:D:/QLTA-Project/tests/database/trial_level_and_hearing_members_integrity_test.sql:205: NOTICE:  PASSED: trial_level_and_hearing_members_integrity_test.sql
 DO
+psql:D:/QLTA-Project/tests/database/trial_level_and_hearing_members_integrity_test.sql:205: NOTICE:  PASSED: trial_level_and_hearing_members_integrity_test.sql
 ```

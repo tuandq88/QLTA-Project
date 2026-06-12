@@ -172,7 +172,7 @@ def split_staff_names(value: str | None) -> list[str]:
 def normalize_staff_name(value: str) -> str:
     text = unicodedata.normalize("NFD", value)
     text = "".join(ch for ch in text if unicodedata.category(ch) != "Mn")
-    text = text.replace("đ", "d").replace("Đ", "D").lower()
+    text = text.replace("đ", "d").replace("Đ", "D").replace("Ä‘", "d").replace("Ä", "D").lower()
     text = re.sub(r"[^a-z0-9]+", " ", text)
     return re.sub(r"\s+", " ", text).strip()
 
@@ -228,15 +228,38 @@ def first_line_before_date(value: str | None) -> str | None:
     return parts[0] if parts else None
 
 
-def normalize_code(value: str, prefix: str = "") -> str:
+def normalize_code(value: str, prefix: str = "", max_length: int = 80) -> str:
     text = unicodedata.normalize("NFD", value)
     text = "".join(ch for ch in text if unicodedata.category(ch) != "Mn")
     text = text.replace("đ", "d").replace("Đ", "D").lower()
     text = re.sub(r"[^a-z0-9]+", "_", text).strip("_")
-    if len(text) > 80:
+    allowed_text_length = max_length - len(prefix)
+    if allowed_text_length < 9:
+        raise ValueError(f"max_length too short for prefix: {prefix}")
+    if len(text) > allowed_text_length:
         digest = hashlib.sha1(value.encode("utf-8")).hexdigest()[:8]
-        text = text[:71].rstrip("_") + "_" + digest
+        text = text[: allowed_text_length - 9].rstrip("_") + "_" + digest
     return f"{prefix}{text}" if prefix else text
+
+
+def normalize_ascii(value: str | None) -> str:
+    if not value:
+        return ""
+    text = unicodedata.normalize("NFD", value)
+    text = "".join(ch for ch in text if unicodedata.category(ch) != "Mn")
+    text = text.replace("đ", "d").replace("Đ", "D").replace("Ä‘", "d").replace("Ä", "D").lower()
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def infer_first_instance_court_level(value: str | None) -> str | None:
+    text = normalize_ascii(value)
+    if not text:
+        return None
+    if "khu vuc" in text:
+        return "regional"
+    if any(marker in text for marker in ("huyen", "thanh pho", "thi xa")):
+        return "district"
+    return "district"
 
 
 def sql_string(value: str | None) -> str:
@@ -286,6 +309,18 @@ def appellate_result_code(value: str | None) -> str | None:
     if "đình chỉ" in lowered:
         return "terminated"
     return "other_review_required"
+
+
+def resolved_date_for_case(record: SourceRow) -> date | None:
+    if not record.result_text:
+        return None
+    candidates = [record.decision_date]
+    if record.case_group == "PHUC_THAM":
+        candidates.append(record.hearing_date)
+    for candidate in candidates:
+        if candidate and candidate >= record.acceptance_date:
+            return candidate
+    return None
 
 
 def case_type_from_alias(alias: str | None, file_name: str) -> tuple[str, str, str]:
@@ -361,8 +396,8 @@ def parse_row(file_name: str, sheet_name: str, excel_row: int, headers: list[str
         defendants = None
         result = values.get("Kết quả XXPT")
         appeal = values.get("KC/KN")
-        decision_date = None
         hearing_date = extract_date(values.get("Ngày xử"))
+        decision_date = hearing_date if result else None
         source = values
 
     slug = normalize_code(file_name.replace(".xlsx", "").replace(" ", "_").replace("ở", "o").replace("ự", "u")).upper()
@@ -475,7 +510,7 @@ def write_case_seed(records: list[SourceRow]) -> None:
     rows = []
     for r in records:
         status, stage, resolution = case_status(r)
-        closed_date = r.decision_date if r.decision_date and r.decision_date >= r.acceptance_date else None
+        closed_date = resolved_date_for_case(r)
         rows.append(
             (
                 sql_string(r.case_code),
@@ -490,6 +525,12 @@ def write_case_seed(records: list[SourceRow]) -> None:
                 sql_string(resolution),
                 sql_date(closed_date),
                 sql_string(source_summary(r)),
+                sql_string(normalize_code(r.first_instance_court, "EXCEL_FIRST_INSTANCE_", max_length=50) if r.case_group == "PHUC_THAM" and r.first_instance_court else None),
+                sql_string(r.first_instance_court if r.case_group == "PHUC_THAM" else None),
+                sql_string(infer_first_instance_court_level(r.first_instance_court) if r.case_group == "PHUC_THAM" else None),
+                sql_string(r.case_number_raw if r.case_group == "PHUC_THAM" else None),
+                sql_string(r.first_instance_decision_number if r.case_group == "PHUC_THAM" else None),
+                sql_date(r.first_instance_decision_date if r.case_group == "PHUC_THAM" else None),
             )
         )
     sql = f"""-- Seed 030: Excel-derived case_files from database/seed/danh_sach/*.xlsx.
@@ -516,14 +557,41 @@ ON CONFLICT (court_code) DO UPDATE SET
     court_level_id = EXCLUDED.court_level_id,
     updated_at = CURRENT_TIMESTAMP;
 
-WITH source_rows(case_code, case_number, case_type, case_group, procedure_law, filing_date, acceptance_date, current_stage, case_status, resolution_status, closed_date, summary) AS (
+WITH source_rows(
+    case_code, case_number, case_type, case_group, procedure_law, filing_date, acceptance_date,
+    current_stage, case_status, resolution_status, closed_date, summary,
+    first_instance_court_code, first_instance_court_name, first_instance_court_level, first_instance_case_number,
+    first_instance_judgment_number, first_instance_judgment_date
+) AS (
     VALUES
 {values_block(rows)}
+),
+first_instance_court_seed AS (
+    INSERT INTO courts (court_id, court_code, court_name, court_level, province, court_level_id)
+    SELECT DISTINCT
+        uuid_generate_v5(uuid_ns_url(), 'qlta:court:' || sr.first_instance_court_code),
+        sr.first_instance_court_code,
+        sr.first_instance_court_name,
+        sr.first_instance_court_level::court_level_enum,
+        'Quảng Ngãi',
+        dci.item_id
+    FROM source_rows sr
+    LEFT JOIN dm_categories dc ON dc.category_code = 'court_level'
+    LEFT JOIN dm_category_items dci ON dci.category_id = dc.category_id AND dci.item_code = sr.first_instance_court_level
+    WHERE sr.first_instance_court_code IS NOT NULL
+    ON CONFLICT (court_code) DO UPDATE SET
+        court_name = EXCLUDED.court_name,
+        court_level = EXCLUDED.court_level,
+        province = EXCLUDED.province,
+        court_level_id = EXCLUDED.court_level_id,
+        updated_at = CURRENT_TIMESTAMP
+    RETURNING court_id, court_code
 ),
 resolved AS (
     SELECT
         sr.*,
         court.court_id,
+        COALESCE(fics.court_id, fic.court_id) AS first_instance_court_id,
         ct.item_id AS case_type_id,
         cg.item_id AS case_group_id,
         pl.item_id AS procedure_law_id,
@@ -532,6 +600,8 @@ resolved AS (
         rs.item_id AS resolution_status_id
     FROM source_rows sr
     CROSS JOIN courts court
+    LEFT JOIN first_instance_court_seed fics ON fics.court_code = sr.first_instance_court_code
+    LEFT JOIN courts fic ON fic.court_code = sr.first_instance_court_code
     LEFT JOIN dm_categories ct_cat ON ct_cat.category_code = 'case_type'
     LEFT JOIN dm_category_items ct ON ct.category_id = ct_cat.category_id AND ct.item_code = sr.case_type::text
     LEFT JOIN dm_categories cg_cat ON cg_cat.category_code = 'case_group'
@@ -550,13 +620,17 @@ INSERT INTO case_files (
     court_id, case_code, case_number, case_type, case_group, procedure_law,
     filing_date, acceptance_date, current_stage, case_status, resolution_status,
     closed_date, summary, case_type_id, case_group_id, procedure_law_id,
-    current_stage_id, case_status_id, resolution_status_id
+    current_stage_id, case_status_id, resolution_status_id,
+    first_instance_court_id, first_instance_case_number,
+    first_instance_judgment_number, first_instance_judgment_date
 )
 SELECT
     court_id, case_code, case_number, case_type, case_group, procedure_law,
     filing_date, acceptance_date, current_stage, case_status, resolution_status,
     closed_date, summary, case_type_id, case_group_id, procedure_law_id,
-    current_stage_id, case_status_id, resolution_status_id
+    current_stage_id, case_status_id, resolution_status_id,
+    first_instance_court_id, first_instance_case_number,
+    first_instance_judgment_number, first_instance_judgment_date
 FROM resolved
 ON CONFLICT (case_code) DO UPDATE SET
     court_id = EXCLUDED.court_id,
@@ -577,6 +651,10 @@ ON CONFLICT (case_code) DO UPDATE SET
     current_stage_id = EXCLUDED.current_stage_id,
     case_status_id = EXCLUDED.case_status_id,
     resolution_status_id = EXCLUDED.resolution_status_id,
+    first_instance_court_id = EXCLUDED.first_instance_court_id,
+    first_instance_case_number = EXCLUDED.first_instance_case_number,
+    first_instance_judgment_number = EXCLUDED.first_instance_judgment_number,
+    first_instance_judgment_date = EXCLUDED.first_instance_judgment_date,
     updated_at = CURRENT_TIMESTAMP;
 
 COMMIT;
@@ -946,6 +1024,33 @@ WHERE NOT EXISTS (
       AND d.decision_type = r.decision_type
       AND COALESCE(d.decision_number, '') = COALESCE(r.decision_number, '')
 );
+
+WITH src(case_code, decision_type, decision_number, decision_date, result_code, result_summary, is_final) AS (
+    VALUES
+{values_block(decision_rows) if decision_rows else "        (NULL, NULL, NULL, NULL, NULL, NULL, NULL)"}
+),
+resolved AS (
+    SELECT cf.case_id, src.*, dtype.item_id AS decision_type_id, result_item.item_id AS result_code_id
+    FROM src
+    JOIN case_files cf ON cf.case_code = src.case_code
+    LEFT JOIN dm_categories dtype_cat ON dtype_cat.category_code = 'decision_type'
+    LEFT JOIN dm_category_items dtype ON dtype.category_id = dtype_cat.category_id AND dtype.item_code = src.decision_type
+    LEFT JOIN dm_categories result_cat ON result_cat.category_code = 'appellate_result'
+    LEFT JOIN dm_category_items result_item ON result_item.category_id = result_cat.category_id AND result_item.item_code = src.result_code
+    WHERE src.case_code IS NOT NULL
+)
+UPDATE decisions d
+SET
+    decision_date = COALESCE(r.decision_date, d.decision_date),
+    result_code = COALESCE(r.result_code, d.result_code),
+    result_summary = COALESCE(r.result_summary, d.result_summary),
+    is_final = COALESCE(r.is_final, d.is_final),
+    decision_type_id = COALESCE(r.decision_type_id, d.decision_type_id),
+    result_code_id = COALESCE(r.result_code_id, d.result_code_id)
+FROM resolved r
+WHERE d.case_id = r.case_id
+  AND d.decision_type = r.decision_type
+  AND COALESCE(d.decision_number, '') = COALESCE(r.decision_number, '');
 
 WITH src(case_code, appeal_type, appellant_type, appeal_date, appeal_scope, appeal_status) AS (
     VALUES

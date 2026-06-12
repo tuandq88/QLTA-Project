@@ -44,6 +44,7 @@ Các nhóm bảng chính:
 Migration status:
 
 - Active upgrade migrations: `006_trial_level_and_hearing_members.sql`, `007_case_occurrences_and_resolution_events.sql`, `008_criminal_appellate_defendant_results.sql`.
+- Active upgrade migration mới: `009_appellate_first_instance_court.sql` bổ sung `case_files.first_instance_court_id` và metadata bản án sơ thẩm cho án phúc thẩm.
 - Merged/idempotent history: `002`, `003`, `004`, `005` đã được đồng bộ phần ổn định vào unified schema nhưng vẫn giữ để tham chiếu/nâng cấp theo baseline phù hợp.
 - Core baseline riêng: `001_core_database_schema.sql` chỉ tạo core schema, không đại diện toàn bộ database.
 - Legacy extension migrations: `random_assignment_schema_extension.sql`, `appeal_protest_tracking_schema_extension.sql`; không chạy mặc định vì đã được gộp vào unified schema và có nguy cơ trùng bảng.
@@ -56,6 +57,7 @@ Seed production/reference nằm trong `database/seed/*.sql`, chạy theo thứ t
 003_reference_data_seed.sql
 004_statistical_reference_data_seed.sql
 010_legal_seed_data_tand_vietnam.sql
+011_courts_quang_ngai.sql
 020_excel_seed_case_categories.sql
 021_excel_seed_criminal_categories.sql
 022_excel_seed_civil_categories.sql
@@ -75,6 +77,7 @@ Seed test-only:
 
 - `database/seed/test/040_test_criminal_first_instance_return_lifecycle.sql`
 - `database/seed/test/050_test_criminal_appellate_defendant_results.sql`
+- `database/seed/test/060_test_appellate_first_instance_courts.sql`
 
 Seed phải idempotent, không chứa secret, không chứa dữ liệu cá nhân thật và không được đưa seed test vào luồng production.
 
@@ -94,6 +97,7 @@ Chạy thêm nếu các module liên quan tồn tại:
 .\tests\database\run_criminal_return_lifecycle_skill_check.ps1 -DatabaseName qlta_schema_merge_test
 .\tests\database\run_criminal_appellate_defendant_result_skill_check.ps1 -DatabaseName qlta_schema_merge_test
 .\tests\database\run_trial_level_and_hearing_members_check.ps1 -DatabaseName qlta_schema_merge_test
+.\tests\database\run_appellate_first_instance_court_check.ps1 -DatabaseName qlta_schema_merge_test
 ```
 
 Các script database phải đọc cấu hình từ `.env.local` hoặc environment variables `PGHOST`, `PGPORT`, `PGUSER`, `PGPASSWORD`, `PGDATABASE`, `DATABASE_URL`. Không hard-code mật khẩu.

@@ -123,6 +123,10 @@ CREATE TABLE IF NOT EXISTS case_files (
     has_foreign_element BOOLEAN DEFAULT FALSE,
     is_minor_related BOOLEAN DEFAULT FALSE,
     is_confidential BOOLEAN DEFAULT FALSE,
+    first_instance_court_id UUID,
+    first_instance_case_number VARCHAR(100),
+    first_instance_judgment_number VARCHAR(100),
+    first_instance_judgment_date DATE,
     closed_date DATE,
     summary TEXT,
     created_by UUID REFERENCES users(user_id),
@@ -1362,7 +1366,11 @@ ALTER TABLE case_files
     ADD COLUMN IF NOT EXISTS case_group_id UUID,
     ADD COLUMN IF NOT EXISTS procedure_law_id UUID,
     ADD COLUMN IF NOT EXISTS current_stage_id UUID,
-    ADD COLUMN IF NOT EXISTS resolution_status_id UUID;
+    ADD COLUMN IF NOT EXISTS resolution_status_id UUID,
+    ADD COLUMN IF NOT EXISTS first_instance_court_id UUID,
+    ADD COLUMN IF NOT EXISTS first_instance_case_number VARCHAR(100),
+    ADD COLUMN IF NOT EXISTS first_instance_judgment_number VARCHAR(100),
+    ADD COLUMN IF NOT EXISTS first_instance_judgment_date DATE;
 ALTER TABLE participants ADD COLUMN IF NOT EXISTS participant_type_id UUID;
 ALTER TABLE documents ADD COLUMN IF NOT EXISTS document_type_id UUID;
 ALTER TABLE decisions
@@ -1594,6 +1602,10 @@ BEGIN
         ALTER TABLE appellate_fault_assessments ADD CONSTRAINT chk_appellate_fault_subjective_requires_reason
             CHECK (fault_classification <> 'subjective' OR fault_reason_group IS NOT NULL);
     END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'fk_case_files_first_instance_court') THEN
+        ALTER TABLE case_files ADD CONSTRAINT fk_case_files_first_instance_court
+            FOREIGN KEY (first_instance_court_id) REFERENCES courts(court_id) ON DELETE RESTRICT;
+    END IF;
 END $$;
 
 -- ---------------------------------------------------------------------
@@ -1602,6 +1614,7 @@ END $$;
 
 CREATE INDEX IF NOT EXISTS idx_users_court ON users(court_id);
 CREATE INDEX IF NOT EXISTS idx_case_files_court ON case_files(court_id);
+CREATE INDEX IF NOT EXISTS idx_case_files_first_instance_court_id ON case_files(first_instance_court_id);
 CREATE INDEX IF NOT EXISTS idx_case_files_type_status ON case_files(case_type, case_status);
 CREATE INDEX IF NOT EXISTS idx_case_files_acceptance_date ON case_files(acceptance_date);
 CREATE INDEX IF NOT EXISTS idx_case_occurrences_case_acceptance ON case_occurrences(case_id, acceptance_date);

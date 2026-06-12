@@ -47,7 +47,28 @@ Hướng dẫn thiết kế schema, migration, seed và test database cho QLTA-P
 - Không group theo `case_id` nếu nghiệp vụ yêu cầu occurrence-level hoặc defendant-level.
 - Formula/validation phải truy xuất được nguồn từ skill, data dictionary hoặc tài liệu pháp lý.
 
-## 8. Skill Follow-up
+## 8. Appellate Court Metadata Rule
+
+- Với án phúc thẩm phải phân biệt:
+  - `case_files.court_id`: tòa án đang quản lý/xét xử hồ sơ hiện tại, với án phúc thẩm là tòa phúc thẩm/current court.
+  - `case_files.first_instance_court_id`: tòa án đã xét xử sơ thẩm, tức tòa có bản án/quyết định bị kháng cáo/kháng nghị.
+- Không dùng một `court_id` để biểu thị đồng thời cả tòa phúc thẩm và tòa sơ thẩm.
+- Query group/list án phúc thẩm theo tòa sơ thẩm phải join `courts` qua `case_files.first_instance_court_id`.
+- Nếu thiếu `first_instance_court_id`, query phải hiển thị/cảnh báo `MISSING_FIRST_INSTANCE_COURT`; không fallback im lặng thành TAND tỉnh.
+- Validation cần kiểm tra:
+  - án `PHUC_THAM` phải có `first_instance_court_id` khi dữ liệu đầu vào có thể xác định;
+  - `first_instance_court_id` join được `courts`;
+  - `first_instance_court_id` phải khác `court_id` khi `court_id` là tòa phúc thẩm/current court cấp tỉnh;
+
+## 9. Appellate Result Metadata Rule
+
+- Kết quả xét xử phúc thẩm từ Excel như `Kết quả XXPT` phải có nơi lưu rõ ràng, tối thiểu `decisions.result_summary/result_code` hoặc bảng appellate result tương ứng.
+- Không dùng `resolution_status` chung chung nếu không đủ biểu diễn nghiệp vụ hủy/sửa/giữ nguyên/đình chỉ.
+- Chỉ set `case_files.closed_date`, `decisions.decision_date`, `appellate_results.result_date` khi có ngày nguồn hợp lệ như `Ngày BA/QĐ PT` hoặc `Ngày xử`; không tự bịa ngày.
+- Nếu có result text nhưng thiếu ngày hợp lệ, phải lưu result text và gắn cảnh báo validation/list như `XXPT_RESULT_WITHOUT_DATE`.
+  - nếu có `court_level`, tòa sơ thẩm nên thuộc cấp khu vực/huyện hoặc cấp sơ thẩm tương ứng.
+
+## 9. Skill Follow-up
 
 Nếu schema change tạo ra logic dùng lại được, phải cập nhật hoặc tạo skill cho:
 
