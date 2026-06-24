@@ -133,6 +133,7 @@ Nguyên tắc chính:
 ## 8. Current Active Skills
 
 - UI/UX Design Agent: `agents/UI_UX_DESIGN_AGENT.md`, `skills/ui_ux_design_skill_pack.md`, `prompts/ui_screen_generation_prompt.md`
+- Backend Design Agent: `agents/BACKEND_DESIGN_AGENT.md`, `skills/backend_api_agent_skill.md`, `prompts/backend_module_design_prompt.md`
 - Tổng quan thống kê: `knowledge_base/skills/statistics/skill_thong_ke_tat_ca_loai_an.md`
 - Hình sự: `knowledge_base/skills/statistics/skill_thong_ke_hinh_su.md`
 - Hình sự sơ thẩm trả hồ sơ VKS: `knowledge_base/skills/statistics/skill_criminal_first_instance_return_to_procuracy_list.md`
@@ -151,9 +152,10 @@ Nguyên tắc chính:
 3. Nếu task liên quan database, đọc `database/schema/unified_postgresql_schema.sql`, `database/schema/DATABASE_TABLES_DATA_DICTIONARY_VI.md` và migration liên quan.
 4. Nếu task liên quan pháp luật/biểu mẫu, đối chiếu `Documents/` hoặc `docs/legal/` nếu có.
 5. Nếu task thiết kế UI/UX, dùng `agents/UI_UX_DESIGN_AGENT.md`, `skills/ui_ux_design_skill_pack.md`, các skill con trong `skills/` và `prompts/ui_screen_generation_prompt.md`; không sửa backend/database/thống kê nếu chưa được giao rõ.
-6. Khi sửa schema, cập nhật migration, unified schema, data dictionary, seed/test và README liên quan.
-7. Khi sửa logic tái sử dụng, cập nhật hoặc tạo skill.
-8. Chạy test phù hợp và ghi báo cáo kết quả.
+6. Nếu task thiết kế backend/API, dùng `agents/BACKEND_DESIGN_AGENT.md`, `skills/backend_api_agent_skill.md`, `prompts/backend_module_design_prompt.md` và skill nền `knowledge_base/skills/system/backend_api_design_rules.md`.
+7. Khi sửa schema, cập nhật migration, unified schema, data dictionary, seed/test và README liên quan.
+8. Khi sửa logic tái sử dụng, cập nhật hoặc tạo skill.
+9. Chạy test phù hợp và ghi báo cáo kết quả.
 
 ## 10. Cleanup/Archive Policy
 
@@ -174,6 +176,7 @@ Nguyên tắc chính:
 - [x] Chuẩn hóa án hình sự phúc thẩm theo từng bị cáo.
 - [x] Bổ sung quy tắc naming English cho technical objects.
 - [x] Bổ sung rule AI Agent về cập nhật skill sau task.
+- [x] Bổ sung BACKEND_DESIGN_AGENT cho thiết kế backend/API.
 
 ## 12. Approved Plans
 
