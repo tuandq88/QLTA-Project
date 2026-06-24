@@ -47,3 +47,25 @@ Hướng dẫn thiết kế UI nhập liệu, danh sách, chi tiết, report và
 - Validation.
 - Edge cases.
 - Test UI.
+
+## 8. UI/UX Design Agent
+
+Khi cần thiết kế màn hình, component, layout, form, dashboard hoặc prototype, có thể gọi `UI_UX_DESIGN_AGENT` theo cấu hình:
+
+```text
+agents/UI_UX_DESIGN_AGENT.md
+skills/ui_ux_design_skill_pack.md
+prompts/ui_screen_generation_prompt.md
+```
+
+Agent này chỉ thiết kế UI/UX, không sửa backend, database, schema, seed, công thức thống kê hoặc logic nghiệp vụ nếu task không yêu cầu rõ.
+
+Bộ skill UI/UX miễn phí đi kèm:
+
+```text
+skills/design_system_skill.md
+skills/form_design_skill.md
+skills/dashboard_design_skill.md
+skills/data_table_design_skill.md
+skills/validation_ui_skill.md
+```
