@@ -190,7 +190,9 @@ Nguyên tắc chính:
 ## 13. Suggested Next Plans
 
 - [ ] Sinh API contract từ schema hiện tại.
-- [ ] Thiết kế backend modules theo bounded context.
+- [x] Thiết kế backend modules theo bounded context.
+- [x] Scaffold backend Fastify/TypeScript nền tảng trong `backend/`.
+- [x] Bật chế độ backend local-no-auth và tạo request mẫu kiểm thử API nền.
 - [ ] Thiết kế frontend nhập liệu hồ sơ vụ án.
 - [ ] Thiết kế frontend list/report thống kê.
 - [ ] Thiết kế validation engine cho biểu mẫu thống kê.

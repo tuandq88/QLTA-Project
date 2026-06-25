@@ -1,0 +1,138 @@
+@baseUrl = http://127.0.0.1:3000
+
+### Health
+GET {{baseUrl}}/health
+
+### Health database
+GET {{baseUrl}}/health/db
+
+### Current local user when AUTH_REQUIRED=false
+GET {{baseUrl}}/auth/me
+
+### Courts list
+GET {{baseUrl}}/api/courts?page=1&pageSize=20&search=Quang
+
+### Categories list
+GET {{baseUrl}}/api/categories?page=1&pageSize=20
+
+### Category items by category code
+GET {{baseUrl}}/api/categories/case_group/items
+
+### Cases list
+GET {{baseUrl}}/api/cases?page=1&pageSize=20
+
+### Cases filtered by court/status/type
+GET {{baseUrl}}/api/cases?page=1&pageSize=20&court_id=00000000-0000-0000-0000-000000000000&case_status=accepted&case_type=criminal
+
+### Create case sample
+POST {{baseUrl}}/api/cases
+Content-Type: application/json
+
+{
+  "court_id": "00000000-0000-0000-0000-000000000000",
+  "case_number": "LOCAL-TEST-001",
+  "case_type": "criminal",
+  "case_group": "SO_THAM",
+  "filing_date": "2026-06-25",
+  "acceptance_date": "2026-06-25",
+  "case_status": "accepted",
+  "summary": "Ho so kiem thu API local, khong dung du lieu ca nhan that."
+}
+
+### Update case sample
+PATCH {{baseUrl}}/api/cases/00000000-0000-0000-0000-000000000000
+Content-Type: application/json
+
+{
+  "current_stage": "PREPARING_TRIAL",
+  "summary": "Cap nhat thu nghiem API local."
+}
+
+### Case occurrences list
+GET {{baseUrl}}/api/case-occurrences?page=1&pageSize=20
+
+### Create occurrence sample
+POST {{baseUrl}}/api/case-occurrences
+Content-Type: application/json
+
+{
+  "case_id": "00000000-0000-0000-0000-000000000000",
+  "occurrence_no": 1,
+  "acceptance_date": "2026-06-25",
+  "acceptance_type_code": "INITIAL_ACCEPTANCE",
+  "source_note": "Tao bang API local."
+}
+
+### Resolution events list
+GET {{baseUrl}}/api/case-resolution-events?page=1&pageSize=20
+
+### Create resolution event sample
+POST {{baseUrl}}/api/case-resolution-events
+Content-Type: application/json
+
+{
+  "case_id": "00000000-0000-0000-0000-000000000000",
+  "occurrence_id": "00000000-0000-0000-0000-000000000000",
+  "event_type_code": "RESOLUTION",
+  "event_date": "2026-06-25",
+  "resolution_type_code": "JUDGMENT",
+  "counted_as_resolved": true
+}
+
+### Participants list
+GET {{baseUrl}}/api/participants?page=1&pageSize=20
+
+### Create participant sample
+POST {{baseUrl}}/api/participants
+Content-Type: application/json
+
+{
+  "case_id": "00000000-0000-0000-0000-000000000000",
+  "participant_type": "DEFENDANT",
+  "full_name": "Nguoi kiem thu",
+  "note": "Du lieu mau local, khong phai du lieu that."
+}
+
+### Hearings list
+GET {{baseUrl}}/api/hearings?page=1&pageSize=20
+
+### Create hearing sample
+POST {{baseUrl}}/api/hearings
+Content-Type: application/json
+
+{
+  "case_id": "00000000-0000-0000-0000-000000000000",
+  "hearing_type": "FIRST_INSTANCE",
+  "scheduled_date": "2026-07-01",
+  "scheduled_time": "08:00",
+  "courtroom": "Phong xu an 01"
+}
+
+### Hearing members list
+GET {{baseUrl}}/api/hearing-members?page=1&pageSize=20
+
+### Statistics snapshots readonly
+GET {{baseUrl}}/api/statistics/snapshots?page=1&pageSize=20
+
+### KPI values readonly
+GET {{baseUrl}}/api/statistics/kpi-values?page=1&pageSize=20
+
+### Validation results list
+GET {{baseUrl}}/api/validation-results?page=1&pageSize=20
+
+### Create validation result sample
+POST {{baseUrl}}/api/validation-results
+Content-Type: application/json
+
+{
+  "case_id": "00000000-0000-0000-0000-000000000000",
+  "rule_code": "LOCAL_TEST_WARNING",
+  "severity": "WARNING",
+  "message": "Canh bao kiem thu API local.",
+  "field_name": "case_id",
+  "checked_by": "local-no-auth",
+  "suggested_action": "Kiem tra lai du lieu mau truoc khi dung."
+}
+
+### Audit logs
+GET {{baseUrl}}/api/audit-logs?page=1&pageSize=20

@@ -68,7 +68,7 @@ Mỗi lần thiết kế backend phải xuất đủ:
 
 ## Skill sử dụng chính
 
-- `skills/backend_design_skill.md`
+- `skills/backend_api_agent_skill.md`
 - `knowledge_base/skills/system/backend_api_design_rules.md`
 - `knowledge_base/skills/system/database_design_rules.md`
 

@@ -1,0 +1,108 @@
+{
+  "info": {
+    "name": "QLTA Backend Local",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/health"
+      }
+    },
+    {
+      "name": "Health DB",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/health/db"
+      }
+    },
+    {
+      "name": "Local user",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/auth/me"
+      }
+    },
+    {
+      "name": "Courts list",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/courts?page=1&pageSize=20"
+      }
+    },
+    {
+      "name": "Categories list",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/categories?page=1&pageSize=20"
+      }
+    },
+    {
+      "name": "Cases list",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/cases?page=1&pageSize=20"
+      }
+    },
+    {
+      "name": "Create case sample",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"court_id\": \"00000000-0000-0000-0000-000000000000\",\n  \"case_number\": \"LOCAL-TEST-001\",\n  \"case_type\": \"criminal\",\n  \"case_group\": \"SO_THAM\",\n  \"filing_date\": \"2026-06-25\",\n  \"acceptance_date\": \"2026-06-25\",\n  \"case_status\": \"accepted\",\n  \"summary\": \"Ho so kiem thu API local, khong dung du lieu ca nhan that.\"\n}"
+        },
+        "url": "{{baseUrl}}/api/cases"
+      }
+    },
+    {
+      "name": "Participants list",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/participants?page=1&pageSize=20"
+      }
+    },
+    {
+      "name": "Hearings list",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/hearings?page=1&pageSize=20"
+      }
+    },
+    {
+      "name": "Statistics snapshots",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/statistics/snapshots?page=1&pageSize=20"
+      }
+    },
+    {
+      "name": "Validation results list",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/validation-results?page=1&pageSize=20"
+      }
+    },
+    {
+      "name": "Audit logs list",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/audit-logs?page=1&pageSize=20"
+      }
+    }
+  ]
+}
