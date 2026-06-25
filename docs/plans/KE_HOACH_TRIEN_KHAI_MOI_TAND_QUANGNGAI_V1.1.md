@@ -30,6 +30,12 @@ Xây dựng hệ thống quản lý và điều hành TAND hai cấp tỉnh Qu�
 12. Dự báo khối lượng án.
 ```
 
+Nguyên tắc kỳ báo cáo chung:
+
+- Năm công tác của Tòa án được tính từ ngày 01/10 của năm trước đến ngày 30/09 của năm công tác.
+- Ví dụ: năm công tác 2026 được tính từ ngày 01/10/2025 đến hết ngày 30/09/2026.
+- Các báo cáo năm, dashboard KPI và bộ lọc thống kê theo `working_year` phải dùng nguyên tắc này, không mặc định theo năm dương lịch nếu không có yêu cầu rõ.
+
 ---
 
 ## 3. Kiến trúc triển khai

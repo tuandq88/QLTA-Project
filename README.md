@@ -118,6 +118,7 @@ Nguyên tắc chính:
 
 - Không bịa luật, biểu mẫu, chỉ tiêu, công thức hoặc căn cứ pháp lý.
 - Không cho phép đếm trùng số liệu thống kê.
+- Năm công tác của Tòa án được tính từ ngày 01/10 của năm trước đến ngày 30/09 của năm công tác; ví dụ năm công tác 2026 là từ 01/10/2025 đến 30/09/2026.
 - AI chỉ được ghi đề xuất/cảnh báo/validation; không tự ghi đè dữ liệu chính.
 - Khi thay đổi schema, phải cập nhật `database/`, README liên quan, data dictionary và test.
 - Sau mỗi task, AI Agent phải kiểm tra có rule/logic/mapping/SQL/API/UI pattern nào cần ghi lại thành skill để tái sử dụng không.
@@ -135,6 +136,7 @@ Nguyên tắc chính:
 - UI/UX Design Agent: `agents/UI_UX_DESIGN_AGENT.md`, `skills/ui_ux_design_skill_pack.md`, `prompts/ui_screen_generation_prompt.md`
 - Backend Design Agent: `agents/BACKEND_DESIGN_AGENT.md`, `skills/backend_api_agent_skill.md`, `prompts/backend_module_design_prompt.md`
 - Tổng quan thống kê: `knowledge_base/skills/statistics/skill_thong_ke_tat_ca_loai_an.md`
+- Năm công tác Tòa án: `knowledge_base/skills/statistics/skill_court_working_year.md`
 - Hình sự: `knowledge_base/skills/statistics/skill_thong_ke_hinh_su.md`
 - Hình sự sơ thẩm trả hồ sơ VKS: `knowledge_base/skills/statistics/skill_criminal_first_instance_return_to_procuracy_list.md`
 - Hình sự phúc thẩm theo từng bị cáo: `knowledge_base/skills/statistics/skill_criminal_appellate_defendant_result_rules.md`

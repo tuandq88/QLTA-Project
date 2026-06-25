@@ -441,6 +441,25 @@ Không được tự kết luận lỗi chủ quan nếu chưa có căn cứ.
 
 ## 11. Rule KPI và thống kê
 
+### 11.1. Rule năm công tác Tòa án
+
+Năm công tác của Tòa án được tính từ ngày 01/10 của năm trước đến ngày 30/09 của năm công tác.
+
+Ví dụ:
+
+```text
+Năm công tác 2026 = từ ngày 01/10/2025 đến hết ngày 30/09/2026.
+```
+
+Khi API, báo cáo, dashboard, KPI, truy vấn AI hoặc bộ lọc dữ liệu dùng `working_year = Y`, AI Agent phải quy đổi:
+
+```text
+from_date = (Y - 1)-10-01
+to_date   = Y-09-30
+```
+
+Không dùng mặc định năm dương lịch 01/01-31/12 cho báo cáo theo năm công tác Tòa án nếu không có yêu cầu rõ.
+
 AI Agent phải tính KPI từ dữ liệu chuẩn hóa, không tính từ text tự do.
 
 KPI bắt buộc:

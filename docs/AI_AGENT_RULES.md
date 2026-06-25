@@ -8,6 +8,13 @@
 - Không ghi đè audit log, kết quả phân công án, kết quả cấp trên hoặc dữ liệu chính khi chưa có workflow xác nhận.
 - Không sửa schema nghiệp vụ nếu task chỉ là cleanup/tài liệu, trừ cập nhật tài liệu hoặc index an toàn.
 
+## 1.1. Court Working Year Rule
+
+- Năm công tác của Tòa án được tính từ ngày 01/10 của năm trước đến ngày 30/09 của năm công tác.
+- Ví dụ: năm công tác 2026 được tính từ ngày 01/10/2025 đến hết ngày 30/09/2026.
+- Khi API, báo cáo, dashboard, KPI hoặc bộ lọc dùng `working_year = Y`, phải quy đổi thành `from_date = (Y - 1)-10-01` và `to_date = Y-09-30`.
+- Không dùng mặc định năm dương lịch 01/01-31/12 cho báo cáo theo năm công tác Tòa án nếu không có yêu cầu rõ.
+
 ## 2. Database Naming Convention
 
 - Technical object names phải dùng tiếng Anh: table, column, enum, index, constraint, function, view, trigger, migration file.
