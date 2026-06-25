@@ -40,6 +40,8 @@ npm run dev
 - `GET /api/category-items`
 - `GET /api/categories/:categoryCode/items`
 - `GET|POST|PATCH /api/cases`
+- `GET /api/cases/worklist`
+- `GET /api/cases/:id/overview`
 - `GET|POST|PATCH /api/case-occurrences`
 - `GET|POST|PATCH /api/case-resolution-events`
 - `GET|POST|PATCH /api/participants`

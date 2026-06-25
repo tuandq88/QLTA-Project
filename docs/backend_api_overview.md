@@ -14,6 +14,8 @@ Backend hiện thực lớp API nền cho các bảng đã có trong `database/s
 | Courts | `/api/courts` | Danh mục Tòa án chỉ đọc. |
 | Categories | `/api/categories`, `/api/category-items` | Danh mục dùng chung chỉ đọc. |
 | Cases | `/api/cases` | Quản lý `case_files` theo schema hiện có. |
+| Case worklist | `/api/cases/worklist` | Danh sách hồ sơ đã join Tòa án và count dữ liệu liên quan cho màn hình quản lý. |
+| Case overview | `/api/cases/:id/overview` | Gom hồ sơ, occurrence, participant, hearing, validation và audit liên quan để frontend đọc một lần. |
 | Case occurrences | `/api/case-occurrences`, `/api/case-resolution-events` | Theo dõi vòng đời thụ lý/giải quyết, chống gộp sai occurrence. |
 | Participants | `/api/participants` | Người tham gia tố tụng theo schema. |
 | Hearings | `/api/hearings`, `/api/hearing-members` | Phiên tòa và thành phần phiên tòa, dùng role code chuẩn. |
@@ -50,7 +52,7 @@ Giai đoạn này chưa dùng đăng nhập/phân quyền. Backend mặc định
 
 ## Smoke test
 
-Script `tests/backend/run_local_case_flow_smoke.ps1` kiểm thử flow nền: health DB, local-no-auth, tạo hồ sơ, occurrence, participant, hearing, validation result và kiểm tra audit log.
+Script `tests/backend/run_local_case_flow_smoke.ps1` kiểm thử flow nền: health DB, local-no-auth, tạo hồ sơ, occurrence, participant, hearing, validation result, case worklist, case overview và kiểm tra audit log.
 
 ## Rủi ro cần kiểm tra
 

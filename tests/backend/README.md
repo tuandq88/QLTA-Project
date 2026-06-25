@@ -23,5 +23,5 @@ Script sẽ:
 - lấy một Tòa án từ `/api/courts`;
 - tạo hồ sơ local mẫu trong `/api/cases`;
 - tạo occurrence, participant, hearing và validation result;
-- đọc lại dữ liệu liên quan;
+- đọc lại dữ liệu liên quan, endpoint worklist và endpoint overview;
 - kiểm tra audit log của thao tác tạo hồ sơ.

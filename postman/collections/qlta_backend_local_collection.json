@@ -53,6 +53,13 @@
       }
     },
     {
+      "name": "Cases worklist",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/cases/worklist?page=1&pageSize=20&case_type=criminal&case_group=SO_THAM&case_status=accepted&search=LOCAL"
+      }
+    },
+    {
       "name": "Create case sample",
       "request": {
         "method": "POST",
@@ -67,6 +74,13 @@
           "raw": "{\n  \"court_id\": \"00000000-0000-0000-0000-000000000000\",\n  \"case_number\": \"LOCAL-TEST-001\",\n  \"case_type\": \"criminal\",\n  \"case_group\": \"SO_THAM\",\n  \"filing_date\": \"2026-06-25\",\n  \"acceptance_date\": \"2026-06-25\",\n  \"case_status\": \"accepted\",\n  \"summary\": \"Ho so kiem thu API local, khong dung du lieu ca nhan that.\"\n}"
         },
         "url": "{{baseUrl}}/api/cases"
+      }
+    },
+    {
+      "name": "Case overview",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/cases/00000000-0000-0000-0000-000000000000/overview"
       }
     },
     {

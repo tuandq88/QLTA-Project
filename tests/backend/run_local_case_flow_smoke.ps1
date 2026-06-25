@@ -95,6 +95,18 @@ $validation = Invoke-QltaApi -Method "POST" -Path "/api/validation-results" -Bod
 $caseRead = Invoke-QltaApi -Method "GET" -Path "/api/cases/$caseId"
 Assert-True ($caseRead.data.case_id -eq $caseId) "Case detail mismatch"
 
+$worklist = Invoke-QltaApi -Method "GET" -Path "/api/cases/worklist?page=1&pageSize=20&court_id=$courtId&case_type=criminal&case_status=accepted&search=LOCAL-SMOKE-$suffix"
+$worklistRows = @($worklist.data)
+$worklistCase = @($worklistRows | Where-Object { $_.case_id -eq $caseId })
+Assert-True ($worklistRows.Count -ge 1) "Worklist did not include created case"
+Assert-True ($worklistCase.Count -ge 1) "Worklist filter did not return created case"
+Assert-True ($worklistCase[0].participant_count -ge 1) "Worklist participant count mismatch"
+Assert-True ($worklistCase[0].hearing_count -ge 1) "Worklist hearing count mismatch"
+Assert-True ($worklistCase[0].occurrence_count -ge 1) "Worklist occurrence count mismatch"
+
+$overview = Invoke-QltaApi -Method "GET" -Path "/api/cases/$caseId/overview"
+Assert-True ($overview.data.case.case_id -eq $caseId) "Case overview mismatch"
+
 $participants = Invoke-QltaApi -Method "GET" -Path "/api/participants?page=1&pageSize=20&case_id=$caseId"
 $hearings = Invoke-QltaApi -Method "GET" -Path "/api/hearings?page=1&pageSize=20&case_id=$caseId"
 $occurrences = Invoke-QltaApi -Method "GET" -Path "/api/case-occurrences?page=1&pageSize=20&case_id=$caseId"
@@ -104,6 +116,10 @@ Assert-True ($participants.data.Count -ge 1) "Participant list did not include c
 Assert-True ($hearings.data.Count -ge 1) "Hearing list did not include created record"
 Assert-True ($occurrences.data.Count -ge 1) "Occurrence list did not include created record"
 Assert-True ($validations.data.Count -ge 1) "Validation list did not include created record"
+Assert-True ($overview.data.participants.Count -ge 1) "Overview did not include participants"
+Assert-True ($overview.data.hearings.Count -ge 1) "Overview did not include hearings"
+Assert-True ($overview.data.occurrences.Count -ge 1) "Overview did not include occurrences"
+Assert-True ($overview.data.validationResults.Count -ge 1) "Overview did not include validation results"
 
 $audit = Invoke-QltaApi -Method "GET" -Path "/api/audit-logs?page=1&pageSize=20&record_id=$caseId"
 Assert-True ($audit.data.Count -ge 1) "Audit log did not include case create"
@@ -115,5 +131,16 @@ Assert-True ($audit.data.Count -ge 1) "Audit log did not include case create"
     participant_id = $participant.data.participant_id
     hearing_id = $hearing.data.hearing_id
     validation_id = $validation.data.validation_id
+    worklist_count = $worklistRows.Count
+    overview_sections = @(
+        "case",
+        "occurrences",
+        "resolutionEvents",
+        "participants",
+        "hearings",
+        "hearingMembers",
+        "validationResults",
+        "auditLogs"
+    )
     audit_count = $audit.data.Count
 } | ConvertTo-Json -Depth 5
