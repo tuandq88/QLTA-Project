@@ -74,6 +74,8 @@ Seed production/reference nằm trong `database/seed/*.sql`, chạy theo thứ t
 034_excel_seed_hearing_members.sql
 ```
 
+Catalog 12 biểu mẫu thống kê sơ thẩm/phúc thẩm (1A-6B) được seed trong `004_statistical_reference_data_seed.sql`; mapping thực thi nằm tại `knowledge_base/data/statistics/report_mapping_ab.json`.
+
 `database/seed/999_seed_all.sql` là ghi chú thứ tự, không dùng để chạy trùng seed.
 
 Seed test-only:
@@ -134,8 +136,11 @@ Nguyên tắc chính:
 ## 8. Current Active Skills
 
 - UI/UX Design Agent: `agents/UI_UX_DESIGN_AGENT.md`, `skills/ui_ux_design_skill_pack.md`, `prompts/ui_screen_generation_prompt.md`
+- TasteSkill frontend wrapper: `skills/design_taste_frontend_skill.md`, `.agents/skills/design-taste-frontend/SKILL.md`
 - Backend Design Agent: `agents/BACKEND_DESIGN_AGENT.md`, `skills/backend_api_agent_skill.md`, `prompts/backend_module_design_prompt.md`
 - Tổng quan thống kê: `knowledge_base/skills/statistics/skill_thong_ke_tat_ca_loai_an.md`
+- Xuất Excel 12 mẫu A/B: `knowledge_base/skills/statistics/skill_statistical_form_ab_export.md`
+- Báo cáo theo khoảng thời gian và trạng thái tại cuối kỳ: `knowledge_base/skills/statistics/skill_case_period_reporting.md`
 - Năm công tác Tòa án: `knowledge_base/skills/statistics/skill_court_working_year.md`
 - Hình sự: `knowledge_base/skills/statistics/skill_thong_ke_hinh_su.md`
 - Hình sự sơ thẩm trả hồ sơ VKS: `knowledge_base/skills/statistics/skill_criminal_first_instance_return_to_procuracy_list.md`
@@ -153,7 +158,7 @@ Nguyên tắc chính:
 2. Nếu task liên quan nghiệp vụ, đọc skill tương ứng trong `knowledge_base/skills/`.
 3. Nếu task liên quan database, đọc `database/schema/unified_postgresql_schema.sql`, `database/schema/DATABASE_TABLES_DATA_DICTIONARY_VI.md` và migration liên quan.
 4. Nếu task liên quan pháp luật/biểu mẫu, đối chiếu `Documents/` hoặc `docs/legal/` nếu có.
-5. Nếu task thiết kế UI/UX, dùng `agents/UI_UX_DESIGN_AGENT.md`, `skills/ui_ux_design_skill_pack.md`, các skill con trong `skills/` và `prompts/ui_screen_generation_prompt.md`; không sửa backend/database/thống kê nếu chưa được giao rõ.
+5. Nếu task thiết kế UI/UX, dùng `agents/UI_UX_DESIGN_AGENT.md`, `skills/ui_ux_design_skill_pack.md`, `skills/design_taste_frontend_skill.md`, các skill con trong `skills/` và `prompts/ui_screen_generation_prompt.md`; TasteSkill chỉ dùng để cải thiện frontend phù hợp hệ thống hành chính nhà nước, không sửa backend/database/thống kê nếu chưa được giao rõ.
 6. Nếu task thiết kế backend/API, dùng `agents/BACKEND_DESIGN_AGENT.md`, `skills/backend_api_agent_skill.md`, `prompts/backend_module_design_prompt.md` và skill nền `knowledge_base/skills/system/backend_api_design_rules.md`.
 7. Khi sửa schema, cập nhật migration, unified schema, data dictionary, seed/test và README liên quan.
 8. Khi sửa logic tái sử dụng, cập nhật hoặc tạo skill.

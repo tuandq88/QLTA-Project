@@ -21,6 +21,8 @@ Hướng dẫn thiết kế backend/API dựa trên schema đã chuẩn hóa c�
 ## 4. Quy tắc list/statistics API
 
 - API list thống kê phải hỗ trợ `from_date`, `to_date`, `as_of_date` khi nghiệp vụ cần.
+- Với báo cáo theo khoảng ngày, áp dụng `knowledge_base/skills/statistics/skill_case_period_reporting.md`: hai biên đều bao gồm và trạng thái phải được xác định tại `to_date`, không theo `case_status` hiện tại.
+- Hồ sơ có ngày giải quyết sau `to_date` không được tính đã giải quyết; API danh sách tồn phải trả `report_resolution_status = null` và ghi chú sau kỳ riêng.
 - Không group sai theo `case_id` nếu skill yêu cầu occurrence-level hoặc defendant-level.
 - Với hình sự sơ thẩm trả hồ sơ VKS, dùng occurrence/event theo skill `skill_criminal_first_instance_return_to_procuracy_list.md`.
 - Với hình sự phúc thẩm, kết quả phải theo `defendant_id` theo skill `skill_criminal_appellate_defendant_result_rules.md`.

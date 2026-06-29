@@ -123,6 +123,15 @@ GET {{baseUrl}}/api/statistics/snapshots?page=1&pageSize=20
 ### KPI values readonly
 GET {{baseUrl}}/api/statistics/kpi-values?page=1&pageSize=20
 
+### Statistical A/B forms
+GET {{baseUrl}}/api/statistics/forms
+
+### Preview civil first-instance form 2A
+GET {{baseUrl}}/api/statistics/reports/2A?from_date=2026-05-01&to_date=2026-05-31
+
+### Export civil first-instance form 2A as the source Excel template
+GET {{baseUrl}}/api/statistics/reports/2A/export?format=xlsx&from_date=2026-05-01&to_date=2026-05-31
+
 ### Validation results list
 GET {{baseUrl}}/api/validation-results?page=1&pageSize=20
 

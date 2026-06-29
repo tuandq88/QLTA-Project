@@ -206,10 +206,87 @@ ON CONFLICT (type_code) DO UPDATE SET
 
 INSERT INTO dm_statistical_forms (form_code, form_name, case_type_scope, report_period_type, legal_basis)
 VALUES
-    ('FORM_REVIEW_REQUIRED', 'Bieu mau thong ke can doi chieu Quyết định 287/QĐ-TANDTC va JSON trong knowledge_base', NULL, NULL, 'Documents/huong_dan_bm.pdf')
+    ('FORM_REVIEW_REQUIRED', 'Bieu mau thong ke can doi chieu Quyết định 287/QĐ-TANDTC va JSON trong knowledge_base', NULL, NULL, 'Documents/huong_dan_bm.pdf'),
+    ('HS_ST_1A', 'Hình sự sơ thẩm - Mẫu 1A', 'criminal', 'date_range', 'Documents/huong_dan_bm.pdf'),
+    ('HS_PT_1B', 'Hình sự phúc thẩm - Mẫu 1B', 'criminal', 'date_range', 'Documents/huong_dan_bm.pdf'),
+    ('DS_ST_2A', 'Dân sự sơ thẩm - Mẫu 2A', 'civil', 'date_range', 'Documents/huong_dan_bm.pdf'),
+    ('DS_PT_2B', 'Dân sự phúc thẩm - Mẫu 2B', 'civil', 'date_range', 'Documents/huong_dan_bm.pdf'),
+    ('HNGD_ST_3A', 'Hôn nhân gia đình sơ thẩm - Mẫu 3A', 'marriage_family', 'date_range', 'Documents/huong_dan_bm.pdf'),
+    ('HNGD_PT_3B', 'Hôn nhân gia đình phúc thẩm - Mẫu 3B', 'marriage_family', 'date_range', 'Documents/huong_dan_bm.pdf'),
+    ('KDTM_ST_4A', 'Kinh doanh thương mại sơ thẩm - Mẫu 4A', 'business_commercial', 'date_range', 'Documents/huong_dan_bm.pdf'),
+    ('KDTM_PT_4B', 'Kinh doanh thương mại phúc thẩm - Mẫu 4B', 'business_commercial', 'date_range', 'Documents/huong_dan_bm.pdf'),
+    ('LD_ST_5A', 'Lao động sơ thẩm - Mẫu 5A', 'labor', 'date_range', 'Documents/huong_dan_bm.pdf'),
+    ('LD_PT_5B', 'Lao động phúc thẩm - Mẫu 5B', 'labor', 'date_range', 'Documents/huong_dan_bm.pdf'),
+    ('HC_ST_6A', 'Hành chính sơ thẩm - Mẫu 6A', 'administrative', 'date_range', 'Documents/huong_dan_bm.pdf'),
+    ('HC_PT_6B', 'Hành chính phúc thẩm - Mẫu 6B', 'administrative', 'date_range', 'Documents/huong_dan_bm.pdf')
 ON CONFLICT (form_code) DO UPDATE SET
     form_name = EXCLUDED.form_name,
+    case_type_scope = EXCLUDED.case_type_scope,
+    report_period_type = EXCLUDED.report_period_type,
     legal_basis = EXCLUDED.legal_basis;
+
+-- Cấu trúc cột của 12 mẫu A/B. Tên nghiệp vụ chi tiết và nguồn join phức tạp
+-- được version hóa tại knowledge_base/data/statistics/report_mapping_ab.json.
+WITH form_columns(form_code, column_count) AS (
+    VALUES
+        ('HS_ST_1A', 91), ('HS_PT_1B', 77),
+        ('DS_ST_2A', 34), ('DS_PT_2B', 49),
+        ('HNGD_ST_3A', 36), ('HNGD_PT_3B', 49),
+        ('KDTM_ST_4A', 32), ('KDTM_PT_4B', 49),
+        ('LD_ST_5A', 35), ('LD_PT_5B', 49),
+        ('HC_ST_6A', 37), ('HC_PT_6B', 47)
+), items AS (
+    SELECT f.form_id,
+           series.column_no,
+           'C' || series.column_no::text AS item_code,
+           'Cột ' || series.column_no::text AS item_name
+    FROM form_columns fc
+    JOIN dm_statistical_forms f ON f.form_code = fc.form_code
+    CROSS JOIN LATERAL generate_series(1, fc.column_count) AS series(column_no)
+)
+INSERT INTO dm_statistical_form_items (form_id, item_code, item_name, input_control_type, sort_order)
+SELECT form_id, item_code, item_name,
+       CASE WHEN column_no = 1 THEN 'label' ELSE 'number' END,
+       column_no
+FROM items
+ON CONFLICT (form_id, item_code) DO UPDATE SET
+    item_name = EXCLUDED.item_name,
+    input_control_type = EXCLUDED.input_control_type,
+    sort_order = EXCLUDED.sort_order;
+
+WITH formula_targets(form_code, column_no) AS (
+    VALUES
+        ('HS_ST_1A', 9), ('HS_ST_1A', 10), ('HS_ST_1A', 37), ('HS_ST_1A', 38), ('HS_ST_1A', 39), ('HS_ST_1A', 40),
+        ('HS_PT_1B', 11), ('HS_PT_1B', 12), ('HS_PT_1B', 13), ('HS_PT_1B', 14), ('HS_PT_1B', 28), ('HS_PT_1B', 29), ('HS_PT_1B', 30), ('HS_PT_1B', 31), ('HS_PT_1B', 32), ('HS_PT_1B', 33), ('HS_PT_1B', 34), ('HS_PT_1B', 35),
+        ('DS_ST_2A', 6), ('DS_ST_2A', 10), ('DS_ST_2A', 11), ('DS_ST_2A', 14),
+        ('HNGD_ST_3A', 6), ('HNGD_ST_3A', 15), ('HNGD_ST_3A', 16),
+        ('KDTM_ST_4A', 6), ('KDTM_ST_4A', 12), ('KDTM_ST_4A', 13), ('KDTM_ST_4A', 14),
+        ('LD_ST_5A', 6), ('LD_ST_5A', 12), ('LD_ST_5A', 13), ('LD_ST_5A', 14),
+        ('HC_ST_6A', 6), ('HC_ST_6A', 9), ('HC_ST_6A', 13), ('HC_ST_6A', 15), ('HC_ST_6A', 17),
+        ('DS_PT_2B', 6), ('DS_PT_2B', 7), ('DS_PT_2B', 8), ('DS_PT_2B', 13), ('DS_PT_2B', 16), ('DS_PT_2B', 17), ('DS_PT_2B', 18), ('DS_PT_2B', 19), ('DS_PT_2B', 20), ('DS_PT_2B', 21), ('DS_PT_2B', 22),
+        ('HNGD_PT_3B', 6), ('HNGD_PT_3B', 7), ('HNGD_PT_3B', 8), ('HNGD_PT_3B', 13), ('HNGD_PT_3B', 16), ('HNGD_PT_3B', 17), ('HNGD_PT_3B', 18), ('HNGD_PT_3B', 19), ('HNGD_PT_3B', 20), ('HNGD_PT_3B', 21), ('HNGD_PT_3B', 22),
+        ('KDTM_PT_4B', 6), ('KDTM_PT_4B', 7), ('KDTM_PT_4B', 8), ('KDTM_PT_4B', 13), ('KDTM_PT_4B', 16), ('KDTM_PT_4B', 17), ('KDTM_PT_4B', 18), ('KDTM_PT_4B', 19), ('KDTM_PT_4B', 20), ('KDTM_PT_4B', 21), ('KDTM_PT_4B', 22),
+        ('LD_PT_5B', 6), ('LD_PT_5B', 7), ('LD_PT_5B', 8), ('LD_PT_5B', 13), ('LD_PT_5B', 16), ('LD_PT_5B', 17), ('LD_PT_5B', 18), ('LD_PT_5B', 19), ('LD_PT_5B', 20), ('LD_PT_5B', 21), ('LD_PT_5B', 22),
+        ('HC_PT_6B', 6), ('HC_PT_6B', 7), ('HC_PT_6B', 8), ('HC_PT_6B', 13), ('HC_PT_6B', 16), ('HC_PT_6B', 17), ('HC_PT_6B', 18), ('HC_PT_6B', 19), ('HC_PT_6B', 20), ('HC_PT_6B', 21), ('HC_PT_6B', 22)
+)
+UPDATE dm_statistical_form_items item
+SET formula_ref = 'knowledge_base/data/statistics/report_mapping_ab.json#' || target.form_code || '.C' || target.column_no::text,
+    input_control_type = 'formula'
+FROM formula_targets target
+JOIN dm_statistical_forms form_ref ON form_ref.form_code = target.form_code
+WHERE item.form_id = form_ref.form_id
+  AND item.item_code = 'C' || target.column_no::text;
+
+-- Nguồn trực tiếp chung; nguồn kết quả và grain đặc thù nằm trong mapping/service.
+UPDATE dm_statistical_form_items item
+SET source_table = CASE WHEN form_ref.form_code LIKE '%_ST_%' THEN 'case_files' ELSE 'appellate_trackings' END,
+    source_field = CASE WHEN form_ref.form_code LIKE '%_ST_%' THEN 'acceptance_date' ELSE 'upper_court_acceptance_date' END
+FROM dm_statistical_forms form_ref
+WHERE item.form_id = form_ref.form_id
+  AND (
+      (form_ref.form_code LIKE '%_ST_%' AND item.item_code IN ('C2', 'C3'))
+      OR (form_ref.form_code LIKE '%_PT_%' AND item.item_code IN ('C2', 'C3', 'C4', 'C5'))
+  );
 
 WITH metrics(metric_code, metric_name, metric_group, aggregation_method, sort_hint) AS (
     VALUES

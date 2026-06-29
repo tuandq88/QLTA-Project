@@ -1,6 +1,6 @@
 ﻿# Ket qua kiem tra seed database
 
-- Thoi diem kiem tra: 2026-06-12 15:19:31 +07:00
+- Thoi diem kiem tra: 2026-06-29 10:48:03 +07:00
 - Database: qlta_schema_merge_test
 - ResetDatabase: False
 - SeedOnly: False
@@ -74,7 +74,10 @@ INSERT 0 7
 INSERT 0 4
 INSERT 0 5
 INSERT 0 3
-INSERT 0 1
+INSERT 0 13
+INSERT 0 585
+UPDATE 93
+UPDATE 36
 INSERT 0 17
 INSERT 0 4
 [Chay seed lan 1 / database/seed/010_legal_seed_data_tand_vietnam.sql]
@@ -87,8 +90,8 @@ INSERT 0 312
 INSERT 0 79
 DROP TABLE
 [Chay seed lan 1 / database/seed/011_courts_quang_ngai.sql]
-CREATE EXTENSION
 psql:D:/QLTA-Project/database/seed/011_courts_quang_ngai.sql:4: NOTICE:  extension "uuid-ossp" already exists, skipping
+CREATE EXTENSION
 INSERT 0 3
 [Chay seed lan 1 / database/seed/020_excel_seed_case_categories.sql]
 INSERT 0 2
@@ -158,7 +161,10 @@ INSERT 0 7
 INSERT 0 4
 INSERT 0 5
 INSERT 0 3
-INSERT 0 1
+INSERT 0 13
+INSERT 0 585
+UPDATE 93
+UPDATE 36
 INSERT 0 17
 INSERT 0 4
 [Chay seed lan 2 / database/seed/010_legal_seed_data_tand_vietnam.sql]
@@ -265,8 +271,8 @@ DO
 DO
 DO
 ROLLBACK
-psql:D:/QLTA-Project/tests/database/case_file_excel_seed_integrity_test.sql:179: NOTICE:  PASSED: case_file_excel_seed_integrity_test.sql
 DO
+psql:D:/QLTA-Project/tests/database/case_file_excel_seed_integrity_test.sql:179: NOTICE:  PASSED: case_file_excel_seed_integrity_test.sql
 [Chay seed test / tests/database/excel_case_full_import_integrity_test.sql]
 BEGIN
 DO

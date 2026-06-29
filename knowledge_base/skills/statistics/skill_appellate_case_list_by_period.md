@@ -1,7 +1,7 @@
 ---
 name: appellate_case_list_by_period
 description: Quy tắc lập danh sách án phúc thẩm theo kỳ, nhóm/sắp xếp theo tòa án xét xử sơ thẩm và loại án từ unified PostgreSQL schema.
-version: 1.1
+version: 1.2
 domain: judicial_statistics
 ---
 
@@ -39,6 +39,7 @@ Không dùng tên cũ hoặc suy đoán như `cf.id`, `case_title`, `resolved_da
    - `Còn lại cuối kỳ` = `x` nếu `acceptance_date <= to_date` và `resolution_date IS NULL OR resolution_date > to_date`.
 5. Không tính còn lại bằng công thức `accepted - resolved`; phải xét trạng thái từng case/occurrence tại `to_date`.
 6. Khi nhóm theo tòa án sơ thẩm, `STT` reset theo `first_instance_court_display + case_type_display`.
+7. Kết quả có ngày sau `to_date` không được tính hoặc hiển thị như kết quả trong kỳ; giữ hồ sơ trong danh sách tồn phù hợp và đưa ngày kết quả sau kỳ vào cảnh báo/ghi chú riêng.
 
 ## Hình sự phúc thẩm theo bị cáo
 

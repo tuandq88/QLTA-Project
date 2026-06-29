@@ -49,6 +49,11 @@ npm run dev
 - `GET|POST|PATCH /api/hearing-members`
 - `GET /api/statistics/snapshots`
 - `GET /api/statistics/kpi-values`
+- `GET /api/statistics/case-period` (ba danh sách theo kỳ báo cáo)
+- `GET /api/statistics/case-period/export?format=xlsx|pdf`
+- `GET /api/statistics/forms` (12 mẫu A/B đang triển khai)
+- `GET /api/statistics/reports/:formCode?from_date=...&to_date=...&court_id=...`
+- `GET /api/statistics/reports/:formCode/export?format=xlsx&from_date=...&to_date=...&court_id=...`
 - `GET|POST|PATCH /api/validation-results`
 - `GET /api/audit-logs`
 
@@ -86,7 +91,9 @@ Smoke test API local:
 
 ## Ghi chú nghiệp vụ
 
-- API thống kê chỉ đọc từ `statistics_snapshots` và `kpi_values`; không tự tạo công thức mới.
+- API thống kê snapshot/KPI chỉ đọc dữ liệu đã tính. API `case-period` tính trực tiếp từ `acceptance_date`/`closed_date`, dùng khoảng ngày bao gồm hai biên và trạng thái tại `to_date`.
+- API biểu mẫu A/B clone trực tiếp file tham chiếu trong `bieu_mau/` vào bộ nhớ, xóa số liệu mẫu tại vùng số và chỉ ghi các ô truy vết được. Ô chưa có nguồn và cột phát sinh ngoài phạm vi Quyết định 287 để trống; response/header trả trạng thái `incomplete` thay vì ghi `0`.
+- Xuất biểu mẫu A/B chỉ hỗ trợ XLSX. Không có luồng dựng hoặc chuyển đổi PDF trong phạm vi này.
 - Mutation dùng allow-list cột theo schema, validation Zod, permission check và ghi `audit_logs`.
 - AI chỉ nên ghi cảnh báo/gợi ý/validation qua `validation_results` hoặc bảng AI/risk về sau; không tự ghi đè dữ liệu chính.
 - `POST /auth/login` không hard-code tài khoản. Schema hiện tại chưa có cột `password_hash`; endpoint sẽ trả lỗi cấu hình cho tới khi schema auth được bổ sung an toàn.

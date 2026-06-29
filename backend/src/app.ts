@@ -5,9 +5,12 @@ import { ZodError } from 'zod';
 import { ApiError, fail } from './common/http.js';
 import { auditLogRoutes } from './modules/audit-logs.js';
 import { authRoutes } from './modules/auth.js';
+import { caseAssignmentRoutes } from './modules/case-assignments.js';
 import { caseOccurrenceRoutes } from './modules/case-occurrences.js';
 import { caseRoutes } from './modules/cases.js';
 import { catalogRoutes } from './modules/catalog.js';
+import { dashboardRoutes } from './modules/dashboard.js';
+import { defendantRoutes } from './modules/defendants.js';
 import { healthRoutes } from './modules/health.js';
 import { hearingRoutes } from './modules/hearings.js';
 import { participantRoutes } from './modules/participants.js';
@@ -44,7 +47,10 @@ export async function buildApp() {
   await app.register(async (api) => {
     await api.register(userRoutes);
     await api.register(catalogRoutes);
+    await api.register(dashboardRoutes);
     await api.register(caseRoutes);
+    await api.register(defendantRoutes);
+    await api.register(caseAssignmentRoutes);
     await api.register(caseOccurrenceRoutes);
     await api.register(participantRoutes);
     await api.register(hearingRoutes);

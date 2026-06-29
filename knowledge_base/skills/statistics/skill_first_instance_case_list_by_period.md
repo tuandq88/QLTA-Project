@@ -1,7 +1,7 @@
 ---
 name: first_instance_case_list_by_period
 description: Quy tắc lập danh sách án sơ thẩm thụ lý, giải quyết, còn lại theo một khoảng ngày từ unified PostgreSQL schema.
-version: 1.1
+version: 1.2
 domain: judicial_statistics
 ---
 
@@ -35,6 +35,7 @@ Không dùng tên cũ như `cf.id`, `case_title`, `resolved_date`, `case_type_co
    - `Giải quyết trong kỳ` = `x` nếu `resolution_date BETWEEN from_date AND to_date`;
    - `Còn lại cuối kỳ` = `x` nếu `acceptance_date <= to_date` và `resolution_date IS NULL OR resolution_date > to_date`.
 6. Chỉ dùng cột hoặc logic `Nhóm danh sách` khi người dùng yêu cầu tách riêng danh sách theo nhóm nghiệp vụ.
+7. Khi tách danh sách tồn đầu kỳ/chưa giải quyết đến cuối kỳ, dùng `acceptance_date < from_date AND (resolution_date IS NULL OR resolution_date > to_date)`; hồ sơ giải quyết sau kỳ vẫn nằm trong danh sách và kết quả chính phải để trống, chỉ ghi chú ngày giải quyết sau kỳ.
 
 ## Nguyên tắc ngày và fallback
 

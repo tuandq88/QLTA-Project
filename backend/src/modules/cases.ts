@@ -2,6 +2,8 @@ import type { FastifyInstance } from 'fastify';
 import { z } from 'zod';
 import { pool } from '../database/pool.js';
 import { ApiError, ok } from '../common/http.js';
+import { requireRoles } from '../common/auth.js';
+import { writeAudit } from '../common/audit.js';
 import { pageMeta, paginationSchema } from '../common/pagination.js';
 import { tableConfigs } from '../common/table-config.js';
 import { crudRoutes } from './generic-crud.js';
@@ -37,6 +39,71 @@ const worklistQuerySchema = paginationSchema.extend({
   current_stage: z.string().optional(),
   from_date: z.string().optional(),
   to_date: z.string().optional()
+});
+
+const nullableText = z.string().trim().optional().nullable();
+const nullableDate = z.string().trim().optional().nullable();
+
+const caseIntakeSchema = z.object({
+  case: z.object({
+    court_id: z.string().uuid(),
+    case_code: nullableText,
+    case_number: nullableText,
+    case_type: z.enum(['criminal', 'civil', 'administrative', 'marriage_family', 'business_commercial', 'labor']),
+    case_group: nullableText,
+    procedure_law: nullableText,
+    filing_date: nullableDate,
+    acceptance_date: nullableDate,
+    current_stage: nullableText,
+    case_status: z.enum(['draft', 'accepted', 'in_progress', 'suspended', 'resolved', 'closed', 'overdue']).default('accepted'),
+    resolution_status: nullableText,
+    has_foreign_element: z.boolean().optional(),
+    is_minor_related: z.boolean().optional(),
+    is_confidential: z.boolean().optional(),
+    first_instance_court_id: z.string().uuid().optional().nullable(),
+    first_instance_case_number: nullableText,
+    first_instance_judgment_number: nullableText,
+    first_instance_judgment_date: nullableDate,
+    summary: nullableText
+  }),
+  occurrence: z
+    .object({
+      occurrence_no: z.number().int().positive().default(1),
+      acceptance_date: z.string().trim(),
+      acceptance_type_code: z.enum(['INITIAL_ACCEPTANCE', 'RE_ACCEPTANCE_AFTER_SUPPLEMENTAL_INVESTIGATION']).default('INITIAL_ACCEPTANCE'),
+      source_note: nullableText
+    })
+    .optional(),
+  criminalDetail: z
+    .object({
+      procuracy_name: nullableText,
+      indictment_number: nullableText,
+      indictment_date: nullableDate,
+      investigation_agency: nullableText,
+      dossier_received_date: nullableDate,
+      trial_panel_type: nullableText
+    })
+    .optional(),
+  civilDetail: z
+    .object({
+      civil_category: nullableText,
+      dispute_type: nullableText,
+      claim_value: z.coerce.number().optional().nullable(),
+      jurisdiction_basis: nullableText,
+      mediation_result: nullableText,
+      court_fee_advance_paid: z.boolean().optional()
+    })
+    .optional(),
+  administrativeDetail: z
+    .object({
+      lawsuit_type: nullableText,
+      defendant_agency_name: nullableText,
+      agency_representative: nullableText,
+      agency_level: nullableText,
+      compensation_amount: z.coerce.number().optional().nullable(),
+      jurisdiction_basis: nullableText
+    })
+    .optional()
 });
 
 export async function caseRoutes(app: FastifyInstance) {
@@ -169,6 +236,103 @@ export async function caseRoutes(app: FastifyInstance) {
     filterFields: ['court_id', 'case_type', 'case_group', 'case_status', 'current_stage', 'resolution_status']
   });
 
+  app.post('/cases/intake', async (request, reply) => {
+    const user = requireRoles(request, ['admin', 'chief_judge', 'deputy_chief_judge']);
+    const input = caseIntakeSchema.parse(request.body);
+    const client = await pool.connect();
+
+    try {
+      await client.query('begin');
+
+      if (input.case.case_number) {
+        const duplicate = await client.query(
+          `select case_id
+           from case_files
+           where court_id = $1
+             and case_number = $2
+             and case_type = $3
+           limit 1`,
+          [input.case.court_id, input.case.case_number, input.case.case_type]
+        );
+        if (duplicate.rowCount) {
+          throw new ApiError('CONFLICT', 'Ho so da ton tai trong cung toa an va loai an', 409, {
+            case_id: duplicate.rows[0]?.case_id
+          });
+        }
+      }
+
+      const createdCase = await insertRecord(client, 'case_files', [
+        'court_id',
+        'case_code',
+        'case_number',
+        'case_type',
+        'case_group',
+        'procedure_law',
+        'filing_date',
+        'acceptance_date',
+        'current_stage',
+        'case_status',
+        'resolution_status',
+        'has_foreign_element',
+        'is_minor_related',
+        'is_confidential',
+        'first_instance_court_id',
+        'first_instance_case_number',
+        'first_instance_judgment_number',
+        'first_instance_judgment_date',
+        'summary'
+      ], normalizeInput(input.case));
+
+      const createdOccurrence = input.occurrence
+        ? await insertRecord(client, 'case_occurrences', [
+            'case_id',
+            'occurrence_no',
+            'acceptance_date',
+            'acceptance_type_code',
+            'source_note'
+          ], {
+            case_id: createdCase.case_id,
+            ...normalizeInput(input.occurrence)
+          })
+        : null;
+
+      const detail = await createCaseDetail(client, input.case.case_type, createdCase.case_id, input);
+
+      await writeAudit(client, {
+        tableName: 'case_files',
+        recordId: createdCase.case_id,
+        action: 'case_intake.create',
+        actor: user,
+        newData: {
+          case: createdCase,
+          occurrence: createdOccurrence,
+          detail
+        }
+      });
+
+      await client.query('commit');
+      return reply.status(201).send({
+        success: true,
+        data: {
+          case: createdCase,
+          occurrence: createdOccurrence,
+          detail
+        },
+        meta: {
+          trace: {
+            sourceTables: ['case_files', 'case_occurrences', detail?.tableName].filter(Boolean),
+            note: 'Transaction tao ho so tu form nhap lieu; chua tinh chi tieu thong ke.'
+          }
+        }
+      });
+    } catch (error) {
+      await client.query('rollback');
+      throw error;
+    } finally {
+      client.release();
+    }
+  });
+
   app.get('/cases/:id/overview', async (request, reply) => {
     const { id } = z.object({ id: z.string().uuid() }).parse(request.params);
     const caseResult = await pool.query(
@@ -294,4 +458,89 @@ export async function caseRoutes(app: FastifyInstance) {
       }
     );
   });
+}
+
+async function createCaseDetail(
+  client: import('pg').PoolClient,
+  caseType: z.infer<typeof caseIntakeSchema>['case']['case_type'],
+  caseId: string,
+  input: z.infer<typeof caseIntakeSchema>
+) {
+  if (caseType === 'criminal' && input.criminalDetail) {
+    const row = await insertRecord(client, 'criminal_case_details', [
+      'case_id',
+      'procuracy_name',
+      'indictment_number',
+      'indictment_date',
+      'investigation_agency',
+      'dossier_received_date',
+      'trial_panel_type'
+    ], {
+      case_id: caseId,
+      ...normalizeInput(input.criminalDetail)
+    });
+    return { tableName: 'criminal_case_details', row };
+  }
+
+  if (caseType === 'administrative' && input.administrativeDetail) {
+    const detailInput = normalizeInput(input.administrativeDetail);
+    const row = await insertRecord(client, 'administrative_case_details', [
+      'case_id',
+      'lawsuit_type',
+      'defendant_agency_name',
+      'agency_representative',
+      'agency_level',
+      'compensation_claimed',
+      'compensation_amount',
+      'jurisdiction_basis'
+    ], {
+      case_id: caseId,
+      ...detailInput,
+      compensation_claimed: detailInput.compensation_amount !== null && detailInput.compensation_amount !== undefined
+    });
+    return { tableName: 'administrative_case_details', row };
+  }
+
+  if (input.civilDetail) {
+    const row = await insertRecord(client, 'civil_case_details', [
+      'case_id',
+      'civil_category',
+      'dispute_type',
+      'claim_value',
+      'jurisdiction_basis',
+      'mediation_result',
+      'court_fee_advance_paid'
+    ], {
+      case_id: caseId,
+      ...normalizeInput(input.civilDetail)
+    });
+    return { tableName: 'civil_case_details', row };
+  }
+
+  return null;
+}
+
+function normalizeInput(input: Record<string, unknown>) {
+  return Object.fromEntries(
+    Object.entries(input).map(([key, value]) => [key, value === '' ? null : value])
+  );
+}
+
+async function insertRecord(
+  client: import('pg').PoolClient,
+  table: string,
+  allowedColumns: readonly string[],
+  input: Record<string, unknown>
+) {
+  const entries = allowedColumns
+    .filter((column) => input[column] !== undefined)
+    .map((column) => [column, input[column]] as const);
+  const columns = entries.map(([column]) => column);
+  const values = entries.map(([, value]) => value);
+  const params = values.map((_, index) => `$${index + 1}`);
+  const result = await client.query(
+    `insert into ${table} (${columns.join(', ')}) values (${params.join(', ')}) returning *`,
+    values
+  );
+  return result.rows[0];
 }

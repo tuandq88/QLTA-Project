@@ -1,6 +1,6 @@
 ﻿# Káº¿t quáº£ kiá»ƒm tra PostgreSQL trá»‘ng
 
-- Thá»i Ä‘iá»ƒm kiá»ƒm tra: 2026-06-12 15:19:01 +07:00
+- Thá»i Ä‘iá»ƒm kiá»ƒm tra: 2026-06-29 10:47:37 +07:00
 - Database test: qlta_schema_merge_test
 - Cháº¿ Ä‘á»™: UnifiedOnly
 - PGHOST: localhost
@@ -323,7 +323,10 @@ INSERT 0 7
 INSERT 0 4
 INSERT 0 5
 INSERT 0 3
-INSERT 0 1
+INSERT 0 13
+INSERT 0 585
+UPDATE 93
+UPDATE 36
 INSERT 0 17
 INSERT 0 4
 [Chay seed / database/seed/010_legal_seed_data_tand_vietnam.sql]
@@ -336,8 +339,8 @@ INSERT 0 312
 INSERT 0 79
 DROP TABLE
 [Chay seed / database/seed/011_courts_quang_ngai.sql]
-psql:D:/QLTA-Project/database/seed/011_courts_quang_ngai.sql:4: NOTICE:  extension "uuid-ossp" already exists, skipping
 CREATE EXTENSION
+psql:D:/QLTA-Project/database/seed/011_courts_quang_ngai.sql:4: NOTICE:  extension "uuid-ossp" already exists, skipping
 INSERT 0 3
 [Chay seed / database/seed/020_excel_seed_case_categories.sql]
 INSERT 0 2
@@ -397,8 +400,8 @@ DO
 DO
 DO
 ROLLBACK
-psql:D:/QLTA-Project/tests/database/database_structure_integrity_test.sql:178: NOTICE:  PASSED: database_structure_integrity_test.sql
 DO
+psql:D:/QLTA-Project/tests/database/database_structure_integrity_test.sql:178: NOTICE:  PASSED: database_structure_integrity_test.sql
 [Chay SQL test / tests/database/seed_data_integrity_test.sql]
 BEGIN
 DO
@@ -417,7 +420,8 @@ DO
 DO
 DO
 DO
+DO
 ROLLBACK
 DO
-psql:D:/QLTA-Project/tests/database/statistics_algorithm_precheck.sql:167: NOTICE:  PASSED: statistics_algorithm_precheck.sql
+psql:D:/QLTA-Project/tests/database/statistics_algorithm_precheck.sql:201: NOTICE:  PASSED: statistics_algorithm_precheck.sql
 ```

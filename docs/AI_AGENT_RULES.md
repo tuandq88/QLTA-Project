@@ -89,6 +89,7 @@ Sau mỗi task thiết kế database hoặc nghiệp vụ, AI Agent phải cân 
 - hiển thị danh mục từ API, không hard-code text lặp;
 - cảnh báo validation;
 - trường hợp thống kê theo occurrence/defendant-level.
+- Khi dùng TasteSkill, phải áp dụng wrapper `skills/design_taste_frontend_skill.md`, giữ giao diện nghiêm túc phù hợp cơ quan nhà nước và không dùng TasteSkill để tạo nghiệp vụ, chỉ tiêu, công thức hoặc biểu mẫu.
 
 ## 11. Reporting Rule
 

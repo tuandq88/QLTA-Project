@@ -1,6 +1,6 @@
 ﻿# Ket qua precheck thong ke
 
-- Thoi diem kiem tra: 2026-06-12 15:19:10 +07:00
+- Thoi diem kiem tra: 2026-06-29 10:48:03 +07:00
 - Database: qlta_schema_merge_test
 - PGHOST: localhost
 - PGPORT: 5432
@@ -16,7 +16,8 @@ DO
 DO
 DO
 DO
+DO
 ROLLBACK
 DO
-psql:D:/QLTA-Project/tests/database/statistics_algorithm_precheck.sql:167: NOTICE:  PASSED: statistics_algorithm_precheck.sql
+psql:D:/QLTA-Project/tests/database/statistics_algorithm_precheck.sql:201: NOTICE:  PASSED: statistics_algorithm_precheck.sql
 ```

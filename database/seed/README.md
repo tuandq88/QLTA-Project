@@ -53,7 +53,7 @@ Chạy qua wrapper test:
 ## Nguồn dữ liệu seed
 
 - `003_reference_data_seed.sql`: danh mục nền tối thiểu cho schema.
-- `004_statistical_reference_data_seed.sql`: danh mục thống kê/KPI tối thiểu.
+- `004_statistical_reference_data_seed.sql`: danh mục thống kê/KPI và cấu trúc cột 12 mẫu A/B; mapping công thức/nguồn chi tiết tham chiếu `knowledge_base/data/statistics/report_mapping_ab.json`.
 - `010_legal_seed_data_tand_vietnam.sql`: dữ liệu từ `database/seed/legal_seed_data_tand_vietnam/all_legal_seed_master.csv`.
 - `011_courts_quang_ngai.sql`: TAND tỉnh Quảng Ngãi và các tòa khu vực placeholder có kiểm soát, cần xác minh nguồn chính thức trước production.
 - `020` đến `025`: dữ liệu trích từ Excel trong `database/seed/danh_sach/` và các file preview trong `docs/review/`.

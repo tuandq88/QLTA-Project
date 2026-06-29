@@ -88,6 +88,40 @@ END $$;
 
 DO $$
 DECLARE
+    form_count integer;
+    item_count integer;
+    formula_count integer;
+BEGIN
+    SELECT count(*) INTO form_count
+    FROM dm_statistical_forms
+    WHERE form_code IN (
+        'HS_ST_1A', 'HS_PT_1B', 'DS_ST_2A', 'DS_PT_2B',
+        'HNGD_ST_3A', 'HNGD_PT_3B', 'KDTM_ST_4A', 'KDTM_PT_4B',
+        'LD_ST_5A', 'LD_PT_5B', 'HC_ST_6A', 'HC_PT_6B'
+    );
+    IF form_count <> 12 THEN
+        RAISE EXCEPTION 'Thiếu catalog mẫu A/B: có %, cần 12', form_count;
+    END IF;
+
+    SELECT count(*), count(*) FILTER (WHERE item.formula_ref IS NOT NULL)
+    INTO item_count, formula_count
+    FROM dm_statistical_form_items item
+    JOIN dm_statistical_forms form_ref ON form_ref.form_id = item.form_id
+    WHERE form_ref.form_code IN (
+        'HS_ST_1A', 'HS_PT_1B', 'DS_ST_2A', 'DS_PT_2B',
+        'HNGD_ST_3A', 'HNGD_PT_3B', 'KDTM_ST_4A', 'KDTM_PT_4B',
+        'LD_ST_5A', 'LD_PT_5B', 'HC_ST_6A', 'HC_PT_6B'
+    );
+    IF item_count <> 585 THEN
+        RAISE EXCEPTION 'Sai số item cột mẫu A/B: có %, cần 585', item_count;
+    END IF;
+    IF formula_count <> 93 THEN
+        RAISE EXCEPTION 'Sai số cột công thức mẫu A/B: có %, cần 93', formula_count;
+    END IF;
+END $$;
+
+DO $$
+DECLARE
     issue_count integer;
 BEGIN
     SELECT

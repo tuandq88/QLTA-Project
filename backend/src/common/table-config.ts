@@ -64,6 +64,14 @@ export const tableConfigs: Record<string, TableConfig> = {
     searchable: ['full_name', 'organization_name', 'id_number'],
     defaultOrder: 'participant_id'
   },
+  caseAssignments: {
+    table: 'case_assignments',
+    idColumn: 'assignment_id',
+    selectable: ['assignment_id', 'case_id', 'user_id', 'assignment_role', 'assigned_date', 'ended_date', 'is_primary', 'assignment_method', 'assigned_by', 'legal_basis', 'designated_reason_code', 'judge_rank_at_assignment', 'case_order_at_assignment', 'integrity_hash', 'status', 'replacement_reason'],
+    writable: ['case_id', 'user_id', 'assignment_role', 'assigned_date', 'ended_date', 'is_primary', 'assignment_method', 'assigned_by', 'legal_basis', 'designated_reason_code', 'judge_rank_at_assignment', 'case_order_at_assignment', 'integrity_hash', 'status', 'replacement_reason'],
+    searchable: ['assignment_role', 'legal_basis', 'designated_reason_code', 'replacement_reason'],
+    defaultOrder: 'assigned_date'
+  },
   hearings: {
     table: 'hearings',
     idColumn: 'hearing_id',
