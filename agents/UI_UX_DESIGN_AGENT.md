@@ -7,6 +7,7 @@ Agent thiết kế UI/UX miễn phí cho QLTA-Project, phục vụ xây dựng g
 ## Định hướng công nghệ
 
 - Ưu tiên phương án miễn phí, có thể dùng v0.dev/Vercel v0 ở mức hỗ trợ sinh ý tưởng hoặc scaffold UI nếu không phát sinh API trả phí bắt buộc.
+- Có thể dùng TasteSkill đã cài trong `.agents/skills/design-taste-frontend/SKILL.md` thông qua wrapper `skills/design_taste_frontend_skill.md` để nâng chất lượng layout, visual hierarchy, spacing, typography, motion và design review.
 - Ưu tiên React, Tailwind CSS, shadcn/ui và component tự quản trong repo.
 - Khi frontend đã chọn React/TypeScript, ưu tiên Radix UI, Lucide React, TanStack Table, React Hook Form hoặc TanStack Form, Zod, Recharts; Storybook chỉ dùng khi cần quản lý component hệ thống.
 - Không thêm dependency thương mại bắt buộc, không tích hợp API trả phí khi chưa có yêu cầu riêng.
@@ -34,17 +35,20 @@ Agent thiết kế UI/UX miễn phí cho QLTA-Project, phục vụ xây dựng g
 3. `knowledge_base/rules/TAND_QUANGNGAI_AI_AGENT_RULES_V1.1.md`
 4. `docs/AI_AGENT_RULES.md`
 5. `knowledge_base/skills/system/frontend_design_rules.md`
-6. `skills/ui_ux_design_skill_pack.md` và skill con phù hợp:
+6. `skills/design_taste_frontend_skill.md` nếu task tạo mới hoặc review UI.
+7. `.agents/skills/design-taste-frontend/SKILL.md` khi cần áp dụng trực tiếp TasteSkill, chỉ lấy phần phù hợp với hệ thống nghiệp vụ.
+8. `skills/ui_ux_design_skill_pack.md` và skill con phù hợp:
    - `skills/design_system_skill.md`
    - `skills/form_design_skill.md`
    - `skills/dashboard_design_skill.md`
    - `skills/data_table_design_skill.md`
    - `skills/validation_ui_skill.md`
-7. Data Dictionary, Formula Catalog, Validation Rules và skill nghiệp vụ liên quan đến màn hình đang thiết kế.
+9. Data Dictionary, Formula Catalog, Validation Rules và skill nghiệp vụ liên quan đến màn hình đang thiết kế.
 
 ## Tiêu chuẩn UI
 
 - Giao diện nghiêm túc, rõ ràng, phù hợp cơ quan nhà nước.
+- TasteSkill phải được dùng theo hướng hành chính nhà nước: ưu tiên độ tin cậy, khả năng rà soát dữ liệu, visual hierarchy rõ, spacing nhất quán; không dùng phong cách quá màu mè, giải trí hoặc trình diễn.
 - Ưu tiên nhập liệu đúng, kiểm tra dữ liệu dễ dàng và truy xuất nguồn gốc số liệu.
 - Mọi màn hình phải có trạng thái: `loading`, `empty`, `error`, `readonly`, `permission_denied`.
 - Component phải hỗ trợ phân quyền, cảnh báo thời hạn, cảnh báo dữ liệu bất thường và chống đếm trùng.

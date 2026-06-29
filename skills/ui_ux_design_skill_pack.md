@@ -10,6 +10,7 @@ Dùng cùng `UI_UX_DESIGN_AGENT` khi cần thiết kế màn hình, component, d
 
 ## Skill con đã cài
 
+- `skills/design_taste_frontend_skill.md`: wrapper TasteSkill cho nâng chất lượng frontend phù hợp hệ thống Tòa án.
 - `skills/design_system_skill.md`: design system, token, component inventory.
 - `skills/form_design_skill.md`: form nhập liệu và validation theo field.
 - `skills/dashboard_design_skill.md`: dashboard, KPI, biểu đồ và cảnh báo.
@@ -26,6 +27,9 @@ Dùng cùng `UI_UX_DESIGN_AGENT` khi cần thiết kế màn hình, component, d
 ## Quy tắc thiết kế
 
 - Thiết kế UI theo hướng miễn phí, ưu tiên React, Tailwind CSS, shadcn/ui.
+- Khi dùng TasteSkill, phải đọc brief nghiệp vụ, xác định người dùng chính và áp dụng wrapper `skills/design_taste_frontend_skill.md`; chỉ dùng TasteSkill cho layout, component composition, visual hierarchy, spacing, typography, motion và design review.
+- Với QLTA-Project, TasteSkill phải nghiêng về giao diện hành chính nhà nước: nghiêm túc, rõ ràng, dày thông tin vừa phải, ưu tiên table/form/dashboard/report/cảnh báo nghiệp vụ.
+- Không dùng TasteSkill để tạo landing page, hero marketing, card rỗng, placeholder giả, hiệu ứng thừa, gradient/trang trí quá đà hoặc phong cách thiếu trang trọng.
 - Thư viện cộng đồng ưu tiên khi frontend đã chọn React/TypeScript: Radix UI, Lucide React, TanStack Table, React Hook Form hoặc TanStack Form, Zod, Recharts; Storybook chỉ dùng nếu cần quản lý component nhiều màn hình.
 - Không yêu cầu API trả phí, SDK thương mại hoặc dịch vụ bắt buộc ngoài repo.
 - Không cài dependency khi repo chưa có framework/frontend package rõ ràng.
@@ -45,6 +49,8 @@ Dùng cùng `UI_UX_DESIGN_AGENT` khi cần thiết kế màn hình, component, d
 - Có phân quyền xem/sửa/xuất/duyệt theo vai trò.
 - Có cơ chế chống đếm trùng trong table/dashboard/report.
 - Có ghi chú nguồn dữ liệu, API cần gọi và edge cases.
+- Có kiểm tra responsive desktop/tablet, accessibility, contrast, spacing, typography và motion hợp lý.
+- Nếu frontend đã hỗ trợ dark mode thì component phải tương thích; nếu chưa có, không ép thêm dark mode.
 
 ## Component ưu tiên
 

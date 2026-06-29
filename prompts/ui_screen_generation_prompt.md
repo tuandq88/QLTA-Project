@@ -12,6 +12,8 @@ Required context:
 - Đọc AGENTS.md, README.md, docs/AI_AGENT_RULES.md.
 - Đọc knowledge_base/rules/TAND_QUANGNGAI_AI_AGENT_RULES_V1.1.md.
 - Đọc knowledge_base/skills/system/frontend_design_rules.md.
+- Đọc skills/design_taste_frontend_skill.md.
+- Khi cần áp dụng TasteSkill trực tiếp, đọc .agents/skills/design-taste-frontend/SKILL.md và chỉ dùng phần phù hợp với ứng dụng nghiệp vụ Tòa án.
 - Đọc skills/ui_ux_design_skill_pack.md và skill con phù hợp:
   - skills/design_system_skill.md
   - skills/form_design_skill.md
@@ -22,6 +24,10 @@ Required context:
 
 Constraints:
 - Ưu tiên miễn phí: React, Tailwind CSS, shadcn/ui, v0.dev/Vercel v0 nếu chỉ dùng cho scaffold hoặc gợi ý UI.
+- TasteSkill chỉ dùng để cải thiện layout, component composition, visual hierarchy, spacing, typography, motion và design review; không dùng để tạo nghiệp vụ, chỉ tiêu, công thức, biểu mẫu hoặc căn cứ pháp lý.
+- Trước khi tạo UI, phải xác định người dùng chính: lãnh đạo, Thẩm phán, Thư ký, thống kê viên hoặc quản trị.
+- Giao diện phải nghiêm túc, rõ ràng, phù hợp cơ quan nhà nước; ưu tiên data table, form nhập liệu, dashboard, cảnh báo nghiệp vụ và báo cáo.
+- Tránh giao diện generic, landing-page hero, card rỗng, placeholder giả, hiệu ứng thừa hoặc phong cách quá màu mè.
 - Khi frontend đã chọn React/TypeScript, ưu tiên Radix UI, Lucide React, TanStack Table, React Hook Form hoặc TanStack Form, Zod, Recharts; Storybook chỉ dùng nếu repo phù hợp.
 - Không tích hợp API trả phí hoặc dependency thương mại bắt buộc.
 - Không cài dependency nếu repo chưa có package.json/framework frontend rõ ràng.
@@ -30,6 +36,7 @@ Constraints:
 - Mọi màn hình phải có loading, empty, error, readonly, permission_denied.
 - UI phải hỗ trợ phân quyền, cảnh báo thời hạn, cảnh báo dữ liệu bất thường và chống đếm trùng.
 - Bảng dữ liệu phải có tìm kiếm, lọc, sắp xếp, phân trang, trạng thái hồ sơ, cảnh báo thời hạn và thao tác theo phân quyền.
+- Phải kiểm tra responsive desktop/tablet, accessibility, contrast, spacing, typography và motion. Nếu frontend đã có dark mode thì hỗ trợ dark mode; nếu chưa có thì không ép thêm.
 
 Task:
 [Mô tả màn hình/component cần thiết kế]
@@ -39,6 +46,7 @@ Input:
 
 Output format:
 - Screen/Component
+- Design Read
 - Purpose
 - Route
 - Inputs
